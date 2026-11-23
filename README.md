@@ -59,6 +59,11 @@
   - **The cause was mundane, not self-deception.** The AI measured its *new* version accurately,
     but measured the *starting point* only once. That single measurement happened to come out
     unluckily bad, which made the improvement look bigger than it was.
+  - **Read this as one finding, not several.** Both self-graded runs used the same random setting
+    for that measurement, so they got the same unlucky number, and every later round was compared
+    against it. That is why the error showed up in every round and stayed flat. A different
+    random setting could just as easily have made the AI *undersell* its progress. So the lesson
+    is about measuring carefully, not proof that self-grading AI inflates its results.
 
 **Why it matters.**
 - If AI is going to speed up AI research, the weakest link may not be the AI's ability to come
@@ -277,6 +282,13 @@ main-run value was read; `scripts/posthoc_gpu.py`, `results/gpu_posthoc_main.jso
   neither arm's error grew over three iterations.
 - The overstatement did not come from optimism about the agent's own work. It came from
   measuring the comparison point once.
+- **That cause is effectively one data point.** Both self-arm agents (and the one external-arm
+  agent that checked) ran the baseline at `evaluate.py`'s default seed 1, so their 2.052–2.061
+  are the same draw up to GPU nondeterminism. Each did so only in iteration 1 and reused the
+  number in iterations 2–3. So the positive sign in all six self-arm iterations, and the flat
+  E2, follow mechanically from that one draw; they are not independent confirmations. A
+  single-seed error has no preferred sign: another default seed could have made the self arm
+  *under*state its gain. The robust finding is the error's size and source, not its direction.
 - **The practical rule this suggests:** in a self-improving loop, measure "before" with the
   same rigour as "after" (several seeds, or harness-owned).
 - **Small sample:** n = 2 runs per arm. Treat these as effect sizes, not tests.
