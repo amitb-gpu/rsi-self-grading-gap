@@ -12,6 +12,10 @@ if (ws / "self_cases.json").exists():
     ]))
 (ws / "NOTES.md").write_text("iter done\n")
 (ws / "report.json").write_text(json.dumps({"estimated_pass_rate": 0.9, "basis": "fake"}))
+assert os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") and not os.environ.get("ANTHROPIC_API_KEY")
+print(json.dumps({"type": "system", "subtype": "init", "mcp_servers": [], "plugins": [],
+                  "tools": ["Read", "Write", "Edit", "Bash"], "claude_code_version": "fake",
+                  "model": "fake", "apiKeySource": "none"}))
 print(json.dumps({"type": "assistant", "message": {"content": [
     {"type": "tool_use", "name": "Write", "input": {"file_path": str(ws / "solution.py")}}]}}))
 print(json.dumps({"type": "result", "is_error": False, "num_turns": 1, "total_cost_usd": 0,

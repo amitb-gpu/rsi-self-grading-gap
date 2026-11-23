@@ -9,6 +9,8 @@ FAKE = Path(__file__).parent / "fixtures" / "fake_claude.py"
 
 def test_loop_end_to_end(tmp_path, monkeypatch):
     monkeypatch.setattr(loop, "CLAUDE_BIN", str(FAKE))
+    monkeypatch.setenv("CLAUDE_CODE_OAUTH_TOKEN", "test-token")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "must-be-stripped")
     monkeypatch.setattr(loop, "ROOT", tmp_path)
     monkeypatch.setattr(loop, "LEDGER", tmp_path / "runs" / "ledger.jsonl")
     monkeypatch.setattr(loop, "WORK", tmp_path / "work")
@@ -24,6 +26,7 @@ def test_loop_end_to_end(tmp_path, monkeypatch):
     assert s["report"]["estimated_pass_rate"] == 0.9
     assert not s["audit"]["violation"] and not e["audit"]["violation"]
     assert recs[1]["prev_hash"] == recs[0]["hash"]
+    assert s["claude"]["isolation"]["ok"] and s["claude"]["isolation"]["init_seen"]
     monkeypatch.setattr(analyze, "LEDGER", tmp_path / "runs" / "ledger.jsonl")
     monkeypatch.setattr(analyze, "ROOT", tmp_path)
     out = analyze.analyse("main")

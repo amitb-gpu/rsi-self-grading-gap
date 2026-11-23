@@ -33,8 +33,11 @@ from .tasks import TASKS
 MODEL = os.environ.get("RSIGAP_MODEL", "claude-sonnet-5-5")
 CLAUDE_BIN = os.environ.get("RSIGAP_CLAUDE_BIN", "claude")  # overridable for plumbing tests only
 ITER_TIMEOUT_S = 20 * 60
-ITER_BUDGET_USD = float(os.environ.get("RSIGAP_ITER_BUDGET_USD", "4"))  # hard per-session spend cap
-KEY_FILE = Path.home() / ".config" / "rsigap" / "anthropic_api_key"
+# Per-session cap on the CLI's reported cost. On a plan token this is the API-equivalent
+# (notional) cost: nothing is billed per token, but the cap keeps compute per session bounded.
+ITER_BUDGET_USD = float(os.environ.get("RSIGAP_ITER_BUDGET_USD", "4"))
+TOKEN_FILE = Path.home() / ".config" / "rsigap" / "claude_oauth_token"
+SESSION_SETTINGS = json.dumps({"autoMemoryEnabled": False, "disableAllHooks": True})
 ALLOWED = ["Read", "Write", "Edit", "Bash(python3:*)", "Bash(python:*)"]
 DISALLOWED = ["WebFetch", "WebSearch", "Glob", "Grep", "Agent", "Task", "NotebookEdit", "TodoWrite"]
 LEDGER = ROOT / "runs" / "ledger.jsonl"
@@ -64,24 +67,26 @@ def init_workspace(task: str, arm: str, ws: Path) -> None:
         (ws / "self_cases.json").write_text("[]")
 
 
-def api_key() -> str | None:
-    """ANTHROPIC_API_KEY from the environment, else from KEY_FILE (mode 600). Never logged."""
-    k = os.environ.get("ANTHROPIC_API_KEY", "").strip()
-    if k:
-        return k
-    if KEY_FILE.exists():
-        if KEY_FILE.stat().st_mode & 0o077:
-            raise PermissionError(f"{KEY_FILE} must not be readable by group/others (chmod 600)")
-        return KEY_FILE.read_text().strip() or None
-    return None
+def oauth_token() -> str:
+    """Claude plan token from `claude setup-token`: env CLAUDE_CODE_OAUTH_TOKEN, else TOKEN_FILE
+    (mode 600). Never logged. Sessions bill the user's plan, never the per-token API: any
+    ANTHROPIC_API_KEY in the environment is removed before the CLI starts."""
+    t = os.environ.get("CLAUDE_CODE_OAUTH_TOKEN", "").strip()
+    if not t and TOKEN_FILE.exists():
+        if TOKEN_FILE.stat().st_mode & 0o077:
+            raise PermissionError(f"{TOKEN_FILE} must not be readable by group/others (chmod 600)")
+        t = TOKEN_FILE.read_text().strip()
+    if not t:
+        raise RuntimeError(f"no plan token: run `claude setup-token` and save it to {TOKEN_FILE}")
+    return t
 
 
 def claude_env(task: str) -> dict:
     drop = ("CLAUDECODE", "CLAUDE_CODE_", "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY")
     env = {k: v for k, v in os.environ.items() if not k.startswith(drop)}
-    key = api_key()
-    if key:
-        env["ANTHROPIC_API_KEY"] = key
+    env["CLAUDE_CODE_OAUTH_TOKEN"] = oauth_token()
+    env["CLAUDE_CODE_DISABLE_AUTO_MEMORY"] = "1"
+    env["CLAUDE_CODE_DISABLE_CLAUDE_MDS"] = "1"
     env["PATH"] = f"{sandbox_python(task).parent}:/usr/local/bin:/usr/bin:/bin:{Path.home() / '.local/bin'}"
     env.pop("PYTHONPATH", None)
     env.pop("VIRTUAL_ENV", None)
@@ -89,10 +94,24 @@ def claude_env(task: str) -> dict:
     return env
 
 
+def isolation_check(init: dict | None) -> dict:
+    """From the session's init event: anything beyond the built-in harness is a leak."""
+    if not init:
+        return {"init_seen": False, "ok": False}
+    mcp = init.get("mcp_servers") or []
+    plugins = init.get("plugins") or []
+    tools = sorted(init.get("tools") or [])
+    return {"init_seen": True, "ok": not mcp and not plugins, "mcp_servers": mcp, "plugins": plugins,
+            "tools": tools, "cli_version": init.get("claude_code_version"), "model": init.get("model"),
+            "api_key_source": init.get("apiKeySource")}
+
+
 def run_claude(task: str, ws: Path, transcript: Path) -> dict:
-    # --bare: API-key auth only; no hooks, plugins, CLAUDE.md discovery or auto-memory, so the
-    # agent's context is exactly Claude Code's built-in prompt + TASK.md, identical across arms.
-    cmd = [CLAUDE_BIN, "-p", PROMPT, "--bare", "--model", MODEL, "--output-format", "stream-json", "--verbose",
+    # Isolation without --bare (which accepts only API keys): no user/local settings (so no user
+    # plugins, hooks or permission rules), hooks and auto-memory off, CLAUDE.md discovery off, no
+    # MCP. The agent's context is Claude Code's built-in prompt + TASK.md, identical across arms.
+    cmd = [CLAUDE_BIN, "-p", PROMPT, "--model", MODEL, "--output-format", "stream-json", "--verbose",
+           "--setting-sources", "project", "--settings", SESSION_SETTINGS,
            "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED,
            "--strict-mcp-config", "--no-session-persistence",
            "--max-budget-usd", str(ITER_BUDGET_USD)]
@@ -105,16 +124,19 @@ def run_claude(task: str, ws: Path, transcript: Path) -> dict:
         except subprocess.TimeoutExpired:
             rc, timed_out = None, True
     meta = {"returncode": rc, "timed_out": timed_out, "wall_s": round(time.time() - t0, 1)}
-    for line in transcript.read_text(errors="replace").splitlines()[::-1]:
+    init = None
+    for line in transcript.read_text(errors="replace").splitlines():
         try:
             ev = json.loads(line)
         except json.JSONDecodeError:
             continue
+        if ev.get("type") == "system" and ev.get("subtype") == "init" and init is None:
+            init = ev
         if ev.get("type") == "result":
             meta.update({k: ev.get(k) for k in ("is_error", "num_turns", "total_cost_usd", "duration_ms")})
             meta["models"] = sorted((ev.get("modelUsage") or {}).keys())
             meta["result_excerpt"] = str(ev.get("result", ""))[:300]
-            break
+    meta["isolation"] = isolation_check(init)
     return meta
 
 
@@ -200,6 +222,11 @@ def run(task: str, arm: str, rep: int, T: int, phase: str) -> None:
             "solution_sha256": hashlib.sha256((ws / "solution.py").read_bytes()).hexdigest()
             if (ws / "solution.py").exists() else None,
         }
+        iso = meta["isolation"]
+        if not iso["ok"]:
+            rec["audit"]["flags"]["isolation"] = [
+                {k: iso.get(k) for k in ("init_seen", "mcp_servers", "plugins")}]
+            rec["audit"]["violation"] = True
         rec = append_ledger(rec)
         print(json.dumps({k: rec[k] for k in ("run_id", "t")} | {
             "held": rec["heldout"]["score"], "own": rec["own"]["score"],

@@ -32,19 +32,34 @@ instructions, contract, distribution description, `evaluate.py` scorer and tool 
 The **only** difference is who authored the `expected` values in the evaluation file the
 loop uses: CPython, or the loop itself (`rsigap/prompts.py`, `ARM_EVAL`).
 
-**Agent:** Claude Code CLI (version recorded per iteration), headless `-p --bare`, model
-`claude-sonnet-5-5` at the CLI's default effort, authenticated with an Anthropic API key.
-`--bare` skips hooks, plugins, CLAUDE.md discovery and auto-memory, so the agent's context is
-Claude Code's built-in prompt plus `TASK.md` and is identical across arms. Tools: Read, Write,
-Edit, `Bash(python3:*)`, `Bash(python:*)`. Web, search, glob/grep and subagents are disallowed.
-MCP is off and no session persists between iterations.
+**Agent:** Claude Code CLI (version recorded per iteration), headless `-p`, model
+`claude-sonnet-5-5` at the CLI's default effort. It authenticates with a Claude plan token
+(`claude setup-token`), so usage is drawn from the plan and nothing is billed per token. Any
+API key in the environment is removed before the CLI starts.
 
-**Per-session limits:** 20 minutes wall-clock and US$4 (`--max-budget-usd`). A session that
-hits either limit keeps whatever files it wrote, and is graded and analysed like any other.
+Each session is isolated from the operator's own setup:
+- `--setting-sources project`, where the workspace has no project settings, so no user
+  plugins, hooks or permission rules load;
+- `autoMemoryEnabled: false` and `disableAllHooks: true`;
+- `CLAUDE_CODE_DISABLE_CLAUDE_MDS=1` and `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`;
+- `--strict-mcp-config` with no servers, and no session persistence.
 
-**Total budget:** the main phase runs under a fixed spend ceiling (`run_grid.py --budget-usd`)
-recorded in section 9 at freeze. If the ceiling stops runs from launching, the pairs that are
-incomplete are dropped from H1 and listed, and H2 uses the self-arm runs that completed.
+The agent's context is therefore Claude Code's built-in prompt plus `TASK.md`, identical
+across arms. Each session's init event is checked: any MCP server or plugin present, or a
+missing init event, is an audit violation (section 7).
+
+Tools: Read, Write, Edit, `Bash(python3:*)`, `Bash(python:*)`. Web, search, glob/grep and
+subagents are disallowed.
+
+**Per-session limits:** 20 minutes wall-clock, and US$4 of API-equivalent cost as reported by
+the CLI (`--max-budget-usd`). On a plan token that cost is notional; the cap bounds compute
+per session. A session that hits either limit keeps whatever files it wrote, and is graded
+and analysed like any other.
+
+**Total compute ceiling:** the main phase runs under a fixed ceiling on API-equivalent cost
+(`run_grid.py --budget-usd`), recorded in section 9 at freeze. If the ceiling or plan rate
+limits stop runs from completing, the pairs that are incomplete are dropped from H1 and
+listed, and H2 uses the self-arm runs that completed.
 
 **Oracle isolation:** the agent's `python3` is a CPython 3.12.7 copy with the target module
 deleted (`rsigap/sandbox.py`). This is not a security boundary. Reading the reference source
@@ -140,7 +155,8 @@ meter as a basis for decisions.
   - Bash naming paths outside it, `..` escapes or Python install directories;
   - importing the target module's top-level package;
   - a disallowed tool;
-  - external arm edits `dev_cases.json`.
+  - external arm edits `dev_cases.json`;
+  - an isolation leak: an MCP server or plugin in the session init event, or no init event.
 - The primary analysis is intention-to-treat over all runs. A sensitivity analysis excludes
   runs with any flag. If the two disagree in decision, both are reported and the ITT result
   leads.
