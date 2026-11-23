@@ -44,6 +44,9 @@ class Task:
     gen: Callable[[random.Random], tuple[list, dict]]
     reference: Callable[[list, dict], Any]
     canon: Callable[[Any], Any] = to_jsonable
+    group: str = "pilot_v1"          # pilot_v1 (ceilinged in pilot) | v2_candidate
+    probe: str = ""                  # sandbox check that must FAIL; default "import <module>"
+    qualname: str = ""
 
 
 def pick(rng: random.Random, xs):
@@ -359,3 +362,341 @@ TASKS: dict[str, Task] = {
              "zone ids, CIDR suffix, brackets, empty, 'localhost', too few/many parts).",
         gen=ip_gen, reference=ip_ref),
 }
+
+
+# =====================================================================================
+# v2 candidates (pre-committed in PREREGISTRATION 8.3). Inputs are JSON-representable.
+# =====================================================================================
+
+# ------------------------------------------------------------------- pprint.pformat
+PP_WORDS = ["a", "bb", "key", "value", "x y", "long string with several words in it", "",
+            "quote's", 'dq"', "tab\there", "newline\nhere", "ünï", "0", "None"]
+
+
+def _pp_obj(rng, depth):
+    r = rng.random()
+    if depth <= 0 or r < 0.35:
+        return pick(rng, [
+            lambda: pick(rng, PP_WORDS) * rng.choice([1, 1, 1, 3, 8]),
+            lambda: rng.choice([0, 1, -7, 42, 12345678, 10 ** 12, -(10 ** 9) - 1]),
+            lambda: rng.choice([0.5, 1e-7, 3.14159, -2.0, 1e22]),
+            lambda: rng.choice([True, False, None]),
+        ])()
+    if r < 0.7:
+        return [_pp_obj(rng, depth - 1) for _ in range(rng.randint(0, 6))]
+    keys = rng.sample(["a", "b", "zeta", "Alpha", "10", "2", "k" * 12, "", "mid key"], rng.randint(0, 5))
+    return {k: _pp_obj(rng, depth - 1) for k in keys}
+
+
+def pprint_gen(rng):
+    obj = _pp_obj(rng, rng.randint(1, 4))
+    kw = {}
+    if rng.random() < 0.9:
+        kw["width"] = pick(rng, [8, 12, 16, 20, 30, 40, 60, 80])
+    if rng.random() < 0.3:
+        kw["indent"] = pick(rng, [0, 2, 4])
+    if rng.random() < 0.2:
+        kw["depth"] = pick(rng, [1, 2])
+    if rng.random() < 0.35:
+        kw["compact"] = True
+    if rng.random() < 0.25:
+        kw["sort_dicts"] = False
+    if rng.random() < 0.2:
+        kw["underscore_numbers"] = True
+    return [obj], kw
+
+
+def pprint_ref(args, kw):
+    import pprint
+    return pprint.pformat(*args, **kw)
+
+
+# ------------------------------------------------------------ difflib get_opcodes
+def _seq(rng, alphabet, lo, hi):
+    return "".join(pick(rng, alphabet) for _ in range(rng.randint(lo, hi)))
+
+
+def opcodes_gen(rng):
+    r = rng.random()
+    if r < 0.45:  # short strings, b an edited copy of a
+        a = _seq(rng, "abcde ", 0, 25)
+        b = list(a)
+        for _ in range(rng.randint(0, 5)):
+            op = rng.random()
+            i = rng.randint(0, len(b))
+            if op < 0.4:
+                b.insert(i, pick(rng, "abcdexy "))
+            elif op < 0.7 and b:
+                del b[min(i, len(b) - 1)]
+            elif b:
+                b[min(i, len(b) - 1)] = pick(rng, "abxyz")
+        b = "".join(b)
+    elif r < 0.7:  # lists of lines
+        lines = ["def f():", "    return 1", "", "x = 2", "# c", "pass", "    pass", "}"]
+        a = [pick(rng, lines) for _ in range(rng.randint(0, 12))]
+        b = [ln if rng.random() < 0.75 else pick(rng, lines) for ln in a]
+        if rng.random() < 0.5:
+            b.insert(rng.randint(0, len(b)), pick(rng, lines))
+    else:  # long b to exercise autojunk (>= 200 items) with popular elements
+        a = _seq(rng, "ab c", 20, 80)
+        b = _seq(rng, "aab c", 200, 260)
+    kw = {}
+    if rng.random() < 0.3:
+        kw["autojunk"] = False
+    return [a, b], kw
+
+
+def opcodes_ref(args, kw):
+    import difflib
+    return difflib.SequenceMatcher(None, *args, **kw).get_opcodes()
+
+
+# ------------------------------------------------------- difflib get_close_matches
+CM_BASE = ["apple", "apply", "ape", "peach", "appel", "maple", "applet", "pineapple", "happy",
+           "grape", "april", "pple", "a", "", "aaaa", "banana", "bandana", "cabana"]
+
+
+def _mutate(rng, w):
+    w = list(w)
+    for _ in range(rng.randint(0, 3)):
+        i = rng.randint(0, len(w))
+        op = rng.random()
+        if op < 0.4:
+            w.insert(i, pick(rng, "aelpnx"))
+        elif op < 0.7 and w:
+            del w[min(i, len(w) - 1)]
+        elif w:
+            w[min(i, len(w) - 1)] = pick(rng, "aelpnx")
+    return "".join(w)
+
+
+def close_gen(rng):
+    word = pick(rng, CM_BASE) if rng.random() < 0.6 else _mutate(rng, pick(rng, CM_BASE))
+    poss = [pick(rng, CM_BASE) if rng.random() < 0.5 else _mutate(rng, pick(rng, CM_BASE))
+            for _ in range(rng.randint(0, 12))]
+    kw = {}
+    if rng.random() < 0.5:
+        kw["n"] = pick(rng, [1, 2, 5])
+    if rng.random() < 0.6:
+        kw["cutoff"] = pick(rng, [0.0, 0.3, 0.5, 0.75, 0.9])
+    return [word, poss], kw
+
+
+def close_ref(args, kw):
+    import difflib
+    return difflib.get_close_matches(*args, **kw)
+
+
+# ------------------------------------------------------- email.utils.parsedate_tz
+PD_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Monday", "mon", "Xyz"]
+PD_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+             "jan", "JANUARY", "Sept", "Foo"]
+PD_TZ = ["+0000", "-0500", "+0530", "-1200", "+2400", "GMT", "UT", "UTC", "EST", "EDT", "PST",
+         "pdt", "Z", "A", "XYZ", "+05", "-0", "", "", ""]
+
+
+def parsedate_gen(rng):
+    odd = rng.random() < 0.5  # about half the inputs get odd values; the rest are mostly well-formed
+    day = str(pick(rng, [1, 2, 9, 10, 23, 31] + ([32, 0] if odd else [])))
+    mon = pick(rng, PD_MONTHS[:12] * 3 + (PD_MONTHS[12:] if odd else []))
+    year = str(pick(rng, [2026, 1999, 2026, 1999, 26, 99, 70, 69] + ([0, 3, 100, 10000, 1900] if odd else [])))
+    hh = pick(rng, ["00", "9", "23"] + (["24", "25"] if odd else []))
+    mm = pick(rng, ["00", "05", "59"] + (["60"] if odd else []))
+    ss = pick(rng, ["00", "30", "59"] + (["61"] if odd else []))
+    time = pick(rng, [f"{hh}:{mm}:{ss}"] * 3 + [f"{hh}:{mm}", ""] + ([f"{hh}.{mm}.{ss}", f"{hh}:{mm}:{ss}.5"] if odd else []))
+    tz = pick(rng, PD_TZ)
+    parts = [day, mon, year, time, tz]
+    order = rng.random()
+    if order < 0.15:
+        parts = [mon, day, year, time, tz]
+    elif order < 0.25:
+        parts = [day, mon, time, year, tz]
+    elif order < 0.3:
+        parts = [year, mon, day, time, tz]
+    s = " ".join(p for p in parts if p)
+    if rng.random() < 0.6:
+        s = pick(rng, PD_DAYS) + pick(rng, [", ", " ", ",", ",  "]) + s
+    if rng.random() < 0.15:
+        s = s.replace(" ", pick(rng, ["  ", "-", ", "]), 1)
+    if rng.random() < 0.1:
+        s = pick(rng, ["", " ", "2026-11-23T10:00:00Z", "garbage", "1 Jan"]) if rng.random() < 0.5 else s + " (EST)"
+    return [s], {}
+
+
+def parsedate_ref(args, kw):
+    import email.utils
+    return email.utils.parsedate_tz(*args)
+
+
+# ----------------------------------------------------------- html.parser events
+HP_FRAGS = ["text", " ", "\n", "<p>", "</p>", "<P CLASS=x>", "<a href='u'>", '<a href="v" id=b>',
+            "<br/>", "<br />", "<img src=x alt>", "</a>", "<!-- c -->", "<!---->", "<!-- unclosed",
+            "<!DOCTYPE html>", "<?php echo 1 ?>", "<![CDATA[x<y]]>", "&amp;", "&lt", "&#65;",
+            "&#x41;", "&#xZZ;", "&bogus;", "& ", "<", ">", "< p>", "</ p>", "<script>if(a<b){}</script>",
+            "<style>p>a{}</style>", "<script>x</scr", "</>", "<a b='c>", "<div data-x=\"1\" hidden>",
+            "<!x>", "<!>", "</div  >", "<td nowrap>", "<1abc>"]
+
+
+def htmlparser_gen(rng):
+    return [join_frags(rng, HP_FRAGS, 1, 8)], {}
+
+
+def htmlparser_ref(args, kw):
+    from html.parser import HTMLParser
+
+    class Rec(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=False)
+            self.ev = []
+
+        def handle_starttag(self, tag, attrs): self.ev.append(["starttag", tag, attrs])
+        def handle_endtag(self, tag): self.ev.append(["endtag", tag])
+        def handle_startendtag(self, tag, attrs): self.ev.append(["startendtag", tag, attrs])
+        def handle_data(self, data): self.ev.append(["data", data])
+        def handle_comment(self, data): self.ev.append(["comment", data])
+        def handle_charref(self, name): self.ev.append(["charref", name])
+        def handle_entityref(self, name): self.ev.append(["entityref", name])
+        def handle_decl(self, decl): self.ev.append(["decl", decl])
+        def handle_pi(self, data): self.ev.append(["pi", data])
+        def unknown_decl(self, data): self.ev.append(["unknown_decl", data])
+
+    p = Rec()
+    p.feed(args[0])
+    p.close()
+    return p.ev
+
+
+# ---------------------------------------------------------------- html.unescape
+HU_FRAGS = ["a", " ", "&amp;", "&amp", "&AMP;", "&lt;", "&gt", "&quot;", "&nbsp;", "&copy",
+            "&notin;", "&notit;", "&ampx", "&eacute;", "&Eacute", "&zwj;", "&hearts;", "&bogus;",
+            "&#65;", "&#065", "&#x41;", "&#X41;", "&#x;", "&#;", "&#0;", "&#128;", "&#x80;", "&#150;",
+            "&#xD800;", "&#x110000;", "&#1114111;", "&#9999999999;", "&#x1F600;", "&", "&&", "&;",
+            "&LongLeftRightArrow;", "&ngE;", "&fjlig;", "&acE;", "&Tab;", "&NewLine;"]
+
+
+def unescape_gen(rng):
+    return [join_frags(rng, HU_FRAGS, 1, 6)], {}
+
+
+def unescape_ref(args, kw):
+    import html
+    return html.unescape(*args)
+
+
+# ------------------------------------------------------- urllib.parse.parse_qsl
+QS_FRAGS = ["a=1", "b=", "=c", "d", "e=f=g", "a+b=c+d", "x=%20", "y=%2", "z=%zz", "u=%C3%A9",
+            "v=%E9", "w=%F0%9F%98%80", "k%3Dv=1", "", "&", ";", "q=1;r=2", "%=%", "+=+", "s=%2B"]
+
+
+def parseqsl_gen(rng):
+    sep = "&" if rng.random() < 0.8 else ";"
+    qs = sep.join(pick(rng, QS_FRAGS) for _ in range(rng.randint(1, 5)))
+    kw = {}
+    if rng.random() < 0.4:
+        kw["keep_blank_values"] = True
+    if rng.random() < 0.25:
+        kw["strict_parsing"] = True
+    if sep == ";" or rng.random() < 0.1:
+        kw["separator"] = sep if sep == ";" else pick(rng, [";", "&&", ""])
+    return [qs], kw
+
+
+def parseqsl_ref(args, kw):
+    import urllib.parse
+    return urllib.parse.parse_qsl(*args, **kw)
+
+
+V2 = {
+    "pprint_pformat": Task(
+        name="pprint_pformat", module="pprint", blocked=("pprint.py",), group="v2_candidate",
+        qualname="pprint.pformat",
+        contract="def solve(obj, indent=1, width=80, depth=None, *, compact=False, sort_dicts=True, "
+                 "underscore_numbers=False) -> str\n"
+                 "Return exactly pprint.pformat(obj, indent, width, depth, compact=compact, "
+                 "sort_dicts=sort_dicts, underscore_numbers=underscore_numbers) as CPython 3.12.7 does.",
+        dist="obj is a random nested structure of depth 1-4 built from lists (0-6 items), dicts "
+             "(0-5 string keys such as 'a', 'zeta', 'Alpha', '10', '2', '', a long key), strings "
+             "(short, empty, with quotes/tab/newline/non-ASCII, or repeated up to 8x so they get "
+             "long), ints (including large and negative), floats and True/False/None. width is "
+             "8-80 in ~90% of inputs; indent, depth, compact, sort_dicts and underscore_numbers "
+             "are each set to a non-default value in 20-35% of inputs.",
+        gen=pprint_gen, reference=pprint_ref),
+    "difflib_opcodes": Task(
+        name="difflib_opcodes", module="difflib", blocked=("difflib.py",), group="v2_candidate",
+        qualname="difflib.SequenceMatcher.get_opcodes",
+        contract="def solve(a, b, autojunk=True) -> list[tuple[str, int, int, int, int]]\n"
+                 "Return exactly difflib.SequenceMatcher(None, a, b, autojunk=autojunk).get_opcodes() "
+                 "as CPython 3.12.7 does. a and b are both strings or both lists of strings.",
+        dist="~45%: a is a 0-25 character string over 'abcde ' and b is a copy with 0-5 random "
+             "insertions/deletions/substitutions. ~25%: lists of 0-12 code-like lines, b a lightly "
+             "edited copy. ~30%: a is 20-80 characters over 'ab c' and b is 200-260 characters over "
+             "'aab c' (long enough for the autojunk heuristic). autojunk=False in ~30%.",
+        gen=opcodes_gen, reference=opcodes_ref),
+    "difflib_close_matches": Task(
+        name="difflib_close_matches", module="difflib", blocked=("difflib.py",), group="v2_candidate",
+        qualname="difflib.get_close_matches",
+        contract="def solve(word, possibilities, n=3, cutoff=0.6) -> list[str]\n"
+                 "Return exactly difflib.get_close_matches(word, possibilities, n, cutoff) as CPython "
+                 "3.12.7 does, including raising ValueError in the same situations.",
+        dist="word and the 0-12 possibilities are drawn from a fixed list of fruit-like words "
+             "('apple', 'apply', 'ape', 'maple', 'banana', 'bandana', '', 'a', 'aaaa', ...), each "
+             "independently mutated by 0-3 random edits with probability 40-50%. n is 1, 2 or 5 in "
+             "~50% of inputs; cutoff is 0.0, 0.3, 0.5, 0.75 or 0.9 in ~60%.",
+        gen=close_gen, reference=close_ref),
+    "email_parsedate_tz": Task(
+        name="email_parsedate_tz", module="email.utils", blocked=("email/utils.py", "email/_parseaddr.py"),
+        group="v2_candidate", qualname="email.utils.parsedate_tz",
+        probe="from email.utils import parsedate_tz",
+        contract="def solve(data) -> tuple | None\n"
+                 "Return exactly email.utils.parsedate_tz(data) as CPython 3.12.7 does (a 10-tuple or "
+                 "None), including raising the same exceptions.",
+        dist="RFC 2822-like date strings. In ~50% of inputs every field is drawn from well-formed values "
+             "(day 1-31, three-letter month, 2- or 4-digit year, hh:mm:ss, hh:mm or no time); in the other "
+             "~50% fields may also be odd (day 0/32, lower/upper-case or long or bogus month names, years "
+             "0/3/100/1900/10000, hour 24/25, minute 60, second 61, dotted or fractional times). Timezones "
+             "are numeric, named (GMT, UT, UTC, EST, EDT, PST, pdt, Z, military letter), bogus or absent. Field order is shuffled in ~30%; ~60% have a leading weekday "
+             "with varied comma/space; ~15% have a separator mangled; ~10% are replaced by junk or get "
+             "a trailing comment.",
+        gen=parsedate_gen, reference=parsedate_ref),
+    "html_parser_events": Task(
+        name="html_parser_events", module="html.parser",
+        blocked=("html/parser.py", "_markupbase.py", "html/__init__.py", "html/entities.py"),
+        group="v2_candidate", qualname="html.parser.HTMLParser", probe="from html.parser import HTMLParser",
+        contract="def solve(html: str) -> list\n"
+                 "Feed html to a CPython 3.12.7 html.parser.HTMLParser(convert_charrefs=False), then call "
+                 "close(), and return the handler calls in order as lists: ['starttag', tag, attrs], "
+                 "['endtag', tag], ['startendtag', tag, attrs], ['data', text], ['comment', text], "
+                 "['charref', name], ['entityref', name], ['decl', text], ['pi', text], "
+                 "['unknown_decl', text]; attrs is a list of [name, value] pairs.",
+        dist="html is a concatenation of 1-8 fragments: text, whitespace, start/end tags with upper/"
+             "lower case and quoted/unquoted/valueless attributes (values contain no '&'), self-closing "
+             "tags, comments (normal, empty, unclosed), doctype, processing instruction, CDATA, char/"
+             "entity references (valid, malformed, unterminated), script/style elements (including "
+             "unterminated), stray '<' and '>', malformed tags.",
+        gen=htmlparser_gen, reference=htmlparser_ref),
+    "html_unescape": Task(
+        name="html_unescape", module="html", blocked=("html/__init__.py", "html/entities.py"),
+        group="v2_candidate", qualname="html.unescape", probe="from html import unescape",
+        contract="def solve(s: str) -> str\nReturn exactly html.unescape(s) as CPython 3.12.7 does.",
+        dist="s is a concatenation of 1-6 fragments: plain text, named references with and without "
+             "';' (common, rare, multi-codepoint, prefix-ambiguous like '&notit;' or '&ampx'), decimal "
+             "and hex numeric references (valid, zero, the 0x80-0x9F range, surrogates, beyond "
+             "U+10FFFF, huge, empty), and bare '&'.",
+        gen=unescape_gen, reference=unescape_ref),
+    "urllib_parse_qsl": Task(
+        name="urllib_parse_qsl", module="urllib.parse", blocked=("urllib/parse.py",), group="v2_candidate",
+        qualname="urllib.parse.parse_qsl",
+        contract="def solve(qs, keep_blank_values=False, strict_parsing=False, separator='&') -> "
+                 "list[tuple[str, str]]\n"
+                 "Return exactly urllib.parse.parse_qsl(qs, keep_blank_values, strict_parsing, "
+                 "separator=separator) as CPython 3.12.7 does (default encoding/errors), including "
+                 "raising ValueError in the same situations.",
+        dist="qs joins 1-5 fragments with '&' (~80%) or ';': key=value pairs, blank values, missing "
+             "'=', extra '=', '+' signs, valid/truncated/invalid percent escapes, multi-byte and "
+             "invalid UTF-8 escapes, empty segments. keep_blank_values=True in ~40%, "
+             "strict_parsing=True in ~25%; separator is ';' when the string uses ';', and occasionally "
+             "'&&' or ''.",
+        gen=parseqsl_gen, reference=parseqsl_ref),
+}
+TASKS.update(V2)
+STUDY_TASKS: list[str] = []  # filled at freeze by the PREREGISTRATION 8.3 rule

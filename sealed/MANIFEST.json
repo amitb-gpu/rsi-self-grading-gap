@@ -14,7 +14,21 @@
     "cases/dev/email_parseaddr.json": "206f3a161481205d95a052ac9931761a7fb5b62419660e35a35247fd2896d5a8",
     "sealed/heldout/email_parseaddr.json": "7e4e3a1eb72210f78a48e221c9caa53f6edaf5d0e9206739731c373d1106f479",
     "cases/dev/ipaddress_ip_address.json": "069115824baa88489b444a0f9e8ec82cf64d5b98b5e4350eab0c2f3e6a0e930e",
-    "sealed/heldout/ipaddress_ip_address.json": "d8c7568466ba389267b5da069492331047ec2d7aa8239656f1eb8633564c03df"
+    "sealed/heldout/ipaddress_ip_address.json": "d8c7568466ba389267b5da069492331047ec2d7aa8239656f1eb8633564c03df",
+    "cases/dev/pprint_pformat.json": "4b53f00c66dd0b28868b3ea7cf08c6650ac7cca459db5709d0d7d3238bb2e349",
+    "sealed/heldout/pprint_pformat.json": "ca3c3de1f330842c2a16e539a61508a14c1b3b824cd3ba4028c36976a0de290f",
+    "cases/dev/difflib_opcodes.json": "e2f717b2b51fc8a0311e6c0c6ef40fc4f2fb2935e8a6255ee3146347f80a9f00",
+    "sealed/heldout/difflib_opcodes.json": "6b49eabe25a70cc0c980a6fa494dafa6719562dbebee16e392d9404debfe528f",
+    "cases/dev/difflib_close_matches.json": "1d2e71c179eaac73f1779b1694b47bcb5ff23cf6bb9538d48f6e37d460ab8aaf",
+    "sealed/heldout/difflib_close_matches.json": "45f9fd9b1995d2b6ecd912c1278039962f0bc1ad87f03ba6190dddf74d4c0746",
+    "cases/dev/email_parsedate_tz.json": "5b64bad8ec7876712f365bda67b29d88aa24807c45dd606ae8b828f3dae05559",
+    "sealed/heldout/email_parsedate_tz.json": "1dfe8b051dcc83713b6c28bcdf7f68b83c50d0bbc14021c3ced54f96aa39c57e",
+    "cases/dev/html_parser_events.json": "f92e20e99b4deba0a065bbff00e6add5179d7d72b5fb8b86aa7c168ca5bc46b5",
+    "sealed/heldout/html_parser_events.json": "eff2740244dc4e61ba499564161fa07437a2ed6b4fa081f93510f3fcb49cfd11",
+    "cases/dev/html_unescape.json": "832be5430fe30680775dc73b55939a4c5fa03ba332c00d69ebda6631f71b8452",
+    "sealed/heldout/html_unescape.json": "371b6ef683581048593a292fe4fb9257dac60918e8b2bcffee3b8f34c2bc2ab1",
+    "cases/dev/urllib_parse_qsl.json": "2475a21f929fe96f19d8d206d3b37e1783a804e24f1cc67c5bf8996701ccbbb6",
+    "sealed/heldout/urllib_parse_qsl.json": "24e3285bc0d06aaa2eb92bff20a4ea2f43baf7869df6b9d2d12f5d1afea5078e"
   },
   "discarded_reference_timeouts": [
     {

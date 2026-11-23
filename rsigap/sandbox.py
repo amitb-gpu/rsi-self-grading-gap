@@ -41,7 +41,7 @@ def build(task_name: str) -> Path:
         for pyc in (src.parent / "__pycache__").glob(f"{stem}.*.pyc"):
             pyc.unlink()
     py = sandbox_python(task_name)
-    probe = subprocess.run([str(py), "-I", "-c", f"import {task.module}"], capture_output=True)
+    probe = subprocess.run([str(py), "-I", "-c", task.probe or f"import {task.module}"], capture_output=True)
     if probe.returncode == 0:
         raise RuntimeError(f"sandbox for {task_name} can still import {task.module}")
     return py

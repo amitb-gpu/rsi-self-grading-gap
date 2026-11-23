@@ -1,0 +1,18789 @@
+[
+{
+"args": [
+"&+=+&=c&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"+=+&a+b=c+d&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"d;w=%F0%9F%98%80;&;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&u=%C3%A9&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"s=%2B"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"q=1;r=2"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"=c;a=1;b=;;;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&z=%zz&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&y=%2&d&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+";&q=1;r=2&e=f=g&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+";&v=%E9&q=1;r=2&x=%20&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&;&=c&z=%zz&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&v=%E9&%=%&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"%=%;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"d&x=%20&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"x",
+" "
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"%=%&k%3Dv=1&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"b=;;;a+b=c+d;u=%C3%A9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&;u=%C3%A9;y=%2;k%3Dv=1;b="
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&a=1&v=%E9&s=%2B&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"%=%&b=&a=1&e=f=g&%=%"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"a",
+"1"
+],
+[
+"e",
+"f=g"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"=c&+=+&x=%20&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+" ",
+" "
+],
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"x=%20&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";&;"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"%=%&&k%3Dv=1&"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"%=%&=c&a=1&=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"a",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"b=&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"x=%20&v=%E9&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"v=%E9&&b=&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"b",
+""
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&&a=1&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"a",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"x=%20&d&k%3Dv=1&s=%2B&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B;a+b=c+d;a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"b=;a+b=c+d;z=%zz"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+";&+=+"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+";& ",
+" "
+]
+]
+},
+{
+"args": [
+"=c&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"%=%&q=1;r=2&d&e=f=g&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"d",
+""
+],
+[
+"e",
+"f=g"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"z=%zz&x=%20&b=&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"%=%;u=%C3%A9;u=%C3%A9;v=%E9;%=%"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"%=%"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"z=%zz&d&d&w=%F0%9F%98%80&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2&a=1&q=1;r=2&;&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"=c;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;e=f=g;w=%F0%9F%98%80;+=+;w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"+=+&;&e=f=g&=c&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"e",
+"f=g"
+],
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;b=;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"y=%2&&u=%C3%A9&"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&s=%2B&x=%20&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"z=%zz;&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&+=+&&b=&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b="
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": []
+},
+{
+"args": [
+"z=%zz&s=%2B&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"&&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&x=%20&q=1;r=2&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1;w=%F0%9F%98%80;w=%F0%9F%98%80;w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"y=%2&w=%F0%9F%98%80&v=%E9&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"d&&&a+b=c+d&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+";&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c&k%3Dv=1&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"s=%2B&&&a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&x=%20&&b="
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&a=1&&&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&z=%zz&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"e=f=g&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"s=%2B&a+b=c+d&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+";;q=1;r=2;e=f=g;d"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&;&&u=%C3%A9&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&a+b=c+d&u=%C3%A9&y=%2&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;b=;;;&;z=%zz"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+";&s=%2B&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+"s",
+"+"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&y=%2&;&&&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+";&u=%C3%A9&v=%E9&u=%C3%A9&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&u=%C3%A9&d&d"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&x=%20&k%3Dv=1&z=%zz&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&&b=&b=&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"b",
+""
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"&&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"s=%2B&e=f=g&%=%&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+],
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+";&q=1;r=2&a=1&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";&b=&v=%E9&z=%zz&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"z",
+"%zz"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"d&e=f=g&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"e=f=g;q=1;r=2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"z=%zz;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&s=%2B&w=%F0%9F%98%80&z=%zz"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&w=%F0%9F%98%80&;&;&a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" &w=😀&"
+],
+[
+"&a",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&&=c&q=1;r=2&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&d&a=1&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"e=f=g&;"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"%=%&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&b="
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+";&;&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&&x=%20&x=%20&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"x",
+" "
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"y=%2&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2&y=%2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d&v=%E9&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"e=f=g&;&x=%20&;&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&;&q=1;r=2&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+";",
+""
+],
+[
+"q",
+"1;r=2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"z=%zz&q=1;r=2&y=%2&%=%&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&&w=%F0%9F%98%80&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&d"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&+=+&y=%2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d& = &y=%2"
+]
+]
+},
+{
+"args": [
+"y=%2&%=%&y=%2&x=%20&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&v=%E9&x=%20&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"a=1&z=%zz&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"a=1&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"%=%;a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"+=+&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&y=%2&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&&&u=%C3%A9&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&a=1&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"a",
+"1"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"&d&;&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&=c&b=&%=%&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"b=;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+";a=1;x=%20;e=f=g;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&w=%F0%9F%98%80&k%3Dv=1&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+";;a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"b=&w=%F0%9F%98%80&+=+&v=%E9&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+],
+[
+"v",
+"�"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%&y=%2&y=%2&%=%&d"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"x=%20&z=%zz&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&b=&v=%E9&x=%20&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"z=%zz&d&%=%&v=%E9&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B;a+b=c+d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"v=%E9&"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&q=1;r=2&a+b=c+d&%=%&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a=1&s=%2B&d&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"d",
+""
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"b=&&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&=c&;&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"",
+"c"
+],
+[
+";",
+""
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"&d&w=%F0%9F%98%80&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"s=%2B;y=%2;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"e=f=g;v=%E9;a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"v",
+"�"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d&+=+&d"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1;d;q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"d",
+""
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;;&;=c;k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"&",
+""
+],
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"&;w=%F0%9F%98%80;&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"&",
+""
+],
+[
+"w",
+"😀"
+],
+[
+"&",
+""
+]
+]
+},
+{
+"args": [
+"y=%2&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&&b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+";&=c&d&u=%C3%A9&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"b=;%=%;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"v=%E9&x=%20&&;&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&x=%20&k%3Dv=1&x=%20&b="
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"=c&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"z=%zz&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"e=f=g&s=%2B&d&k%3Dv=1&&"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"s",
+"+"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+";;+=+;=c;q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2&%=%&e=f=g&q=1;r=2&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+],
+[
+"e",
+"f=g"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+";&z=%zz&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2&+=+&q=1;r=2&"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+" ",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&e=f=g&e=f=g&v=%E9&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+],
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"e=f=g&z=%zz&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"+=+&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"a=1&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&+=+&e=f=g&+=+&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+],
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": []
+},
+{
+"args": [
+"a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"v=%E9&y=%2&u=%C3%A9&x=%20&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"b=&a=1&k%3Dv=1&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&&;&+=+&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"=c&;&z=%zz&b=&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a=1"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"x=%20&k%3Dv=1&a+b=c+d&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&=c&q=1;r=2&&&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a=1;%=%;u=%C3%A9;y=%2;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"v=%E9;a+b=c+d;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&q=1;r=2&&"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%&w=%F0%9F%98%80&=c&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%&w=😀&=c&z=%zz"
+]
+]
+},
+{
+"args": [
+"v=%E9;v=%E9;v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"v",
+"�"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"=c&%=%&d&x=%20&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"v=%E9&%=%&u=%C3%A9&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B&w=%F0%9F%98%80&=c&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&x=%20&v=%E9&;"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"b=&=c&s=%2B&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"=c&=c"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;q=1;r=2;k%3Dv=1;;;v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"k=v",
+"1"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%&q=1;r=2&a=1&e=f=g&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&=c&k%3Dv=1&"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&d&d"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&q=1;r=2&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"d&=c&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&s=%2B&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"s",
+"+"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";;+=+;z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&&&;&a+b=c+d&&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2;k%3Dv=1;e=f=g"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"k=v",
+"1"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"s=%2B"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"e=f=g&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&+=+&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+" ",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"z=%zz&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&a+b=c+d&e=f=g&b=&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"b",
+""
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"x=%20;d;a=1;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"d",
+""
+],
+[
+"a",
+"1"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"&;&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"z=%zz;&;+=+;x=%20"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&k%3Dv=1&&&&"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"+=+;+=+;y=%2;x=%20"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2&z=%zz&u=%C3%A9&d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"e=f=g&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"v=%E9&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�&s=+"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+";&&a=1&"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&y=%2&v=%E9&k%3Dv=1&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+],
+[
+"k=v",
+"1"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c;e=f=g;=c;z=%zz;%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"e",
+"f=g"
+],
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"&y=%2&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&a+b=c+d&v=%E9&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"y=%2&&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"b=&&&q=1;r=2&z=%zz"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"&q",
+"1;r=2&z=%zz"
+]
+]
+},
+{
+"args": [
+";&d&+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&&"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1;&;z=%zz;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;z=%zz;v=%E9;%=%;%=%"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"z",
+"%zz"
+],
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"+=+&d&w=%F0%9F%98%80&&q=1;r=2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" &d&w=😀&&q=1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"e=f=g;%=%;u=%C3%A9;z=%zz"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&&a=1&&z=%zz&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"b=&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+";;a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"&;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"&",
+""
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&u=%C3%A9&u=%C3%A9&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"&x=%20&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"z=%zz&%=%"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&s=%2B&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&+=+&y=%2&d&&"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"d;d;y=%2;y=%2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"=c&d&s=%2B&b=&&"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"z=%zz&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"v=%E9&k%3Dv=1&a+b=c+d&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"x=%20&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&a=1&a+b=c+d&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a",
+"1"
+],
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"s=%2B&v=%E9&b="
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&&a+b=c+d&d&v=%E9&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&q=1;r=2&e=f=g&v=%E9&;"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a=1&y=%2"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"a",
+"1&y=%2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&z=%zz&u=%C3%A9&b=&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"z",
+"%zz"
+],
+[
+"u",
+"é"
+],
+[
+"b",
+""
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"%=%;;;b=;;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&b=&=c"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+";&a=1&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"=c&a+b=c+d&y=%2&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a b",
+"c d"
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"%=%;k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"x=%20&y=%2&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"+=+&%=%&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&x=%20&y=%2&b=&a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"d&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&a=1&k%3Dv=1&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"v=%E9&e=f=g&;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"a+b=c+d&k%3Dv=1&&&+=+&d"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&e=f=g&s=%2B&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"e",
+"f=g"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&&u=%C3%A9&z=%zz"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";;+=+;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&%=%&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;q=1;r=2;q=1;r=2;u=%C3%A9;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"%=%;k%3Dv=1;e=f=g;&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"b="
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"x=%20&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"a=1;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"y=%2&y=%2&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"v=%E9&=c&a=1&b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": "&&"
+},
+"expected": [
+[
+"v",
+"�&=c&a=1&b="
+]
+]
+},
+{
+"args": [
+"y=%2&;&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&b=&y=%2&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c&x=%20&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a=1&q=1;r=2&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&v=%E9&d&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&s=%2B&b="
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"=c&v=%E9&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&x=%20&v=%E9&d"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"y=%2&;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+;=c;w=%F0%9F%98%80;y=%2;v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"+=+&+=+&z=%zz&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&e=f=g&b=&y=%2&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"e=f=g&u=%C3%A9&z=%zz&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"+=+&v=%E9&v=%E9&q=1;r=2&s=%2B"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1;e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"s=%2B&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";y=%2;b=;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"a+b=c+d&y=%2&u=%C3%A9&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;a=1;y=%2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"%=%&w=%F0%9F%98%80&d&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"s=%2B&&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"x=%20&&&y=%2&x=%20&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&&&v=%E9&;&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+],
+[
+";",
+""
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&+=+&d&u=%C3%A9&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"=c&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"=c"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"s=%2B&;&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;&;y=%2"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&=c&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"y=%2;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&&&x=%20&d&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"d",
+""
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"=c&x=%20&q=1;r=2&%=%&%=%"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"z=%zz;;y=%2;v=%E9;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"z=%zz&s=%2B&z=%zz&&"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"y=%2&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"b=;+=+;+=+;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"x=%20&x=%20&x=%20&y=%2&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"x",
+" "
+],
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"+=+&w=%F0%9F%98%80&&&%=%&=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&a+b=c+d&e=f=g&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"=c;e=f=g;b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"e",
+"f=g"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"=c&w=%F0%9F%98%80&x=%20&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;q=1;r=2;x=%20;a=1;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"x",
+" "
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"d&x=%20&;&&"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"d&x",
+" &;"
+]
+]
+},
+{
+"args": [
+"&;u=%C3%A9;d;&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B&e=f=g&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&s=%2B&a+b=c+d&b=&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"y=%2&q=1;r=2&y=%2&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"y",
+"%2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&w=%F0%9F%98%80&;&w=%F0%9F%98%80&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"b=&u=%C3%A9&v=%E9&a+b=c+d&w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"b",
+"&u=é&v=�&a b=c d&w=😀"
+]
+]
+},
+{
+"args": [
+";&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"%=%&=c&+=+&+=+&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+" ",
+" "
+],
+[
+" ",
+" "
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"e=f=g;+=+;k%3Dv=1;+=+;s=%2B"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"x=%20&d&&"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"d&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&=c&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"+=+&%=%&=c&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"y=%2&s=%2B&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&v=%E9&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"v=%E9&w=%F0%9F%98%80&=c&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"b=&d&q=1;r=2&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"d",
+""
+],
+[
+"q",
+"1;r=2"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"q=1;r=2&w=%F0%9F%98%80&b=&s=%2B"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"+=+&%=%&s=%2B&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&&w=%F0%9F%98%80&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"+=+"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"b=&u=%C3%A9&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"v=%E9;=c;;;%=%;v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"y=%2;=c;w=%F0%9F%98%80;y=%2;v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"y=%2;a=1;v=%E9;a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&e=f=g&a=1&y=%2&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+],
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"y=%2&u=%C3%A9&k%3Dv=1&e=f=g&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"k=v",
+"1"
+],
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;y=%2;q=1;r=2;y=%2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"y",
+"%2"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;d;s=%2B"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&v=%E9&a=1"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"d&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"a+b=c+d&a+b=c+d&;&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+],
+[
+";",
+""
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&k%3Dv=1&&&e=f=g&+=+"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"a b",
+"c d&k=v=1"
+],
+[
+"&e",
+"f=g& = "
+]
+]
+},
+{
+"args": [
+"y=%2&z=%zz&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&x=%20&%=%&w=%F0%9F%98%80&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"w",
+"😀"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"e=f=g&w=%F0%9F%98%80&e=f=g&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&z=%zz&&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%;w=%F0%9F%98%80;a+b=c+d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"w",
+"😀"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"b=&&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&&%=%&b=&y=%2&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"d&k%3Dv=1&&&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"k=v",
+"1"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"a=1&e=f=g&+=+&;"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+";&&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"a b",
+"c d&w=😀"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;b=;v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a=1;z=%zz;v=%E9;s=%2B;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&;&u=%C3%A9&%=%&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&&&v=%E9&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&s=%2B&z=%zz&=c"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&q=1;r=2&%=%&&"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"a=1"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"b=&q=1;r=2&d&w=%F0%9F%98%80&&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B;y=%2;w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&b="
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"y=%2&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&q=1;r=2&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"x=%20&;&=c&;"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&;%=%;%=%;s=%2B;e=f=g"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+],
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"d&a+b=c+d&a=1&%=%&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a",
+"1"
+],
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"%=%&d&y=%2&&&&"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"+=+&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"+=+&y=%2&q=1;r=2&&"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"&&d&+=+&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;;y=%2;e=f=g;x=%20"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&y=%2&&&;&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+";",
+""
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&d&b="
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&&;&%=%&"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"%=%&d&&&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"y=%2&u=%C3%A9&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"d&&&d"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"a+b=c+d;a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"e=f=g&&k%3Dv=1&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+";&a=1&a=1"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+";&a",
+"1&a=1"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&e=f=g&y=%2&d&+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2&e=f=g&y=%2&d& = "
+]
+]
+},
+{
+"args": [
+"&a=1&+=+&+=+&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+" ",
+" "
+],
+[
+" ",
+" "
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"e=f=g&v=%E9&e=f=g&b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"v",
+"�"
+],
+[
+"e",
+"f=g"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"%=%&q=1;r=2&;&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"q",
+"1;r=2"
+],
+[
+";",
+""
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"y=%2&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&e=f=g&y=%2&s=%2B&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&a+b=c+d&q=1;r=2&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"=c&&&x=%20&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"x",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"%=%&v=%E9&k%3Dv=1&b="
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&y=%2&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"=c&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"a=1&k%3Dv=1&a+b=c+d&x=%20&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"&&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"y=%2&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c&=c&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&+=+&e=f=g&d&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&a=1&=c&&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&+=+&s=%2B&a+b=c+d&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+],
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"=c;%=%;%=%;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"x=%20&k%3Dv=1&b="
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+";&a+b=c+d&u=%C3%A9&+=+&%=%"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9;q=1;r=2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"a=1&;"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;a=1;d;v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1&&;"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"+=+&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"a=1&s=%2B&d"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+";&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&+=+&%=%&z=%zz&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"=c&v=%E9&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&a=1&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&v=%E9&=c&+=+&;"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"",
+"c"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&%=%"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"e",
+"f=g&%=%"
+]
+]
+},
+{
+"args": [
+"%=%;+=+;a+b=c+d;k%3Dv=1;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+" ",
+" "
+],
+[
+"a b",
+"c d"
+],
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"%=%&=c&w=%F0%9F%98%80&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"s=%2B&a=1&z=%zz&%=%&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&x=%20&k%3Dv=1&a+b=c+d&+=+"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"a b",
+"c d"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;x=%20;%=%"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"%=%&=c&b=&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&a=1&v=%E9&&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"a",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&&q=1;r=2&b="
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2&b=&d"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"d;z=%zz"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"v=%E9&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&w=%F0%9F%98%80&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"x=%20;y=%2;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"b=&u=%C3%A9&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&a=1&s=%2B&s=%2B&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a=1&%=%&a+b=c+d&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1&%=%&a b=c d&%=%"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&%=%&x=%20&;&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%&w=%F0%9F%98%80&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"w",
+"😀"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"e=f=g&&u=%C3%A9&e=f=g&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+],
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"z=%zz&z=%zz&b=&z=%zz&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+],
+[
+"b",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"e=f=g&z=%zz"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"e",
+"f=g&z=%zz"
+]
+]
+},
+{
+"args": [
+"&&=c&z=%zz&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&=c&&"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"e=f=g&b=&e=f=g&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9;u=%C3%A9;a+b=c+d;s=%2B"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+],
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"d&&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"v=%E9&w=%F0%9F%98%80&z=%zz&a+b=c+d&&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9;w=%F0%9F%98%80;v=%E9;z=%zz;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&y=%2&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&u=%C3%A9&s=%2B&v=%E9&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"v=%E9&b=&&=c&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"b",
+""
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+";&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&b=&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+";;k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&z=%zz&z=%zz&e=f=g&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&+=+&w=%F0%9F%98%80&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"s=%2B&x=%20&k%3Dv=1&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&y=%2&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"=c;q=1;r=2;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"a=1&"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"a",
+"1&"
+]
+]
+},
+{
+"args": [
+"&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&&k%3Dv=1&s=%2B&&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c&+=+&w=%F0%9F%98%80&;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c& = &w=😀&"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;s=%2B;s=%2B;a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;;;%=%;z=%zz;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"%",
+"%"
+],
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&a+b=c+d&u=%C3%A9&;&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&q=1;r=2&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"e=f=g;;;a+b=c+d;&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a b",
+"c d"
+],
+[
+"&",
+""
+]
+]
+},
+{
+"args": [
+"=c&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+";&e=f=g&=c&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"s=%2B;k%3Dv=1;y=%2;q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;k%3Dv=1;y=%2;e=f=g;e=f=g"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&d&y=%2&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+";&z=%zz&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"v=%E9&+=+&k%3Dv=1"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"%=%&u=%C3%A9&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"e=f=g&a+b=c+d&x=%20&y=%2&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"y=%2;b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&d&%=%&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&a+b=c+d&b=&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"=c&k%3Dv=1&=c&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+],
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&&v=%E9&&"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"%=%&a=1&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+";&e=f=g&=c&%=%&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"q=1;r=2;a+b=c+d;%=%;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&k%3Dv=1&w=%F0%9F%98%80&&"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&y=%2&w=%F0%9F%98%80&w=%F0%9F%98%80&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&q=1;r=2&=c&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&a=1"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+&z=%zz&a+b=c+d&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";;%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz&+=+&e=f=g&k%3Dv=1&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+],
+[
+"e",
+"f=g"
+],
+[
+"k=v",
+"1"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"v=%E9;x=%20;k%3Dv=1;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&s=%2B&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;a+b=c+d;a+b=c+d;+=+;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"+=+&a+b=c+d&d&+=+&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a b",
+"c d"
+],
+[
+" ",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&;x=%20;%=%;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&+=+&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"b=&+=+&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&b=&x=%20&q=1;r=2&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"z=%zz&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"=c&u=%C3%A9&;&;&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&y=%2&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&%=%&k%3Dv=1&b=&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+],
+[
+"b",
+""
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&;&a+b=c+d&w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%&"
+],
+[
+"&a b",
+"c d&w=😀"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"x=%20&b=&a=1&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"b",
+""
+],
+[
+"a",
+"1"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"y=%2&+=+&a+b=c+d&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2;z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"q=1;r=2;&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"&",
+""
+]
+]
+},
+{
+"args": [
+"%=%&a=1&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"a",
+"1"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"&b="
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"u=%C3%A9&y=%2&u=%C3%A9&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"x=%20&e=f=g&"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&y=%2&w=%F0%9F%98%80&+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+";&b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"&v=%E9&k%3Dv=1&w=%F0%9F%98%80&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"v=%E9&d&b=&a+b=c+d&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&+=+&w=%F0%9F%98%80&w=%F0%9F%98%80&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"+=+&z=%zz&v=%E9&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"v",
+"�"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+";&y=%2&d&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+"y",
+"%2"
+],
+[
+"d",
+""
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"=c;b=;a=1;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"=c&q=1;r=2&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%;+=+;y=%2"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"x=%20&u=%C3%A9&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"&q=1;r=2&x=%20&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"s=%2B&;&b="
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"y=%2;+=+;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&;&%=%&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"y=%2&b="
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"v=%E9&y=%2&z=%zz&w=%F0%9F%98%80&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"z=%zz&k%3Dv=1&x=%20&;&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+],
+[
+";",
+""
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"d&&"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"&&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+&w=%F0%9F%98%80&d&q=1;r=2&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&%=%&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"&&&&z=%zz&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"z=%zz&=c&&"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"e=f=g&z=%zz&w=%F0%9F%98%80&k%3Dv=1&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"e=f=g"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"s=%2B"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"v=%E9&=c&;&=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�&=c&"
+],
+[
+"&",
+"c"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&d&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1&y=%2&&&=c&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"v=%E9;v=%E9;d;%=%;%=%"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&u=%C3%A9&b=&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;a+b=c+d;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"x=%20&&&=c&u=%C3%A9"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"&",
+"c&u=é"
+]
+]
+},
+{
+"args": [
+"a=1;a=1;+=+;v=%E9;a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"a",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"v",
+"�"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"x=%20&q=1;r=2&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" &q=1"
+],
+[
+"r",
+"2&e=f=g"
+]
+]
+},
+{
+"args": [
+"a=1;u=%C3%A9;d;u=%C3%A9;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B&b=&&&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"d&w=%F0%9F%98%80&;&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"e=f=g&+=+&&&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"+=+;&;q=1;r=2;x=%20;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"x",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"%=%&d&y=%2&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"d",
+""
+],
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"v=%E9;w=%F0%9F%98%80;e=f=g;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&u=%C3%A9&y=%2&e=f=g&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"d&q=1;r=2&a+b=c+d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&u=%C3%A9&d&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"s=%2B&a+b=c+d&e=f=g&a=1&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20&k%3Dv=1&b=&e=f=g&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"b=&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"b",
+"&z=%zz"
+]
+]
+},
+{
+"args": [
+"=c&;&z=%zz&"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"s=%2B&s=%2B&e=f=g&e=f=g&d"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&d&&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"b=&k%3Dv=1&a+b=c+d&v=%E9"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"b",
+"&k=v=1&a b=c d&v=�"
+]
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz;e=f=g;b=;y=%2;a=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+";;k%3Dv=1;q=1;r=2;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"%=%&u=%C3%A9&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&;%=%;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"&",
+""
+],
+[
+"%",
+"%"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"a+b=c+d&&&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"b=&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"s=%2B&z=%zz&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&y=%2&&&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"e=f=g&u=%C3%A9&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&=c&k%3Dv=1&d"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"",
+"c"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"z=%zz&;&e=f=g&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz&w=%F0%9F%98%80&e=f=g&y=%2&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"+=+&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"s=%2B&k%3Dv=1&b=&d"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"+=+&d&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" &d&w=😀"
+]
+]
+},
+{
+"args": [
+"&&&y=%2&z=%zz&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"%=%&x=%20&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&b="
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"s=%2B&+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"x=%20&z=%zz&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&&&y=%2&b=&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"&&e=f=g&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&a=1&z=%zz&%=%&;"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"d;y=%2;;+=+;=c"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"e=f=g&;&e=f=g&d&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"d&q=1;r=2&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"q",
+"1;r=2"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"x=%20&q=1;r=2&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a=1;+=+;a+b=c+d;w=%F0%9F%98%80;+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"a b",
+"c d"
+],
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&a+b=c+d&a+b=c+d&s=%2B&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"b=&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"e=f=g&;&&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1&%=%&z=%zz&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"%",
+"%"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"d&+=+&k%3Dv=1&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"e=f=g;a=1;a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a",
+"1"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&=c&z=%zz&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"+=+&&&=c&y=%2&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"y",
+"%2"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&&w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9;v=%E9;x=%20;x=%20"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+],
+[
+"x",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%;x=%20;v=%E9;e=f=g;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": []
+},
+{
+"args": [
+"e=f=g&w=%F0%9F%98%80&e=f=g&=c&;"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"e=f=g&x=%20&d"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&x=%20&a=1&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+],
+[
+"a",
+"1"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"y=%2&z=%zz&=c"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz&b=&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"x=%20&v=%E9&+=+&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+],
+[
+" ",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&q=1;r=2&d&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"=c&z=%zz&v=%E9&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+],
+[
+"v",
+"�"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"=c;;;&;a+b=c+d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+";&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;u=%C3%A9;w=%F0%9F%98%80;a+b=c+d;%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&e=f=g&q=1;r=2&&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"y=%2&z=%zz&d&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1&z=%zz&b=&v=%E9"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1&z=%zz&b=&v=�"
+]
+]
+},
+{
+"args": [
+"%=%&;&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2&u=%C3%A9&s=%2B&u=%C3%A9&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"u",
+"é"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"&e=f=g&q=1;r=2&a=1&;"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"e=f=g&k%3Dv=1&;&u=%C3%A9&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9;y=%2;%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+";&z=%zz&a=1&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"a",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"=c&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&&b="
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"a=1&v=%E9&;&e=f=g&b="
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9&s=%2B&v=%E9&&&"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;q=1;r=2;u=%C3%A9;u=%C3%A9;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"b=&a+b=c+d&d&;&&"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"k%3Dv=1&u=%C3%A9&d&;&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"s=%2B&z=%zz&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"z=%zz&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+";&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"&;b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d;d;v=%E9;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"d",
+""
+],
+[
+"v",
+"�"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"=c&&&;&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=c&w=%F0%9F%98%80&+=+&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+" ",
+" "
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"y=%2&&"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"%=%&;&b=&a+b=c+d&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+";",
+""
+],
+[
+"b",
+""
+],
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&s=%2B&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&a=1&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"b=&w=%F0%9F%98%80&=c&w=%F0%9F%98%80&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"x=%20;;;%=%"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"d&v=%E9&&&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"v",
+"�"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"y=%2&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"x=%20&&&w=%F0%9F%98%80&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&b=&%=%&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"%",
+"%"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"z=%zz;+=+;e=f=g;z=%zz;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+" ",
+" "
+],
+[
+"e",
+"f=g"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&u=%C3%A9&e=f=g"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"k=v",
+"1&u=é&e=f=g"
+]
+]
+},
+{
+"args": [
+"x=%20&+=+&x=%20&e=f=g&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&x=%20&e=f=g"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"z=%zz&w=%F0%9F%98%80&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"e=f=g&=c&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"b=;d;v=%E9"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2;z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&a=1&;&s=%2B&;"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&&&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"b=&&&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"d&=c&+=+&&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d&&&q=1;r=2&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"q",
+"1;r=2"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"s=%2B;+=+"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&z=%zz&%=%&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&z=%zz&"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&;%=%;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"x=%20&"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";;;q=1;r=2;s=%2B;y=%2"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"s",
+"+"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+";&a+b=c+d&q=1;r=2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1&v=%E9&s=%2B&y=%2&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"y",
+"%2"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&w=%F0%9F%98%80&y=%2&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"y",
+"%2"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"q=1;r=2&;&b="
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&a=1&u=%C3%A9&%=%&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a",
+"1"
+],
+[
+"u",
+"é"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"u",
+"é&"
+]
+]
+},
+{
+"args": [
+"d&z=%zz&+=+&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+&&&=c&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&w=%F0%9F%98%80&%=%&w=%F0%9F%98%80&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"%",
+"%"
+],
+[
+"w",
+"😀"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"b="
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+";&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"b=&q=1;r=2&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&k%3Dv=1&+=+&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&w=%F0%9F%98%80&y=%2&k%3Dv=1&b="
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+],
+[
+"y",
+"%2"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&=c&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"v=%E9&a=1&z=%zz&k%3Dv=1&"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+],
+[
+"z",
+"%zz"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&z=%zz&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"z=%zz&b=&y=%2&k%3Dv=1&=c"
+],
+"kwargs": {
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&e=f=g&u=%C3%A9&w=%F0%9F%98%80&"
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"d;w=%F0%9F%98%80;w=%F0%9F%98%80;;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&&&w=%F0%9F%98%80&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&%=%&z=%zz&&&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&d&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a+b=c+d&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"e=f=g&a+b=c+d&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a b",
+"c d"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&+=+&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+";e=f=g;k%3Dv=1;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&+=+&z=%zz&x=%20&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"d&+=+&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9;;;d;v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"d",
+""
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+";&d&d&;"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"+=+;=c;v=%E9"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&b=&&&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&w=%F0%9F%98%80&v=%E9&&&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&d&%=%&&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";&s=%2B&k%3Dv=1&z=%zz&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+";&s",
+"+&k=v=1&z=%zz&u=é"
+]
+]
+},
+{
+"args": [
+"b=;q=1;r=2;u=%C3%A9;q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"u",
+"é"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+]
+]
+},
+{
+"args": [
+"e=f=g;x=%20;=c;&;+=+"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&b=&=c&s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"b",
+""
+],
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"z=%zz&w=%F0%9F%98%80&k%3Dv=1&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+],
+[
+"k=v",
+"1"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"s=%2B&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": "&&"
+},
+"expected": [
+[
+"s",
+"+&"
+]
+]
+},
+{
+"args": [
+"s=%2B&a+b=c+d&e=f=g&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"d;x=%20;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&v=%E9&&&;&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+&&&e=f=g&=c&"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" &&&e=f=g&=c&"
+]
+]
+},
+{
+"args": [
+"b=&z=%zz&=c&+=+&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+],
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"%=%;=c;y=%2;w=%F0%9F%98%80;s=%2B"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"y",
+"%2"
+],
+[
+"w",
+"😀"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+";&%=%&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&k%3Dv=1&v=%E9&b=&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=1;s=%2B"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&u=%C3%A9&z=%zz&&&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"u",
+"é"
+],
+[
+"z",
+"%zz"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"z=%zz&x=%20&w=%F0%9F%98%80&x=%20&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+],
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;;s=%2B;u=%C3%A9;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&d&d"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"e=f=g&u=%C3%A9"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"e",
+"f=g&u=é"
+]
+]
+},
+{
+"args": [
+"%=%&v=%E9&&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"+=+&a=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&w=%F0%9F%98%80&b=&=c&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"&v=%E9&d"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"b=&u=%C3%A9&y=%2&a=1&y=%2"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+";%=%;q=1;r=2;y=%2;x=%20"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"y",
+"%2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";&%=%&v=%E9&q=1;r=2&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&e=f=g&x=%20&=c&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+],
+[
+"",
+"c"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"b=&w=%F0%9F%98%80&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": []
+},
+{
+"args": [
+"=c&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"a=1&d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"+=+&y=%2&q=1;r=2&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"y",
+"%2"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"x=%20&q=1;r=2&x=%20&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"s=%2B&y=%2&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&w=%F0%9F%98%80&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9&y=%2&k%3Dv=1&;&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+],
+[
+"k=v",
+"1"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"d&b=&a+b=c+d&&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"%=%&=c&b=&x=%20&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"",
+"c"
+],
+[
+"b",
+""
+],
+[
+"x",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"&&q=1;r=2&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"&s=%2B&s=%2B"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x=%20;e=f=g;b=;d;w=%F0%9F%98%80"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a=1&b=&s=%2B&x=%20&;"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&b=&d&u=%C3%A9&y=%2"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"u",
+"é"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"e=f=g;x=%20"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+";&a+b=c+d&d&w=%F0%9F%98%80"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&&+=+&=c&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"",
+"c"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"b=&&&w=%F0%9F%98%80&%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"+=+;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": []
+},
+{
+"args": [
+"z=%zz&d&;"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"a=1&y=%2&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"&a=1&y=%2&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d&+=+&%=%&&&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"+=+&k%3Dv=1&&b=&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"e=f=g&a=1&b=&u=%C3%A9&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"a",
+"1"
+],
+[
+"b",
+""
+],
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"b=&+=+&x=%20&b="
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+" ",
+" "
+],
+[
+"x",
+" "
+],
+[
+"b",
+""
+]
+]
+},
+{
+"args": [
+"+=+&d&a+b=c+d&%=%&a=1"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&w=%F0%9F%98%80&%=%&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"%",
+"%"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&x=%20&%=%"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"x",
+" "
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"&&s=%2B&=c&z=%zz"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"v=%E9&q=1;r=2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"+=+&%=%&e=f=g&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"e",
+"f=g"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&=c&s=%2B&%=%&b="
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"y=%2&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"a=1&;&y=%2&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"z=%zz;z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"s=%2B&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"d;u=%C3%A9;s=%2B;w=%F0%9F%98%80;d"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+";&&&b=&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"+=+;s=%2B;q=1;r=2;s=%2B;d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"s",
+"+"
+],
+[
+"q",
+"1"
+],
+[
+"r",
+"2"
+],
+[
+"s",
+"+"
+],
+[
+"d",
+""
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;;"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"e=f=g&w=%F0%9F%98%80&v=%E9&b="
+],
+"kwargs": {},
+"expected": [
+[
+"e",
+"f=g"
+],
+[
+"w",
+"😀"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&b=&y=%2&&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&d"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"y=%2&%=%&x=%20"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": "&&"
+},
+"expected": [
+[
+"y",
+"%2&%=%&x= "
+]
+]
+},
+{
+"args": [
+"y=%2;y=%2;s=%2B;b="
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"y",
+"%2"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"e=f=g&&&q=1;r=2&q=1;r=2&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&w=%F0%9F%98%80&u=%C3%A9&%=%"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d;k%3Dv=1;&"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&u=%C3%A9&w=%F0%9F%98%80&;"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2;+=+"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;b=;a=1;k%3Dv=1"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"z=%zz;=c;x=%20;a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+],
+[
+"x",
+" "
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&+=+&k%3Dv=1&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";;k%3Dv=1;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"&y=%2&u=%C3%A9&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"&&u=%C3%A9&e=f=g&k%3Dv=1"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"w=%F0%9F%98%80&&=c"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"&&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80;e=f=g;;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"a+b=c+d;k%3Dv=1;&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"k=v",
+"1"
+],
+[
+"&",
+""
+]
+]
+},
+{
+"args": [
+"&&&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&d&s=%2B&;"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"d",
+""
+],
+[
+"s",
+"+"
+],
+[
+";",
+""
+]
+]
+},
+{
+"args": [
+"q=1;r=2&"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&k%3Dv=1&y=%2&z=%zz"
+],
+"kwargs": {},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"k=v",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"=c&a+b=c+d&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"a b",
+"c d"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"v=%E9&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"=c;=c;y=%2;k%3Dv=1;"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"",
+"c"
+],
+[
+"",
+"c"
+],
+[
+"y",
+"%2"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&x=%20&q=1;r=2&v=%E9&&"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+],
+[
+"x",
+" "
+],
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"z=%zz;b=;s=%2B;b=;=c"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"b",
+""
+],
+[
+"s",
+"+"
+],
+[
+"b",
+""
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"=c&w=%F0%9F%98%80&d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a+b=c+d&%=%&+=+&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"%",
+"%"
+],
+[
+" ",
+" "
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"y=%2;+=+;u=%C3%A9;&;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"%=%&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"%=%&z=%zz&z=%zz&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"%",
+"%"
+],
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"q=1;r=2&;&&&v=%E9&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&q=1;r=2&e=f=g&+=+&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+],
+[
+" ",
+" "
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"s=%2B&w=%F0%9F%98%80&u=%C3%A9&q=1;r=2&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"q=1;r=2&+=+&d&d&"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"v=%E9&b=&;&s=%2B&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"v",
+"�"
+],
+[
+"s",
+"+"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"+=+&k%3Dv=1&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"b=&=c&d&;&&"
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"b=&v=%E9&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"b",
+""
+],
+[
+"v",
+"�"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&&&x=%20&z=%zz&y=%2"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"y",
+"%2"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&=c"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"y=%2&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"x=%20"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1;s=%2B;s=%2B;v=%E9;=c"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"z=%zz&&&w=%F0%9F%98%80&"
+],
+"kwargs": {},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"z=%zz&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"b=&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"x=%20&x=%20"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"k%3Dv=1&=c"
+],
+"kwargs": {},
+"expected": [
+[
+"k=v",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"x=%20&k%3Dv=1&u=%C3%A9&&&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"e=f=g&q=1;r=2&u=%C3%A9&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&;"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"d&x=%20&&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"d",
+""
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"d&a+b=c+d&s=%2B"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+]
+]
+},
+{
+"args": [
+"+=+&b=&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"b",
+""
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&q=1;r=2&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"y=%2&%=%&b=&z=%zz&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+],
+[
+"b",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"+=+&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"=c&b="
+],
+"kwargs": {},
+"expected": [
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"+=+;&;z=%zz;%=%"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+" ",
+" "
+],
+[
+"&",
+""
+],
+[
+"z",
+"%zz"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": [
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"a+b=c+d&s=%2B&a+b=c+d"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"s",
+"+"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"q=1;r=2&=c&"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"x=%20&k%3Dv=1&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"x",
+" "
+],
+[
+"k=v",
+"1"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&u=%C3%A9&s=%2B&v=%E9"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&s=%2B&&v=%E9&+=+"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"v",
+"�"
+],
+[
+" ",
+" "
+]
+]
+},
+{
+"args": [
+"a=1&=c"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"",
+"c"
+]
+]
+},
+{
+"args": [
+"+=+&b=&a+b=c+d&&"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";&z=%zz"
+],
+"kwargs": {
+"keep_blank_values": true,
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&b=&k%3Dv=1"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"k=v",
+"1"
+]
+]
+},
+{
+"args": [
+"&q=1;r=2&y=%2&a=1&a=1"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"y",
+"%2"
+],
+[
+"a",
+"1"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"a=1&w=%F0%9F%98%80"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"a=1&u=%C3%A9&q=1;r=2&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"w=%F0%9F%98%80&e=f=g&%=%&a+b=c+d&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"w",
+"😀"
+],
+[
+"e",
+"f=g"
+],
+[
+"%",
+"%"
+],
+[
+"a b",
+"c d"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"b=&s=%2B&s=%2B&x=%20&u=%C3%A9"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&s=%2B&e=f=g&q=1;r=2&"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"s",
+"+"
+],
+[
+"e",
+"f=g"
+],
+[
+"q",
+"1;r=2"
+]
+]
+},
+{
+"args": [
+"z=%zz"
+],
+"kwargs": {
+"separator": ";"
+},
+"expected": [
+[
+"z",
+"%zz"
+]
+]
+},
+{
+"args": [
+"d;x=%20;e=f=g;x=%20"
+],
+"kwargs": {
+"strict_parsing": true,
+"separator": ";"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"s=%2B&z=%zz&q=1;r=2&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"s",
+"+"
+],
+[
+"z",
+"%zz"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+";&q=1;r=2&y=%2&z=%zz&e=f=g"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"y",
+"%2"
+],
+[
+"z",
+"%zz"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"x=%20&v=%E9"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"v",
+"�"
+]
+]
+},
+{
+"args": [
+"x=%20&v=%E9&a+b=c+d&&&e=f=g"
+],
+"kwargs": {
+"separator": "&&"
+},
+"expected": [
+[
+"x",
+" &v=�&a b=c d"
+],
+[
+"&e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"u=%C3%A9&q=1;r=2&a=1&k%3Dv=1&x=%20"
+],
+"kwargs": {},
+"expected": [
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"a",
+"1"
+],
+[
+"k=v",
+"1"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+"d&u=%C3%A9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&k%3Dv=1&%=%&+=+"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"u=%C3%A9&&&a+b=c+d&v=%E9"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"y=%2&%=%&u=%C3%A9&q=1;r=2&%=%"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"y",
+"%2"
+],
+[
+"%",
+"%"
+],
+[
+"u",
+"é"
+],
+[
+"q",
+"1;r=2"
+],
+[
+"%",
+"%"
+]
+]
+},
+{
+"args": [
+"&;&;+=+;&;u=%C3%A9"
+],
+"kwargs": {
+"keep_blank_values": true,
+"separator": ";"
+},
+"expected": [
+[
+"&",
+""
+],
+[
+"&",
+""
+],
+[
+" ",
+" "
+],
+[
+"&",
+""
+],
+[
+"u",
+"é"
+]
+]
+},
+{
+"args": [
+"x=%20&a=1&y=%2&a+b=c+d&b="
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"a",
+"1"
+],
+[
+"y",
+"%2"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"z=%zz&=c&s=%2B&x=%20"
+],
+"kwargs": {
+"strict_parsing": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"",
+"c"
+],
+[
+"s",
+"+"
+],
+[
+"x",
+" "
+]
+]
+},
+{
+"args": [
+";&q=1;r=2&w=%F0%9F%98%80"
+],
+"kwargs": {},
+"expected": [
+[
+"q",
+"1;r=2"
+],
+[
+"w",
+"😀"
+]
+]
+},
+{
+"args": [
+"x=%20&z=%zz&&;&a=1"
+],
+"kwargs": {},
+"expected": [
+[
+"x",
+" "
+],
+[
+"z",
+"%zz"
+],
+[
+"a",
+"1"
+]
+]
+},
+{
+"args": [
+"&a+b=c+d&a+b=c+d"
+],
+"kwargs": {},
+"expected": [
+[
+"a b",
+"c d"
+],
+[
+"a b",
+"c d"
+]
+]
+},
+{
+"args": [
+"z=%zz&&e=f=g"
+],
+"kwargs": {
+"keep_blank_values": true
+},
+"expected": [
+[
+"z",
+"%zz"
+],
+[
+"e",
+"f=g"
+]
+]
+},
+{
+"args": [
+"a=1&q=1;r=2"
+],
+"kwargs": {},
+"expected": [
+[
+"a",
+"1"
+],
+[
+"q",
+"1;r=2"
+]
+]
+}
+]

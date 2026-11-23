@@ -82,5 +82,5 @@ QUALNAME = {
 
 
 def task_md(task: Task, arm: str, t: int, T: int) -> str:
-    return COMMON.format(qualname=QUALNAME[task.name], t=t, T=T, contract=task.contract,
+    return COMMON.format(qualname=QUALNAME.get(task.name, task.qualname), t=t, T=T, contract=task.contract,
                          module=task.module, dist=task.dist, arm_eval=ARM_EVAL[arm])

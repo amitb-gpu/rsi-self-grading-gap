@@ -1,0 +1,2102 @@
+[
+{
+"args": [
+"&ampx&lt;&#x1F600;&#9999999999;&#x1F600;"
+],
+"kwargs": {},
+"expected": "&x<😀�😀"
+},
+{
+"args": [
+"&Eacute&&"
+],
+"kwargs": {},
+"expected": "É&&"
+},
+{
+"args": [
+"&;&amp;&#x;"
+],
+"kwargs": {},
+"expected": "&;&&#x;"
+},
+{
+"args": [
+"&AMP;&#X41;"
+],
+"kwargs": {},
+"expected": "&A"
+},
+{
+"args": [
+"&#9999999999;&notin;"
+],
+"kwargs": {},
+"expected": "�∉"
+},
+{
+"args": [
+"&#x80;&Tab;&#;&notit;"
+],
+"kwargs": {},
+"expected": "€\t&#;¬it;"
+},
+{
+"args": [
+"&#;&lt;"
+],
+"kwargs": {},
+"expected": "&#;<"
+},
+{
+"args": [
+"&lt;&#x110000; &LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "<� ⟷"
+},
+{
+"args": [
+"&ngE;&quot;&fjlig;&NewLine;"
+],
+"kwargs": {},
+"expected": "≧̸\"fj\n"
+},
+{
+"args": [
+"&#0;&zwj;&amp;&#xD800;&notit;&ampx"
+],
+"kwargs": {},
+"expected": "�‍&�¬it;&x"
+},
+{
+"args": [
+"&;&#65;&gt&#x1F600;&lt;&acE;"
+],
+"kwargs": {},
+"expected": "&;A>😀<∾̳"
+},
+{
+"args": [
+"&#9999999999;&#65;&#x41;&fjlig;&#x80;"
+],
+"kwargs": {},
+"expected": "�AAfj€"
+},
+{
+"args": [
+"& &copy &"
+],
+"kwargs": {},
+"expected": "& © &"
+},
+{
+"args": [
+"&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "⟷"
+},
+{
+"args": [
+"&notin;&bogus;&Tab;&#x110000;&notin;"
+],
+"kwargs": {},
+"expected": "∉&bogus;\t�∉"
+},
+{
+"args": [
+"&nbsp;&&&#9999999999;"
+],
+"kwargs": {},
+"expected": " &&�"
+},
+{
+"args": [
+"&Eacute&amp&#;&#1114111;"
+],
+"kwargs": {},
+"expected": "É&&#;"
+},
+{
+"args": [
+"&&#xD800;&#0;&notin;&quot;&NewLine;"
+],
+"kwargs": {},
+"expected": "&��∉\"\n"
+},
+{
+"args": [
+"&acE;&Tab;&fjlig;&amp"
+],
+"kwargs": {},
+"expected": "∾̳\tfj&"
+},
+{
+"args": [
+"&notin;&amp;"
+],
+"kwargs": {},
+"expected": "∉&"
+},
+{
+"args": [
+"&LongLeftRightArrow;&AMP;&& &ngE;&Tab;"
+],
+"kwargs": {},
+"expected": "⟷&&& ≧̸\t"
+},
+{
+"args": [
+"&#128;"
+],
+"kwargs": {},
+"expected": "€"
+},
+{
+"args": [
+"&lt;"
+],
+"kwargs": {},
+"expected": "<"
+},
+{
+"args": [
+"&Eacute&#9999999999;&copy"
+],
+"kwargs": {},
+"expected": "É�©"
+},
+{
+"args": [
+"&&&NewLine;"
+],
+"kwargs": {},
+"expected": "&&\n"
+},
+{
+"args": [
+"&#150;&#x41;&Tab;&#0;&#0;"
+],
+"kwargs": {},
+"expected": "–A\t��"
+},
+{
+"args": [
+"&acE;&#x;a&#65;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "∾̳&#x;aA⟷"
+},
+{
+"args": [
+"&Eacute&acE;"
+],
+"kwargs": {},
+"expected": "É∾̳"
+},
+{
+"args": [
+"&#x110000;&#150;&#xD800;&&"
+],
+"kwargs": {},
+"expected": "�–�&&"
+},
+{
+"args": [
+"&#X41;&Eacute&copya&acE;&#65;"
+],
+"kwargs": {},
+"expected": "AÉ©a∾̳A"
+},
+{
+"args": [
+"&#065&#128;&ngE;&;"
+],
+"kwargs": {},
+"expected": "A€≧̸&;"
+},
+{
+"args": [
+"&ngE;"
+],
+"kwargs": {},
+"expected": "≧̸"
+},
+{
+"args": [
+"&amp&hearts;&NewLine;&#9999999999;&lt;&"
+],
+"kwargs": {},
+"expected": "&♥\n�<&"
+},
+{
+"args": [
+"&lt;&fjlig;&eacute;&&zwj;&nbsp;"
+],
+"kwargs": {},
+"expected": "<fjé&‍ "
+},
+{
+"args": [
+"&LongLeftRightArrow;&hearts;&lt;&#0;&#x;&;"
+],
+"kwargs": {},
+"expected": "⟷♥<�&#x;&;"
+},
+{
+"args": [
+"&copy&bogus;&eacute;&acE;&#x;&#x1F600;"
+],
+"kwargs": {},
+"expected": "©&bogus;é∾̳&#x;😀"
+},
+{
+"args": [
+"&#9999999999;&#x80;&amp&#x80;&#0;"
+],
+"kwargs": {},
+"expected": "�€&€�"
+},
+{
+"args": [
+"&#xD800;&notin;"
+],
+"kwargs": {},
+"expected": "�∉"
+},
+{
+"args": [
+"&amp&fjlig;&ngE;a"
+],
+"kwargs": {},
+"expected": "&fj≧̸a"
+},
+{
+"args": [
+"&lt;&#9999999999;"
+],
+"kwargs": {},
+"expected": "<�"
+},
+{
+"args": [
+"&notit;&Tab;"
+],
+"kwargs": {},
+"expected": "¬it;\t"
+},
+{
+"args": [
+"&Eacute&#x41;"
+],
+"kwargs": {},
+"expected": "ÉA"
+},
+{
+"args": [
+"&&&copy&AMP;&#x; &copy"
+],
+"kwargs": {},
+"expected": "&&©&&#x; ©"
+},
+{
+"args": [
+"&#1114111;&acE;&#9999999999;&quot;&#x1F600;"
+],
+"kwargs": {},
+"expected": "∾̳�\"😀"
+},
+{
+"args": [
+"&#x1F600;&Eacute"
+],
+"kwargs": {},
+"expected": "😀É"
+},
+{
+"args": [
+"&&&quot;&;&nbsp;"
+],
+"kwargs": {},
+"expected": "&&\"&; "
+},
+{
+"args": [
+"&#;&#;&Eacute"
+],
+"kwargs": {},
+"expected": "&#;&#;É"
+},
+{
+"args": [
+"&lt;&LongLeftRightArrow;&#0;&&lt;"
+],
+"kwargs": {},
+"expected": "<⟷�&<"
+},
+{
+"args": [
+"&#X41;&notin;&LongLeftRightArrow;&bogus;"
+],
+"kwargs": {},
+"expected": "A∉⟷&bogus;"
+},
+{
+"args": [
+"&hearts;&eacute;&acE;&#0;"
+],
+"kwargs": {},
+"expected": "♥é∾̳�"
+},
+{
+"args": [
+"&Tab;&#9999999999;&quot;&#065&nbsp;"
+],
+"kwargs": {},
+"expected": "\t�\"A "
+},
+{
+"args": [
+"&AMP;&hearts;&&&ngE;&NewLine;"
+],
+"kwargs": {},
+"expected": "&♥&&≧̸\n"
+},
+{
+"args": [
+"&#x110000;&#9999999999;&LongLeftRightArrow;&#065"
+],
+"kwargs": {},
+"expected": "��⟷A"
+},
+{
+"args": [
+"&LongLeftRightArrow; &zwj;&#150;"
+],
+"kwargs": {},
+"expected": "⟷ ‍–"
+},
+{
+"args": [
+"&bogus;&#x;&"
+],
+"kwargs": {},
+"expected": "&bogus;&#x;&"
+},
+{
+"args": [
+"&#x1F600;&#1114111;&&nbsp;&#xD800;"
+],
+"kwargs": {},
+"expected": "😀& �"
+},
+{
+"args": [
+"&#128;&lt;&#9999999999;&amp;&fjlig;&acE;"
+],
+"kwargs": {},
+"expected": "€<�&fj∾̳"
+},
+{
+"args": [
+" &hearts;&#65;&eacute;"
+],
+"kwargs": {},
+"expected": " ♥Aé"
+},
+{
+"args": [
+"&#9999999999;&acE;&quot;&#128;&#;&fjlig;"
+],
+"kwargs": {},
+"expected": "�∾̳\"€&#;fj"
+},
+{
+"args": [
+"&acE;&AMP;&#x;&acE;"
+],
+"kwargs": {},
+"expected": "∾̳&&#x;∾̳"
+},
+{
+"args": [
+"&Eacute&zwj;&amp;"
+],
+"kwargs": {},
+"expected": "É‍&"
+},
+{
+"args": [
+"&#x41;&#X41;&#x41;&fjlig;&#x;&gt"
+],
+"kwargs": {},
+"expected": "AAAfj&#x;>"
+},
+{
+"args": [
+"&#x;&#065&notin;&quot;"
+],
+"kwargs": {},
+"expected": "&#x;A∉\""
+},
+{
+"args": [
+"&NewLine;&fjlig;"
+],
+"kwargs": {},
+"expected": "\nfj"
+},
+{
+"args": [
+"&nbsp;"
+],
+"kwargs": {},
+"expected": " "
+},
+{
+"args": [
+"&#150;&#1114111;&#x;&notin;&eacute;&amp;"
+],
+"kwargs": {},
+"expected": "–&#x;∉é&"
+},
+{
+"args": [
+"&nbsp;&#x41;"
+],
+"kwargs": {},
+"expected": " A"
+},
+{
+"args": [
+"&AMP;&ampx&#x1F600;&quot;&Tab;"
+],
+"kwargs": {},
+"expected": "&&x😀\"\t"
+},
+{
+"args": [
+"&NewLine;&AMP;&notin;&#xD800;"
+],
+"kwargs": {},
+"expected": "\n&∉�"
+},
+{
+"args": [
+" &ampx&#x41;&#65;&AMP;"
+],
+"kwargs": {},
+"expected": " &xAA&"
+},
+{
+"args": [
+"&#;&#x110000;&acE;"
+],
+"kwargs": {},
+"expected": "&#;�∾̳"
+},
+{
+"args": [
+"&&Tab;&acE;&#x80;&fjlig;&#128;"
+],
+"kwargs": {},
+"expected": "&\t∾̳€fj€"
+},
+{
+"args": [
+"&#1114111;"
+],
+"kwargs": {},
+"expected": ""
+},
+{
+"args": [
+"&notit;"
+],
+"kwargs": {},
+"expected": "¬it;"
+},
+{
+"args": [
+"&amp&LongLeftRightArrow;&#0;&#x1F600;&#x1F600;"
+],
+"kwargs": {},
+"expected": "&⟷�😀😀"
+},
+{
+"args": [
+"&gt&#xD800;"
+],
+"kwargs": {},
+"expected": ">�"
+},
+{
+"args": [
+"&#9999999999;"
+],
+"kwargs": {},
+"expected": "�"
+},
+{
+"args": [
+"&#1114111;&zwj;&#X41;&ngE;&&"
+],
+"kwargs": {},
+"expected": "‍A≧̸&&"
+},
+{
+"args": [
+"&NewLine;"
+],
+"kwargs": {},
+"expected": "\n"
+},
+{
+"args": [
+"&nbsp;&Eacute&AMP;&NewLine;"
+],
+"kwargs": {},
+"expected": " É&\n"
+},
+{
+"args": [
+"&Tab;&#65;&bogus;&hearts; "
+],
+"kwargs": {},
+"expected": "\tA&bogus;♥ "
+},
+{
+"args": [
+"&eacute;&fjlig;"
+],
+"kwargs": {},
+"expected": "éfj"
+},
+{
+"args": [
+"&#65;&zwj;&AMP;"
+],
+"kwargs": {},
+"expected": "A‍&"
+},
+{
+"args": [
+"&nbsp;&#65;&AMP;&zwj;"
+],
+"kwargs": {},
+"expected": " A&‍"
+},
+{
+"args": [
+"&#65;&#150;&nbsp;&#x110000;&#x110000;"
+],
+"kwargs": {},
+"expected": "A– ��"
+},
+{
+"args": [
+"&#0;&#9999999999;&#x41;&copy&notin;&"
+],
+"kwargs": {},
+"expected": "��A©∉&"
+},
+{
+"args": [
+"&;"
+],
+"kwargs": {},
+"expected": "&;"
+},
+{
+"args": [
+"&zwj;"
+],
+"kwargs": {},
+"expected": "‍"
+},
+{
+"args": [
+"&#x1F600;&notin;&notit;&#65;a"
+],
+"kwargs": {},
+"expected": "😀∉¬it;Aa"
+},
+{
+"args": [
+"&notin;&quot;"
+],
+"kwargs": {},
+"expected": "∉\""
+},
+{
+"args": [
+"&#065&&#x110000;&Eacute&ampx"
+],
+"kwargs": {},
+"expected": "A&�É&x"
+},
+{
+"args": [
+"&ngE;&eacute;&fjlig;&acE;&amp;"
+],
+"kwargs": {},
+"expected": "≧̸éfj∾̳&"
+},
+{
+"args": [
+"&#x110000;&#1114111;&#xD800;&&ngE;"
+],
+"kwargs": {},
+"expected": "��&≧̸"
+},
+{
+"args": [
+"&ampx"
+],
+"kwargs": {},
+"expected": "&x"
+},
+{
+"args": [
+"&bogus;&#;&copy&#128;"
+],
+"kwargs": {},
+"expected": "&bogus;&#;©€"
+},
+{
+"args": [
+"&#065&ngE;&#x1F600;&ngE;&bogus;&#065"
+],
+"kwargs": {},
+"expected": "A≧̸😀≧̸&bogus;A"
+},
+{
+"args": [
+"&#X41;"
+],
+"kwargs": {},
+"expected": "A"
+},
+{
+"args": [
+"&#65;"
+],
+"kwargs": {},
+"expected": "A"
+},
+{
+"args": [
+"a&#65;&acE;"
+],
+"kwargs": {},
+"expected": "aA∾̳"
+},
+{
+"args": [
+"&#0;&NewLine;&Tab;&&bogus;&&"
+],
+"kwargs": {},
+"expected": "�\n\t&&bogus;&&"
+},
+{
+"args": [
+"&LongLeftRightArrow;&#0;&eacute;&#150;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "⟷�é–⟷"
+},
+{
+"args": [
+"&zwj;&#x110000;&hearts;&&gt"
+],
+"kwargs": {},
+"expected": "‍�♥&>"
+},
+{
+"args": [
+"&zwj;&#x1F600;&quot;"
+],
+"kwargs": {},
+"expected": "‍😀\""
+},
+{
+"args": [
+"&copy&Tab;&fjlig;&#x1F600;&amp&Tab;"
+],
+"kwargs": {},
+"expected": "©\tfj😀&\t"
+},
+{
+"args": [
+"&#x110000;&#150;"
+],
+"kwargs": {},
+"expected": "�–"
+},
+{
+"args": [
+"&#x80;&amp;&#0;"
+],
+"kwargs": {},
+"expected": "€&�"
+},
+{
+"args": [
+"&amp;&ampx"
+],
+"kwargs": {},
+"expected": "&&x"
+},
+{
+"args": [
+"&ngE;&#x80;&quot;&#X41;"
+],
+"kwargs": {},
+"expected": "≧̸€\"A"
+},
+{
+"args": [
+"&#x80;&#128;&#065"
+],
+"kwargs": {},
+"expected": "€€A"
+},
+{
+"args": [
+"&gt&;&&"
+],
+"kwargs": {},
+"expected": ">&;&&"
+},
+{
+"args": [
+"&eacute;&acE;&Tab;&#0;"
+],
+"kwargs": {},
+"expected": "é∾̳\t�"
+},
+{
+"args": [
+"&; &#065"
+],
+"kwargs": {},
+"expected": "&; A"
+},
+{
+"args": [
+"&AMP;&#65;&#xD800;&fjlig;&NewLine; "
+],
+"kwargs": {},
+"expected": "&A�fj\n "
+},
+{
+"args": [
+"&&#150;&;&ngE;&amp;"
+],
+"kwargs": {},
+"expected": "&–&;≧̸&"
+},
+{
+"args": [
+"&#0;&fjlig;&amp&acE;&Tab;"
+],
+"kwargs": {},
+"expected": "�fj&∾̳\t"
+},
+{
+"args": [
+"&amp;&notit;&#x80;&acE;"
+],
+"kwargs": {},
+"expected": "&¬it;€∾̳"
+},
+{
+"args": [
+"&gt&eacute;"
+],
+"kwargs": {},
+"expected": ">é"
+},
+{
+"args": [
+"&"
+],
+"kwargs": {},
+"expected": "&"
+},
+{
+"args": [
+"&fjlig;&#9999999999;&ampx"
+],
+"kwargs": {},
+"expected": "fj�&x"
+},
+{
+"args": [
+"&NewLine;&copy&#x110000;a&nbsp;"
+],
+"kwargs": {},
+"expected": "\n©�a "
+},
+{
+"args": [
+"&copy&#x;"
+],
+"kwargs": {},
+"expected": "©&#x;"
+},
+{
+"args": [
+"&Eacute&amp&AMP;&#xD800;&#x41;&ngE;"
+],
+"kwargs": {},
+"expected": "É&&�A≧̸"
+},
+{
+"args": [
+"&AMP;&#x110000;&#xD800;&copy"
+],
+"kwargs": {},
+"expected": "&��©"
+},
+{
+"args": [
+"&Tab;&#x110000;&ngE;&#1114111; &bogus;"
+],
+"kwargs": {},
+"expected": "\t�≧̸ &bogus;"
+},
+{
+"args": [
+"&notit;&#xD800;&AMP;&copy"
+],
+"kwargs": {},
+"expected": "¬it;�&©"
+},
+{
+"args": [
+"&#150;&notin;&hearts;&#128;"
+],
+"kwargs": {},
+"expected": "–∉♥€"
+},
+{
+"args": [
+"&#;&amp;&#65;"
+],
+"kwargs": {},
+"expected": "&#;&A"
+},
+{
+"args": [
+" &eacute; &#X41;"
+],
+"kwargs": {},
+"expected": " é A"
+},
+{
+"args": [
+"&zwj;&#x80;&ngE;&ngE;&fjlig;&gt"
+],
+"kwargs": {},
+"expected": "‍€≧̸≧̸fj>"
+},
+{
+"args": [
+"&Tab;"
+],
+"kwargs": {},
+"expected": "\t"
+},
+{
+"args": [
+" &bogus;"
+],
+"kwargs": {},
+"expected": " &bogus;"
+},
+{
+"args": [
+"&gt&&&LongLeftRightArrow;&nbsp;a&Eacute"
+],
+"kwargs": {},
+"expected": ">&&⟷ aÉ"
+},
+{
+"args": [
+"&#x;&copy&#9999999999;"
+],
+"kwargs": {},
+"expected": "&#x;©�"
+},
+{
+"args": [
+"&ngE;&ampx"
+],
+"kwargs": {},
+"expected": "≧̸&x"
+},
+{
+"args": [
+"&nbsp;&Eacute&notit;"
+],
+"kwargs": {},
+"expected": " É¬it;"
+},
+{
+"args": [
+"&fjlig;"
+],
+"kwargs": {},
+"expected": "fj"
+},
+{
+"args": [
+"&#X41;&hearts;&amp; &NewLine;"
+],
+"kwargs": {},
+"expected": "A♥& \n"
+},
+{
+"args": [
+"&#X41;&notin;&copy"
+],
+"kwargs": {},
+"expected": "A∉©"
+},
+{
+"args": [
+"&lt;&acE;&lt;"
+],
+"kwargs": {},
+"expected": "<∾̳<"
+},
+{
+"args": [
+"&bogus;&#X41;&&&#0;&#0;&&"
+],
+"kwargs": {},
+"expected": "&bogus;A&&��&&"
+},
+{
+"args": [
+"&#0;&#;&acE;&;&zwj;&#128;"
+],
+"kwargs": {},
+"expected": "�&#;∾̳&;‍€"
+},
+{
+"args": [
+"&#xD800;&#9999999999;&fjlig;&notit;&#x80;&;"
+],
+"kwargs": {},
+"expected": "��fj¬it;€&;"
+},
+{
+"args": [
+"&eacute;&#x110000;"
+],
+"kwargs": {},
+"expected": "é�"
+},
+{
+"args": [
+"&eacute;&#065&gt&#x41;"
+],
+"kwargs": {},
+"expected": "éA>A"
+},
+{
+"args": [
+"&lt;&fjlig;"
+],
+"kwargs": {},
+"expected": "<fj"
+},
+{
+"args": [
+"&Eacute&hearts;&quot;&copy&#x;"
+],
+"kwargs": {},
+"expected": "É♥\"©&#x;"
+},
+{
+"args": [
+"&#150;&copy&quot;"
+],
+"kwargs": {},
+"expected": "–©\""
+},
+{
+"args": [
+"a&Tab;&notit;&hearts;&#x1F600;&NewLine;"
+],
+"kwargs": {},
+"expected": "a\t¬it;♥😀\n"
+},
+{
+"args": [
+"&Tab;&#128;"
+],
+"kwargs": {},
+"expected": "\t€"
+},
+{
+"args": [
+"&#9999999999;&#150;&fjlig;"
+],
+"kwargs": {},
+"expected": "�–fj"
+},
+{
+"args": [
+"&#xD800;&hearts;&&hearts;&#128;"
+],
+"kwargs": {},
+"expected": "�♥&♥€"
+},
+{
+"args": [
+"&;&gt&"
+],
+"kwargs": {},
+"expected": "&;>&"
+},
+{
+"args": [
+"&NewLine;&fjlig;&#128;a&notit;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "\nfj€a¬it;⟷"
+},
+{
+"args": [
+"&quot;&gt&fjlig;&Tab;&hearts;&notit;"
+],
+"kwargs": {},
+"expected": "\">fj\t♥¬it;"
+},
+{
+"args": [
+"&nbsp;&#x1F600;"
+],
+"kwargs": {},
+"expected": " 😀"
+},
+{
+"args": [
+" &acE;&LongLeftRightArrow;&&#X41;&copy"
+],
+"kwargs": {},
+"expected": " ∾̳⟷&A©"
+},
+{
+"args": [
+"&&&&Eacute"
+],
+"kwargs": {},
+"expected": "&&&É"
+},
+{
+"args": [
+"&AMP;&#x;&#150;&ampx"
+],
+"kwargs": {},
+"expected": "&&#x;–&x"
+},
+{
+"args": [
+"&lt;&#x110000;"
+],
+"kwargs": {},
+"expected": "<�"
+},
+{
+"args": [
+"&amp&ngE;"
+],
+"kwargs": {},
+"expected": "&≧̸"
+},
+{
+"args": [
+"&Tab;&#0;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "\t�⟷"
+},
+{
+"args": [
+"&&&hearts;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "&&♥⟷"
+},
+{
+"args": [
+"&Eacute&copy&fjlig;&acE;"
+],
+"kwargs": {},
+"expected": "É©fj∾̳"
+},
+{
+"args": [
+"&Eacutea&#65;&fjlig;&zwj;&AMP;"
+],
+"kwargs": {},
+"expected": "ÉaAfj‍&"
+},
+{
+"args": [
+"&eacute;&#;&#065&NewLine;&Eacute&"
+],
+"kwargs": {},
+"expected": "é&#;A\nÉ&"
+},
+{
+"args": [
+"&&;&notit;&copy&#65;&#X41;"
+],
+"kwargs": {},
+"expected": "&&;¬it;©AA"
+},
+{
+"args": [
+" &lt;"
+],
+"kwargs": {},
+"expected": " <"
+},
+{
+"args": [
+"&#;&#150;&&&#x1F600;"
+],
+"kwargs": {},
+"expected": "&#;–&&😀"
+},
+{
+"args": [
+"&quot;&amp&AMP;&&&&"
+],
+"kwargs": {},
+"expected": "\"&&&&&&"
+},
+{
+"args": [
+"&#065&#0;&amp&lt;&fjlig;"
+],
+"kwargs": {},
+"expected": "A�&<fj"
+},
+{
+"args": [
+"&#x1F600;"
+],
+"kwargs": {},
+"expected": "😀"
+},
+{
+"args": [
+"&#1114111;&Tab;&amp&#1114111;&#x80;"
+],
+"kwargs": {},
+"expected": "\t&€"
+},
+{
+"args": [
+"&ampx&LongLeftRightArrow;&#X41;"
+],
+"kwargs": {},
+"expected": "&x⟷A"
+},
+{
+"args": [
+"&#x41;"
+],
+"kwargs": {},
+"expected": "A"
+},
+{
+"args": [
+"&notin;&#xD800;&&&#x80;&#;&#x;"
+],
+"kwargs": {},
+"expected": "∉�&&€&#;&#x;"
+},
+{
+"args": [
+"&#1114111;&acE;&#x80;a&&&lt;"
+],
+"kwargs": {},
+"expected": "∾̳€a&&<"
+},
+{
+"args": [
+"&notin;&hearts;&#065&#128;&"
+],
+"kwargs": {},
+"expected": "∉♥A€&"
+},
+{
+"args": [
+"&LongLeftRightArrow;&AMP;"
+],
+"kwargs": {},
+"expected": "⟷&"
+},
+{
+"args": [
+"&#x80;&bogus;"
+],
+"kwargs": {},
+"expected": "€&bogus;"
+},
+{
+"args": [
+"&;&#150;&lt;&#065&nbsp;&#150;"
+],
+"kwargs": {},
+"expected": "&;–<A –"
+},
+{
+"args": [
+"&zwj;&#x80;&#065&nbsp;&;&#x80;"
+],
+"kwargs": {},
+"expected": "‍€A &;€"
+},
+{
+"args": [
+"&quot;&#065&#0;"
+],
+"kwargs": {},
+"expected": "\"A�"
+},
+{
+"args": [
+"&Tab;&#X41;&notin;&#x;&#xD800;&#x1F600;"
+],
+"kwargs": {},
+"expected": "\tA∉&#x;�😀"
+},
+{
+"args": [
+"&#128;&nbsp;&bogus;"
+],
+"kwargs": {},
+"expected": "€ &bogus;"
+},
+{
+"args": [
+"&copy"
+],
+"kwargs": {},
+"expected": "©"
+},
+{
+"args": [
+"&quot;&; &;&#x1F600;&lt;"
+],
+"kwargs": {},
+"expected": "\"&; &;😀<"
+},
+{
+"args": [
+"&#150;&Tab;"
+],
+"kwargs": {},
+"expected": "–\t"
+},
+{
+"args": [
+"&bogus;&zwj;&#0;&&&&&eacute;"
+],
+"kwargs": {},
+"expected": "&bogus;‍�&&&&é"
+},
+{
+"args": [
+"&#xD800;"
+],
+"kwargs": {},
+"expected": "�"
+},
+{
+"args": [
+"&zwj;&fjlig;&&gt&"
+],
+"kwargs": {},
+"expected": "‍fj&>&"
+},
+{
+"args": [
+"&#x;"
+],
+"kwargs": {},
+"expected": "&#x;"
+},
+{
+"args": [
+"&#x;&bogus;&#0;&notin;&fjlig;&#0;"
+],
+"kwargs": {},
+"expected": "&#x;&bogus;�∉fj�"
+},
+{
+"args": [
+"&fjlig;&amp;"
+],
+"kwargs": {},
+"expected": "fj&"
+},
+{
+"args": [
+"&&#xD800;"
+],
+"kwargs": {},
+"expected": "&�"
+},
+{
+"args": [
+"&;&notit;&hearts;"
+],
+"kwargs": {},
+"expected": "&;¬it;♥"
+},
+{
+"args": [
+"&zwj;&amp&nbsp; &acE;&#1114111;"
+],
+"kwargs": {},
+"expected": "‍&  ∾̳"
+},
+{
+"args": [
+"&ampx&zwj;"
+],
+"kwargs": {},
+"expected": "&x‍"
+},
+{
+"args": [
+"&#x41;&ngE;&#X41;"
+],
+"kwargs": {},
+"expected": "A≧̸A"
+},
+{
+"args": [
+"&#1114111;&#x;"
+],
+"kwargs": {},
+"expected": "&#x;"
+},
+{
+"args": [
+"a&#1114111;&zwj;&eacute;&;"
+],
+"kwargs": {},
+"expected": "a‍é&;"
+},
+{
+"args": [
+"&quot;&#;&#128;&#9999999999;"
+],
+"kwargs": {},
+"expected": "\"&#;€�"
+},
+{
+"args": [
+"&ngE;&&nbsp;&#0;"
+],
+"kwargs": {},
+"expected": "≧̸& �"
+},
+{
+"args": [
+"&amp&#065&hearts;"
+],
+"kwargs": {},
+"expected": "&A♥"
+},
+{
+"args": [
+"&amp;"
+],
+"kwargs": {},
+"expected": "&"
+},
+{
+"args": [
+"&copy&fjlig;a&#128;"
+],
+"kwargs": {},
+"expected": "©fja€"
+},
+{
+"args": [
+"&LongLeftRightArrow;&#x110000;&&&acE;&#150;&quot;"
+],
+"kwargs": {},
+"expected": "⟷�&&∾̳–\""
+},
+{
+"args": [
+"&&#X41;&#1114111;"
+],
+"kwargs": {},
+"expected": "&A"
+},
+{
+"args": [
+"&&copy&#xD800;"
+],
+"kwargs": {},
+"expected": "&©�"
+},
+{
+"args": [
+"&#0;&bogus;&#x110000;&#x41;"
+],
+"kwargs": {},
+"expected": "�&bogus;�A"
+},
+{
+"args": [
+"&nbsp;&Eacute&bogus;"
+],
+"kwargs": {},
+"expected": " É&bogus;"
+},
+{
+"args": [
+"&quot;&copy&NewLine;&;&&"
+],
+"kwargs": {},
+"expected": "\"©\n&;&&"
+},
+{
+"args": [
+"&notin;"
+],
+"kwargs": {},
+"expected": "∉"
+},
+{
+"args": [
+"&Tab;&amp&Tab;&AMP;&lt;a"
+],
+"kwargs": {},
+"expected": "\t&\t&<a"
+},
+{
+"args": [
+"&#x41;&LongLeftRightArrow;&#65;&NewLine;"
+],
+"kwargs": {},
+"expected": "A⟷A\n"
+},
+{
+"args": [
+"&;&AMP;&Eacute&#128;&#x1F600;&#150;"
+],
+"kwargs": {},
+"expected": "&;&É€😀–"
+},
+{
+"args": [
+"&amp&#65;&#65;&gt"
+],
+"kwargs": {},
+"expected": "&AA>"
+},
+{
+"args": [
+"&ngE;&#x1F600;&amp;&NewLine;&#X41;"
+],
+"kwargs": {},
+"expected": "≧̸😀&\nA"
+},
+{
+"args": [
+"&acE;&#x80;&Eacute"
+],
+"kwargs": {},
+"expected": "∾̳€É"
+},
+{
+"args": [
+"&copy&ampx&#;"
+],
+"kwargs": {},
+"expected": "©&x&#;"
+},
+{
+"args": [
+"&zwj;&#x;"
+],
+"kwargs": {},
+"expected": "‍&#x;"
+},
+{
+"args": [
+"&;&AMP;&amp;&#128;&#65;"
+],
+"kwargs": {},
+"expected": "&;&&€A"
+},
+{
+"args": [
+"&Eacute&;&quot;&#X41;&hearts;"
+],
+"kwargs": {},
+"expected": "É&;\"A♥"
+},
+{
+"args": [
+"&#128;&#0;"
+],
+"kwargs": {},
+"expected": "€�"
+},
+{
+"args": [
+"&#065"
+],
+"kwargs": {},
+"expected": "A"
+},
+{
+"args": [
+"&NewLine;&AMP;&zwj;&;&#150;"
+],
+"kwargs": {},
+"expected": "\n&‍&;–"
+},
+{
+"args": [
+"&#x80;&nbsp;&&&#;&bogus;"
+],
+"kwargs": {},
+"expected": "€ &&&#;&bogus;"
+},
+{
+"args": [
+"&Eacute"
+],
+"kwargs": {},
+"expected": "É"
+},
+{
+"args": [
+"&LongLeftRightArrow;&&notin;&nbsp;a"
+],
+"kwargs": {},
+"expected": "⟷&∉ a"
+},
+{
+"args": [
+"&#65;&#x41;"
+],
+"kwargs": {},
+"expected": "AA"
+},
+{
+"args": [
+"&#x41;&notin;"
+],
+"kwargs": {},
+"expected": "A∉"
+},
+{
+"args": [
+"&#x;&#128;&notin;&Eacute&hearts;&#0;"
+],
+"kwargs": {},
+"expected": "&#x;€∉É♥�"
+},
+{
+"args": [
+"&#065&notin;&fjlig;&notit;&acE;"
+],
+"kwargs": {},
+"expected": "A∉fj¬it;∾̳"
+},
+{
+"args": [
+"&#x80;&#X41;&&"
+],
+"kwargs": {},
+"expected": "€A&&"
+},
+{
+"args": [
+"&NewLine;&notit;&fjlig;"
+],
+"kwargs": {},
+"expected": "\n¬it;fj"
+},
+{
+"args": [
+"&#X41;&#X41;&notin;&eacute;&#9999999999;&gt"
+],
+"kwargs": {},
+"expected": "AA∉é�>"
+},
+{
+"args": [
+"&amp&#0;&copy"
+],
+"kwargs": {},
+"expected": "&�©"
+},
+{
+"args": [
+"&&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "&⟷"
+},
+{
+"args": [
+"&NewLine;&lt;"
+],
+"kwargs": {},
+"expected": "\n<"
+},
+{
+"args": [
+"&amp"
+],
+"kwargs": {},
+"expected": "&"
+},
+{
+"args": [
+"&fjlig;&NewLine;&LongLeftRightArrow;&eacute;&amp;"
+],
+"kwargs": {},
+"expected": "fj\n⟷é&"
+},
+{
+"args": [
+"&#x80;"
+],
+"kwargs": {},
+"expected": "€"
+},
+{
+"args": [
+"&#x80;&AMP; &ampx"
+],
+"kwargs": {},
+"expected": "€& &x"
+},
+{
+"args": [
+"&copy&#128;&ngE;&Tab;&amp;"
+],
+"kwargs": {},
+"expected": "©€≧̸\t&"
+},
+{
+"args": [
+"&acE;&#9999999999;&quot;&NewLine;&#;&#128;"
+],
+"kwargs": {},
+"expected": "∾̳�\"\n&#;€"
+},
+{
+"args": [
+"a &amp;"
+],
+"kwargs": {},
+"expected": "a &"
+},
+{
+"args": [
+"&#65;&#150;&gt"
+],
+"kwargs": {},
+"expected": "A–>"
+},
+{
+"args": [
+"&NewLine;&ngE;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "\n≧̸⟷"
+},
+{
+"args": [
+"&zwj;&Eacute&eacute;&#1114111;&amp&#150;"
+],
+"kwargs": {},
+"expected": "‍Éé&–"
+},
+{
+"args": [
+"&quot;&#;&NewLine;&#x110000;"
+],
+"kwargs": {},
+"expected": "\"&#;\n�"
+},
+{
+"args": [
+"&#0;&#x80;&hearts;&acE;"
+],
+"kwargs": {},
+"expected": "�€♥∾̳"
+},
+{
+"args": [
+"&#xD800;&copy&fjlig;"
+],
+"kwargs": {},
+"expected": "�©fj"
+},
+{
+"args": [
+"&NewLine;&acE;"
+],
+"kwargs": {},
+"expected": "\n∾̳"
+},
+{
+"args": [
+"&eacute;&copy&#150;&notin;&#;"
+],
+"kwargs": {},
+"expected": "é©–∉&#;"
+},
+{
+"args": [
+"&copy&amp;&#x;&eacute;&#x110000;"
+],
+"kwargs": {},
+"expected": "©&&#x;é�"
+},
+{
+"args": [
+"&Eacute&#0;&#xD800;"
+],
+"kwargs": {},
+"expected": "É��"
+},
+{
+"args": [
+"a&#xD800;&gt&fjlig;"
+],
+"kwargs": {},
+"expected": "a�>fj"
+},
+{
+"args": [
+"&notit;&#1114111;"
+],
+"kwargs": {},
+"expected": "¬it;"
+},
+{
+"args": [
+"&zwj;&&&amp&#1114111;&notit;&#x41;"
+],
+"kwargs": {},
+"expected": "‍&&&¬it;A"
+},
+{
+"args": [
+"&#0;&nbsp;a"
+],
+"kwargs": {},
+"expected": "� a"
+},
+{
+"args": [
+"&ngE;&;&#0;"
+],
+"kwargs": {},
+"expected": "≧̸&;�"
+},
+{
+"args": [
+"&Eacute&amp&&&amp;"
+],
+"kwargs": {},
+"expected": "É&&&&"
+},
+{
+"args": [
+"&acE;&zwj;&quot;&#x80;"
+],
+"kwargs": {},
+"expected": "∾̳‍\"€"
+},
+{
+"args": [
+"&bogus;&eacute;&amp&Eacute"
+],
+"kwargs": {},
+"expected": "&bogus;é&É"
+},
+{
+"args": [
+"&notit;&#x80;"
+],
+"kwargs": {},
+"expected": "¬it;€"
+},
+{
+"args": [
+" &#150;"
+],
+"kwargs": {},
+"expected": " –"
+},
+{
+"args": [
+"&ampx&AMP;&bogus;&notit;&#150;"
+],
+"kwargs": {},
+"expected": "&x&&bogus;¬it;–"
+},
+{
+"args": [
+"&acE;&notin;&#1114111;&eacute;&ngE;"
+],
+"kwargs": {},
+"expected": "∾̳∉é≧̸"
+},
+{
+"args": [
+"&eacute;&fjlig;&#9999999999;&fjlig;&;&zwj;"
+],
+"kwargs": {},
+"expected": "éfj�fj&;‍"
+},
+{
+"args": [
+"&#X41;&notit;&#X41;"
+],
+"kwargs": {},
+"expected": "A¬it;A"
+},
+{
+"args": [
+"&acE;&Eacute&gt&eacute;&bogus;"
+],
+"kwargs": {},
+"expected": "∾̳É>é&bogus;"
+},
+{
+"args": [
+"&#;&fjlig;&eacute;"
+],
+"kwargs": {},
+"expected": "&#;fjé"
+},
+{
+"args": [
+"&eacute;&Eacute&#x1F600;&#xD800;&LongLeftRightArrow; "
+],
+"kwargs": {},
+"expected": "éÉ😀�⟷ "
+},
+{
+"args": [
+"&NewLine;&#128;&amp;&#x110000;"
+],
+"kwargs": {},
+"expected": "\n€&�"
+},
+{
+"args": [
+"&AMP;"
+],
+"kwargs": {},
+"expected": "&"
+},
+{
+"args": [
+"&#128;&nbsp;"
+],
+"kwargs": {},
+"expected": "€ "
+},
+{
+"args": [
+"&ampx&#1114111;&#x80;&#x;&zwj;&NewLine;"
+],
+"kwargs": {},
+"expected": "&x€&#x;‍\n"
+},
+{
+"args": [
+"&bogus;&#x80;&bogus;&#x110000;&#128;"
+],
+"kwargs": {},
+"expected": "&bogus;€&bogus;�€"
+},
+{
+"args": [
+"&#x80;&notit;&notit;&#x80;&Tab;"
+],
+"kwargs": {},
+"expected": "€¬it;¬it;€\t"
+},
+{
+"args": [
+"&notit;&NewLine;"
+],
+"kwargs": {},
+"expected": "¬it;\n"
+},
+{
+"args": [
+"&#0;&#0;&#x110000;&LongLeftRightArrow;&ampx"
+],
+"kwargs": {},
+"expected": "���⟷&x"
+},
+{
+"args": [
+"&NewLine;&zwj;&&&nbsp;&#;&fjlig;"
+],
+"kwargs": {},
+"expected": "\n‍&& &#;fj"
+},
+{
+"args": [
+"&LongLeftRightArrow;&amp&AMP;"
+],
+"kwargs": {},
+"expected": "⟷&&"
+},
+{
+"args": [
+"aa&quot;&eacute;&#128;&LongLeftRightArrow;"
+],
+"kwargs": {},
+"expected": "aa\"é€⟷"
+},
+{
+"args": [
+"&fjlig;&#X41;&#065&acE;&#9999999999;&#65;"
+],
+"kwargs": {},
+"expected": "fjAA∾̳�A"
+},
+{
+"args": [
+"&#65;&#0;&notin;&#128;&zwj;&acE;"
+],
+"kwargs": {},
+"expected": "A�∉€‍∾̳"
+},
+{
+"args": [
+"&;&#x110000;"
+],
+"kwargs": {},
+"expected": "&;�"
+},
+{
+"args": [
+"&&&notin; &quot;&fjlig;"
+],
+"kwargs": {},
+"expected": "&&∉ \"fj"
+},
+{
+"args": [
+"&amp&;"
+],
+"kwargs": {},
+"expected": "&&;"
+},
+{
+"args": [
+"&#;&#x110000;"
+],
+"kwargs": {},
+"expected": "&#;�"
+},
+{
+"args": [
+"&gt"
+],
+"kwargs": {},
+"expected": ">"
+},
+{
+"args": [
+" &;&gt&notin;&&"
+],
+"kwargs": {},
+"expected": " &;>∉&&"
+},
+{
+"args": [
+"&Eacutea"
+],
+"kwargs": {},
+"expected": "Éa"
+},
+{
+"args": [
+" &notit;&#x80;&NewLine;"
+],
+"kwargs": {},
+"expected": " ¬it;€\n"
+},
+{
+"args": [
+"&amp;&eacute;a"
+],
+"kwargs": {},
+"expected": "&éa"
+},
+{
+"args": [
+"&#x1F600;a&gt&#1114111;&#1114111;"
+],
+"kwargs": {},
+"expected": "😀a>"
+},
+{
+"args": [
+"&#9999999999;&#x;&acE;"
+],
+"kwargs": {},
+"expected": "�&#x;∾̳"
+},
+{
+"args": [
+"&AMP;&&&copy&eacute;&quot;"
+],
+"kwargs": {},
+"expected": "&&&©é\""
+},
+{
+"args": [
+"&AMP;&NewLine;&ngE;&eacute;"
+],
+"kwargs": {},
+"expected": "&\n≧̸é"
+},
+{
+"args": [
+"&#0;"
+],
+"kwargs": {},
+"expected": "�"
+},
+{
+"args": [
+"&ampx&gt&quot;&ngE;"
+],
+"kwargs": {},
+"expected": "&x>\"≧̸"
+}
+]

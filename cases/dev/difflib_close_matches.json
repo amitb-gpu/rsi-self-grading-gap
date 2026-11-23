@@ -1,0 +1,5687 @@
+[
+{
+"args": [
+"appel",
+[
+"apply",
+"applet",
+"lple",
+"maele",
+"pple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"apply",
+"applet",
+"pple",
+"maele",
+"lple"
+]
+},
+{
+"args": [
+"e",
+[
+"nalle",
+"grape",
+"axple",
+""
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"nalle",
+"grape"
+]
+},
+{
+"args": [
+"grape",
+[
+"aple",
+"pnplpne"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"aple",
+"pnplpne"
+]
+},
+{
+"args": [
+"april",
+[
+"april",
+"engrape",
+"lay",
+"pielapple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"april"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"",
+"anpp",
+"bpnanea"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"cabana",
+"xaepple",
+"baana",
+"",
+"banana",
+"bandannp",
+"alpnael",
+"applet"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"baana",
+"cabana"
+]
+},
+{
+"args": [
+"cabana",
+[
+"aaaa",
+"appel",
+"a",
+"apple",
+"apple",
+"en",
+"peach",
+"apppel",
+"a"
+]
+],
+"kwargs": {},
+"expected": [
+"aaaa"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"ape",
+"apply",
+"banana",
+"appp",
+"appel",
+"pple",
+"apxplete",
+"a",
+"a",
+"e"
+]
+],
+"kwargs": {},
+"expected": [
+"banana"
+]
+},
+{
+"args": [
+"apple",
+[
+"pple",
+"bandana",
+""
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.75
+},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"banana",
+[
+"hapy",
+"ln",
+"appele",
+"ap",
+"bandana",
+"banana",
+"happy",
+"pineapple",
+"grape"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"banana",
+"bandana",
+"pineapple"
+]
+},
+{
+"args": [
+"appl",
+[
+"grape",
+"a",
+"maple",
+"happy",
+"a",
+"happy",
+"applet",
+"lplp",
+"happy",
+"banan"
+]
+],
+"kwargs": {},
+"expected": [
+"applet",
+"maple",
+"happy"
+]
+},
+{
+"args": [
+"x",
+[
+"applply",
+"xmaplle",
+"appel",
+"pineapple",
+"apple",
+"apple",
+"laplpex",
+"appaleaa",
+"a"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"bandana",
+[
+"happy",
+"april",
+"pineapple",
+"peach",
+"apen",
+"ppxle",
+"",
+"bandana",
+"happy",
+"pineapple",
+"anpril"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.3
+},
+"expected": [
+"bandana",
+"apen",
+"anpril"
+]
+},
+{
+"args": [
+"aaply",
+[
+"applet",
+"pxacenh",
+"bandana",
+"peach",
+"grap",
+"bandanal",
+"ape",
+"april",
+"pple",
+"april",
+"apply",
+"appel"
+]
+],
+"kwargs": {},
+"expected": [
+"apply",
+"april",
+"april"
+]
+},
+{
+"args": [
+"cabana",
+[
+"banana"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"banana"
+]
+},
+{
+"args": [
+"ape",
+[]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"bandana",
+[
+"",
+"napil",
+"applet",
+"applet",
+"apple",
+"xpnle",
+"grxpex",
+"aaaa",
+"appel"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"apply",
+[
+"ape",
+"maple",
+"a",
+"peach",
+"apple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"",
+[
+"cabana",
+"grape",
+"banana",
+"panana",
+"happy",
+"maplxe",
+"",
+"maple",
+"napril",
+"apply"
+]
+],
+"kwargs": {},
+"expected": [
+""
+]
+},
+{
+"args": [
+"bandana",
+[
+"mpaple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"mpaple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"appln",
+"axpl",
+"peleach",
+"appel",
+"apepee",
+"maple",
+"apple"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"ape",
+[
+"aaaa",
+"aplenx",
+"cabaa"
+]
+],
+"kwargs": {},
+"expected": [
+"aplenx"
+]
+},
+{
+"args": [
+"appele",
+[
+"xaa",
+"bandana",
+"balana",
+"appel",
+"bandana",
+"apply",
+"appel"
+]
+],
+"kwargs": {},
+"expected": [
+"appel",
+"appel",
+"apply"
+]
+},
+{
+"args": [
+"banana",
+[
+"pineppl",
+"alppel",
+"ppple",
+"gxxpe",
+"happy",
+"a",
+"pineapeple",
+"happy",
+"bandana",
+"a",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"bandana"
+]
+},
+{
+"args": [
+"ape",
+[
+"peach",
+"cpbana",
+"apply",
+"grape",
+"epeaexch",
+"pple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"grape",
+"pple"
+]
+},
+{
+"args": [
+"map",
+[
+"e",
+"pineapple",
+"pgrape",
+"appl",
+"a",
+"alepply",
+"maple",
+"grp"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"maple",
+"appl",
+"a"
+]
+},
+{
+"args": [
+"april",
+[
+"april",
+"banana",
+"peach",
+"",
+"",
+"april",
+"applet",
+"appel",
+"pineapple",
+"banana",
+"peach"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"april",
+"april",
+"appel"
+]
+},
+{
+"args": [
+"ape",
+[
+"apple",
+"cabana",
+"aaaa"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"",
+[
+"xl",
+"aexa",
+"april",
+"grape",
+"penle",
+"grape",
+"applet",
+"pl"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"aprial",
+"aaaa",
+"apple",
+"ppach",
+"maple",
+"aaaap",
+"apeil",
+"banxdan",
+"ape",
+"alxepl",
+"ape",
+"aplppe"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"",
+[
+"apple",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"banana",
+[
+"applet",
+"grape",
+"pee",
+"happy",
+"appp",
+"maple",
+"peach",
+"appel",
+"maple",
+"papnly",
+"happy",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"papnly"
+]
+},
+{
+"args": [
+"appel",
+[
+"pply",
+"pple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"pply",
+"pple"
+]
+},
+{
+"args": [
+"maple",
+[
+"cabana",
+"peineapple",
+"axpel",
+"happy"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"axpel"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"aaax",
+"applet",
+"mnapl",
+"appplet",
+"aaapl",
+"aapril",
+"applp"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"applet",
+"appplet",
+"mnapl"
+]
+},
+{
+"args": [
+"mapnle",
+[
+"en",
+"aaaa",
+"app",
+"apply",
+"aaaa",
+"ape"
+]
+],
+"kwargs": {},
+"expected": [
+"ape"
+]
+},
+{
+"args": [
+"grape",
+[
+"peach",
+"",
+"pieaple",
+"mpple",
+"maple",
+"x"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"maple",
+"pieaple",
+"peach",
+"mpple",
+"x"
+]
+},
+{
+"args": [
+"cabana",
+[
+"apple",
+"",
+"cabana",
+"ananan",
+"nl",
+"pineapple",
+"peneche",
+"pineapppe",
+"happy",
+"banana",
+"pineapple",
+"maplen"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"cabana",
+"banana",
+"ananan"
+]
+},
+{
+"args": [
+"happy",
+[]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"grape",
+[
+"napri",
+"banana",
+"apple",
+"peach",
+"apa",
+"banana",
+"",
+"apply",
+"paneapple",
+"aaaa"
+]
+],
+"kwargs": {},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"appel",
+[
+"cabana"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"happy",
+[
+"banana",
+"pineapple",
+"grape",
+"maple",
+"happl"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"happl"
+]
+},
+{
+"args": [
+"bnanan",
+[
+"pple",
+"apple",
+"aaaa",
+"applet",
+"pineapple",
+"",
+"peaac",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"aaaa",
+"peaac"
+]
+},
+{
+"args": [
+"bandana",
+[
+"aprinl",
+"maple",
+"",
+"mpe",
+"xnrap",
+"a",
+"a"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"xnrap"
+]
+},
+{
+"args": [
+"ape",
+[
+"gappe",
+"peach"
+]
+],
+"kwargs": {},
+"expected": [
+"gappe"
+]
+},
+{
+"args": [
+"apple",
+[]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"apply",
+[
+"ppne",
+"appel",
+"xlp"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"appel"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"pple",
+"banana",
+"april",
+"pineapple",
+"bananxa"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"pineapple",
+"pple"
+]
+},
+{
+"args": [
+"a",
+[
+"la",
+"aanaa",
+"bandana",
+"april",
+"applet",
+"pepal",
+"ap",
+"axapple",
+"apnplet",
+"happy",
+"apply",
+"april"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.0
+},
+"expected": [
+"la"
+]
+},
+{
+"args": [
+"",
+[
+"pineapple",
+"bandlpana",
+"cabana",
+"happy",
+"grape",
+"abanena"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"happy",
+[
+"bandana",
+"garann",
+"cabana"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"banana",
+[
+"a",
+"applet",
+"lranpe",
+"pneah",
+"apple",
+"maple",
+"banana",
+"peaph",
+"apa",
+"apn",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"banana",
+"bandana",
+"apn"
+]
+},
+{
+"args": [
+"",
+[
+"pheppy",
+"maple",
+"a",
+"april",
+"nbndana",
+"appel",
+"pineapple",
+"grape",
+"",
+"aea",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"",
+"pple",
+"pineapple"
+]
+},
+{
+"args": [
+"andea",
+[
+"apply",
+"ape",
+"happy",
+"aexpaly",
+"maple",
+"appel",
+"pineapple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"ape",
+"aexpaly",
+"pineapple"
+]
+},
+{
+"args": [
+"peach",
+[
+"aaa",
+"banana",
+"apply",
+"banana",
+"bana",
+"x",
+"ppnlpy"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"happy",
+[
+"l",
+"pineapxle",
+"x"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"caana",
+[
+"ap",
+"",
+"bannalx",
+"applet",
+"ceaana",
+"",
+"banana",
+"appel",
+"bandana",
+"maple",
+"bnaedalna",
+"banana"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"ceaana"
+]
+},
+{
+"args": [
+"april",
+[
+"n",
+"appel",
+"peach",
+"ehaplpy"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"appel"
+]
+},
+{
+"args": [
+"applet",
+[
+"apple",
+"apply",
+"pineapple",
+"maple",
+"apple"
+]
+],
+"kwargs": {},
+"expected": [
+"apple",
+"apple",
+"maple"
+]
+},
+{
+"args": [
+"banana",
+[
+"apple",
+"applet",
+"maenl",
+"april",
+"happy",
+"pln",
+"grape"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"cabana",
+"aepxe",
+"apaplet",
+"",
+"hnnlppy",
+"cabana",
+"applet",
+"pineappple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"applet",
+"apaplet"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"pineaple",
+"nppel",
+"grape",
+"a",
+"pineapple",
+"grpa",
+"pea",
+"ppel",
+"x",
+"ape"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"pineapple"
+]
+},
+{
+"args": [
+"halppy",
+[
+"bandana",
+"appletx",
+"baadana",
+"apppel",
+"",
+"grae",
+"bandana"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"n",
+"aaaa",
+"maple",
+"peach",
+"peah",
+"grape",
+"",
+"bnanana",
+"applet",
+"cnabanaa"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"maple",
+"applet",
+"grape"
+]
+},
+{
+"args": [
+"happy",
+[
+"eaa",
+"",
+"bandana",
+"applet",
+"ple",
+"appel",
+"apply",
+"grape",
+"apxplet"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"apply",
+"appel"
+]
+},
+{
+"args": [
+"peach",
+[
+"bandana",
+"appet",
+"applet",
+"blndana",
+"pple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"pple",
+"appet"
+]
+},
+{
+"args": [
+"peach",
+[
+"",
+"appply"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"",
+[
+"applet",
+"nppe",
+"laxnana",
+"banann",
+"axplxe",
+"bapnaan",
+"al",
+"nabaaa",
+"ban"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"happy",
+"aea",
+"bandana",
+"a",
+"applet",
+"ala",
+"april",
+"appel",
+"applet",
+"grape",
+"pple",
+"banana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"april",
+"appel",
+"applet"
+]
+},
+{
+"args": [
+"happy",
+[
+"pple",
+"anana",
+"happy",
+"haapppy",
+"cabana",
+"applp",
+"aaaa",
+"cabap",
+"bandana",
+"grape",
+"banana"
+]
+],
+"kwargs": {},
+"expected": [
+"happy",
+"haapppy",
+"applp"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"aaaa",
+"aprill",
+"caban"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.3
+},
+"expected": [
+"aprill"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"cabana",
+"apply",
+"a",
+"pineaapele",
+"applet",
+"pple",
+"halply"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"pineaapele",
+"applet"
+]
+},
+{
+"args": [
+"apple",
+[
+"applet",
+"banana",
+"apply",
+"a",
+"p",
+"banana",
+"pple",
+"appel",
+"mnapae",
+"apply",
+"pexac"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": [
+"applet"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"appel",
+"applet",
+"april",
+"abandanal",
+"peach",
+"peach",
+"pineapple",
+"apply",
+"a",
+"enan",
+"maple",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"abandanal",
+"bandana"
+]
+},
+{
+"args": [
+"ple",
+[
+"plple",
+"pple",
+"pppel",
+"apple",
+"nbandxnla",
+"grape",
+"agraple",
+"applet",
+"april"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"pple",
+"plple",
+"apple"
+]
+},
+{
+"args": [
+"pineappla",
+[
+"a",
+"apeel",
+"alpnet",
+""
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"apeel",
+"alpnet",
+"a"
+]
+},
+{
+"args": [
+"",
+[
+"appllet",
+"peach",
+"bandanax",
+"grape",
+"banana",
+"eappell",
+"appe",
+"abaep"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"peach",
+[
+"apply",
+"",
+"maple",
+"applet",
+"applet"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"cbanna",
+[
+"na",
+"peach",
+"cabana"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"cabana"
+]
+},
+{
+"args": [
+"pilneapple",
+[
+"appel",
+"happy"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"appel"
+]
+},
+{
+"args": [
+"grape",
+[
+"peach",
+"appel",
+"ape",
+"hapaely",
+"pineapple",
+"pla",
+"banana",
+"apa",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"ape",
+"appel",
+"hapaely"
+]
+},
+{
+"args": [
+"",
+[
+""
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.5
+},
+"expected": [
+""
+]
+},
+{
+"args": [
+"pineapple",
+[
+"maple",
+"cabana",
+"",
+"happy",
+"bandana",
+"pple",
+"a",
+"apply",
+"x",
+"grapaepe",
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"pple",
+"maple",
+"apply"
+]
+},
+{
+"args": [
+"happy",
+[
+"happy",
+"cabn",
+"bananan",
+"april",
+"grape",
+"apaa",
+"apllle",
+"napex",
+"apply"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"happy",
+"apply"
+]
+},
+{
+"args": [
+"cabpn",
+[]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"pple",
+[
+"lappee",
+"appeee",
+"pieapaple",
+"aprxl"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"aparil",
+"cabanea",
+"pple",
+"aapal",
+"appel",
+"ape",
+"banana"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"aapal"
+]
+},
+{
+"args": [
+"maple",
+[
+"appel",
+"",
+"ape",
+"bandana",
+"grape",
+"appel",
+"apepel",
+"banana",
+"a"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"ape"
+]
+},
+{
+"args": [
+"peach",
+[]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"pple",
+[
+"pply",
+"pple",
+"bananl",
+"apletnx",
+"pplnn",
+"happy",
+"bandana",
+"ape",
+"maple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"pple",
+"pply",
+"pplnn"
+]
+},
+{
+"args": [
+"bandana",
+[
+"applet",
+"peach",
+"grape",
+"nlpeach",
+"banana",
+"pineapplep",
+"ape",
+"bandana",
+"apply",
+"a",
+"apnple",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"bandana",
+"bandana",
+"banana"
+]
+},
+{
+"args": [
+"applet",
+[
+"",
+"pianeapxple",
+"apppexe",
+"xaaaa",
+"happy",
+"bannalna",
+"banana",
+"april",
+"happy"
+]
+],
+"kwargs": {},
+"expected": [
+"apppexe"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"aapa"
+]
+],
+"kwargs": {},
+"expected": [
+"aapa"
+]
+},
+{
+"args": [
+"grape",
+[
+"peach",
+"",
+"banana",
+"ape",
+"apply"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"ape"
+]
+},
+{
+"args": [
+"peach",
+[
+"a",
+"apply",
+"ppet",
+"appletx",
+"peach",
+"apple",
+"pineapple",
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"peach",
+"ape"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"maple",
+"aaaa",
+"april",
+"banana",
+"appel",
+"bandana",
+"peach",
+"anppel",
+"grap",
+"maple"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"maple",
+"maple",
+"appel"
+]
+},
+{
+"args": [
+"apple",
+[
+"grapx",
+"apple",
+"apply",
+"happy",
+"a",
+"applet"
+]
+],
+"kwargs": {},
+"expected": [
+"apple",
+"applet",
+"apply"
+]
+},
+{
+"args": [
+"cabnnl",
+[
+"apxril",
+"earil",
+"grape",
+"balana",
+"ape",
+"appl",
+"april",
+"pple",
+"arnpe",
+"pa",
+"a",
+"happy"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"appl",
+"earil"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"",
+"aanaa",
+"banana",
+"grape",
+"pple",
+"a",
+"paly"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"aanap",
+[
+"aax",
+"eppex",
+"app",
+"banana",
+"abanax",
+"applet",
+"appel",
+"l",
+""
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"abanax",
+"banana"
+]
+},
+{
+"args": [
+"napi",
+[
+"llpe",
+"ppeach",
+"appel",
+"applet",
+"gaape",
+"peeplch",
+"a",
+"apple",
+"alpely",
+"xpen",
+"bannana",
+"maple"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"applet",
+[
+"happy",
+"banana",
+"apply",
+"cxlan"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.0
+},
+"expected": [
+"apply"
+]
+},
+{
+"args": [
+"apppl",
+[
+"banana",
+"pnmaale",
+"apael",
+"applet",
+"apple"
+]
+],
+"kwargs": {},
+"expected": [
+"apple",
+"applet",
+"apael"
+]
+},
+{
+"args": [
+"aril",
+[
+"bandana",
+"happy",
+"",
+"applet",
+"april",
+"aaaa",
+"cabana",
+"happya",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"april",
+"applet"
+]
+},
+{
+"args": [
+"ppnex",
+[
+"",
+"",
+"a",
+"april",
+"applet",
+"a",
+"leac",
+"pineapple",
+"grape",
+"balnxan"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"apnly",
+[
+"heappy",
+"al",
+"apple",
+"apply",
+"",
+"pexach",
+"ample"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"applet",
+"cabanl",
+"la",
+"happy",
+"banane"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"cabana",
+[
+"april",
+"cabann",
+"apnxl",
+"happy"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"cabann"
+]
+},
+{
+"args": [
+"happy",
+[
+"",
+"april",
+"ape"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"",
+"ape",
+"april",
+"bapnlna",
+"npbandalna"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"banan",
+[
+"cabana"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"cabana"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"peach",
+"pple",
+"happy",
+"",
+"pineapple",
+"cabana",
+"bandana",
+"april",
+"grape",
+"ppaep",
+"grape",
+"maple"
+]
+],
+"kwargs": {},
+"expected": [
+"pineapple",
+"pple"
+]
+},
+{
+"args": [
+"",
+[
+"phapy",
+"maple",
+"banana",
+"appel",
+"aaa",
+"happyx",
+"pple",
+"april",
+"",
+"a",
+"apple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.3
+},
+"expected": [
+""
+]
+},
+{
+"args": [
+"april",
+[
+"mpapln",
+"pape",
+"a",
+"mapla",
+"cabana",
+"pple",
+"baendna",
+"maple",
+"applet",
+"a"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"maple",
+"mapla"
+]
+},
+{
+"args": [
+"pril",
+[
+"aaaa",
+"apply",
+"apple",
+"a",
+"a",
+"applet"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"apply",
+[
+"maple",
+"applet",
+"apllet"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"applet",
+"maple"
+]
+},
+{
+"args": [
+"happy",
+[
+"apple",
+"apple",
+"appel",
+"aplx"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"aprail",
+[
+"pppll"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"pple",
+"clabne",
+"bandana"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"clabne",
+"bandana"
+]
+},
+{
+"args": [
+"bandana",
+[
+"appalet",
+"apel"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"happy"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"pppe",
+[
+"banana",
+"appel",
+"meapll",
+"aaaa",
+"ape",
+"peach",
+"bandne",
+"peach",
+"bandana"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"pineapple",
+"aaaa",
+"grape",
+"bnpna",
+"pinaappln",
+"maple",
+"ana",
+"nappe",
+"aaaa",
+"appel"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": [
+"maple"
+]
+},
+{
+"args": [
+"peach",
+[
+"pineapple",
+"cabana",
+"hapa",
+"pplet",
+"apple",
+"banana",
+"pineapple",
+"pac"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"pac",
+"pineapple",
+"pineapple"
+]
+},
+{
+"args": [
+"banana",
+[
+"bandana",
+"banana"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": [
+"banana",
+"bandana"
+]
+},
+{
+"args": [
+"pple",
+[
+"cabana",
+"banana",
+"ale",
+"grape",
+"pple",
+"pach"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"april",
+[
+"bandaana",
+"pple",
+"apple",
+"ape",
+"apple",
+"applet",
+"maple",
+"banana",
+""
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"maple",
+"apple",
+"apple"
+]
+},
+{
+"args": [
+"maple",
+[]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"aerip",
+"",
+"ape"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"leach",
+[
+"cabana",
+"xpe",
+"eapxply",
+"pply",
+"a",
+"baana"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"a",
+"pple",
+"maple",
+"april",
+"maple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"a"
+]
+},
+{
+"args": [
+"applet",
+[]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"pple",
+[]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"applet",
+[
+"a",
+"aaaa",
+"pineapple",
+"haapxe",
+"",
+"happy",
+"april",
+"ape",
+"appel",
+"ep",
+"xglape"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"appel",
+"pineapple"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"alppen",
+"ape",
+"apple",
+"pxneappple",
+"eaplp",
+""
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"pxneappple",
+"apple"
+]
+},
+{
+"args": [
+"apply",
+[
+"happy",
+"pple",
+"aln",
+"apply",
+"cabana",
+"a",
+"pa",
+"grape",
+"ppneaapple",
+"a"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apply",
+"happy",
+"pple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"appel",
+"xa",
+"grap",
+"peach",
+"ape"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"aly",
+[
+"aaaa",
+"aaaa"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"aaaa",
+"aaaa"
+]
+},
+{
+"args": [
+"pineapplea",
+[]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"banana",
+[
+"apply",
+"pineapple",
+"pineapple",
+"eaa",
+"a",
+"pineappleal",
+"appel",
+"laa",
+"paaae",
+"grape",
+"peach",
+"april"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"paaae",
+"laa"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"bandana",
+"applet",
+"pp",
+"appel",
+"paneapple",
+"grape",
+"a",
+"a"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"bandana",
+"a"
+]
+},
+{
+"args": [
+"xineplple",
+[
+"applet",
+"ape",
+"cabana",
+"aaaa",
+"eapy",
+"ape",
+"pineapple",
+"bandaea",
+"maple",
+"pineapple"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.5
+},
+"expected": [
+"pineapple"
+]
+},
+{
+"args": [
+"",
+[
+"happy",
+"bandanax",
+"grape",
+"baanaep",
+"bandana",
+"grape",
+"april",
+"apnplel",
+"appel",
+"happy",
+"pil"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"apply",
+[
+"grapa",
+"appleet",
+"maple",
+"pple",
+"pple"
+]
+],
+"kwargs": {},
+"expected": [
+"pple",
+"pple",
+"appleet"
+]
+},
+{
+"args": [
+"ape",
+[
+"mappl",
+"april",
+"apple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"peach",
+[
+"peac",
+"hxepp",
+"ail",
+"aaaa",
+"granpe",
+"ana"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"peac"
+]
+},
+{
+"args": [
+"pply",
+[
+"aplee"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"aplee"
+]
+},
+{
+"args": [
+"gap",
+[
+"pple",
+"pple",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"aaaa"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"apple",
+[
+"cabana",
+"eaapnle",
+"",
+"pineapple",
+"applet",
+"pineapple",
+"ape"
+]
+],
+"kwargs": {},
+"expected": [
+"applet",
+"ape",
+"pineapple"
+]
+},
+{
+"args": [
+"grape",
+[
+"appalpe",
+"happy",
+"pple",
+"a",
+"appel",
+"happy",
+"grape",
+"ape",
+"april"
+]
+],
+"kwargs": {},
+"expected": [
+"grape",
+"ape",
+"appel"
+]
+},
+{
+"args": [
+"pple",
+[
+"apple",
+"aprilp",
+"april",
+"pmappe",
+"appel",
+"pineappppel",
+"ape",
+"banana",
+"rlp",
+"aaaa"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"apple",
+"appel"
+]
+},
+{
+"args": [
+"aplpel",
+[
+"grape"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"grape"
+]
+},
+{
+"args": [
+"",
+[
+"anple",
+"a",
+"grape",
+"lapi",
+"appl",
+"appel",
+"pple"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"apple",
+[]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"banana",
+[
+"",
+"pple",
+"cabana",
+"paxplle",
+"bananal",
+"pnlrape",
+"applet",
+"grape",
+"grxape"
+]
+],
+"kwargs": {},
+"expected": [
+"bananal",
+"cabana"
+]
+},
+{
+"args": [
+"pineapple",
+[]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"aaeel",
+[
+"pench",
+"banana",
+"happy",
+"pple",
+"a",
+"apply"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"lapnly",
+[
+"applet",
+"happy",
+"april",
+"peach",
+"a",
+"appllt",
+"aepple",
+"apply",
+"happy",
+"banana",
+"a",
+"grpxe"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apply"
+]
+},
+{
+"args": [
+"banana",
+[
+"aaaa",
+"",
+"grape",
+"banana",
+"aaply",
+"banana",
+"",
+"pineeple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.5
+},
+"expected": [
+"banana",
+"banana",
+"aaaa"
+]
+},
+{
+"args": [
+"pple",
+[
+"peach",
+"nne",
+"pineaple",
+"applet",
+"ele",
+"axan",
+"april",
+"april",
+"pineapplle",
+"banana"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.75
+},
+"expected": [
+"applet"
+]
+},
+{
+"args": [
+"appel",
+[
+"grape",
+"cabana",
+"pply",
+"malal",
+"maplpe",
+"apal",
+"peach",
+"ea",
+"apply",
+"maple",
+"nplple"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"cabana",
+"aaa",
+"applet",
+"appel",
+"grape",
+"grape",
+"pineapple",
+"pple",
+"banana",
+"banana",
+"cabana"
+]
+],
+"kwargs": {},
+"expected": [
+"aaa",
+"cabana",
+"cabana"
+]
+},
+{
+"args": [
+"pineepplne",
+[
+"pple",
+"eeach",
+"a",
+"applet",
+"ap",
+"aaaa",
+"applet",
+"ppnnle",
+"nench"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"pple",
+"ppnnle"
+]
+},
+{
+"args": [
+"april",
+[]
+],
+"kwargs": {
+"n": 2
+},
+"expected": []
+},
+{
+"args": [
+"pineappl",
+[
+"nxaple",
+"pineapple",
+"l",
+"apple",
+"aaaa",
+"aaaae",
+"a",
+"applet",
+"appple"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"pineapple",
+"apple",
+"nxaple"
+]
+},
+{
+"args": [
+"grape",
+[
+"pineapple",
+"applet",
+"april",
+"appyx",
+"grape",
+"aaaa",
+"happy",
+"cabana",
+"apple",
+"happy"
+]
+],
+"kwargs": {},
+"expected": [
+"grape",
+"apple"
+]
+},
+{
+"args": [
+"aple",
+[
+"appe",
+"peach",
+"grapll",
+"aaaa",
+"maple",
+"happy",
+"hep",
+"peach",
+"happy",
+"appel"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"peach",
+[
+"pinxpple",
+"april",
+"aaaa"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"banana",
+[
+"apple"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"applet",
+"leacn",
+"happyp"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"applet",
+[]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"applet",
+[
+"apply",
+"apple",
+"pineapple"
+]
+],
+"kwargs": {},
+"expected": [
+"apple",
+"apply",
+"pineapple"
+]
+},
+{
+"args": [
+"pple",
+[
+"peach"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"bndana",
+"aaana",
+"aaaa"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"axpplye",
+[
+"aaaa",
+"apxnple",
+"acabana",
+"aaaa",
+"ep",
+"ape",
+"bandana",
+"peach",
+"pineapple",
+"cbana",
+"e"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"apxnple",
+"pineapple",
+"ape"
+]
+},
+{
+"args": [
+"cabana",
+[
+"applet",
+"aple",
+"pnle"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"apple",
+"peach",
+"pechl"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"appel",
+[
+"apepelex",
+"banana",
+"grapee",
+"applet",
+"",
+"cabana",
+"grape",
+"maxple",
+"maple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"apepelex",
+"applet"
+]
+},
+{
+"args": [
+"apply",
+[
+"happy",
+"aaaa",
+"pple",
+"bandana",
+"april",
+"cabana",
+"penxdana",
+"maple"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"happy"
+]
+},
+{
+"args": [
+"apipl",
+[
+"hapxny",
+"banldana",
+"a",
+"applet",
+"cabana",
+"applelt"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"applet",
+"applelt",
+"hapxny"
+]
+},
+{
+"args": [
+"",
+[
+"aaaa",
+"ape",
+"apply",
+"aaaa",
+"april",
+"apple",
+"a",
+"cabana",
+""
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+""
+]
+},
+{
+"args": [
+"bandana",
+[
+"cabana",
+"happy",
+"cabana",
+"lnappy",
+"maple",
+"a",
+"april",
+"",
+"cabaenea",
+"happy",
+"aprnilp",
+"pple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.5
+},
+"expected": [
+"cabana",
+"cabana"
+]
+},
+{
+"args": [
+"ape",
+[
+"happy",
+"april",
+"banpanal",
+"grape"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"aaaa",
+[
+"banane",
+"axpri",
+"apnpelet",
+"l",
+"n",
+"aaaa",
+"pineapple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"aaaa"
+]
+},
+{
+"args": [
+"bandana",
+[
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"apple",
+[]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"peach",
+[
+"pineapple",
+"aaxaa",
+"aplt",
+"banna",
+"banan",
+"a",
+"applpt",
+"apply",
+"maple",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"peach"
+]
+},
+{
+"args": [
+"a",
+[
+"pnnapple",
+"aplplt",
+"banpana",
+"aaaa",
+"pineapple",
+"appel",
+"",
+"xaban",
+"april",
+"apple",
+"applp"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"arale",
+[
+"pineapple",
+"happy",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"pineapple",
+"bandana",
+"happy"
+]
+},
+{
+"args": [
+"happy",
+[
+"a",
+"a"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"peach",
+[
+"pple",
+"aaaa",
+"apple",
+"apple",
+"maple",
+"apple"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"apaply",
+[
+"ape",
+"applet",
+"",
+"banana"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"applet"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"banana",
+"anpnl",
+"",
+"ape",
+"a",
+"",
+"papriln",
+"april",
+"ape",
+"pinaappe",
+"",
+"pneapple"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"banana"
+]
+},
+{
+"args": [
+"aanpletx",
+[]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": []
+},
+{
+"args": [
+"cabana",
+[
+"april",
+"maple",
+"ape"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"ape",
+"maple"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"appley",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"appley",
+"pple"
+]
+},
+{
+"args": [
+"ape",
+[
+"pplly",
+"peach",
+"apple",
+"apple",
+"e",
+"a"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.5
+},
+"expected": [
+"apple",
+"apple"
+]
+},
+{
+"args": [
+"xappy",
+[
+"grape",
+"appel",
+"appny",
+"appel",
+"apply",
+"ainaeaple",
+"bandana",
+"peach",
+"pinappl",
+"april",
+"gax"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"appny",
+"apply",
+"appel"
+]
+},
+{
+"args": [
+"cabana",
+[
+"banana",
+"cabalna",
+"peach",
+"happa"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"cabalna",
+"banana"
+]
+},
+{
+"args": [
+"appel",
+[
+"pppet"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"pppet"
+]
+},
+{
+"args": [
+"pple",
+[
+"pineapple",
+"",
+"",
+"applet",
+"ppipl",
+""
+]
+],
+"kwargs": {},
+"expected": [
+"applet",
+"ppipl",
+"pineapple"
+]
+},
+{
+"args": [
+"bandana",
+[
+"apple",
+"apply",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"pieaplne",
+[
+"axpa",
+"a",
+"cabana",
+"grape",
+"apply",
+"banana",
+"aa",
+"anpply",
+"ape",
+"banana",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"applen",
+[
+"pple",
+"pineapple",
+"appel",
+"appnet"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"pneappae",
+"aaaa"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"aaaa",
+"pneappae"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"applet"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"ap",
+"mall",
+"pep",
+"apple",
+"happy"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": [
+"apple",
+"ap",
+"mall",
+"happy",
+"pep"
+]
+},
+{
+"args": [
+"",
+[
+"applx",
+"ape",
+"applet",
+"aaaa",
+"ane",
+"apple"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"banldaneax",
+[
+"peach",
+"happy",
+"anan",
+"maple",
+"happp",
+"aaaa",
+"haplpy",
+"grape",
+"happy",
+"pineapple",
+"apple"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"anan"
+]
+},
+{
+"args": [
+"maple",
+[]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"cabana",
+[
+"bandanlaa"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"pple",
+[
+"cabana"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"llxpplet",
+[
+"pple",
+"applet",
+"pineapple",
+"alpe",
+"cabana",
+"apxl"
+]
+],
+"kwargs": {},
+"expected": [
+"applet",
+"pple"
+]
+},
+{
+"args": [
+"",
+[
+"banana",
+"greppe",
+"cabana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"greppe",
+"cabana",
+"banana"
+]
+},
+{
+"args": [
+"maple",
+[
+"aaaa",
+"maple",
+"",
+"apply",
+"pineapple",
+"pineapple",
+"bandana",
+"appel"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": [
+"maple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"ape",
+"beanna",
+"apple",
+"applet",
+"cabana",
+"peach",
+"applet",
+"xapxria",
+"maplx",
+"cabana",
+"manle",
+"pineapple"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"e",
+[
+"appleat",
+"axpe",
+"",
+"banana",
+"banana",
+"cabana",
+"pple",
+"applxy"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"apple",
+"baana",
+"banana",
+"maplle",
+"applet",
+"grlae",
+"banana",
+"pineapple",
+"apple",
+"apple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"maplle",
+"apple",
+"apple"
+]
+},
+{
+"args": [
+"ape",
+[
+"appel",
+"appel",
+"apple",
+"cabann",
+"",
+"applet",
+"ape",
+"cabana",
+"a",
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"ape",
+"ape",
+"apple"
+]
+},
+{
+"args": [
+"maple",
+[
+"a"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"grap",
+[
+"bandana"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"bandana",
+[
+"appel",
+"peach",
+"map",
+"a",
+"naeple",
+"aprail",
+"pineapple",
+"april",
+"appe",
+"aaa",
+"",
+"peach"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"aaa"
+]
+},
+{
+"args": [
+"applet",
+[
+"appel",
+"bandana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"appel",
+"bandana"
+]
+},
+{
+"args": [
+"pple",
+[
+"pple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"bandana",
+[
+"al",
+"cabana",
+"apply",
+"apel",
+"apple",
+"appy",
+"caban",
+"banana"
+]
+],
+"kwargs": {},
+"expected": [
+"banana",
+"cabana"
+]
+},
+{
+"args": [
+"appel",
+[
+"apple",
+"applet",
+"applet",
+"banana",
+"appnl",
+"banana",
+"cabana",
+"april"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"appnl",
+"apple",
+"applet"
+]
+},
+{
+"args": [
+"happy",
+[
+"pple",
+"applple",
+"happy",
+"happy",
+"apply",
+"happy"
+]
+],
+"kwargs": {},
+"expected": [
+"happy",
+"happy",
+"happy"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"pinenapple",
+"maple",
+"peach"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"pinenapple"
+]
+},
+{
+"args": [
+"maple",
+[]
+],
+"kwargs": {
+"n": 5
+},
+"expected": []
+},
+{
+"args": [
+"appel",
+[
+"",
+"pple"
+]
+],
+"kwargs": {},
+"expected": [
+"pple"
+]
+},
+{
+"args": [
+"ape",
+[
+"apa",
+"pineapple",
+"lppnle",
+"pnneple",
+"applet",
+"apnplt",
+"appe"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"appe",
+"applet",
+"apa"
+]
+},
+{
+"args": [
+"apply",
+[
+"pple",
+"mapxe",
+"lbananx",
+"peaeeh",
+"anpplea",
+"a",
+"apple",
+"anplx",
+"anprin",
+"banana",
+"pple"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.0
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"grape",
+[
+"pineapple",
+"eblna",
+"peach",
+"appel",
+"aplela",
+"cabana",
+"bnanan",
+"applet"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"applya",
+[
+"bandana",
+"ape",
+"elpy",
+"aeaaaa",
+"happy",
+"",
+"appel",
+"bandana",
+"peacx"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"pple",
+[
+"ppnach",
+"pineapple",
+"aaaa",
+"ax",
+"pplxn",
+"pineapple",
+"apple",
+"grape",
+"bandana"
+]
+],
+"kwargs": {},
+"expected": [
+"apple",
+"pplxn",
+"pineapple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"peac",
+"caban"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"apy",
+[
+"happy",
+"aaaa",
+"pineapple",
+"ape",
+"appel",
+"exch",
+"happy"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"happy",
+"happy",
+"ape"
+]
+},
+{
+"args": [
+"pple",
+[
+"appel",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"cabana",
+[
+"pple",
+"a",
+"maplp",
+"ax"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"applle",
+[
+"maple",
+"a",
+"anpel",
+"pplxne"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"maple"
+]
+},
+{
+"args": [
+"applet",
+[
+"papxplle",
+"maple",
+"al",
+"bnanpana",
+"apple",
+"apply",
+"appel",
+"appen"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.5
+},
+"expected": [
+"apple",
+"maple",
+"apply",
+"appen",
+"appel"
+]
+},
+{
+"args": [
+"pple",
+[
+"appel",
+"applet",
+"",
+"april",
+"apply",
+"applel",
+"caaana",
+"maple"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"applet",
+"applel",
+"maple"
+]
+},
+{
+"args": [
+"caba",
+[
+"apppel",
+"pinnapple",
+"nnprie",
+"appn",
+"eaa",
+"ceabanna"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"ceabanna",
+"eaa"
+]
+},
+{
+"args": [
+"applet",
+[
+"",
+"bandana",
+"andana",
+"apple",
+""
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": [
+"apple",
+"andana"
+]
+},
+{
+"args": [
+"april",
+[
+"cabana",
+"pealch",
+"apriel",
+"raple",
+"cabannp",
+"pple",
+"pple",
+""
+]
+],
+"kwargs": {},
+"expected": [
+"apriel",
+"raple"
+]
+},
+{
+"args": [
+"banana",
+[
+"",
+"pixneapppele",
+"aaaa",
+"apple",
+"aprail",
+"april",
+"eeac",
+"appalyel",
+"pineapple"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"aaaa",
+"aprail"
+]
+},
+{
+"args": [
+"april",
+[
+"apl",
+"aepplexy",
+"apl",
+"a",
+"apply"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"happy",
+[
+"appel",
+"banana",
+"each",
+"nandana"
+]
+],
+"kwargs": {
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"peach",
+[
+"paaa",
+"lppel",
+"apply",
+"peach",
+"alpe",
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": [
+"peach",
+"ape",
+"paaa"
+]
+},
+{
+"args": [
+"cabana",
+[
+"grape",
+"",
+"grape",
+"apply",
+"ape"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"ape",
+"grape",
+"grape"
+]
+},
+{
+"args": [
+"cabana",
+[
+"maple",
+"peach",
+"caebana",
+"happy",
+"",
+"happy",
+"grape",
+"cabana",
+"grape",
+"",
+"aprinl",
+"eaaa"
+]
+],
+"kwargs": {},
+"expected": [
+"cabana",
+"caebana",
+"eaaa"
+]
+},
+{
+"args": [
+"grape",
+[
+"grapea",
+"eapl",
+"",
+"cabana",
+"ape",
+"ple"
+]
+],
+"kwargs": {},
+"expected": [
+"grapea",
+"ape"
+]
+},
+{
+"args": [
+"apply",
+[
+"ple",
+"apple",
+"nbana",
+"pple",
+"peach",
+"",
+"ape",
+"pple"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"apple",
+"pple",
+"pple"
+]
+},
+{
+"args": [
+"april",
+[
+"",
+"hlappn",
+"caana",
+"bapnana",
+"aaaa",
+"pineapple",
+"happy",
+"april",
+"e",
+"applet"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"april"
+]
+},
+{
+"args": [
+"baxdana",
+[
+"happy",
+"e",
+"applet",
+"applet",
+"cabana"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"cabana",
+"happy",
+"applet"
+]
+},
+{
+"args": [
+"peach",
+[
+"aaaa",
+"applet",
+"aan"
+]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"april",
+"applet",
+"a",
+"pineapple",
+"",
+"apply",
+"cabana",
+"banana",
+"a",
+"grape",
+"pplp",
+"banana"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"april",
+"apply",
+"applet"
+]
+},
+{
+"args": [
+"apnpe",
+[
+"bandana",
+"peach"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"peach",
+"ppineeappee",
+"apex"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"applet",
+[]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.0
+},
+"expected": []
+},
+{
+"args": [
+"haxppy",
+[
+"apply",
+"baxndna",
+"applet",
+"grape",
+"april",
+"aepee",
+"aaaa",
+"apxpel",
+"apple",
+"appnl",
+"e",
+"applet"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.5
+},
+"expected": [
+"apply",
+"appnl",
+"apple",
+"apxpel",
+"applet"
+]
+},
+{
+"args": [
+"appel",
+[]
+],
+"kwargs": {
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"grape",
+[]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.3
+},
+"expected": []
+},
+{
+"args": [
+"",
+[
+"appael",
+"aaxa",
+"xaple",
+"april",
+"appelne",
+"apee"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"applet",
+"grape",
+"maple",
+"apana",
+"happy"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"april",
+"april",
+"banana",
+"appa",
+"pineapple",
+"applet",
+"aaaa",
+"bandana",
+"pineapple",
+"ape",
+"applet",
+""
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"pineapple",
+"pineapple"
+]
+},
+{
+"args": [
+"appple",
+[
+"peanc",
+"apple",
+"",
+"alril",
+"ape",
+"grape",
+"appel",
+"n",
+"",
+"apne"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"peach",
+[]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"happy",
+[
+"pple",
+"applet",
+"",
+"cabana",
+"a",
+"a",
+"a",
+"aaaa",
+"peach"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"aanna",
+[
+"peach",
+"bandan",
+"bandaena",
+"apple",
+"",
+"maple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.5
+},
+"expected": [
+"bandaena",
+"bandan"
+]
+},
+{
+"args": [
+"happy",
+[
+"a",
+"banana",
+"apply",
+"banana",
+"ape",
+"ppll",
+"happy",
+"px",
+"appple"
+]
+],
+"kwargs": {
+"n": 2
+},
+"expected": [
+"happy",
+"apply"
+]
+},
+{
+"args": [
+"pineapple",
+[
+"cabap",
+"appel",
+"anp",
+"ppxlee",
+"apxpl",
+"bandana",
+"appel"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.5
+},
+"expected": [
+"apxpl",
+"appel"
+]
+},
+{
+"args": [
+"mepaple",
+[
+"pinepeapple",
+"banana",
+"apply",
+"grae",
+"bandana",
+"npeeaach"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"pinepeapple",
+"apply"
+]
+},
+{
+"args": [
+"applet",
+[
+"mxnll",
+"aapaplyx",
+"maple",
+"",
+"banana",
+"grape",
+"banana",
+"baxnan",
+"xeach",
+"appe",
+"banana"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"appe"
+]
+},
+{
+"args": [
+"maale",
+[
+"caban",
+"applet",
+"banana",
+"plle",
+"",
+"banana"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.3
+},
+"expected": [
+"applet"
+]
+},
+{
+"args": [
+"a",
+[
+"peach",
+"grape"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"grape",
+[
+"peach",
+"peach",
+"egpnape",
+"pineappl",
+"ppneapple",
+"apapel",
+"appel",
+"pineapple",
+"cabana",
+"pineapple",
+"",
+"xaxpply"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"laa",
+"maple",
+"maple",
+"peach",
+"balnapa",
+"pineapple",
+"ape",
+"appel",
+"a",
+"apple",
+"peach",
+"appla"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"maple"
+]
+},
+{
+"args": [
+"pple",
+[
+"applet",
+"apnae",
+"",
+"appel",
+"appel",
+"banana"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.5
+},
+"expected": [
+"applet",
+"appel"
+]
+},
+{
+"args": [
+"cabana",
+[
+"aaaa",
+"",
+"a",
+"happy",
+"nlril",
+"ape",
+"aapaaa",
+"pech",
+"app",
+"peecph",
+"applet",
+"anena"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.3
+},
+"expected": [
+"aaaa",
+"anena"
+]
+},
+{
+"args": [
+"",
+[
+"grape",
+"aaaa",
+"a",
+"apply",
+"pineapple"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"apply",
+[
+"ape",
+"a",
+"xbandaena",
+"apply",
+"pple",
+"happy",
+"apple",
+"laaxn"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apply",
+"happy",
+"apple",
+"pple"
+]
+},
+{
+"args": [
+"a",
+[
+"peach",
+"aaaa",
+"calaxa",
+"happy",
+"aaaa",
+"nhapp"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": []
+},
+{
+"args": [
+"april",
+[
+"cabana",
+"a",
+"applet",
+"maple",
+"apply"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"axpple",
+[
+"",
+"apple",
+"mapl",
+"apxpley",
+"apple"
+]
+],
+"kwargs": {
+"cutoff": 0.0
+},
+"expected": [
+"apple",
+"apple",
+"apxpley"
+]
+},
+{
+"args": [
+"appel",
+[
+"applea",
+"happy",
+"cabana",
+"plilneapplex",
+"apply"
+]
+],
+"kwargs": {
+"n": 5
+},
+"expected": [
+"apply",
+"applea",
+"happy"
+]
+},
+{
+"args": [
+"maple",
+[
+"pineappelee",
+"xapri",
+"maple",
+"april",
+"apple",
+"aaaa",
+"anpen",
+"appex",
+"pineapple",
+"a",
+"pple",
+"bpaenaena"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.9
+},
+"expected": [
+"maple"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"",
+"",
+"bandana",
+"ppln",
+"peach"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.75
+},
+"expected": []
+},
+{
+"args": [
+"maple",
+[
+"banaana",
+"banana",
+"aaaa",
+"bandana",
+"a",
+"cabana",
+"aaaa",
+"apple",
+"happy",
+"hanpppy",
+"pple"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.75
+},
+"expected": [
+"apple"
+]
+},
+{
+"args": [
+"banana",
+[
+"pplel",
+"",
+"eah",
+"",
+"peach",
+"ape",
+"happy",
+"banana",
+"ape",
+"llapl",
+"appil"
+]
+],
+"kwargs": {
+"n": 1
+},
+"expected": [
+"banana"
+]
+},
+{
+"args": [
+"applet",
+[
+"happy",
+"bandana",
+"apply",
+"aappale",
+"maplle",
+"cabana",
+"pple",
+"happy"
+]
+],
+"kwargs": {
+"n": 2,
+"cutoff": 0.9
+},
+"expected": []
+},
+{
+"args": [
+"pineapple",
+[
+"apply",
+"grape",
+"apply",
+"appel",
+"aaaa",
+"xplp",
+"appea",
+"aape",
+"appn",
+"pple",
+"npe",
+"p"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"pple",
+"apply",
+"apply"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"applet",
+"pplx",
+"apa"
+]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.3
+},
+"expected": [
+"apa"
+]
+},
+{
+"args": [
+"applxe",
+[
+"applet",
+"cabana",
+"pineapple",
+"maple",
+"peach",
+"banana",
+"pple",
+"pple",
+"na"
+]
+],
+"kwargs": {
+"cutoff": 0.5
+},
+"expected": [
+"applet",
+"pple",
+"pple"
+]
+},
+{
+"args": [
+"maple",
+[
+"bandana",
+"appny",
+"ape",
+"pplpet"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"ape"
+]
+},
+{
+"args": [
+"aaaa",
+[
+"grape",
+"app",
+"xp",
+"pineapple",
+"ape",
+"cabaxxa"
+]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"pple",
+[
+"ineapplp",
+"bandana",
+"ax",
+"eaxch",
+"maple",
+"cabana",
+"plee"
+]
+],
+"kwargs": {
+"cutoff": 0.75
+},
+"expected": [
+"plee"
+]
+},
+{
+"args": [
+"grape",
+[]
+],
+"kwargs": {
+"n": 5,
+"cutoff": 0.0
+},
+"expected": []
+},
+{
+"args": [
+"a",
+[
+"bandana",
+"grape"
+]
+],
+"kwargs": {
+"n": 1,
+"cutoff": 0.5
+},
+"expected": []
+}
+]

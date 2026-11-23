@@ -1,0 +1,10235 @@
+[
+{
+"args": [
+"<![CDATA[x<y]]><br /><![CDATA[x<y]]></p>"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"</ p></div  ><a href=\"v\" id=b><!x></p>&bogus;&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"&#x41;<1abc><?php echo 1 ?></>&#xZZ;<script>x</scr<br />"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<!-- c --></a><div data-x=\"1\" hidden>&#xZZ;<style>p>a{}</style></p>< p>< p>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"endtag",
+"a"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]>&bogus;</p> <!-- unclosed<!----><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+" "
+],
+[
+"comment",
+" unclosed<!--"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"</a></a>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"endtag",
+"a"
+]
+]
+},
+{
+"args": [
+"<?php echo 1 ?>&amp;& <br/><script>x</scr&#65;&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"entityref",
+"amp"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><style>p>a{}</style>&#65;<script>x</scr<br/></a>&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</ p><style>p>a{}</style><<a href='u'>text<!>><img src=x alt>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"<"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"text"
+],
+[
+"comment",
+""
+],
+[
+"data",
+">"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<!-- c -->&amp;>&#65;<!>></div  ><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"entityref",
+"amp"
+],
+[
+"data",
+">"
+],
+[
+"charref",
+"65"
+],
+[
+"comment",
+""
+],
+[
+"data",
+">"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<&lt<!DOCTYPE html><!x></ p>>\n&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"entityref",
+"lt"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+">\n"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><img src=x alt>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"\n&#65;<div data-x=\"1\" hidden></div  ><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"endtag",
+"div"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"><br /><!x><a href='u'>&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+">"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"&#x41;<br /><div data-x=\"1\" hidden>&#x41;<script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</a><!-- unclosed<script>x</scr<style>p>a{}</style>& text"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"data",
+"<!-- unclosed<script>"
+],
+[
+"data",
+"x"
+],
+[
+"endtag",
+"scr<style"
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" text"
+]
+]
+},
+{
+"args": [
+"<!>&#xZZ; <style>p>a{}</style></p>&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ; "
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"endtag",
+"p"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"&#xZZ;<a href=\"v\" id=b></div  ><img src=x alt></ p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"&lttext<br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lttext"
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"</p> <?php echo 1 ?><![CDATA[x<y]]><img src=x alt><div data-x=\"1\" hidden>text"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"data",
+" "
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"<img src=x alt>&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"<P CLASS=x>& < p><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><?php echo 1 ?> <br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+" "
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"</ p><a b='c>< p><?php echo 1 ?><script>if(a<b){}</script><!DOCTYPE html><div data-x=\"1\" hidden>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"<</ p></a>< p> </div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"endtag",
+"p"
+],
+[
+"endtag",
+"a"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p> "
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"</p><!---->< p><P CLASS=x>& < p>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"comment",
+""
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"&bogus;<p><script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"&#65;</><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"< p><a href='u'><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><!-- c --><a b='c><</a>text<style>p>a{}</style></>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"comment",
+" c "
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"<"
+],
+[
+"endtag",
+"a"
+],
+[
+"data",
+"text"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"<a href='u'>&lt<style>p>a{}</style><img src=x alt><br/><!x><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"entityref",
+"lt"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+"x"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"</p><!></a><style>p>a{}</style>\n>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"comment",
+""
+],
+[
+"endtag",
+"a"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"\n>"
+]
+]
+},
+{
+"args": [
+" <p><style>p>a{}</style><div data-x=\"1\" hidden>&bogus;<!-- unclosed<br /><"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<!-- unclosed<br />"
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+]
+]
+},
+{
+"args": [
+"<td nowrap><?php echo 1 ?>&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"charref",
+"65"
+]
+]
+},
+{
+"args": [
+"<img src=x alt>&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<&lt<![CDATA[x<y]]><?php echo 1 ?><!----><a href=\"v\" id=b><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"entityref",
+"lt"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<!-- c -->&bogus;<script>x</scr<!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</div  ><script>x</scr<!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</a></div  ></a>&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"endtag",
+"div"
+],
+[
+"endtag",
+"a"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+" "
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"&bogus;< p><a b='c><style>p>a{}</style>&#xZZ;<script>x</scr \n"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;<script>x</scr \n"
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style><script>x</scr\n"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<1abc>&#65;text<!DOCTYPE html><div data-x=\"1\" hidden>><style>p>a{}</style></>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"text"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+">"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"<<div data-x=\"1\" hidden><!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"<1abc><style>p>a{}</style><td nowrap></ p></></p><"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"text<!x>&#x41;&bogus;&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"comment",
+"x"
+],
+[
+"charref",
+"x41"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style><script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"&amp;<a href='u'>&lt<a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"entityref",
+"lt"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+"<!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b>& <!x></p><?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"text<1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html>&bogus;<?php echo 1 ?><a href='u'>&bogus;>&bogus;<!DOCTYPE html>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+">"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"decl",
+"DOCTYPE html"
+]
+]
+},
+{
+"args": [
+"<a href='u'><a href='u'><![CDATA[x<y]]>&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"charref",
+"65"
+]
+]
+},
+{
+"args": [
+"</ p><br />"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><?php echo 1 ?>&#xZZ;<!----><!----><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"comment",
+""
+],
+[
+"comment",
+""
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script><!----><td nowrap></p>>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"&#xZZ;<a b='c><br />&#xZZ; &bogus;<script>if(a<b){}</script>>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ; &bogus;<script>if(a<b){}</script>>"
+]
+]
+},
+{
+"args": [
+"<script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<img src=x alt>&#x41;<!x><?php echo 1 ?></div  ><td nowrap><br/><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"comment",
+"x"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<p><&lt<!>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"<"
+],
+[
+"entityref",
+"lt"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b>&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"</div  >\n<script>x</scr<!----><a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<!x><!----></><style>p>a{}</style> "
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]>&lt<td nowrap><br/>&amp;<p><img src=x alt>"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"entityref",
+"lt"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><a b='c><div data-x=\"1\" hidden><?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"&bogus;text</ p>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"text"
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><br /></ p>text</a><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"text"
+],
+[
+"endtag",
+"a"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"</div  ><"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"<a b='c><!DOCTYPE html><!----><a href=\"v\" id=b></></>\n"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<a b='c>"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"</p><br/><!-- unclosed<script>x</scrtext"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"<!-- unclosed<script>"
+],
+[
+"data",
+"x"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"/scrtext"
+]
+]
+},
+{
+"args": [
+"<a href='u'>&#65;</>text<script>if(a<b){}</script><1abc></><P CLASS=x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"text"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+]
+]
+},
+{
+"args": [
+"&#x41;</a><br/>&amp;>\n<a href=\"v\" id=b><!>"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"a"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"entityref",
+"amp"
+],
+[
+"data",
+">\n"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<&bogus;<<br/><!x>&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+"x"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"</div  ><script>x</scr&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"text& <style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"<a b='c><!x>&#x41;<script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<a b='c>"
+],
+[
+"comment",
+"x"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>&#x41;</div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"</div  ></><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"</p><!-- unclosed<!-- c -->\n<td nowrap><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"comment",
+" unclosed<!-- c "
+],
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<img src=x alt><a href='u'><!-- c -->&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"comment",
+" c "
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"&amp;&#x41;<a href='u'></ p><?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"\n"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"&lt<1abc>&amp;<style>p>a{}</style><?php echo 1 ?><br />&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"&amp;&#x41;<div data-x=\"1\" hidden><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"& <?php echo 1 ?>& "
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<!x></ p><br /><br />&#xZZ;<!----><!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"comment",
+""
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"</p><P CLASS=x><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<!x><style>p>a{}</style><!---->&#xZZ;&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"comment",
+""
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<!-- c --><!-- unclosed<script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"data",
+"<!-- unclosed<script>"
+],
+[
+"data",
+"x"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"/scr"
+]
+]
+},
+{
+"args": [
+"\n</div  ><a href=\"v\" id=b><a b='c>&#xZZ;<1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;<1abc>"
+]
+]
+},
+{
+"args": [
+"&bogus;<!DOCTYPE html><div data-x=\"1\" hidden><!DOCTYPE html></>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+]
+]
+},
+{
+"args": [
+"</ p>text"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"<td nowrap>&#xZZ;<td nowrap><script>x</scr& <a b='c><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+" <!-- unclosed<a b='c><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"data",
+"<!-- unclosed<a b='c>"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><P CLASS=x></ p> "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<p>><P CLASS=x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+">"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+]
+]
+},
+{
+"args": [
+"<!>&#x41;& <a href='u'><!-- c -->\n<a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"charref",
+"x41"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"comment",
+" c "
+],
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"<a href='u'>text</>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html>&#x41;<P CLASS=x><<!DOCTYPE html><style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"<!---->& <!---->< p>&#x41;</p>& "
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"comment",
+""
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"&#65;<p>& <a href='u'><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"text<td nowrap><td nowrap><P CLASS=x><br/> <td nowrap><a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><?php echo 1 ?> </>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+]
+]
+},
+{
+"args": [
+"</><a href='u'><P CLASS=x>><style>p>a{}</style>&amp;<style>p>a{}</style>\n"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+">"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"text<!>\n<br/><?php echo 1 ?><a href=\"v\" id=b><a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"comment",
+""
+],
+[
+"data",
+"\n"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<?php echo 1 ?>&bogus;<br/><1abc><br />&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"charref",
+"65"
+]
+]
+},
+{
+"args": [
+"</p><script>x</scr</a>& <![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<br/><style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"&bogus;&amp;</>< p><a b='c><a href='u'><div data-x=\"1\" hidden>&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"entityref",
+"amp"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"a",
+[
+[
+"b",
+"c><a href="
+],
+[
+"u'",
+null
+]
+]
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"&lt&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><!-- unclosed< p>&#x41;&#x41;<!>&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"<!-- unclosed< p>"
+],
+[
+"charref",
+"x41"
+],
+[
+"charref",
+"x41"
+],
+[
+"comment",
+""
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<img src=x alt>< p>&#65;</a>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"charref",
+"65"
+],
+[
+"endtag",
+"a"
+]
+]
+},
+{
+"args": [
+"<img src=x alt>&#x41;<td nowrap><!----></><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"&#x41;< p><br/></ p>><?php echo 1 ?><!DOCTYPE html><1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+">"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"< p>& <a b='c>< p>& "
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<!---->&#x41;&#xZZ;<!-- unclosed</p><script>x</scr&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"charref",
+"x41"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"<!-- unclosed</p>"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<a href='u'><a b='c>< p>\n<!><script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>\n"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"\n<!x></ p>&lt></>&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"entityref",
+"lt"
+],
+[
+"data",
+">"
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"<br/><a href=\"v\" id=b><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"\n<1abc></div  >&bogus;</><div data-x=\"1\" hidden><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"endtag",
+"div"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"</><script>if(a<b){}</script>&#65;<!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"charref",
+"65"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"\n</a></ p><!x>>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"endtag",
+"a"
+],
+[
+"endtag",
+"p"
+],
+[
+"comment",
+"x"
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"& & <a href='u'><br/><br /><![CDATA[x<y]]>\n<a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+" <1abc>&bogus;<div data-x=\"1\" hidden><script>x</scr<!>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"text<style>p>a{}</style>&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><br/><!><script>if(a<b){}</script><img src=x alt><br/><!x>\n"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+"x"
+],
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"</div  ><1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"&lt<!-- unclosed<div data-x=\"1\" hidden>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"data",
+"<!-- unclosed<div data-x=\"1\" hidden>"
+]
+]
+},
+{
+"args": [
+"<a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"</a><a b='c>&lt<img src=x alt></><br /><td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"entityref",
+"lt"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<!-- unclosed<a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<a href=\"v\" id=b>"
+]
+]
+},
+{
+"args": [
+"<a b='c></p><P CLASS=x><a href=\"v\" id=b><p><img src=x alt></ p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<a b='c>"
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"<!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"<!>&#65;<a href='u'><!-- unclosed>text"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<!-- unclosed>"
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"<td nowrap></></div  ><!>&bogus;< <a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"endtag",
+"div"
+],
+[
+"comment",
+""
+],
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<?php echo 1 ?><br/>& "
+],
+"kwargs": {},
+"expected": [
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"&#65;<img src=x alt>"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<img src=x alt></ p><!-- c --></p>><br />"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"comment",
+" c "
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+">"
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"&amp;<a href=\"v\" id=b><td nowrap>&amp;<div data-x=\"1\" hidden><"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"<!x></ p><!----><img src=x alt>&#x41;</a>>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"a"
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"& <img src=x alt><!---->&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<a href='u'>&lt</>& </a>&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"entityref",
+"lt"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"endtag",
+"a"
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><!-- unclosed<!-- unclosed</p>&amp;<td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+"<!-- unclosed<!-- unclosed</p>"
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"< p></a>&#65;< p></div  >\n"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"endtag",
+"a"
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"endtag",
+"div"
+],
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"&#x41;& >"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" >"
+]
+]
+},
+{
+"args": [
+"&#xZZ;&lt&#x41;<td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"entityref",
+"lt"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"</>&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+" <!-- unclosed&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"texttext<style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"texttext"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"</ p>&amp;<!x><script>if(a<b){}</script>text<?php echo 1 ?>&#65;<a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"entityref",
+"amp"
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"data",
+"text"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"</p>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"&#x41;<?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"x41"
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"&lt<a href=\"v\" id=b><p><a href='u'><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"& "
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<!----><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"<1abc><a b='c><br /><![CDATA[x<y]]><![CDATA[x<y]]>< p></p><a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"starttag",
+"a",
+[
+[
+"b",
+"c><br /><![CDATA[x<y]]><![CDATA[x<y]]>< p></p><a href="
+],
+[
+"u'",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><a b='c><br /><?php echo 1 ?>&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"\n&amp;&lt<!x><img src=x alt><a b='c><?php echo 1 ?><![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"entityref",
+"amp"
+],
+[
+"entityref",
+"lt"
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+]
+]
+},
+{
+"args": [
+"<p>< p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"&lt<!>&bogus;&lt<!><P CLASS=x><!>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"comment",
+""
+],
+[
+"entityref",
+"bogus"
+],
+[
+"entityref",
+"lt"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<1abc><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<br /> <div data-x=\"1\" hidden><img src=x alt> <a b='c>& "
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"</p><!x><script>x</scr<br /><br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<br/>&#xZZ;</a>&#65;<style>p>a{}</style>&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"endtag",
+"a"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"</p><<script>if(a<b){}</script><!x><a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"&#65;<<br /><a href=\"v\" id=b><!>&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"data",
+"<"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"</><br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"<!-- unclosed<!DOCTYPE html><script>if(a<b){}</script>&#xZZ;<<!><![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<!DOCTYPE html>"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;<<!><![CDATA[x<y]]>"
+]
+]
+},
+{
+"args": [
+"</><!-- c --><</p>&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"data",
+"<"
+],
+[
+"endtag",
+"p"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"<a href='u'>&#x41;< p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"</p>&bogus;<div data-x=\"1\" hidden>&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"charref",
+"65"
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"</ p><!>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<a b='c><p></></>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<a b='c>"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style><![CDATA[x<y]]><img src=x alt> &#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+" "
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"</a><P CLASS=x><!-- c --><!>&#x41;</div  ><p><"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"comment",
+" c "
+],
+[
+"comment",
+""
+],
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"&bogus;<script>x</scr&#65;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<!x><img src=x alt>< p>&bogus;<div data-x=\"1\" hidden><!></a><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"endtag",
+"a"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"\n<img src=x alt>&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<!-- unclosed<a href=\"v\" id=b><a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<a href=\"v\" id=b>"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+"<br/><!DOCTYPE html><a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"<script>x</scr<td nowrap>&lt</p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<1abc>&#65;<img src=x alt></ p>&#x41;&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"endtag",
+"p"
+],
+[
+"charref",
+"x41"
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"text<p>text"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"&#65;<a href='u'><?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"text<![CDATA[x<y]]>&#65;<img src=x alt><div data-x=\"1\" hidden><1abc></>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"charref",
+"65"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<a b='c><![CDATA[x<y]]>&#65;<a href='u'><style>p>a{}</style><a href=\"v\" id=b><!DOCTYPE html><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"b",
+"c><![CDATA[x<y]]>A<a href="
+],
+[
+"u'",
+null
+]
+]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b></>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+"<!x></p>< p><a href=\"v\" id=b><!----><script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<img src=x alt><</div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"&amp;<style>p>a{}</style>text</ p>&lt<!><!x><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"text"
+],
+[
+"endtag",
+"p"
+],
+[
+"entityref",
+"lt"
+],
+[
+"comment",
+""
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<p><script>x</scr&#65;</a><img src=x alt>& "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>&#x41;<?php echo 1 ?>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"charref",
+"x41"
+],
+[
+"pi",
+"php echo 1 ?"
+]
+]
+},
+{
+"args": [
+"&bogus;<a href='u'><!DOCTYPE html><!-- c --><!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"comment",
+" c "
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"</p></a></ p><script>x</scr<div data-x=\"1\" hidden><script>x</scr</a>&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"endtag",
+"a"
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"&#xZZ;<!----></ p><P CLASS=x></><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"comment",
+""
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"></a><style>p>a{}</style>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+">"
+],
+[
+"endtag",
+"a"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+" <br/><img src=x alt><!><![CDATA[x<y]]><br/>&#x41;<td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b>&amp;<!-- c --><P CLASS=x>&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"entityref",
+"amp"
+],
+[
+"comment",
+" c "
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"<br />&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"<td nowrap>&#x41;<br/><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+"& & <!-- unclosed&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"&#xZZ;<<a href='u'>&#x41;</p>&#xZZ;</>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"<"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;</>"
+]
+]
+},
+{
+"args": [
+"<!><a href='u'>&#x41;<a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+"< <div data-x=\"1\" hidden><!-- c --><br/><br />"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"comment",
+" c "
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"\n<!>\n"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"comment",
+""
+],
+[
+"data",
+"\n"
+]
+]
+},
+{
+"args": [
+"\n& "
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"&bogus;<br/><style>p>a{}</style>&#xZZ;&bogus;&bogus;&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+]
+]
+},
+{
+"args": [
+"<!-- unclosed<1abc><</p><p>&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<1abc>"
+],
+[
+"data",
+"<"
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"</div  ><a href='u'>&#65;< p></>\n&#xZZ;<!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"\n"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><?php echo 1 ?><br/><script>x</scr&#x41;<?php echo 1 ?>< p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</><!>&#65;< p><style>p>a{}</style><script>x</scr  "
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>&amp;<td nowrap><a href=\"v\" id=b>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><div data-x=\"1\" hidden><p></ p><a href='u'></><1abc></>"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"</ p><img src=x alt>text<!-- c --> "
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+"text"
+],
+[
+"comment",
+" c "
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<P CLASS=x>><style>p>a{}</style><!-- c --><br/><!-- unclosed<P CLASS=x><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+">"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"comment",
+" c "
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"<!-- unclosed<P CLASS=x>"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"&#xZZ;< p><!-- unclosed<P CLASS=x></ p><td nowrap><a href='u'>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"<!-- unclosed<P CLASS=x>"
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+]
+]
+},
+{
+"args": [
+"&#65;<!DOCTYPE html><td nowrap><1abc>&amp;</div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"charref",
+"65"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"entityref",
+"amp"
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]><br/><!x><br/>&#xZZ;text"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+"x"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;text"
+]
+]
+},
+{
+"args": [
+"\n<!-- unclosed<td nowrap>text"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"data",
+"<!-- unclosed<td nowrap>"
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"</>"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"<!-- unclosed<br /><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<br />"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+]
+]
+},
+{
+"args": [
+" < p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"&bogus;<a href='u'><?php echo 1 ?></div  ><a href=\"v\" id=b><!x><!></a>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"endtag",
+"div"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+"x"
+],
+[
+"comment",
+""
+],
+[
+"endtag",
+"a"
+]
+]
+},
+{
+"args": [
+"</div  >>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"<1abc><script>if(a<b){}</script></p><!x><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"endtag",
+"p"
+],
+[
+"comment",
+"x"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<td nowrap><<p><![CDATA[x<y]]><!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"<a b='c><td nowrap><!><a href='u'>&lt&amp;<td nowrap>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"b",
+"c><td nowrap><!><a href="
+],
+[
+"u'",
+null
+]
+]
+],
+[
+"entityref",
+"lt"
+],
+[
+"entityref",
+"amp"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"<!-- unclosed</>&bogus;<!-- c -->&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" unclosed</>&bogus;<!-- c "
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"< p><!-- c --><!----><![CDATA[x<y]]>text</div  ></p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"comment",
+" c "
+],
+[
+"comment",
+""
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"data",
+"text"
+],
+[
+"endtag",
+"div"
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<td nowrap><img src=x alt><td nowrap><a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<a href='u'>< p><1abc>&#x41;<script>if(a<b){}</script><?php echo 1 ?><p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<!----><a href='u'><td nowrap></a>&#x41;<!-- unclosed<a href='u'><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+""
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"endtag",
+"a"
+],
+[
+"charref",
+"x41"
+],
+[
+"comment",
+" unclosed<a href='u'><!--"
+]
+]
+},
+{
+"args": [
+"</><script>if(a<b){}</script><?php echo 1 ?><"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"data",
+"<"
+]
+]
+},
+{
+"args": [
+"<!x> <script>if(a<b){}</script>&lt<!DOCTYPE html><1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"entityref",
+"lt"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<a href='u'><br /></ p></p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"endtag",
+"p"
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"<br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"<?php echo 1 ?><script>if(a<b){}</script><!-- c -->"
+],
+"kwargs": {},
+"expected": [
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"comment",
+" c "
+]
+]
+},
+{
+"args": [
+"</a>< p><!-- c --><![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"comment",
+" c "
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+]
+]
+},
+{
+"args": [
+"</div  ><![CDATA[x<y]]>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script><!-- c --> </a>&#x41;<!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"comment",
+" c "
+],
+[
+"data",
+" "
+],
+[
+"endtag",
+"a"
+],
+[
+"charref",
+"x41"
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"&bogus;<1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<!-- unclosed</a>&#x41;<td nowrap></>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed</a>"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+]
+]
+},
+{
+"args": [
+"&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"<1abc><1abc>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+]
+]
+},
+{
+"args": [
+"<a href='u'><br/><style>p>a{}</style>><br /><!-- c -->&#xZZ; "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+">"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"comment",
+" c "
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ; "
+]
+]
+},
+{
+"args": [
+"<!DOCTYPE html><br/><script>x</scr&lt<a href=\"v\" id=b><br />"
+],
+"kwargs": {},
+"expected": [
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"\n<a href=\"v\" id=b>&#xZZ;&lt&lt ><!>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"\n"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"entityref",
+"lt"
+],
+[
+"entityref",
+"lt"
+],
+[
+"data",
+" >"
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"&lt</p>"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"lt"
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"<!-- c -->&lt"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+" c "
+],
+[
+"data",
+"&lt"
+]
+]
+},
+{
+"args": [
+"><td nowrap><!DOCTYPE html><![CDATA[x<y]]><!DOCTYPE html>>& <!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+">"
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+">"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"</>&#xZZ;<!DOCTYPE html>&#xZZ;<![CDATA[x<y]]></div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;<![CDATA[x<y]]></div  >"
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><a b='c></ p>&#x41;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"endtag",
+"p"
+],
+[
+"charref",
+"x41"
+]
+]
+},
+{
+"args": [
+"<!x>&#xZZ;>< p>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;>"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"&bogus;<</><p><br /><p><!DOCTYPE html></div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"<script>x</scr<br/>\n<![CDATA[x<y]]><style>p>a{}</style><?php echo 1 ?><!-- unclosed"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><!DOCTYPE html>text<P CLASS=x><P CLASS=x>&#65;text"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"data",
+"text"
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"charref",
+"65"
+],
+[
+"data",
+"text"
+]
+]
+},
+{
+"args": [
+"<&#x41;<a href='u'></ p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<"
+],
+[
+"charref",
+"x41"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"&#xZZ;<a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><1abc><!-- c --><?php echo 1 ?></ p><p><!x>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"comment",
+" c "
+],
+[
+"pi",
+"php echo 1 ?"
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"comment",
+"x"
+]
+]
+},
+{
+"args": [
+"<style>p>a{}</style>>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"</a></p><a b='c>"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"a"
+],
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<a b='c>"
+]
+]
+},
+{
+"args": [
+"<script>x</scrtext<br/><P CLASS=x><style>p>a{}</style><![CDATA[x<y]]><!>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"</p><!DOCTYPE html><style>p>a{}</style>&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden>&#xZZ;& "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]></div  ><!>>"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"endtag",
+"div"
+],
+[
+"comment",
+""
+],
+[
+"data",
+">"
+]
+]
+},
+{
+"args": [
+"&#xZZ;<!----></p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"comment",
+""
+],
+[
+"endtag",
+"p"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><img src=x alt>&#65;&bogus;<1abc>&lt &#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"charref",
+"65"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"1abc>"
+],
+[
+"entityref",
+"lt"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<div data-x=\"1\" hidden><!DOCTYPE html><a href=\"v\" id=b><!----><!-- c --><td nowrap>& "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"decl",
+"DOCTYPE html"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+],
+[
+"comment",
+" c "
+],
+[
+"starttag",
+"td",
+[
+[
+"nowrap",
+null
+]
+]
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"text</a>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"text"
+],
+[
+"endtag",
+"a"
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b><script>x</scr<![CDATA[x<y]]><!-- c --><br /><!-- unclosed "
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<img src=x alt>><br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"img",
+[
+[
+"src",
+"x"
+],
+[
+"alt",
+null
+]
+]
+],
+[
+"data",
+">"
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"</p><&bogus;<!><a href='u'>< "
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"p"
+],
+[
+"data",
+"<"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"comment",
+""
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" "
+]
+]
+},
+{
+"args": [
+"<a href='u'><!-- unclosed&#xZZ;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+"!-- unclosed"
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+]
+]
+},
+{
+"args": [
+"<a href=\"v\" id=b>></div  >"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"data",
+">"
+],
+[
+"endtag",
+"div"
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>< p><style>p>a{}</style>&amp;"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"starttag",
+"style",
+[]
+],
+[
+"data",
+"p>a{}"
+],
+[
+"endtag",
+"style"
+],
+[
+"entityref",
+"amp"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]><p>&#xZZ;<div data-x=\"1\" hidden>< p></a>"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"data",
+"&#"
+],
+[
+"data",
+"xZZ;"
+],
+[
+"starttag",
+"div",
+[
+[
+"data-x",
+"1"
+],
+[
+"hidden",
+null
+]
+]
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+],
+[
+"endtag",
+"a"
+]
+]
+},
+{
+"args": [
+"</div  >&bogus;"
+],
+"kwargs": {},
+"expected": [
+[
+"endtag",
+"div"
+],
+[
+"entityref",
+"bogus"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]></div  ><a b='c> <p></p><a href=\"v\" id=b><!---->"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"endtag",
+"div"
+],
+[
+"data",
+"<a b='c>"
+],
+[
+"data",
+" "
+],
+[
+"starttag",
+"p",
+[]
+],
+[
+"endtag",
+"p"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"comment",
+""
+]
+]
+},
+{
+"args": [
+"<!x><a href=\"v\" id=b><br/>"
+],
+"kwargs": {},
+"expected": [
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"v"
+],
+[
+"id",
+"b"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>&bogus;<p>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+],
+[
+"entityref",
+"bogus"
+],
+[
+"starttag",
+"p",
+[]
+]
+]
+},
+{
+"args": [
+"<!-- unclosed<script>x</scr<a href=\"v\" id=b>&amp;</div  >& < p>"
+],
+"kwargs": {},
+"expected": [
+[
+"data",
+"<!-- unclosed<script>"
+],
+[
+"data",
+"x"
+],
+[
+"endtag",
+"scr<a"
+],
+[
+"entityref",
+"amp"
+],
+[
+"endtag",
+"div"
+],
+[
+"data",
+"&"
+],
+[
+"data",
+" "
+],
+[
+"data",
+"<"
+],
+[
+"data",
+" p>"
+]
+]
+},
+{
+"args": [
+"<![CDATA[x<y]]><!----><!x><a href='u'><br/><script>x</scr"
+],
+"kwargs": {},
+"expected": [
+[
+"unknown_decl",
+"CDATA[x<y"
+],
+[
+"comment",
+""
+],
+[
+"comment",
+"x"
+],
+[
+"starttag",
+"a",
+[
+[
+"href",
+"u"
+]
+]
+],
+[
+"startendtag",
+"br",
+[]
+],
+[
+"starttag",
+"script",
+[]
+]
+]
+},
+{
+"args": [
+"<script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<P CLASS=x><script>if(a<b){}</script>"
+],
+"kwargs": {},
+"expected": [
+[
+"starttag",
+"p",
+[
+[
+"class",
+"x"
+]
+]
+],
+[
+"starttag",
+"script",
+[]
+],
+[
+"data",
+"if(a<b){}"
+],
+[
+"endtag",
+"script"
+]
+]
+},
+{
+"args": [
+"<br />"
+],
+"kwargs": {},
+"expected": [
+[
+"startendtag",
+"br",
+[]
+]
+]
+}
+]

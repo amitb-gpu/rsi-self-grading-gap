@@ -1,0 +1,7254 @@
+[
+{
+"args": [
+{
+"zeta": {
+"zeta": [
+1
+]
+}
+}
+],
+"kwargs": {
+"width": 20,
+"depth": 2
+},
+"expected": "{'zeta': {'zeta': [1]}}"
+},
+{
+"args": [
+12345678
+],
+"kwargs": {
+"compact": true
+},
+"expected": "12345678"
+},
+{
+"args": [
+{
+"a": [
+false,
+{
+"b": 42,
+"2": 0.5,
+"kkkkkkkkkkkk": 0.5
+},
+[
+false,
+1,
+"key",
+"x y",
+"x y"
+],
+[
+null,
+1e+22,
+42,
+42,
+3.14159,
+3.14159
+]
+],
+"10": [
+{
+"zeta": 0.5,
+"2": null,
+"b": "keykeykey",
+"mid key": "",
+"kkkkkkkkkkkk": true
+},
+0
+]
+}
+],
+"kwargs": {
+"width": 20,
+"depth": 2,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'a': [False, {...},\n       [...],\n       [...]],\n '10': [{...}, 0]}"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"width": 12,
+"sort_dicts": false
+},
+"expected": "-1000000001"
+},
+{
+"args": [
+1
+],
+"kwargs": {
+"sort_dicts": false
+},
+"expected": "1"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 40,
+"compact": true
+},
+"expected": "1e+22"
+},
+{
+"args": [
+{
+"": 1e-07
+}
+],
+"kwargs": {
+"width": 30
+},
+"expected": "{'': 1e-07}"
+},
+{
+"args": [
+{
+"mid key": [
+0.5
+]
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'mid key': [0.5]}"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 30,
+"indent": 2
+},
+"expected": "1e+22"
+},
+{
+"args": [
+{
+"mid key": -7,
+"": [
+[],
+[
+[
+0,
+1e+22,
+false
+]
+],
+{
+"10": -2.0,
+"zeta": false,
+"a": 1e-07,
+"mid key": {
+"Alpha": 0.5
+}
+},
+[
+1e+22,
+{
+"": true
+},
+{},
+{
+"kkkkkkkkkkkk": 42,
+"b": 0.5,
+"Alpha": "newline\nhere",
+"2": true
+},
+1e+22
+],
+{
+"kkkkkkkkkkkk": 12345678,
+"b": "bb",
+"mid key": 3.14159,
+"": "aaaaaaaa",
+"zeta": {
+"b": "value",
+"Alpha": 0,
+"10": "quote'squote'squote's",
+"kkkkkkkkkkkk": -2.0,
+"2": "long string with several words in itlong string with several words in itlong string with several words in it"
+}
+},
+[
+[
+1,
+1e-07,
+null,
+"bb"
+]
+]
+],
+"kkkkkkkkkkkk": [
+[
+[
+0.5,
+1000000000000,
+"None",
+3.14159
+],
+{
+"10": "0",
+"2": 1000000000000,
+"Alpha": 42,
+"a": "aaa",
+"zeta": -1000000001
+}
+],
+{
+"10": {
+"Alpha": "dq\"",
+"": 1e-07,
+"zeta": "quote'squote'squote's",
+"kkkkkkkkkkkk": 1e-07
+},
+"2": [],
+"": "tab\there",
+"a": {
+"zeta": 3.14159,
+"Alpha": -7,
+"10": -1000000001,
+"2": -1000000001,
+"b": 3.14159
+}
+},
+{}
+],
+"a": {
+"Alpha": [
+[
+1000000000000,
+1e+22,
+true,
+0,
+-2.0,
+true
+],
+{
+"Alpha": "None",
+"2": 1e+22,
+"a": null,
+"b": -2.0,
+"": "ünï"
+},
+[
+-2.0,
+true,
+1,
+3.14159,
+0,
+1000000000000
+]
+],
+"2": [
+{
+"": "bb",
+"kkkkkkkkkkkk": 1,
+"a": false,
+"mid key": 3.14159,
+"Alpha": 1000000000000
+},
+[
+"quote's",
+false
+],
+[],
+{
+"b": -1000000001
+},
+{
+"10": 1e-07,
+"b": -7
+},
+"keykeykeykeykeykeykeykey"
+],
+"b": 1e-07,
+"a": []
+},
+"10": -2.0
+}
+],
+"kwargs": {
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{'': [[], [[0, 1e+22, False]],\n      {'10': -2.0, 'a': 1e-07, 'mid key': {'Alpha': 0.5}, 'zeta': False},\n      [1e+22, {'': True}, {},\n       {'2': True, 'Alpha': 'newline\\nhere', 'b': 0.5, 'kkkkkkkkkkkk': 42},\n       1e+22],\n      {'': 'aaaaaaaa',\n       'b': 'bb',\n       'kkkkkkkkkkkk': 12_345_678,\n       'mid key': 3.14159,\n       'zeta': {'10': \"quote'squote'squote's\",\n                '2': 'long string with several words in itlong string with '\n                     'several words in itlong string with several words in it',\n                'Alpha': 0,\n                'b': 'value',\n                'kkkkkkkkkkkk': -2.0}},\n      [[1, 1e-07, None, 'bb']]],\n '10': -2.0,\n 'a': {'2': [{'': 'bb',\n              'Alpha': 1_000_000_000_000,\n              'a': False,\n              'kkkkkkkkkkkk': 1,\n              'mid key': 3.14159},\n             [\"quote's\", False], [], {'b': -1_000_000_001},\n             {'10': 1e-07, 'b': -7}, 'keykeykeykeykeykeykeykey'],\n       'Alpha': [[1_000_000_000_000, 1e+22, True, 0, -2.0, True],\n                 {'': 'ünï', '2': 1e+22, 'Alpha': 'None', 'a': None, 'b': -2.0},\n                 [-2.0, True, 1, 3.14159, 0, 1_000_000_000_000]],\n       'a': [],\n       'b': 1e-07},\n 'kkkkkkkkkkkk': [[[0.5, 1_000_000_000_000, 'None', 3.14159],\n                   {'10': '0',\n                    '2': 1_000_000_000_000,\n                    'Alpha': 42,\n                    'a': 'aaa',\n                    'zeta': -1_000_000_001}],\n                  {'': 'tab\\there',\n                   '10': {'': 1e-07,\n                          'Alpha': 'dq\"',\n                          'kkkkkkkkkkkk': 1e-07,\n                          'zeta': \"quote'squote'squote's\"},\n                   '2': [],\n                   'a': {'10': -1_000_000_001,\n                         '2': -1_000_000_001,\n                         'Alpha': -7,\n                         'b': 3.14159,\n                         'zeta': 3.14159}},\n                  {}],\n 'mid key': -7}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 40,
+"depth": 1,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "[]"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"indent": 0,
+"sort_dicts": false
+},
+"expected": "False"
+},
+{
+"args": [
+{
+"Alpha": "bbbbbbbbbbbbbbbb",
+"kkkkkkkkkkkk": "x yx yx y"
+}
+],
+"kwargs": {
+"width": 16,
+"depth": 2,
+"compact": true
+},
+"expected": "{'Alpha': 'bbbbbbbbbbbbbbbb',\n 'kkkkkkkkkkkk': 'x '\n                 'yx '\n                 'yx '\n                 'y'}"
+},
+{
+"args": [
+[
+""
+]
+],
+"kwargs": {
+"width": 8,
+"indent": 2
+},
+"expected": "['']"
+},
+{
+"args": [
+{
+"a": 0.5,
+"Alpha": "value",
+"10": 12345678,
+"mid key": 1
+}
+],
+"kwargs": {
+"width": 80,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'a': 0.5, 'Alpha': 'value', '10': 12_345_678, 'mid key': 1}"
+},
+{
+"args": [
+{
+"2": "quote's",
+"a": {},
+"kkkkkkkkkkkk": {
+"10": 1e-07
+}
+}
+],
+"kwargs": {
+"width": 8,
+"depth": 1
+},
+"expected": "{'2': \"quote's\",\n 'a': {},\n 'kkkkkkkkkkkk': {'10': 1e-07}}"
+},
+{
+"args": [
+[
+1
+]
+],
+"kwargs": {
+"width": 16,
+"sort_dicts": false
+},
+"expected": "[1]"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 30,
+"compact": true
+},
+"expected": "{}"
+},
+{
+"args": [
+[
+1e+22,
+null,
+false,
+12345678
+]
+],
+"kwargs": {
+"width": 30,
+"underscore_numbers": true
+},
+"expected": "[1e+22,\n None,\n False,\n 12_345_678]"
+},
+{
+"args": [
+1000000000000
+],
+"kwargs": {},
+"expected": "1000000000000"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 16,
+"indent": 0,
+"underscore_numbers": true
+},
+"expected": "True"
+},
+{
+"args": [
+"quote's"
+],
+"kwargs": {
+"width": 80,
+"underscore_numbers": true
+},
+"expected": "\"quote's\""
+},
+{
+"args": [
+{
+"10": {
+"mid key": [
+-2.0,
+true
+],
+"a": -2.0
+},
+"2": [
+{
+"zeta": -7,
+"a": "None",
+"b": "long string with several words in it",
+"kkkkkkkkkkkk": 12345678,
+"mid key": 0.5
+},
+false,
+[],
+{
+"kkkkkkkkkkkk": 0,
+"a": 1000000000000
+},
+[
+-1000000001,
+3.14159,
+true,
+"quote'squote'squote's",
+1,
+null
+]
+],
+"kkkkkkkkkkkk": [
+[
+"a",
+42,
+true,
+42
+],
+true,
+[
+1,
+42,
+1e-07,
+"ünïünïünï",
+"None",
+-1000000001
+],
+[
+"tab\there",
+3.14159,
+42,
+1,
+false
+],
+[]
+],
+"zeta": {
+"b": [
+-2.0,
+12345678,
+null,
+-1000000001,
+true
+],
+"10": 12345678
+},
+"": [
+true,
+true,
+false,
+true
+]
+}
+],
+"kwargs": {
+"width": 40
+},
+"expected": "{'': [True, True, False, True],\n '10': {'a': -2.0,\n        'mid key': [-2.0, True]},\n '2': [{'a': 'None',\n        'b': 'long string with several '\n             'words in it',\n        'kkkkkkkkkkkk': 12345678,\n        'mid key': 0.5,\n        'zeta': -7},\n       False,\n       [],\n       {'a': 1000000000000,\n        'kkkkkkkkkkkk': 0},\n       [-1000000001,\n        3.14159,\n        True,\n        \"quote'squote'squote's\",\n        1,\n        None]],\n 'kkkkkkkkkkkk': [['a', 42, True, 42],\n                  True,\n                  [1,\n                   42,\n                   1e-07,\n                   'ünïünïünï',\n                   'None',\n                   -1000000001],\n                  ['tab\\there',\n                   3.14159,\n                   42,\n                   1,\n                   False],\n                  []],\n 'zeta': {'10': 12345678,\n          'b': [-2.0,\n                12345678,\n                None,\n                -1000000001,\n                True]}}"
+},
+{
+"args": [
+[
+{
+"mid key": [],
+"Alpha": true,
+"": null
+},
+{
+"2": [
+-1000000001
+],
+"zeta": "None",
+"b": [
+0,
+0,
+1e+22
+]
+},
+true
+]
+],
+"kwargs": {
+"width": 60,
+"indent": 0,
+"underscore_numbers": true
+},
+"expected": "[{'': None, 'Alpha': True, 'mid key': []},\n{'2': [-1_000_000_001], 'b': [0, 0, 1e+22], 'zeta': 'None'},\nTrue]"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 12,
+"indent": 2
+},
+"expected": "{}"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "True"
+},
+{
+"args": [
+[
+12345678,
+-7,
+1e-07
+]
+],
+"kwargs": {
+"width": 12,
+"underscore_numbers": true
+},
+"expected": "[12_345_678,\n -7,\n 1e-07]"
+},
+{
+"args": [
+0.5
+],
+"kwargs": {
+"width": 80,
+"depth": 2,
+"sort_dicts": false
+},
+"expected": "0.5"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 12,
+"indent": 0,
+"underscore_numbers": true
+},
+"expected": "{}"
+},
+{
+"args": [
+[
+{
+"zeta": 1,
+"kkkkkkkkkkkk": "long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it"
+},
+{
+"2": [
+{
+"zeta": 0.5,
+"mid key": "0"
+},
+[
+0.5,
+true,
+1e+22
+],
+{
+"a": 1e-07,
+"mid key": 1e+22,
+"2": 1,
+"b": -2.0
+},
+0.5,
+[
+-7,
+1e-07,
+false,
+1e-07,
+0.5
+],
+false
+],
+"kkkkkkkkkkkk": [
+[
+1e+22
+],
+{
+"Alpha": -1000000001,
+"b": 3.14159,
+"kkkkkkkkkkkk": 1
+},
+[
+"key"
+]
+]
+},
+[
+-1000000001,
+{
+"kkkkkkkkkkkk": null,
+"a": {
+"": -7,
+"b": 12345678,
+"kkkkkkkkkkkk": "ünï",
+"2": "value",
+"a": 1
+},
+"zeta": {
+"mid key": "quote'squote'squote'squote'squote'squote'squote'squote's"
+},
+"10": 1e+22,
+"2": {
+"kkkkkkkkkkkk": 0,
+"b": "newline\nherenewline\nherenewline\nhere",
+"mid key": null,
+"": 3.14159,
+"zeta": null
+}
+},
+{},
+3.14159,
+1e-07
+],
+{
+"": [
+[
+0,
+12345678
+],
+{
+"mid key": 42,
+"": 3.14159,
+"kkkkkkkkkkkk": "0",
+"zeta": -2.0,
+"2": "keykeykey"
+}
+],
+"2": [
+"value",
+[
+"bb",
+"tab\theretab\theretab\there"
+]
+],
+"Alpha": [
+{
+"10": 0,
+"kkkkkkkkkkkk": "valuevaluevalue",
+"mid key": "quote'squote'squote's"
+},
+1000000000000,
+[
+"x y"
+]
+],
+"mid key": 1e+22,
+"zeta": {
+"b": {
+"": 1,
+"kkkkkkkkkkkk": -1000000001,
+"Alpha": "long string with several words in it",
+"mid key": -2.0,
+"a": false
+},
+"kkkkkkkkkkkk": 42
+}
+}
+]
+],
+"kwargs": {
+"indent": 0
+},
+"expected": "[{'kkkkkkkkkkkk': 'long string with several words in itlong string with several '\n                'words in itlong string with several words in itlong string '\n                'with several words in itlong string with several words in '\n                'itlong string with several words in itlong string with '\n                'several words in itlong string with several words in it',\n'zeta': 1},\n{'2': [{'mid key': '0', 'zeta': 0.5},\n     [0.5, True, 1e+22],\n     {'2': 1, 'a': 1e-07, 'b': -2.0, 'mid key': 1e+22},\n     0.5,\n     [-7, 1e-07, False, 1e-07, 0.5],\n     False],\n'kkkkkkkkkkkk': [[1e+22],\n                {'Alpha': -1000000001, 'b': 3.14159, 'kkkkkkkkkkkk': 1},\n                ['key']]},\n[-1000000001,\n{'10': 1e+22,\n'2': {'': 3.14159,\n     'b': 'newline\\nherenewline\\nherenewline\\nhere',\n     'kkkkkkkkkkkk': 0,\n     'mid key': None,\n     'zeta': None},\n'a': {'': -7, '2': 'value', 'a': 1, 'b': 12345678, 'kkkkkkkkkkkk': 'ünï'},\n'kkkkkkkkkkkk': None,\n'zeta': {'mid key': \"quote'squote'squote'squote'squote'squote'squote'squote's\"}},\n{},\n3.14159,\n1e-07],\n{'': [[0, 12345678],\n    {'': 3.14159,\n    '2': 'keykeykey',\n    'kkkkkkkkkkkk': '0',\n    'mid key': 42,\n    'zeta': -2.0}],\n'2': ['value', ['bb', 'tab\\theretab\\theretab\\there']],\n'Alpha': [{'10': 0,\n         'kkkkkkkkkkkk': 'valuevaluevalue',\n         'mid key': \"quote'squote'squote's\"},\n         1000000000000,\n         ['x y']],\n'mid key': 1e+22,\n'zeta': {'b': {'': 1,\n             'Alpha': 'long string with several words in it',\n             'a': False,\n             'kkkkkkkkkkkk': -1000000001,\n             'mid key': -2.0},\n        'kkkkkkkkkkkk': 42}}]"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 8,
+"depth": 2,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "True"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "{}"
+},
+{
+"args": [
+"ünïünïünïünïünïünïünïünï"
+],
+"kwargs": {
+"width": 20,
+"depth": 2
+},
+"expected": "'ünïünïünïünïünïünïünïünï'"
+},
+{
+"args": [
+1
+],
+"kwargs": {
+"width": 80
+},
+"expected": "1"
+},
+{
+"args": [
+{
+"2": {
+"a": [
+"x y"
+],
+"kkkkkkkkkkkk": {
+"a": 1000000000000
+}
+},
+"mid key": {
+"10": false,
+"": [
+12345678,
+3.14159,
+-7
+]
+},
+"10": true,
+"b": [
+[
+1e-07,
+3.14159,
+-2.0,
+0.5,
+"newline\nhere"
+],
+[],
+{
+"": -7,
+"mid key": -2.0,
+"Alpha": ""
+},
+{},
+{
+"a": 0
+},
+{
+"b": false,
+"Alpha": 0
+}
+],
+"": {
+"zeta": {
+"2": 0.5,
+"Alpha": 12345678,
+"a": "x yx yx y",
+"": null
+},
+"Alpha": 1000000000000,
+"mid key": [
+"bbbbbbbbbbbbbbbb",
+1e-07
+]
+}
+}
+],
+"kwargs": {
+"width": 60,
+"indent": 4,
+"compact": true
+},
+"expected": "{   '': {   'Alpha': 1000000000000,\n            'mid key': ['bbbbbbbbbbbbbbbb', 1e-07],\n            'zeta': {   '': None,\n                        '2': 0.5,\n                        'Alpha': 12345678,\n                        'a': 'x yx yx y'}},\n    '10': True,\n    '2': {   'a': ['x y'],\n             'kkkkkkkkkkkk': {'a': 1000000000000}},\n    'b': [   [1e-07, 3.14159, -2.0, 0.5, 'newline\\nhere'],\n             [], {'': -7, 'Alpha': '', 'mid key': -2.0}, {},\n             {'a': 0}, {'Alpha': 0, 'b': False}],\n    'mid key': {'': [12345678, 3.14159, -7], '10': False}}"
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"width": 60,
+"indent": 4
+},
+"expected": "''"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{}"
+},
+{
+"args": [
+{
+"2": {},
+"b": [
+{
+"2": {},
+"b": 1e-07,
+"a": "bbbbbb"
+},
+[
+{
+"kkkkkkkkkkkk": "value",
+"": true
+},
+[
+"",
+false
+],
+[
+null,
+12345678,
+false,
+"a",
+1
+],
+[
+12345678,
+42
+],
+{
+"b": true,
+"2": null,
+"zeta": -7
+},
+[
+-7,
+false,
+0
+]
+],
+42,
+{
+"zeta": 3.14159,
+"a": [
+true,
+3.14159,
+"0",
+0,
+null,
+false
+],
+"mid key": [
+false
+]
+},
+1000000000000,
+1e-07
+],
+"a": {
+"": {
+"": [
+-7,
+1000000000000,
+-7
+],
+"2": {}
+}
+},
+"10": true,
+"kkkkkkkkkkkk": [
+[
+{
+"kkkkkkkkkkkk": 1e+22,
+"a": -1000000001,
+"mid key": 12345678
+},
+[
+false
+]
+],
+false
+]
+}
+],
+"kwargs": {
+"width": 20,
+"sort_dicts": false
+},
+"expected": "{'2': {},\n 'b': [{'2': {},\n        'b': 1e-07,\n        'a': 'bbbbbb'},\n       [{'kkkkkkkkkkkk': 'value',\n         '': True},\n        ['', False],\n        [None,\n         12345678,\n         False,\n         'a',\n         1],\n        [12345678,\n         42],\n        {'b': True,\n         '2': None,\n         'zeta': -7},\n        [-7,\n         False,\n         0]],\n       42,\n       {'zeta': 3.14159,\n        'a': [True,\n              3.14159,\n              '0',\n              0,\n              None,\n              False],\n        'mid key': [False]},\n       1000000000000,\n       1e-07],\n 'a': {'': {'': [-7,\n                 1000000000000,\n                 -7],\n            '2': {}}},\n '10': True,\n 'kkkkkkkkkkkk': [[{'kkkkkkkkkkkk': 1e+22,\n                    'a': -1000000001,\n                    'mid key': 12345678},\n                   [False]],\n                  False]}"
+},
+{
+"args": [
+{
+"a": 1e+22
+}
+],
+"kwargs": {
+"width": 80,
+"indent": 2
+},
+"expected": "{'a': 1e+22}"
+},
+{
+"args": [
+{
+"Alpha": {
+"10": [
+1000000000000,
+"bb",
+"aaa",
+1e+22
+],
+"zeta": [
+true,
+"ünï",
+true,
+"a"
+],
+"Alpha": {
+"": false,
+"kkkkkkkkkkkk": "newline\nhere",
+"Alpha": -7,
+"zeta": true,
+"b": "0"
+}
+},
+"mid key": {
+"kkkkkkkkkkkk": "ünï"
+},
+"10": 0.5
+}
+],
+"kwargs": {
+"width": 80,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "{ 'Alpha': { '10': [1000000000000, 'bb', 'aaa', 1e+22],\n             'zeta': [True, 'ünï', True, 'a'],\n             'Alpha': { '': False,\n                        'kkkkkkkkkkkk': 'newline\\nhere',\n                        'Alpha': -7,\n                        'zeta': True,\n                        'b': '0'}},\n  'mid key': {'kkkkkkkkkkkk': 'ünï'},\n  '10': 0.5}"
+},
+{
+"args": [
+[
+-7,
+-1000000001,
+3.14159,
+-1000000001
+]
+],
+"kwargs": {
+"width": 16,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[-7,\n -1_000_000_001,\n 3.14159,\n -1_000_000_001]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[]"
+},
+{
+"args": [
+{
+"Alpha": []
+}
+],
+"kwargs": {
+"width": 8,
+"sort_dicts": false
+},
+"expected": "{'Alpha': []}"
+},
+{
+"args": [
+{
+"a": [
+"tab\theretab\theretab\there"
+],
+"mid key": []
+}
+],
+"kwargs": {
+"width": 40
+},
+"expected": "{'a': ['tab\\theretab\\theretab\\there'],\n 'mid key': []}"
+},
+{
+"args": [
+[
+null
+]
+],
+"kwargs": {
+"width": 12,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[None]"
+},
+{
+"args": [
+false
+],
+"kwargs": {},
+"expected": "False"
+},
+{
+"args": [
+{
+"Alpha": true,
+"kkkkkkkkkkkk": -7,
+"": 0
+}
+],
+"kwargs": {
+"width": 8,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "{'Alpha': True,\n 'kkkkkkkkkkkk': -7,\n '': 0}"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 40,
+"depth": 1,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "1e+22"
+},
+{
+"args": [
+42
+],
+"kwargs": {
+"width": 12,
+"sort_dicts": false
+},
+"expected": "42"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+[
+-2.0
+]
+],
+"kwargs": {
+"width": 16,
+"depth": 2
+},
+"expected": "[-2.0]"
+},
+{
+"args": [
+{
+"Alpha": true
+}
+],
+"kwargs": {
+"width": 12,
+"indent": 4
+},
+"expected": "{   'Alpha': True}"
+},
+{
+"args": [
+-7
+],
+"kwargs": {
+"width": 80,
+"compact": true
+},
+"expected": "-7"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 20,
+"indent": 0
+},
+"expected": "False"
+},
+{
+"args": [
+{
+"10": 1e+22,
+"kkkkkkkkkkkk": 0.5,
+"a": -7,
+"2": -2.0
+}
+],
+"kwargs": {
+"width": 12,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "{ '10': 1e+22,\n  'kkkkkkkkkkkk': 0.5,\n  'a': -7,\n  '2': -2.0}"
+},
+{
+"args": [
+{
+"": [],
+"2": -7,
+"kkkkkkkkkkkk": {
+"": {
+"a": [
+"NoneNoneNone",
+1e-07,
+"quote's",
+12345678
+]
+}
+},
+"Alpha": [
+{
+"10": {
+"": 3.14159,
+"kkkkkkkkkkkk": true,
+"a": null,
+"Alpha": -7
+},
+"mid key": {}
+},
+[
+[]
+]
+],
+"mid key": [
+[
+[
+"ünï",
+42,
+true,
+null
+],
+null,
+"newline\nherenewline\nherenewline\nhere"
+]
+]
+}
+],
+"kwargs": {
+"width": 12,
+"indent": 2,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{ '': [],\n  '2': -7,\n  'Alpha': [ { '10': { '': 3.14159,\n                       'Alpha': -7,\n                       'a': None,\n                       'kkkkkkkkkkkk': True},\n               'mid key': { }},\n             [ [ ]]],\n  'kkkkkkkkkkkk': { '': { 'a': [ 'NoneNoneNone',\n                                 1e-07,\n                                 \"quote's\",\n                                 12_345_678]}},\n  'mid key': [ [ [ 'ünï',\n                   42,\n                   True,\n                   None],\n                 None,\n                 'newline\\n'\n                 'herenewline\\n'\n                 'herenewline\\n'\n                 'here']]}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 60
+},
+"expected": "[]"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 30,
+"depth": 1,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "None"
+},
+{
+"args": [
+{
+"a": "newline\nhere",
+"": {
+"": true,
+"kkkkkkkkkkkk": [],
+"2": [
+{
+"Alpha": "dq\"",
+"": "newline\nhere",
+"b": false,
+"10": 1000000000000
+},
+0.5,
+[
+-1000000001,
+1,
+"long string with several words in it",
+-1000000001
+],
+{
+"zeta": 1000000000000,
+"10": -2.0,
+"mid key": "",
+"kkkkkkkkkkkk": "x y",
+"b": "key"
+},
+1000000000000,
+[
+"quote'squote'squote'squote'squote'squote'squote'squote's",
+-1000000001,
+null,
+"x yx yx yx yx yx yx yx y",
+0.5
+]
+],
+"zeta": 0.5
+},
+"b": "None"
+}
+],
+"kwargs": {
+"width": 30
+},
+"expected": "{'': {'': True,\n      '2': [{'': 'newline\\n'\n                 'here',\n             '10': 1000000000000,\n             'Alpha': 'dq\"',\n             'b': False},\n            0.5,\n            [-1000000001,\n             1,\n             'long string '\n             'with several '\n             'words in it',\n             -1000000001],\n            {'10': -2.0,\n             'b': 'key',\n             'kkkkkkkkkkkk': 'x '\n                             'y',\n             'mid key': '',\n             'zeta': 1000000000000},\n            1000000000000,\n            [\"quote'squote'squote'squote'squote'squote'squote'squote's\",\n             -1000000001,\n             None,\n             'x yx yx yx yx '\n             'yx yx yx y',\n             0.5]],\n      'kkkkkkkkkkkk': [],\n      'zeta': 0.5},\n 'a': 'newline\\nhere',\n 'b': 'None'}"
+},
+{
+"args": [
+[
+[
+[
+-1000000001,
+"tab\there"
+],
+{
+"a": [
+false,
+true,
+false,
+0,
+null
+],
+"10": [],
+"kkkkkkkkkkkk": "000"
+},
+[
+{
+"mid key": 3.14159,
+"10": null,
+"": "0",
+"b": "NoneNoneNone",
+"zeta": false
+},
+"quote's"
+],
+[
+[
+1
+],
+[
+-1000000001,
+-1000000001
+]
+]
+]
+]
+],
+"kwargs": {
+"width": 60,
+"compact": true
+},
+"expected": "[[[-1000000001, 'tab\\there'],\n  {'10': [],\n   'a': [False, True, False, 0, None],\n   'kkkkkkkkkkkk': '000'},\n  [{'': '0',\n    '10': None,\n    'b': 'NoneNoneNone',\n    'mid key': 3.14159,\n    'zeta': False},\n   \"quote's\"],\n  [[1], [-1000000001, -1000000001]]]]"
+},
+{
+"args": [
+{
+"zeta": 42,
+"Alpha": "newline\nhere"
+}
+],
+"kwargs": {
+"width": 60,
+"compact": true
+},
+"expected": "{'Alpha': 'newline\\nhere', 'zeta': 42}"
+},
+{
+"args": [
+[
+"quote'squote'squote's",
+"a"
+]
+],
+"kwargs": {
+"width": 20,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[\"quote'squote'squote's\",\n 'a']"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"indent": 4
+},
+"expected": "[]"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"indent": 0,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "{}"
+},
+{
+"args": [
+"None"
+],
+"kwargs": {
+"width": 60,
+"sort_dicts": false
+},
+"expected": "'None'"
+},
+{
+"args": [
+3.14159
+],
+"kwargs": {
+"width": 60,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "3.14159"
+},
+{
+"args": [
+[
+[
+false,
+[
+-7,
+1e-07,
+-7
+],
+0
+],
+{
+"2": 0.5
+},
+[
+{
+"kkkkkkkkkkkk": -1000000001,
+"": 1e+22,
+"zeta": 0.5
+}
+],
+{
+"zeta": 1
+},
+[]
+]
+],
+"kwargs": {
+"width": 8,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[[False,\n  [-7,\n   1e-07,\n   -7],\n  0],\n {'2': 0.5},\n [{'': 1e+22,\n   'kkkkkkkkkkkk': -1_000_000_001,\n   'zeta': 0.5}],\n {'zeta': 1},\n []]"
+},
+{
+"args": [
+[
+[],
+{}
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 2,
+"compact": true
+},
+"expected": "[[], {}]"
+},
+{
+"args": [
+[
+0.5,
+false
+]
+],
+"kwargs": {
+"width": 60
+},
+"expected": "[0.5, False]"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 40
+},
+"expected": "1e-07"
+},
+{
+"args": [
+1000000000000
+],
+"kwargs": {
+"width": 30,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "1_000_000_000_000"
+},
+{
+"args": [
+{
+"10": 12345678,
+"": 42
+}
+],
+"kwargs": {
+"width": 30,
+"depth": 2,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'10': 12_345_678, '': 42}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "[]"
+},
+{
+"args": [
+[
+{
+"Alpha": -7,
+"": "quote's",
+"b": 1e-07
+},
+"valuevaluevalue",
+[
+0.5
+],
+"000",
+[
+false,
+"quote'squote'squote'squote'squote'squote'squote'squote's",
+1,
+"keykeykey",
+false,
+null
+],
+[]
+]
+],
+"kwargs": {
+"indent": 2,
+"depth": 2
+},
+"expected": "[ {'': \"quote's\", 'Alpha': -7, 'b': 1e-07},\n  'valuevaluevalue',\n  [0.5],\n  '000',\n  [ False,\n    \"quote'squote'squote'squote'squote'squote'squote'squote's\",\n    1,\n    'keykeykey',\n    False,\n    None],\n  []]"
+},
+{
+"args": [
+[
+[
+{
+"a": {
+"": false
+},
+"": [
+1e-07,
+42,
+"long string with several words in it",
+1e+22,
+"quote's",
+null
+],
+"2": []
+},
+"ünï"
+],
+[
+-2.0,
+[
+{
+"a": -7,
+"mid key": -7,
+"2": false,
+"Alpha": "",
+"10": true
+},
+[
+1e+22,
+null,
+1000000000000,
+false,
+false,
+12345678
+]
+],
+{
+"10": "newline\nhere",
+"Alpha": [],
+"zeta": 0
+},
+{
+"mid key": 0.5,
+"kkkkkkkkkkkk": [
+null,
+0,
+null,
+42,
+true,
+-1000000001
+],
+"": false,
+"zeta": -2.0
+},
+[
+[
+1e-07,
+"long string with several words in it"
+],
+"None"
+]
+],
+1e+22,
+[
+[
+[
+null,
+false
+],
+null
+]
+],
+{
+"a": {
+"": [
+42,
+1e+22,
+"value",
+-2.0
+],
+"zeta": null,
+"a": {
+"10": true,
+"2": 0,
+"a": 0
+},
+"2": [
+"ünï",
+"keykeykeykeykeykeykeykey",
+false,
+"",
+"key",
+""
+]
+},
+"2": [
+{},
+[
+true,
+-2.0,
+1000000000000,
+true,
+"x yx yx y",
+"None"
+],
+0.5,
+{
+"Alpha": 12345678,
+"2": false,
+"kkkkkkkkkkkk": 12345678,
+"zeta": "quote's",
+"mid key": -2.0
+},
+{
+"": 0.5,
+"Alpha": -2.0,
+"kkkkkkkkkkkk": 3.14159,
+"10": 0,
+"b": -2.0
+}
+],
+"b": [
+1000000000000,
+{
+"b": 1e-07,
+"Alpha": 12345678
+},
+[
+1e-07,
+-7,
+-1000000001,
+0,
+-7
+],
+{
+"zeta": false,
+"2": -2.0
+},
+[],
+[]
+]
+}
+]
+],
+"kwargs": {
+"width": 8
+},
+"expected": "[[{'': [1e-07,\n        42,\n        'long '\n        'string '\n        'with '\n        'several '\n        'words '\n        'in '\n        'it',\n        1e+22,\n        \"quote's\",\n        None],\n   '2': [],\n   'a': {'': False}},\n  'ünï'],\n [-2.0,\n  [{'10': True,\n    '2': False,\n    'Alpha': '',\n    'a': -7,\n    'mid key': -7},\n   [1e+22,\n    None,\n    1000000000000,\n    False,\n    False,\n    12345678]],\n  {'10': 'newline\\n'\n         'here',\n   'Alpha': [],\n   'zeta': 0},\n  {'': False,\n   'kkkkkkkkkkkk': [None,\n                    0,\n                    None,\n                    42,\n                    True,\n                    -1000000001],\n   'mid key': 0.5,\n   'zeta': -2.0},\n  [[1e-07,\n    'long '\n    'string '\n    'with '\n    'several '\n    'words '\n    'in '\n    'it'],\n   'None']],\n 1e+22,\n [[[None,\n    False],\n   None]],\n {'2': [{},\n        [True,\n         -2.0,\n         1000000000000,\n         True,\n         'x '\n         'yx '\n         'yx '\n         'y',\n         'None'],\n        0.5,\n        {'2': False,\n         'Alpha': 12345678,\n         'kkkkkkkkkkkk': 12345678,\n         'mid key': -2.0,\n         'zeta': \"quote's\"},\n        {'': 0.5,\n         '10': 0,\n         'Alpha': -2.0,\n         'b': -2.0,\n         'kkkkkkkkkkkk': 3.14159}],\n  'a': {'': [42,\n             1e+22,\n             'value',\n             -2.0],\n        '2': ['ünï',\n              'keykeykeykeykeykeykeykey',\n              False,\n              '',\n              'key',\n              ''],\n        'a': {'10': True,\n              '2': 0,\n              'a': 0},\n        'zeta': None},\n  'b': [1000000000000,\n        {'Alpha': 12345678,\n         'b': 1e-07},\n        [1e-07,\n         -7,\n         -1000000001,\n         0,\n         -7],\n        {'2': -2.0,\n         'zeta': False},\n        [],\n        []]}]"
+},
+{
+"args": [
+-2.0
+],
+"kwargs": {
+"width": 8,
+"underscore_numbers": true
+},
+"expected": "-2.0"
+},
+{
+"args": [
+0
+],
+"kwargs": {
+"depth": 1,
+"sort_dicts": false
+},
+"expected": "0"
+},
+{
+"args": [
+{
+"": {
+"10": true
+},
+"2": -7,
+"a": -1000000001,
+"b": false,
+"zeta": []
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"sort_dicts": false
+},
+"expected": "{'': {'10': True},\n'2': -7,\n'a': -1000000001,\n'b': False,\n'zeta': []}"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 40,
+"sort_dicts": false
+},
+"expected": "False"
+},
+{
+"args": [
+{
+"": [
+{
+"b": {
+"Alpha": "long string with several words in it",
+"": false,
+"zeta": true,
+"kkkkkkkkkkkk": true
+},
+"2": {
+"a": -7
+}
+}
+],
+"b": {
+"kkkkkkkkkkkk": [
+{},
+{
+"": 12345678,
+"zeta": null,
+"2": -1000000001,
+"mid key": 1e+22,
+"Alpha": 42
+},
+{},
+[
+-7,
+42,
+3.14159
+],
+false,
+[]
+],
+"mid key": null
+},
+"mid key": [
+[],
+1e+22,
+[
+[
+1e+22,
+true,
+-1000000001
+],
+{
+"zeta": 1000000000000,
+"a": -7,
+"kkkkkkkkkkkk": "a",
+"Alpha": 0
+},
+"tab\there",
+[
+-2.0,
+false
+],
+null,
+[
+false,
+null,
+true,
+0.5
+]
+],
+[
+[
+1,
+false
+],
+1000000000000,
+[
+true,
+12345678,
+1e-07,
+3.14159,
+"newline\nhere"
+]
+],
+{
+"zeta": [
+true,
+0,
+1e+22,
+3.14159,
+null
+],
+"10": null,
+"": [
+0.5,
+1,
+null
+],
+"kkkkkkkkkkkk": "key"
+},
+-1000000001
+],
+"kkkkkkkkkkkk": [
+[
+{
+"a": false,
+"kkkkkkkkkkkk": "long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+"zeta": "NoneNoneNoneNoneNoneNoneNoneNone"
+},
+{
+"zeta": -2.0,
+"a": 1e-07,
+"": -7,
+"kkkkkkkkkkkk": 3.14159
+},
+0.5,
+[
+null,
+1,
+null,
+false,
+"value",
+"newline\nhere"
+]
+],
+{
+"2": [
+"bbbbbbbbbbbbbbbb",
+true
+],
+"kkkkkkkkkkkk": "x yx yx yx yx yx yx yx y",
+"mid key": false,
+"10": false
+}
+],
+"a": false
+}
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "{'': [{'2': {'a': -7},\n       'b': {'': False,\n             'Alpha': 'long '\n                      'string '\n                      'with '\n                      'several '\n                      'words '\n                      'in '\n                      'it',\n             'kkkkkkkkkkkk': True,\n             'zeta': True}}],\n 'a': False,\n 'b': {'kkkkkkkkkkkk': [{},\n                        {'': 12345678,\n                         '2': -1000000001,\n                         'Alpha': 42,\n                         'mid key': 1e+22,\n                         'zeta': None},\n                        {},\n                        [-7,\n                         42,\n                         3.14159],\n                        False,\n                        []],\n       'mid key': None},\n 'kkkkkkkkkkkk': [[{'a': False,\n                    'kkkkkkkkkkkk': 'long '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'itlong '\n                                    'string '\n                                    'with '\n                                    'several '\n                                    'words '\n                                    'in '\n                                    'it',\n                    'zeta': 'NoneNoneNoneNoneNoneNoneNoneNone'},\n                   {'': -7,\n                    'a': 1e-07,\n                    'kkkkkkkkkkkk': 3.14159,\n                    'zeta': -2.0},\n                   0.5,\n                   [None,\n                    1,\n                    None,\n                    False,\n                    'value',\n                    'newline\\n'\n                    'here']],\n                  {'10': False,\n                   '2': ['bbbbbbbbbbbbbbbb',\n                         True],\n                   'kkkkkkkkkkkk': 'x '\n                                   'yx '\n                                   'yx '\n                                   'yx '\n                                   'yx '\n                                   'yx '\n                                   'yx '\n                                   'yx '\n                                   'y',\n                   'mid key': False}],\n 'mid key': [[],\n             1e+22,\n             [[1e+22,\n               True,\n               -1000000001],\n              {'Alpha': 0,\n               'a': -7,\n               'kkkkkkkkkkkk': 'a',\n               'zeta': 1000000000000},\n              'tab\\t'\n              'here',\n              [-2.0,\n               False],\n              None,\n              [False,\n               None,\n               True,\n               0.5]],\n             [[1,\n               False],\n              1000000000000,\n              [True,\n               12345678,\n               1e-07,\n               3.14159,\n               'newline\\n'\n               'here']],\n             {'': [0.5,\n                   1,\n                   None],\n              '10': None,\n              'kkkkkkkkkkkk': 'key',\n              'zeta': [True,\n                       0,\n                       1e+22,\n                       3.14159,\n                       None]},\n             -1000000001]}"
+},
+{
+"args": [
+[
+0.5
+]
+],
+"kwargs": {
+"width": 30,
+"indent": 2
+},
+"expected": "[0.5]"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": "tab\there",
+"a": 1e+22,
+"10": 1e+22,
+"b": 1e-07
+}
+],
+"kwargs": {},
+"expected": "{'10': 1e+22, 'a': 1e+22, 'b': 1e-07, 'kkkkkkkkkkkk': 'tab\\there'}"
+},
+{
+"args": [
+[
+[
+{
+"zeta": "long string with several words in it",
+"Alpha": true,
+"b": "None",
+"": null,
+"mid key": 3.14159
+},
+{
+"Alpha": 1000000000000,
+"": 1,
+"zeta": "quote's",
+"b": false,
+"10": "dq\"dq\"dq\""
+},
+{}
+],
+[
+[
+"ünï",
+"newline\nhere"
+],
+true
+],
+[
+[]
+]
+]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[[{'': None,\n   'Alpha': True,\n   'b': 'None',\n   'mid key': 3.14159,\n   'zeta': 'long '\n           'string '\n           'with '\n           'several '\n           'words '\n           'in it'},\n  {'': 1,\n   '10': 'dq\"dq\"dq\"',\n   'Alpha': 1000000000000,\n   'b': False,\n   'zeta': \"quote's\"},\n  {}],\n [['ünï',\n   'newline\\nhere'],\n  True],\n [[]]]"
+},
+{
+"args": [
+"x yx yx yx yx yx yx yx y"
+],
+"kwargs": {
+"width": 30,
+"depth": 1
+},
+"expected": "'x yx yx yx yx yx yx yx y'"
+},
+{
+"args": [
+"x y"
+],
+"kwargs": {
+"width": 16,
+"compact": true
+},
+"expected": "'x y'"
+},
+{
+"args": [
+"bb"
+],
+"kwargs": {
+"width": 80,
+"indent": 2,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "'bb'"
+},
+{
+"args": [
+0.5
+],
+"kwargs": {
+"width": 12,
+"underscore_numbers": true
+},
+"expected": "0.5"
+},
+{
+"args": [
+"x y"
+],
+"kwargs": {
+"width": 12,
+"indent": 2
+},
+"expected": "'x y'"
+},
+{
+"args": [
+[
+{
+"a": {
+"kkkkkkkkkkkk": "a"
+},
+"b": [
+null,
+"None",
+1e+22,
+42
+]
+},
+{
+"mid key": 0.5,
+"Alpha": 0
+},
+false,
+12345678
+]
+],
+"kwargs": {
+"width": 12,
+"compact": true
+},
+"expected": "[{'a': {'kkkkkkkkkkkk': 'a'},\n  'b': [None,\n        'None',\n        1e+22,\n        42]},\n {'Alpha': 0,\n  'mid key': 0.5},\n False,\n 12345678]"
+},
+{
+"args": [
+{
+"2": -1000000001,
+"10": [
+-7,
+-7,
+"tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+1
+],
+"a": 42
+}
+],
+"kwargs": {
+"width": 8,
+"indent": 0
+},
+"expected": "{'10': [-7,\n      -7,\n      'tab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'heretab\\t'\n      'here',\n      1],\n'2': -1000000001,\n'a': 42}"
+},
+{
+"args": [
+[
+3.14159,
+true
+]
+],
+"kwargs": {
+"width": 30,
+"indent": 0
+},
+"expected": "[3.14159, True]"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 16,
+"depth": 2,
+"compact": true
+},
+"expected": "False"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 8,
+"indent": 2,
+"depth": 2
+},
+"expected": "1e-07"
+},
+{
+"args": [
+{
+"b": "key",
+"zeta": {
+"zeta": true
+},
+"a": {
+"a": "tab\there"
+},
+"kkkkkkkkkkkk": {
+"kkkkkkkkkkkk": true,
+"2": "ünïünïünïünïünïünïünïünï",
+"a": 12345678,
+"b": "dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\""
+}
+}
+],
+"kwargs": {
+"indent": 2
+},
+"expected": "{ 'a': {'a': 'tab\\there'},\n  'b': 'key',\n  'kkkkkkkkkkkk': { '2': 'ünïünïünïünïünïünïünïünï',\n                    'a': 12345678,\n                    'b': 'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n                    'kkkkkkkkkkkk': True},\n  'zeta': {'zeta': True}}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 80,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 16
+},
+"expected": "False"
+},
+{
+"args": [
+"dq\"dq\"dq\""
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"depth": 1,
+"sort_dicts": false
+},
+"expected": "'dq\"dq\"dq\"'"
+},
+{
+"args": [
+{
+"b": 12345678
+}
+],
+"kwargs": {
+"width": 12,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'b': 12_345_678}"
+},
+{
+"args": [
+"long string with several words in it"
+],
+"kwargs": {
+"width": 8
+},
+"expected": "('long '\n 'string '\n 'with '\n 'several '\n 'words '\n 'in '\n 'it')"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 80,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "False"
+},
+{
+"args": [
+42
+],
+"kwargs": {
+"width": 12,
+"indent": 4
+},
+"expected": "42"
+},
+{
+"args": [
+{
+"10": [
+-2.0
+],
+"2": 1000000000000,
+"": false,
+"mid key": {
+"10": true,
+"a": 0,
+"": 1000000000000,
+"zeta": true
+}
+}
+],
+"kwargs": {
+"width": 20
+},
+"expected": "{'': False,\n '10': [-2.0],\n '2': 1000000000000,\n 'mid key': {'': 1000000000000,\n             '10': True,\n             'a': 0,\n             'zeta': True}}"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 8,
+"compact": true
+},
+"expected": "1e-07"
+},
+{
+"args": [
+[
+{
+"2": 1e+22,
+"kkkkkkkkkkkk": {
+"mid key": null,
+"b": "value"
+}
+},
+[],
+"x y"
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 4,
+"sort_dicts": false
+},
+"expected": "[   {   '2': 1e+22,\n        'kkkkkkkkkkkk': {   'mid key': None,\n                            'b': 'value'}},\n    [],\n    'x y']"
+},
+{
+"args": [
+[
+[
+[],
+0.5
+],
+[
+"bb"
+],
+{
+"mid key": 0.5,
+"Alpha": "ünïünïünï"
+},
+42
+]
+],
+"kwargs": {
+"width": 40,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[[[], 0.5], ['bb'],\n {'Alpha': 'ünïünïünï', 'mid key': 0.5},\n 42]"
+},
+{
+"args": [
+{
+"Alpha": 42,
+"": 3.14159
+}
+],
+"kwargs": {
+"width": 16,
+"compact": true
+},
+"expected": "{'': 3.14159,\n 'Alpha': 42}"
+},
+{
+"args": [
+"long string with several words in it"
+],
+"kwargs": {
+"width": 8,
+"compact": true
+},
+"expected": "('long '\n 'string '\n 'with '\n 'several '\n 'words '\n 'in '\n 'it')"
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"width": 12,
+"compact": true
+},
+"expected": "''"
+},
+{
+"args": [
+{
+"Alpha": [
+[
+"dq\""
+],
+{
+"a": "dq\"dq\"dq\"",
+"": false,
+"kkkkkkkkkkkk": "newline\nhere",
+"10": 1,
+"b": "x y"
+},
+"key",
+"bb"
+]
+}
+],
+"kwargs": {
+"width": 8,
+"underscore_numbers": true
+},
+"expected": "{'Alpha': [['dq\"'],\n           {'': False,\n            '10': 1,\n            'a': 'dq\"dq\"dq\"',\n            'b': 'x '\n                 'y',\n            'kkkkkkkkkkkk': 'newline\\n'\n                            'here'},\n           'key',\n           'bb']}"
+},
+{
+"args": [
+1000000000000
+],
+"kwargs": {
+"width": 12,
+"indent": 4
+},
+"expected": "1000000000000"
+},
+{
+"args": [
+[
+true,
+"ünï",
+"newline\nhere"
+]
+],
+"kwargs": {
+"indent": 2,
+"depth": 1
+},
+"expected": "[True, 'ünï', 'newline\\nhere']"
+},
+{
+"args": [
+[
+{
+"a": [
+"x y"
+],
+"b": false,
+"Alpha": null
+},
+[
+[],
+{
+"10": 42,
+"a": null,
+"": false
+}
+]
+]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[{'Alpha': None,\n  'a': ['x y'],\n  'b': False},\n [[],\n  {'': False,\n   '10': 42,\n   'a': None}]]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"depth": 1,
+"compact": true
+},
+"expected": "[]"
+},
+{
+"args": [
+{
+"2": "ünï"
+}
+],
+"kwargs": {
+"width": 60,
+"indent": 2
+},
+"expected": "{'2': 'ünï'}"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 12,
+"depth": 1,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "1e-07"
+},
+{
+"args": [
+"keykeykey"
+],
+"kwargs": {
+"width": 80,
+"indent": 4,
+"compact": true
+},
+"expected": "'keykeykey'"
+},
+{
+"args": [
+[
+{
+"kkkkkkkkkkkk": "dq\"dq\"dq\"",
+"": "value",
+"a": [
+-2.0,
+null,
+12345678,
+"x y",
+"dq\"dq\"dq\""
+],
+"10": "ünïünïünïünïünïünïünïünï",
+"Alpha": [
+"x y"
+]
+},
+{
+"a": [
+0
+],
+"mid key": {
+"Alpha": false
+},
+"2": 1e-07
+},
+{
+"": "x y",
+"10": null
+},
+[],
+false,
+0
+]
+],
+"kwargs": {
+"width": 80,
+"indent": 2,
+"compact": true
+},
+"expected": "[ { '': 'value',\n    '10': 'ünïünïünïünïünïünïünïünï',\n    'Alpha': ['x y'],\n    'a': [-2.0, None, 12345678, 'x y', 'dq\"dq\"dq\"'],\n    'kkkkkkkkkkkk': 'dq\"dq\"dq\"'},\n  {'2': 1e-07, 'a': [0], 'mid key': {'Alpha': False}}, {'': 'x y', '10': None},\n  [], False, 0]"
+},
+{
+"args": [
+0
+],
+"kwargs": {
+"width": 60,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "0"
+},
+{
+"args": [
+[
+1e+22,
+1e-07,
+"NoneNoneNoneNoneNoneNoneNoneNone"
+]
+],
+"kwargs": {
+"width": 80
+},
+"expected": "[1e+22, 1e-07, 'NoneNoneNoneNoneNoneNoneNoneNone']"
+},
+{
+"args": [
+{
+"Alpha": [
+"tab\there",
+0.5
+]
+}
+],
+"kwargs": {
+"width": 20,
+"depth": 2
+},
+"expected": "{'Alpha': ['tab\\t'\n           'here',\n           0.5]}"
+},
+{
+"args": [
+[
+0,
+{
+"mid key": {
+"zeta": [
+null,
+3.14159,
+-1000000001,
+1e+22,
+"keykeykeykeykeykeykeykey"
+],
+"a": {
+"a": 1e-07,
+"kkkkkkkkkkkk": 0.5
+},
+"kkkkkkkkkkkk": [
+null,
+1e+22,
+42,
+1,
+"x yx yx yx yx yx yx yx y",
+-2.0
+]
+}
+},
+{
+"mid key": true,
+"10": {
+"2": [
+0.5,
+"NoneNoneNoneNoneNoneNoneNoneNone",
+1,
+12345678,
+3.14159,
+1e-07
+]
+},
+"kkkkkkkkkkkk": {},
+"": [
+[
+1e+22,
+"quote'squote'squote's",
+1e+22
+]
+],
+"b": [
+{
+"b": -1000000001,
+"2": 0
+},
+42,
+1e-07,
+-1000000001,
+{
+"": "long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+"mid key": "dq\"",
+"10": 3.14159
+}
+]
+},
+3.14159,
+"tab\theretab\theretab\there",
+{
+"10": [
+"dq\"",
+[
+null,
+1,
+42,
+1e+22
+],
+[
+-2.0,
+-2.0,
+"long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+false,
+"a",
+"dq\""
+],
+{},
+{
+"10": null,
+"zeta": -1000000001
+}
+],
+"kkkkkkkkkkkk": 3.14159
+}
+]
+],
+"kwargs": {
+"width": 80,
+"indent": 0,
+"compact": true
+},
+"expected": "[0,\n{'mid key': {'a': {'a': 1e-07, 'kkkkkkkkkkkk': 0.5},\n           'kkkkkkkkkkkk': [None, 1e+22, 42, 1, 'x yx yx yx yx yx yx yx y',\n                           -2.0],\n           'zeta': [None, 3.14159, -1000000001, 1e+22,\n                   'keykeykeykeykeykeykeykey']}},\n{'': [[1e+22, \"quote'squote'squote's\", 1e+22]],\n'10': {'2': [0.5, 'NoneNoneNoneNoneNoneNoneNoneNone', 1, 12345678, 3.14159,\n           1e-07]},\n'b': [{'2': 0, 'b': -1000000001}, 42, 1e-07, -1000000001,\n     {'': 'long string with several words in itlong string with several words '\n         'in itlong string with several words in itlong string with several '\n         'words in itlong string with several words in itlong string with '\n         'several words in itlong string with several words in itlong string '\n         'with several words in it',\n     '10': 3.14159,\n     'mid key': 'dq\"'}],\n'kkkkkkkkkkkk': {},\n'mid key': True},\n3.14159, 'tab\\theretab\\theretab\\there',\n{'10': ['dq\"', [None, 1, 42, 1e+22],\n      [-2.0, -2.0,\n      'long string with several words in itlong string with several words in '\n      'itlong string with several words in itlong string with several words in '\n      'itlong string with several words in itlong string with several words in '\n      'itlong string with several words in itlong string with several words in '\n      'it',\n      False, 'a', 'dq\"'],\n      {}, {'10': None, 'zeta': -1000000001}],\n'kkkkkkkkkkkk': 3.14159}]"
+},
+{
+"args": [
+0.5
+],
+"kwargs": {
+"width": 60
+},
+"expected": "0.5"
+},
+{
+"args": [
+[
+"long string with several words in itlong string with several words in itlong string with several words in it",
+-2.0
+]
+],
+"kwargs": {
+"width": 30,
+"indent": 0,
+"sort_dicts": false
+},
+"expected": "['long string with several '\n'words in itlong string with '\n'several words in itlong '\n'string with several words '\n'in it',\n-2.0]"
+},
+{
+"args": [
+[
+0.5,
+3.14159,
+12345678
+]
+],
+"kwargs": {
+"width": 16,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[0.5, 3.14159,\n 12345678]"
+},
+{
+"args": [
+{
+"b": 0
+}
+],
+"kwargs": {
+"width": 30,
+"depth": 2
+},
+"expected": "{'b': 0}"
+},
+{
+"args": [
+{
+"b": {
+"kkkkkkkkkkkk": true,
+"Alpha": 1e-07,
+"b": 1000000000000,
+"2": false
+},
+"kkkkkkkkkkkk": true,
+"a": [
+"bbbbbb",
+-2.0,
+true,
+"newline\nhere"
+],
+"10": [
+-1000000001,
+true,
+true,
+0,
+0,
+1000000000000
+],
+"zeta": {}
+}
+],
+"kwargs": {
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{'10': [-1_000_000_001, True, True, 0, 0, 1_000_000_000_000],\n 'a': ['bbbbbb', -2.0, True, 'newline\\nhere'],\n 'b': {'2': False,\n       'Alpha': 1e-07,\n       'b': 1_000_000_000_000,\n       'kkkkkkkkkkkk': True},\n 'kkkkkkkkkkkk': True,\n 'zeta': {}}"
+},
+{
+"args": [
+[
+{},
+[
+[
+false,
+[
+true,
+"long string with several words in it",
+"",
+"tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+42,
+-2.0
+],
+[
+"keykeykey",
+1000000000000,
+null
+],
+{
+"kkkkkkkkkkkk": 1,
+"Alpha": 1
+},
+"key"
+],
+{
+"kkkkkkkkkkkk": {
+"kkkkkkkkkkkk": "NoneNoneNone",
+"mid key": -7,
+"Alpha": 0,
+"a": -7
+},
+"10": -7,
+"Alpha": "quote's",
+"mid key": true,
+"zeta": "aaa"
+},
+{
+"Alpha": {
+"10": "dq\"",
+"zeta": 42,
+"kkkkkkkkkkkk": -7,
+"": "ünï",
+"b": -2.0
+},
+"2": {},
+"": {
+"10": 3.14159
+},
+"mid key": [
+"NoneNoneNone",
+true,
+"x yx yx yx yx yx yx yx y",
+null
+],
+"10": [
+1e-07,
+1e-07,
+true,
+true,
+false
+]
+},
+"000"
+],
+[
+{
+"10": -2.0,
+"Alpha": [
+false,
+-2.0,
+-2.0
+],
+"zeta": 1e+22,
+"": 1
+},
+1,
+null,
+-1000000001,
+{
+"Alpha": [
+true
+],
+"a": "newline\nherenewline\nherenewline\nhere"
+}
+],
+[],
+[
+false
+]
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 0,
+"depth": 1,
+"compact": true
+},
+"expected": "[{}, [...], [...], [], [...]]"
+},
+{
+"args": [
+{
+"a": true,
+"zeta": []
+}
+],
+"kwargs": {
+"width": 8,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'a': True,\n 'zeta': []}"
+},
+{
+"args": [
+[
+[
+"0",
+1e-07
+],
+[],
+[
+-7,
+1,
+3.14159,
+1000000000000
+],
+[
+1e-07,
+"",
+42,
+"tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+1e+22
+],
+false,
+null
+]
+],
+"kwargs": {
+"width": 12,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "[['0',\n  1e-07],\n [],\n [-7,\n  1,\n  3.14159,\n  1_000_000_000_000],\n [1e-07,\n  '',\n  42,\n  'tab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'here',\n  1e+22],\n False,\n None]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[]"
+},
+{
+"args": [
+"long string with several words in it"
+],
+"kwargs": {
+"width": 16,
+"indent": 0,
+"depth": 2
+},
+"expected": "('long string '\n 'with several '\n 'words in it')"
+},
+{
+"args": [
+[
+-1000000001,
+12345678,
+-2.0,
+true,
+3.14159,
+true
+]
+],
+"kwargs": {
+"width": 40,
+"depth": 2,
+"compact": true
+},
+"expected": "[-1000000001, 12345678, -2.0, True,\n 3.14159, True]"
+},
+{
+"args": [
+{
+"b": [
+{
+"kkkkkkkkkkkk": null,
+"": null,
+"a": null,
+"Alpha": 42,
+"mid key": false
+},
+{
+"Alpha": 42
+},
+"newline\nhere",
+null,
+[
+0.5
+],
+3.14159
+],
+"kkkkkkkkkkkk": [
+1e-07,
+[
+"quote's",
+"bb",
+false,
+3.14159,
+1000000000000,
+null
+],
+[
+"",
+-2.0,
+42,
+-7,
+"x yx yx yx yx yx yx yx y"
+],
+[
+false,
+3.14159,
+0,
+0.5,
+3.14159
+]
+]
+}
+],
+"kwargs": {
+"width": 20
+},
+"expected": "{'b': [{'': None,\n        'Alpha': 42,\n        'a': None,\n        'kkkkkkkkkkkk': None,\n        'mid key': False},\n       {'Alpha': 42},\n       'newline\\n'\n       'here',\n       None,\n       [0.5],\n       3.14159],\n 'kkkkkkkkkkkk': [1e-07,\n                  [\"quote's\",\n                   'bb',\n                   False,\n                   3.14159,\n                   1000000000000,\n                   None],\n                  ['',\n                   -2.0,\n                   42,\n                   -7,\n                   'x '\n                   'yx '\n                   'yx '\n                   'yx '\n                   'yx '\n                   'yx '\n                   'yx '\n                   'yx '\n                   'y'],\n                  [False,\n                   3.14159,\n                   0,\n                   0.5,\n                   3.14159]]}"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 30,
+"sort_dicts": false
+},
+"expected": "True"
+},
+{
+"args": [
+{
+"zeta": "a"
+}
+],
+"kwargs": {
+"width": 12,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'zeta': 'a'}"
+},
+{
+"args": [
+[
+3.14159
+]
+],
+"kwargs": {
+"width": 12,
+"sort_dicts": false
+},
+"expected": "[3.14159]"
+},
+{
+"args": [
+"a"
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"compact": true
+},
+"expected": "'a'"
+},
+{
+"args": [
+[
+42,
+"aaaaaaaa",
+false,
+12345678,
+true,
+"long string with several words in it"
+]
+],
+"kwargs": {
+"width": 80,
+"sort_dicts": false
+},
+"expected": "[42, 'aaaaaaaa', False, 12345678, True, 'long string with several words in it']"
+},
+{
+"args": [
+-2.0
+],
+"kwargs": {
+"width": 16
+},
+"expected": "-2.0"
+},
+{
+"args": [
+{
+"b": [],
+"10": {
+"b": -1000000001,
+"zeta": 1,
+"mid key": 1000000000000,
+"a": "x yx yx y"
+},
+"kkkkkkkkkkkk": [
+0.5,
+"long string with several words in itlong string with several words in itlong string with several words in it",
+-7,
+42,
+-1000000001,
+1000000000000
+],
+"": [
+true,
+42,
+0,
+true,
+true,
+"bbbbbb"
+]
+}
+],
+"kwargs": {
+"width": 40
+},
+"expected": "{'': [True,\n      42,\n      0,\n      True,\n      True,\n      'bbbbbb'],\n '10': {'a': 'x yx yx y',\n        'b': -1000000001,\n        'mid key': 1000000000000,\n        'zeta': 1},\n 'b': [],\n 'kkkkkkkkkkkk': [0.5,\n                  'long string with '\n                  'several words in '\n                  'itlong string with '\n                  'several words in '\n                  'itlong string with '\n                  'several words in it',\n                  -7,\n                  42,\n                  -1000000001,\n                  1000000000000]}"
+},
+{
+"args": [
+[
+3.14159,
+[
+"aaaaaaaa",
+[
+{
+"b": 0.5,
+"Alpha": 1000000000000
+},
+"long string with several words in it",
+{
+"Alpha": "long string with several words in it",
+"zeta": null,
+"10": null,
+"2": -1000000001,
+"a": 1000000000000
+},
+3.14159,
+[
+false,
+false
+],
+{
+"2": "dq\"",
+"mid key": "a",
+"kkkkkkkkkkkk": "x y"
+}
+],
+[
+0
+]
+],
+{
+"10": [
+{
+"10": -2.0,
+"a": "bbbbbbbbbbbbbbbb",
+"b": true,
+"kkkkkkkkkkkk": null,
+"zeta": "dq\""
+}
+],
+"": {}
+}
+]
+],
+"kwargs": {
+"width": 80,
+"compact": true
+},
+"expected": "[3.14159,\n ['aaaaaaaa',\n  [{'Alpha': 1000000000000, 'b': 0.5}, 'long string with several words in it',\n   {'10': None,\n    '2': -1000000001,\n    'Alpha': 'long string with several words in it',\n    'a': 1000000000000,\n    'zeta': None},\n   3.14159, [False, False],\n   {'2': 'dq\"', 'kkkkkkkkkkkk': 'x y', 'mid key': 'a'}],\n  [0]],\n {'': {},\n  '10': [{'10': -2.0,\n          'a': 'bbbbbbbbbbbbbbbb',\n          'b': True,\n          'kkkkkkkkkkkk': None,\n          'zeta': 'dq\"'}]}]"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"depth": 2,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "-1_000_000_001"
+},
+{
+"args": [
+[
+[
+{
+"mid key": -2.0
+},
+"None",
+[
+"key",
+"key",
+null
+],
+{
+"kkkkkkkkkkkk": 3.14159,
+"Alpha": -1000000001,
+"": false,
+"b": -7,
+"zeta": 1e-07
+}
+],
+null,
+[
+0.5
+],
+null
+]
+],
+"kwargs": {
+"width": 60,
+"depth": 1
+},
+"expected": "[[...], None, [...], None]"
+},
+{
+"args": [
+[
+1e-07
+]
+],
+"kwargs": {
+"width": 12
+},
+"expected": "[1e-07]"
+},
+{
+"args": [
+"000"
+],
+"kwargs": {
+"width": 16,
+"compact": true
+},
+"expected": "'000'"
+},
+{
+"args": [
+{
+"10": "quote's",
+"": [
+1000000000000,
+1e-07,
+{
+"kkkkkkkkkkkk": "ünï",
+"a": 0,
+"mid key": 1000000000000
+},
+[
+{
+"": false,
+"kkkkkkkkkkkk": 1
+},
+{
+"zeta": -2.0,
+"a": null
+},
+[
+1e-07,
+1,
+"000",
+-2.0,
+false,
+"ünïünïünï"
+]
+],
+[
+[
+-1000000001,
+true
+]
+],
+[
+false,
+-1000000001,
+[
+42,
+true,
+1,
+-7,
+false,
+1e+22
+]
+]
+],
+"mid key": -2.0,
+"2": null
+}
+],
+"kwargs": {
+"width": 16,
+"depth": 2,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'10': \"quote's\",\n '': [1_000_000_000_000,\n      1e-07,\n      {...},\n      [...],\n      [...],\n      [...]],\n 'mid key': -2.0,\n '2': None}"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 40
+},
+"expected": "True"
+},
+{
+"args": [
+{
+"": "keykeykeykeykeykeykeykey"
+}
+],
+"kwargs": {
+"width": 16,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{'': 'keykeykeykeykeykeykeykey'}"
+},
+{
+"args": [
+[
+[
+0.5,
+"valuevaluevalue",
+1e-07,
+1e-07,
+"00000000",
+-1000000001
+],
+[
+1e-07
+],
+[
+true,
+1000000000000,
+3.14159,
+-7,
+42
+]
+]
+],
+"kwargs": {
+"width": 40,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "[[0.5,\n  'valuevaluevalue',\n  1e-07,\n  1e-07,\n  '00000000',\n  -1_000_000_001],\n [1e-07],\n [True,\n  1_000_000_000_000,\n  3.14159,\n  -7,\n  42]]"
+},
+{
+"args": [
+{
+"mid key": {},
+"10": {
+"a": "value",
+"kkkkkkkkkkkk": "None",
+"2": 0,
+"10": 1e-07
+},
+"b": false
+}
+],
+"kwargs": {
+"width": 30,
+"indent": 0,
+"underscore_numbers": true
+},
+"expected": "{'10': {'10': 1e-07,\n      '2': 0,\n      'a': 'value',\n      'kkkkkkkkkkkk': 'None'},\n'b': False,\n'mid key': {}}"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": false,
+"mid key": {}
+}
+],
+"kwargs": {
+"width": 60,
+"compact": true
+},
+"expected": "{'kkkkkkkkkkkk': False, 'mid key': {}}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 30,
+"indent": 0,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "[]"
+},
+{
+"args": [
+[
+3.14159,
+false,
+1e-07,
+1
+]
+],
+"kwargs": {
+"compact": true
+},
+"expected": "[3.14159, False, 1e-07, 1]"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 30
+},
+"expected": "1e-07"
+},
+{
+"args": [
+[
+"dq\"",
+12345678,
+[
+-2.0,
+false,
+3.14159,
+"dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"",
+"x yx yx y"
+]
+]
+],
+"kwargs": {
+"width": 12,
+"depth": 2
+},
+"expected": "['dq\"',\n 12345678,\n [-2.0,\n  False,\n  3.14159,\n  'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n  'x yx yx '\n  'y']]"
+},
+{
+"args": [
+[
+{
+"": [
+[
+3.14159
+],
+1e-07,
+[
+"x y",
+3.14159,
+3.14159,
+1,
+false
+],
+[
+12345678,
+"bb",
+"long string with several words in it",
+"aaaaaaaa",
+"None"
+]
+],
+"Alpha": {},
+"zeta": {
+"mid key": {
+"": 0.5,
+"kkkkkkkkkkkk": 1e-07
+},
+"Alpha": [
+1e-07,
+null,
+false
+]
+},
+"mid key": {
+"kkkkkkkkkkkk": 3.14159,
+"2": 0.5,
+"b": [
+null
+],
+"zeta": {},
+"a": [
+true
+]
+},
+"b": {
+"2": [
+0,
+null,
+0,
+"None"
+],
+"": {
+"2": 1e+22,
+"zeta": 1e+22,
+"mid key": null
+},
+"Alpha": [],
+"kkkkkkkkkkkk": 12345678,
+"a": [
+false
+]
+}
+},
+true,
+"keykeykeykeykeykeykeykey"
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 4
+},
+"expected": "[   {   '': [   [3.14159],\n                1e-07,\n                [   'x y',\n                    3.14159,\n                    3.14159,\n                    1,\n                    False],\n                [   12345678,\n                    'bb',\n                    'long string with '\n                    'several words in '\n                    'it',\n                    'aaaaaaaa',\n                    'None']],\n        'Alpha': {},\n        'b': {   '': {   '2': 1e+22,\n                         'mid key': None,\n                         'zeta': 1e+22},\n                 '2': [   0,\n                          None,\n                          0,\n                          'None'],\n                 'Alpha': [],\n                 'a': [False],\n                 'kkkkkkkkkkkk': 12345678},\n        'mid key': {   '2': 0.5,\n                       'a': [True],\n                       'b': [None],\n                       'kkkkkkkkkkkk': 3.14159,\n                       'zeta': {}},\n        'zeta': {   'Alpha': [   1e-07,\n                                 None,\n                                 False],\n                    'mid key': {   '': 0.5,\n                                   'kkkkkkkkkkkk': 1e-07}}},\n    True,\n    'keykeykeykeykeykeykeykey']"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 60,
+"compact": true
+},
+"expected": "[]"
+},
+{
+"args": [
+[
+{
+"": -2.0
+},
+{
+"a": 1,
+"2": "quote'squote'squote's",
+"zeta": -7,
+"": 3.14159,
+"Alpha": null
+}
+]
+],
+"kwargs": {
+"width": 8,
+"depth": 1
+},
+"expected": "[{...},\n {...}]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 12,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": null,
+"b": 12345678,
+"mid key": 1
+}
+],
+"kwargs": {
+"width": 60,
+"indent": 4,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{'b': 12_345_678, 'kkkkkkkkkkkk': None, 'mid key': 1}"
+},
+{
+"args": [
+[
+null,
+[
+[
+0.5,
+3.14159,
+"dq\""
+],
+[
+-1000000001
+],
+[
+null,
+12345678,
+""
+]
+],
+[
+[
+1,
+-2.0,
+"ünï"
+],
+{
+"a": 1000000000000
+},
+3.14159,
+{
+"Alpha": 1e-07,
+"a": null,
+"mid key": "bb",
+"2": 1000000000000,
+"10": true
+}
+],
+{
+"a": "quote's",
+"2": "aaa",
+"b": [
+"newline\nhere"
+],
+"": {
+"2": null,
+"kkkkkkkkkkkk": 3.14159,
+"10": "bb"
+}
+},
+[
+{
+"": false,
+"2": true
+},
+{
+"": 3.14159,
+"a": false,
+"b": "bbbbbb",
+"zeta": 12345678,
+"mid key": false
+},
+{}
+]
+]
+],
+"kwargs": {
+"width": 60
+},
+"expected": "[None,\n [[0.5, 3.14159, 'dq\"'],\n  [-1000000001],\n  [None, 12345678, '']],\n [[1, -2.0, 'ünï'],\n  {'a': 1000000000000},\n  3.14159,\n  {'10': True,\n   '2': 1000000000000,\n   'Alpha': 1e-07,\n   'a': None,\n   'mid key': 'bb'}],\n {'': {'10': 'bb', '2': None, 'kkkkkkkkkkkk': 3.14159},\n  '2': 'aaa',\n  'a': \"quote's\",\n  'b': ['newline\\nhere']},\n [{'': False, '2': True},\n  {'': 3.14159,\n   'a': False,\n   'b': 'bbbbbb',\n   'mid key': False,\n   'zeta': 12345678},\n  {}]]"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"depth": 2,
+"compact": true
+},
+"expected": "{}"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 12,
+"depth": 1
+},
+"expected": "{}"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"compact": true
+},
+"expected": "None"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 30,
+"indent": 4,
+"underscore_numbers": true
+},
+"expected": "{}"
+},
+{
+"args": [
+[
+"long string with several words in it",
+{
+"mid key": {
+"kkkkkkkkkkkk": [
+"a",
+-7,
+42,
+true,
+"a"
+]
+},
+"10": {
+"mid key": {
+"kkkkkkkkkkkk": -1000000001,
+"b": null,
+"2": true,
+"10": "quote'squote'squote'squote'squote'squote'squote'squote's"
+},
+"a": [
+1e+22,
+-7,
+12345678,
+1e-07,
+0,
+-2.0
+]
+},
+"2": true,
+"": 1e+22
+},
+[
+[
+"value",
+{
+"": 3.14159,
+"zeta": false
+}
+]
+],
+[
+[
+false,
+{
+"kkkkkkkkkkkk": "x y"
+},
+[
+0,
+false
+],
+[
+""
+]
+],
+[
+{
+"2": -1000000001
+},
+[
+null,
+true,
+true
+],
+"long string with several words in it",
+false
+],
+{
+"kkkkkkkkkkkk": 42,
+"10": [
+"quote's",
+12345678
+],
+"b": "keykeykey",
+"": true
+},
+{
+"b": {
+"mid key": true,
+"a": 1
+},
+"mid key": [
+false,
+"long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+-7,
+42,
+true,
+12345678
+],
+"Alpha": [
+true
+],
+"zeta": 1e-07
+},
+[
+"value",
+"keykeykeykeykeykeykeykey",
+[
+-7,
+"x yx yx y",
+-7,
+null,
+true,
+"a"
+]
+],
+-1000000001
+],
+[
+"tab\theretab\theretab\there",
+"keykeykeykeykeykeykeykey",
+[
+[
+null,
+0,
+1e+22,
+1,
+0.5
+],
+[
+false,
+0.5,
+null,
+1,
+"ünï"
+],
+0.5,
+{
+"Alpha": false,
+"": "value",
+"b": false,
+"a": "newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere",
+"mid key": 1e-07
+}
+],
+1e-07
+]
+]
+],
+"kwargs": {
+"width": 8,
+"compact": true
+},
+"expected": "['long '\n 'string '\n 'with '\n 'several '\n 'words '\n 'in '\n 'it',\n {'': 1e+22,\n  '10': {'a': [1e+22,\n               -7,\n               12345678,\n               1e-07,\n               0,\n               -2.0],\n         'mid key': {'10': \"quote'squote'squote'squote'squote'squote'squote'squote's\",\n                     '2': True,\n                     'b': None,\n                     'kkkkkkkkkkkk': -1000000001}},\n  '2': True,\n  'mid key': {'kkkkkkkkkkkk': ['a',\n                               -7,\n                               42,\n                               True,\n                               'a']}},\n [['value',\n   {'': 3.14159,\n    'zeta': False}]],\n [[False,\n   {'kkkkkkkkkkkk': 'x '\n                    'y'},\n   [0,\n    False],\n   ['']],\n  [{'2': -1000000001},\n   [None,\n    True,\n    True],\n   'long '\n   'string '\n   'with '\n   'several '\n   'words '\n   'in '\n   'it',\n   False],\n  {'': True,\n   '10': [\"quote's\",\n          12345678],\n   'b': 'keykeykey',\n   'kkkkkkkkkkkk': 42},\n  {'Alpha': [True],\n   'b': {'a': 1,\n         'mid key': True},\n   'mid key': [False,\n               'long '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'itlong '\n               'string '\n               'with '\n               'several '\n               'words '\n               'in '\n               'it',\n               -7,\n               42,\n               True,\n               12345678],\n   'zeta': 1e-07},\n  ['value',\n   'keykeykeykeykeykeykeykey',\n   [-7,\n    'x '\n    'yx '\n    'yx '\n    'y',\n    -7,\n    None,\n    True,\n    'a']],\n  -1000000001],\n ['tab\\t'\n  'heretab\\t'\n  'heretab\\t'\n  'here',\n  'keykeykeykeykeykeykeykey',\n  [[None,\n    0,\n    1e+22,\n    1,\n    0.5],\n   [False,\n    0.5,\n    None,\n    1,\n    'ünï'],\n   0.5,\n   {'': 'value',\n    'Alpha': False,\n    'a': 'newline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'here',\n    'b': False,\n    'mid key': 1e-07}],\n  1e-07]]"
+},
+{
+"args": [
+{
+"b": {
+"mid key": true,
+"10": true,
+"kkkkkkkkkkkk": 1000000000000
+},
+"10": null,
+"": 1e+22,
+"a": "aaa"
+}
+],
+"kwargs": {
+"width": 8
+},
+"expected": "{'': 1e+22,\n '10': None,\n 'a': 'aaa',\n 'b': {'10': True,\n       'kkkkkkkkkkkk': 1000000000000,\n       'mid key': True}}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 40
+},
+"expected": "[]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 30,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+{
+"a": false,
+"kkkkkkkkkkkk": false,
+"b": [
+0.5,
+null,
+"a",
+"valuevaluevalue",
+-1000000001
+],
+"2": [
+"ünï",
+0
+]
+}
+],
+"kwargs": {
+"width": 16,
+"sort_dicts": false
+},
+"expected": "{'a': False,\n 'kkkkkkkkkkkk': False,\n 'b': [0.5,\n       None,\n       'a',\n       'valuevaluevalue',\n       -1000000001],\n '2': ['ünï',\n       0]}"
+},
+{
+"args": [
+[
+{
+"Alpha": -2.0,
+"2": false,
+"b": 1
+},
+"NoneNoneNone"
+]
+],
+"kwargs": {
+"width": 30,
+"depth": 2
+},
+"expected": "[{'2': False,\n  'Alpha': -2.0,\n  'b': 1},\n 'NoneNoneNone']"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 20,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "{}"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"width": 30,
+"compact": true
+},
+"expected": "-1000000001"
+},
+{
+"args": [
+[
+[],
+{}
+]
+],
+"kwargs": {
+"width": 12,
+"indent": 2,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[[], {}]"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 40
+},
+"expected": "False"
+},
+{
+"args": [
+[
+[
+[
+[
+1,
+"bb",
+-1000000001
+],
+{
+"a": 0.5,
+"Alpha": false,
+"10": 0,
+"zeta": false,
+"b": false
+},
+[
+"bb",
+"0",
+"0",
+"quote's",
+3.14159
+]
+],
+{
+"mid key": [
+"0",
+"long string with several words in it",
+-2.0,
+true,
+null
+],
+"b": [],
+"Alpha": [
+null,
+-7,
+42
+]
+}
+]
+]
+],
+"kwargs": {
+"width": 8,
+"depth": 1,
+"compact": true
+},
+"expected": "[[...]]"
+},
+{
+"args": [
+[
+true,
+[
+false,
+"key",
+42,
+[
+[
+false,
+0.5,
+1e-07,
+3.14159
+],
+[
+-2.0,
+null
+],
+"quote's",
+[
+true,
+false,
+0.5,
+0.5,
+-1000000001
+],
+{
+"10": 42,
+"": 1e-07,
+"mid key": -1000000001
+}
+],
+"None",
+[
+1e-07,
+1
+]
+],
+{
+"2": {
+"mid key": [
+1e+22
+],
+"a": {
+"Alpha": "valuevaluevalue",
+"zeta": true,
+"10": 12345678,
+"2": 1000000000000,
+"mid key": "quote's"
+},
+"": true,
+"2": [
+"value",
+1e+22
+],
+"zeta": [
+true,
+42,
+"quote's"
+]
+},
+"a": [
+null,
+0.5,
+0,
+[
+null,
+"newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere",
+true
+]
+]
+},
+"ünï",
+1000000000000,
+1e-07
+]
+],
+"kwargs": {
+"width": 12,
+"sort_dicts": false
+},
+"expected": "[True,\n [False,\n  'key',\n  42,\n  [[False,\n    0.5,\n    1e-07,\n    3.14159],\n   [-2.0,\n    None],\n   \"quote's\",\n   [True,\n    False,\n    0.5,\n    0.5,\n    -1000000001],\n   {'10': 42,\n    '': 1e-07,\n    'mid key': -1000000001}],\n  'None',\n  [1e-07,\n   1]],\n {'2': {'mid key': [1e+22],\n        'a': {'Alpha': 'valuevaluevalue',\n              'zeta': True,\n              '10': 12345678,\n              '2': 1000000000000,\n              'mid key': \"quote's\"},\n        '': True,\n        '2': ['value',\n              1e+22],\n        'zeta': [True,\n                 42,\n                 \"quote's\"]},\n  'a': [None,\n        0.5,\n        0,\n        [None,\n         'newline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'herenewline\\n'\n         'here',\n         True]]},\n 'ünï',\n 1000000000000,\n 1e-07]"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": {
+"zeta": {
+"b": 1e-07,
+"mid key": [
+true,
+false
+],
+"10": [
+"newline\nhere",
+-2.0,
+0
+]
+},
+"Alpha": 1e+22,
+"": [
+[
+"value",
+"tab\theretab\theretab\there"
+],
+0.5,
+1000000000000,
+{
+"2": "",
+"zeta": "x yx yx yx yx yx yx yx y"
+},
+{
+"Alpha": 42,
+"a": "long string with several words in it",
+"10": true
+},
+{
+"kkkkkkkkkkkk": "aaa",
+"2": null
+}
+],
+"b": -1000000001
+},
+"zeta": [
+{
+"": {
+"a": false,
+"2": "tab\there"
+},
+"a": [
+42,
+12345678
+],
+"kkkkkkkkkkkk": {
+"": 1e-07,
+"2": false,
+"Alpha": false,
+"10": true
+},
+"zeta": {
+"b": "quote's",
+"zeta": null,
+"2": true,
+"10": true,
+"": 0.5
+},
+"2": {
+"10": null,
+"kkkkkkkkkkkk": 42
+}
+},
+true,
+[
+12345678,
+{
+"Alpha": "0",
+"b": "newline\nhere",
+"": 1e+22,
+"mid key": "key",
+"kkkkkkkkkkkk": -7
+},
+[
+"ünï",
+-1000000001,
+-2.0,
+true,
+-7,
+12345678
+],
+null
+],
+"",
+{}
+],
+"2": "ünï",
+"b": 1e+22,
+"mid key": 3.14159
+}
+],
+"kwargs": {
+"width": 80
+},
+"expected": "{'2': 'ünï',\n 'b': 1e+22,\n 'kkkkkkkkkkkk': {'': [['value', 'tab\\theretab\\theretab\\there'],\n                       0.5,\n                       1000000000000,\n                       {'2': '', 'zeta': 'x yx yx yx yx yx yx yx y'},\n                       {'10': True,\n                        'Alpha': 42,\n                        'a': 'long string with several words in it'},\n                       {'2': None, 'kkkkkkkkkkkk': 'aaa'}],\n                  'Alpha': 1e+22,\n                  'b': -1000000001,\n                  'zeta': {'10': ['newline\\nhere', -2.0, 0],\n                           'b': 1e-07,\n                           'mid key': [True, False]}},\n 'mid key': 3.14159,\n 'zeta': [{'': {'2': 'tab\\there', 'a': False},\n           '2': {'10': None, 'kkkkkkkkkkkk': 42},\n           'a': [42, 12345678],\n           'kkkkkkkkkkkk': {'': 1e-07, '10': True, '2': False, 'Alpha': False},\n           'zeta': {'': 0.5,\n                    '10': True,\n                    '2': True,\n                    'b': \"quote's\",\n                    'zeta': None}},\n          True,\n          [12345678,\n           {'': 1e+22,\n            'Alpha': '0',\n            'b': 'newline\\nhere',\n            'kkkkkkkkkkkk': -7,\n            'mid key': 'key'},\n           ['ünï', -1000000001, -2.0, True, -7, 12345678],\n           None],\n          '',\n          {}]}"
+},
+{
+"args": [
+{
+"b": {
+"kkkkkkkkkkkk": 3.14159,
+"a": "key"
+},
+"": [
+[
+{
+"kkkkkkkkkkkk": 1000000000000,
+"Alpha": true
+},
+"ünïünïünïünïünïünïünïünï",
+{
+"10": true,
+"mid key": "a",
+"kkkkkkkkkkkk": 1,
+"b": "a",
+"zeta": 12345678
+},
+42
+],
+{
+"zeta": [
+-7,
+"bb",
+null,
+"newline\nhere",
+"long string with several words in itlong string with several words in itlong string with several words in it"
+],
+"": "dq\"dq\"dq\"",
+"mid key": "dq\"",
+"10": {
+"mid key": "ünïünïünïünïünïünïünïünï",
+"kkkkkkkkkkkk": 1e-07,
+"Alpha": 1e+22,
+"zeta": "tab\theretab\theretab\there",
+"a": 1e-07
+},
+"a": [
+1e+22,
+42,
+42
+]
+}
+],
+"a": [
+{
+"2": [
+"ünï",
+"bbbbbb",
+true,
+"x y",
+1e+22
+],
+"": "tab\there"
+},
+-1000000001,
+false,
+"ünïünïünïünïünïünïünïünï",
+[
+{
+"a": "tab\there",
+"zeta": 42,
+"mid key": "x y",
+"": 42,
+"10": true
+},
+null,
+{}
+]
+],
+"Alpha": 1000000000000,
+"10": true
+}
+],
+"kwargs": {
+"width": 8
+},
+"expected": "{'': [[{'Alpha': True,\n        'kkkkkkkkkkkk': 1000000000000},\n       'ünïünïünïünïünïünïünïünï',\n       {'10': True,\n        'b': 'a',\n        'kkkkkkkkkkkk': 1,\n        'mid key': 'a',\n        'zeta': 12345678},\n       42],\n      {'': 'dq\"dq\"dq\"',\n       '10': {'Alpha': 1e+22,\n              'a': 1e-07,\n              'kkkkkkkkkkkk': 1e-07,\n              'mid key': 'ünïünïünïünïünïünïünïünï',\n              'zeta': 'tab\\t'\n                      'heretab\\t'\n                      'heretab\\t'\n                      'here'},\n       'a': [1e+22,\n             42,\n             42],\n       'mid key': 'dq\"',\n       'zeta': [-7,\n                'bb',\n                None,\n                'newline\\n'\n                'here',\n                'long '\n                'string '\n                'with '\n                'several '\n                'words '\n                'in '\n                'itlong '\n                'string '\n                'with '\n                'several '\n                'words '\n                'in '\n                'itlong '\n                'string '\n                'with '\n                'several '\n                'words '\n                'in '\n                'it']}],\n '10': True,\n 'Alpha': 1000000000000,\n 'a': [{'': 'tab\\t'\n            'here',\n        '2': ['ünï',\n              'bbbbbb',\n              True,\n              'x '\n              'y',\n              1e+22]},\n       -1000000001,\n       False,\n       'ünïünïünïünïünïünïünïünï',\n       [{'': 42,\n         '10': True,\n         'a': 'tab\\t'\n              'here',\n         'mid key': 'x '\n                    'y',\n         'zeta': 42},\n        None,\n        {}]],\n 'b': {'a': 'key',\n       'kkkkkkkkkkkk': 3.14159}}"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"width": 80
+},
+"expected": "-1000000001"
+},
+{
+"args": [
+"valuevaluevalue"
+],
+"kwargs": {
+"width": 80,
+"indent": 4
+},
+"expected": "'valuevaluevalue'"
+},
+{
+"args": [
+{
+"10": {
+"Alpha": [
+"aaaaaaaa"
+],
+"a": {
+"zeta": [
+"00000000"
+],
+"kkkkkkkkkkkk": [
+"aaaaaaaa",
+"newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere",
+-2.0,
+"",
+-2.0
+],
+"b": {
+"": 1e-07,
+"2": 3.14159,
+"Alpha": -2.0,
+"10": 12345678
+}
+},
+"kkkkkkkkkkkk": "x y"
+},
+"2": [
+true,
+[]
+]
+}
+],
+"kwargs": {
+"width": 80,
+"underscore_numbers": true
+},
+"expected": "{'10': {'Alpha': ['aaaaaaaa'],\n        'a': {'b': {'': 1e-07, '10': 12_345_678, '2': 3.14159, 'Alpha': -2.0},\n              'kkkkkkkkkkkk': ['aaaaaaaa',\n                               'newline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'herenewline\\n'\n                               'here',\n                               -2.0,\n                               '',\n                               -2.0],\n              'zeta': ['00000000']},\n        'kkkkkkkkkkkk': 'x y'},\n '2': [True, []]}"
+},
+{
+"args": [
+{
+"Alpha": true
+}
+],
+"kwargs": {
+"width": 60,
+"sort_dicts": false
+},
+"expected": "{'Alpha': True}"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 80,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "{}"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 20,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "False"
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"width": 30,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "''"
+},
+{
+"args": [
+[
+"long string with several words in it",
+false
+]
+],
+"kwargs": {
+"width": 16,
+"indent": 2,
+"underscore_numbers": true
+},
+"expected": "[ 'long string '\n  'with '\n  'several '\n  'words in it',\n  False]"
+},
+{
+"args": [
+"dq\""
+],
+"kwargs": {
+"width": 12
+},
+"expected": "'dq\"'"
+},
+{
+"args": [
+{
+"": "a"
+}
+],
+"kwargs": {
+"width": 60,
+"indent": 4
+},
+"expected": "{'': 'a'}"
+},
+{
+"args": [
+"0"
+],
+"kwargs": {
+"width": 60,
+"depth": 2
+},
+"expected": "'0'"
+},
+{
+"args": [
+[
+{
+"mid key": {
+"": {
+"2": 12345678,
+"kkkkkkkkkkkk": null
+},
+"a": 0,
+"zeta": "key",
+"kkkkkkkkkkkk": false,
+"b": [
+0
+]
+},
+"2": "dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"",
+"kkkkkkkkkkkk": {
+"Alpha": [
+3.14159,
+3.14159,
+"long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+null,
+true,
+"dq\""
+],
+"kkkkkkkkkkkk": "quote's",
+"b": [
+null,
+"newline\nhere",
+"value",
+0.5,
+12345678,
+"newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere"
+],
+"10": []
+},
+"Alpha": -7,
+"zeta": {
+"zeta": 12345678,
+"2": [
+false,
+1e+22,
+false,
+1e+22,
+0.5,
+"value"
+],
+"Alpha": 0,
+"b": [
+3.14159
+],
+"": [
+null,
+false,
+1e+22,
+0.5
+]
+}
+},
+{
+"kkkkkkkkkkkk": 0.5,
+"a": {
+"Alpha": {
+"a": 3.14159,
+"Alpha": "ünïünïünï",
+"kkkkkkkkkkkk": "newline\nhere"
+},
+"b": true,
+"": {
+"2": "dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"",
+"mid key": 42
+},
+"zeta": {
+"Alpha": -2.0
+},
+"a": [
+0,
+0.5,
+null,
+true
+]
+},
+"2": [
+3.14159,
+1,
+{
+"": -2.0
+},
+[
+-7
+],
+[
+"None",
+true,
+-2.0,
+1e-07,
+null,
+"a"
+]
+],
+"10": {
+"zeta": [],
+"Alpha": {
+"kkkkkkkkkkkk": -2.0
+}
+}
+},
+[
+12345678,
+[
+[
+"value",
+true,
+false,
+"value"
+],
+[
+"bb",
+1e-07,
+3.14159
+],
+[
+-2.0,
+1000000000000,
+"x y"
+],
+{},
+1000000000000
+],
+[
+{
+"Alpha": null,
+"kkkkkkkkkkkk": 1000000000000,
+"a": 1000000000000,
+"mid key": true
+},
+"bb"
+]
+],
+{
+"kkkkkkkkkkkk": {
+"zeta": {
+"a": 0.5,
+"zeta": 3.14159,
+"kkkkkkkkkkkk": 1e-07,
+"2": -7
+},
+"2": [
+0.5
+],
+"a": []
+},
+"Alpha": {
+"10": {
+"2": "x y",
+"kkkkkkkkkkkk": "long string with several words in it",
+"zeta": false,
+"b": 0.5
+},
+"a": 1e+22,
+"2": [
+3.14159,
+true,
+0,
+"ünï",
+1e+22
+]
+},
+"mid key": 1e-07
+},
+"newline\nherenewline\nherenewline\nhere"
+]
+],
+"kwargs": {
+"width": 20,
+"sort_dicts": false
+},
+"expected": "[{'mid key': {'': {'2': 12345678,\n                   'kkkkkkkkkkkk': None},\n              'a': 0,\n              'zeta': 'key',\n              'kkkkkkkkkkkk': False,\n              'b': [0]},\n  '2': 'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n  'kkkkkkkkkkkk': {'Alpha': [3.14159,\n                             3.14159,\n                             'long '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'itlong '\n                             'string '\n                             'with '\n                             'several '\n                             'words '\n                             'in '\n                             'it',\n                             None,\n                             True,\n                             'dq\"'],\n                   'kkkkkkkkkkkk': \"quote's\",\n                   'b': [None,\n                         'newline\\n'\n                         'here',\n                         'value',\n                         0.5,\n                         12345678,\n                         'newline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'herenewline\\n'\n                         'here'],\n                   '10': []},\n  'Alpha': -7,\n  'zeta': {'zeta': 12345678,\n           '2': [False,\n                 1e+22,\n                 False,\n                 1e+22,\n                 0.5,\n                 'value'],\n           'Alpha': 0,\n           'b': [3.14159],\n           '': [None,\n                False,\n                1e+22,\n                0.5]}},\n {'kkkkkkkkkkkk': 0.5,\n  'a': {'Alpha': {'a': 3.14159,\n                  'Alpha': 'ünïünïünï',\n                  'kkkkkkkkkkkk': 'newline\\n'\n                                  'here'},\n        'b': True,\n        '': {'2': 'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n             'mid key': 42},\n        'zeta': {'Alpha': -2.0},\n        'a': [0,\n              0.5,\n              None,\n              True]},\n  '2': [3.14159,\n        1,\n        {'': -2.0},\n        [-7],\n        ['None',\n         True,\n         -2.0,\n         1e-07,\n         None,\n         'a']],\n  '10': {'zeta': [],\n         'Alpha': {'kkkkkkkkkkkk': -2.0}}},\n [12345678,\n  [['value',\n    True,\n    False,\n    'value'],\n   ['bb',\n    1e-07,\n    3.14159],\n   [-2.0,\n    1000000000000,\n    'x y'],\n   {},\n   1000000000000],\n  [{'Alpha': None,\n    'kkkkkkkkkkkk': 1000000000000,\n    'a': 1000000000000,\n    'mid key': True},\n   'bb']],\n {'kkkkkkkkkkkk': {'zeta': {'a': 0.5,\n                            'zeta': 3.14159,\n                            'kkkkkkkkkkkk': 1e-07,\n                            '2': -7},\n                   '2': [0.5],\n                   'a': []},\n  'Alpha': {'10': {'2': 'x '\n                        'y',\n                   'kkkkkkkkkkkk': 'long '\n                                   'string '\n                                   'with '\n                                   'several '\n                                   'words '\n                                   'in '\n                                   'it',\n                   'zeta': False,\n                   'b': 0.5},\n            'a': 1e+22,\n            '2': [3.14159,\n                  True,\n                  0,\n                  'ünï',\n                  1e+22]},\n  'mid key': 1e-07},\n 'newline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'here']"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 16,
+"indent": 4,
+"compact": true
+},
+"expected": "None"
+},
+{
+"args": [
+{
+"Alpha": [
+1e+22,
+"quote's"
+],
+"kkkkkkkkkkkk": [
+1e-07,
+42,
+-1000000001,
+"x yx yx yx yx yx yx yx y",
+true
+],
+"mid key": [
+3.14159,
+-2.0,
+-2.0
+],
+"zeta": 0.5,
+"b": 1e+22
+}
+],
+"kwargs": {
+"depth": 2,
+"compact": true
+},
+"expected": "{'Alpha': [1e+22, \"quote's\"],\n 'b': 1e+22,\n 'kkkkkkkkkkkk': [1e-07, 42, -1000000001, 'x yx yx yx yx yx yx yx y', True],\n 'mid key': [3.14159, -2.0, -2.0],\n 'zeta': 0.5}"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 80,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+3.14159
+],
+"kwargs": {
+"width": 80,
+"indent": 0,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "3.14159"
+},
+{
+"args": [
+"bbbbbbbbbbbbbbbb"
+],
+"kwargs": {
+"width": 40,
+"depth": 1
+},
+"expected": "'bbbbbbbbbbbbbbbb'"
+},
+{
+"args": [
+{
+"b": 1000000000000
+}
+],
+"kwargs": {
+"width": 40,
+"compact": true
+},
+"expected": "{'b': 1000000000000}"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": "long string with several words in it",
+"": 1e+22,
+"a": "tab\theretab\theretab\there"
+}
+],
+"kwargs": {
+"width": 60,
+"underscore_numbers": true
+},
+"expected": "{'': 1e+22,\n 'a': 'tab\\theretab\\theretab\\there',\n 'kkkkkkkkkkkk': 'long string with several words in it'}"
+},
+{
+"args": [
+[
+"aaaaaaaa",
+"dq\""
+]
+],
+"kwargs": {
+"width": 60,
+"depth": 1,
+"sort_dicts": false
+},
+"expected": "['aaaaaaaa', 'dq\"']"
+},
+{
+"args": [
+[
+null
+]
+],
+"kwargs": {
+"width": 80
+},
+"expected": "[None]"
+},
+{
+"args": [
+[
+42,
+1e-07,
+"",
+1000000000000
+]
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"compact": true
+},
+"expected": "[42, 1e-07, '',\n1000000000000]"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 8,
+"underscore_numbers": true
+},
+"expected": "{}"
+},
+{
+"args": [
+{
+"": [
+1e+22,
+1e+22,
+1,
+true
+],
+"b": 1e-07,
+"Alpha": 1e+22,
+"10": 0,
+"zeta": [
+1,
+true,
+12345678
+]
+}
+],
+"kwargs": {
+"width": 16,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{'': [1e+22,\n      1e+22, 1,\n      True],\n '10': 0,\n 'Alpha': 1e+22,\n 'b': 1e-07,\n 'zeta': [1,\n          True,\n          12_345_678]}"
+},
+{
+"args": [
+[
+0,
+[
+false,
+1000000000000,
+"quote'squote'squote'squote'squote'squote'squote'squote's"
+],
+[
+3.14159,
+1,
+-7
+],
+[
+1000000000000,
+"valuevaluevalue",
+0.5,
+0.5,
+0
+]
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 4,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[   0,\n    [   False, 1000000000000,\n        \"quote'squote'squote'squote'squote'squote'squote'squote's\"],\n    [3.14159, 1, -7],\n    [   1000000000000,\n        'valuevaluevalue', 0.5, 0.5,\n        0]]"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 80
+},
+"expected": "None"
+},
+{
+"args": [
+[
+{
+"mid key": "key",
+"10": true,
+"a": null,
+"": 0
+}
+]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[{'': 0,\n  '10': True,\n  'a': None,\n  'mid key': 'key'}]"
+},
+{
+"args": [
+[
+{},
+[
+{
+"a": [
+12345678,
+-1000000001,
+"a"
+],
+"2": 3.14159,
+"b": [],
+"mid key": {
+"2": 3.14159
+}
+},
+[
+"long string with several words in it",
+null
+]
+],
+[
+42,
+false
+],
+true,
+{
+"mid key": {},
+"kkkkkkkkkkkk": true,
+"2": [
+42
+],
+"zeta": [
+[
+"0",
+true,
+"value",
+"tab\there"
+],
+1e+22,
+[
+null
+]
+]
+}
+]
+],
+"kwargs": {
+"width": 16,
+"indent": 4,
+"depth": 1
+},
+"expected": "[   {},\n    [...],\n    [...],\n    True,\n    {...}]"
+},
+{
+"args": [
+-2.0
+],
+"kwargs": {
+"width": 12,
+"underscore_numbers": true
+},
+"expected": "-2.0"
+},
+{
+"args": [
+"x y"
+],
+"kwargs": {
+"width": 8,
+"underscore_numbers": true
+},
+"expected": "'x y'"
+},
+{
+"args": [
+{
+"": [
+null,
+12345678,
+3.14159
+],
+"kkkkkkkkkkkk": "tab\there",
+"mid key": [
+"dq\"",
+-1000000001,
+1e+22,
+"quote's",
+1e+22,
+-7
+],
+"a": true
+}
+],
+"kwargs": {
+"depth": 1,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "{'': [...], 'kkkkkkkkkkkk': 'tab\\there', 'mid key': [...], 'a': True}"
+},
+{
+"args": [
+[
+{
+"2": {
+"": 1
+},
+"Alpha": {
+"a": 12345678,
+"kkkkkkkkkkkk": 0.5
+},
+"": "None"
+},
+[
+{},
+[
+1,
+"quote's",
+1,
+true,
+1e-07,
+-1000000001
+],
+{
+"mid key": -1000000001,
+"": true,
+"Alpha": null,
+"kkkkkkkkkkkk": -2.0
+},
+null
+],
+"ünïünïünïünïünïünïünïünï",
+[
+[
+-2.0,
+null,
+3.14159
+],
+-2.0,
+{}
+]
+]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[{'': 'None',\n  '2': {'': 1},\n  'Alpha': {'a': 12345678,\n            'kkkkkkkkkkkk': 0.5}},\n [{},\n  [1,\n   \"quote's\",\n   1,\n   True,\n   1e-07,\n   -1000000001],\n  {'': True,\n   'Alpha': None,\n   'kkkkkkkkkkkk': -2.0,\n   'mid key': -1000000001},\n  None],\n 'ünïünïünïünïünïünïünïünï',\n [[-2.0,\n   None,\n   3.14159],\n  -2.0,\n  {}]]"
+},
+{
+"args": [
+{
+"mid key": 0,
+"zeta": {
+"10": [
+0,
+true,
+0.5,
+true,
+null
+],
+"a": 0.5
+},
+"a": {}
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 4,
+"depth": 2
+},
+"expected": "{   'a': {},\n    'mid key': 0,\n    'zeta': {   '10': [   0,\n                          True,\n                          0.5,\n                          True,\n                          None],\n                'a': 0.5}}"
+},
+{
+"args": [
+-2.0
+],
+"kwargs": {
+"width": 30,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "-2.0"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 80,
+"indent": 0
+},
+"expected": "1e-07"
+},
+{
+"args": [
+[
+{
+"mid key": {
+"kkkkkkkkkkkk": [],
+"": 1e-07,
+"10": false,
+"zeta": [
+12345678,
+false,
+""
+],
+"mid key": -2.0
+},
+"10": 1000000000000,
+"b": {
+"zeta": [
+"dq\"",
+"quote's",
+0.5
+],
+"10": "ünï",
+"mid key": {
+"zeta": null,
+"b": "NoneNoneNone",
+"kkkkkkkkkkkk": "None",
+"mid key": "valuevaluevaluevaluevaluevaluevaluevalue",
+"Alpha": 12345678
+},
+"kkkkkkkkkkkk": [
+1000000000000,
+"quote's",
+-1000000001,
+true,
+null,
+"00000000"
+]
+},
+"Alpha": 1e+22
+},
+[
+[
+{
+"zeta": 1000000000000,
+"": "bb",
+"mid key": 1000000000000,
+"Alpha": 3.14159
+},
+true,
+{
+"10": 1e+22,
+"Alpha": "x yx yx yx yx yx yx yx y",
+"mid key": "dq\""
+}
+],
+[
+{
+"mid key": "ünï",
+"b": true
+}
+]
+],
+[
+[
+[
+"keykeykey",
+42,
+3.14159
+],
+true,
+[
+"newline\nhere",
+true,
+"a"
+],
+[
+"ünï",
+"a",
+1,
+-7
+]
+],
+[
+[
+3.14159,
+1e+22,
+true
+],
+[
+0.5,
+"dq\"",
+"long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+1e+22,
+"bbbbbbbbbbbbbbbb",
+-2.0
+],
+{
+"b": -7,
+"Alpha": "tab\there",
+"": true,
+"10": false,
+"zeta": "newline\nhere"
+},
+0,
+{
+"a": "value",
+"10": 3.14159,
+"Alpha": "newline\nhere"
+}
+],
+-2.0,
+[
+-2.0,
+1e-07,
+[
+-7,
+0.5,
+12345678
+],
+{
+"zeta": -1000000001,
+"Alpha": null
+},
+{}
+],
+[
+{
+"b": false,
+"kkkkkkkkkkkk": "aaaaaaaa",
+"mid key": 1e-07,
+"Alpha": 1e-07,
+"zeta": true
+},
+false,
+[
+"",
+"NoneNoneNone",
+12345678,
+-2.0,
+1,
+-7
+],
+{
+"mid key": "a",
+"a": "dq\"",
+"Alpha": 1e-07
+},
+[
+"newline\nhere"
+]
+]
+]
+]
+],
+"kwargs": {
+"width": 30,
+"depth": 1,
+"underscore_numbers": true
+},
+"expected": "[{...}, [...], [...]]"
+},
+{
+"args": [
+[
+{
+"a": "long string with several words in it"
+},
+{
+"a": 42,
+"10": false,
+"2": -2.0
+},
+[
+1e+22
+],
+[],
+{
+"2": false,
+"Alpha": 42,
+"a": null,
+"10": "bb",
+"b": 42
+}
+]
+],
+"kwargs": {
+"sort_dicts": false
+},
+"expected": "[{'a': 'long string with several words in it'},\n {'a': 42, '10': False, '2': -2.0},\n [1e+22],\n [],\n {'2': False, 'Alpha': 42, 'a': None, '10': 'bb', 'b': 42}]"
+},
+{
+"args": [
+[
+[
+"NoneNoneNone"
+],
+{
+"zeta": 1000000000000,
+"Alpha": true,
+"mid key": "keykeykey",
+"2": "tab\there"
+},
+[
+"long string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in itlong string with several words in it",
+0,
+"a",
+"long string with several words in itlong string with several words in itlong string with several words in it"
+],
+42
+]
+],
+"kwargs": {
+"width": 40
+},
+"expected": "[['NoneNoneNone'],\n {'2': 'tab\\there',\n  'Alpha': True,\n  'mid key': 'keykeykey',\n  'zeta': 1000000000000},\n ['long string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'it',\n  0,\n  'a',\n  'long string with several words in '\n  'itlong string with several words in '\n  'itlong string with several words in '\n  'it'],\n 42]"
+},
+{
+"args": [
+[
+{
+"b": {
+"Alpha": [
+"ünïünïünï",
+true
+],
+"mid key": [
+"bb",
+-2.0,
+1,
+3.14159
+],
+"zeta": {
+"mid key": true,
+"10": "",
+"Alpha": null,
+"a": "long string with several words in it",
+"2": 1000000000000
+}
+}
+},
+[
+[
+[
+null,
+-1000000001,
+0.5,
+3.14159,
+12345678
+],
+-2.0,
+null,
+{
+"a": 1000000000000,
+"b": "quote'squote'squote'squote'squote'squote'squote'squote's",
+"10": true,
+"2": "0"
+},
+{
+"mid key": 1000000000000,
+"kkkkkkkkkkkk": 1e+22,
+"a": "key"
+},
+[
+false,
+null,
+"dq\"",
+"quote'squote'squote's"
+]
+],
+-7,
+{}
+],
+"value",
+1000000000000
+]
+],
+"kwargs": {
+"width": 20
+},
+"expected": "[{'b': {'Alpha': ['ünïünïünï',\n                  True],\n        'mid key': ['bb',\n                    -2.0,\n                    1,\n                    3.14159],\n        'zeta': {'10': '',\n                 '2': 1000000000000,\n                 'Alpha': None,\n                 'a': 'long '\n                      'string '\n                      'with '\n                      'several '\n                      'words '\n                      'in '\n                      'it',\n                 'mid key': True}}},\n [[[None,\n    -1000000001,\n    0.5,\n    3.14159,\n    12345678],\n   -2.0,\n   None,\n   {'10': True,\n    '2': '0',\n    'a': 1000000000000,\n    'b': \"quote'squote'squote'squote'squote'squote'squote'squote's\"},\n   {'a': 'key',\n    'kkkkkkkkkkkk': 1e+22,\n    'mid key': 1000000000000},\n   [False,\n    None,\n    'dq\"',\n    \"quote'squote'squote's\"]],\n  -7,\n  {}],\n 'value',\n 1000000000000]"
+},
+{
+"args": [
+{
+"10": [
+0.5,
+-2.0,
+42,
+[
+3.14159
+],
+[]
+]
+}
+],
+"kwargs": {
+"width": 30
+},
+"expected": "{'10': [0.5,\n        -2.0,\n        42,\n        [3.14159],\n        []]}"
+},
+{
+"args": [
+{
+"a": {},
+"mid key": {},
+"Alpha": null,
+"10": "dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\""
+}
+],
+"kwargs": {
+"width": 30,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "{ 'a': {},\n  'mid key': {},\n  'Alpha': None,\n  '10': 'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"'}"
+},
+{
+"args": [
+[
+"valuevaluevaluevaluevaluevaluevaluevalue",
+{
+"a": [
+1e+22,
+"dq\"",
+3.14159,
+1e-07,
+null
+],
+"mid key": "ünï"
+},
+"newline\nhere",
+1000000000000
+]
+],
+"kwargs": {
+"width": 40,
+"indent": 4,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[   'valuevaluevaluevaluevaluevaluevaluevalue',\n    {   'a': [   1e+22, 'dq\"', 3.14159,\n                 1e-07, None],\n        'mid key': 'ünï'},\n    'newline\\nhere', 1_000_000_000_000]"
+},
+{
+"args": [
+{
+"Alpha": [
+1000000000000,
+[]
+],
+"mid key": true,
+"2": false,
+"kkkkkkkkkkkk": {
+"Alpha": {
+"zeta": {
+"b": true,
+"a": "a",
+"kkkkkkkkkkkk": 0.5
+},
+"": {
+"kkkkkkkkkkkk": null,
+"10": 1e-07,
+"a": "newline\nhere",
+"zeta": null,
+"Alpha": 3.14159
+},
+"kkkkkkkkkkkk": "None",
+"2": 1000000000000,
+"Alpha": true
+}
+},
+"a": null
+}
+],
+"kwargs": {
+"width": 12,
+"compact": true
+},
+"expected": "{'2': False,\n 'Alpha': [1000000000000,\n           []],\n 'a': None,\n 'kkkkkkkkkkkk': {'Alpha': {'': {'10': 1e-07,\n                                 'Alpha': 3.14159,\n                                 'a': 'newline\\n'\n                                      'here',\n                                 'kkkkkkkkkkkk': None,\n                                 'zeta': None},\n                            '2': 1000000000000,\n                            'Alpha': True,\n                            'kkkkkkkkkkkk': 'None',\n                            'zeta': {'a': 'a',\n                                     'b': True,\n                                     'kkkkkkkkkkkk': 0.5}}},\n 'mid key': True}"
+},
+{
+"args": [
+{
+"mid key": [
+null,
+{
+"zeta": {},
+"b": -7,
+"10": "tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+"mid key": {
+"mid key": "value"
+}
+},
+{
+"zeta": [
+-2.0,
+12345678
+],
+"10": {
+"a": 1e-07,
+"2": 0,
+"": 0,
+"10": "NoneNoneNoneNoneNoneNoneNoneNone"
+},
+"kkkkkkkkkkkk": [
+3.14159,
+-7,
+true,
+false,
+null,
+true
+]
+},
+{
+"": [],
+"Alpha": {
+"kkkkkkkkkkkk": false,
+"zeta": true,
+"b": "x y",
+"": 1e+22,
+"Alpha": "00000000"
+},
+"b": "quote's",
+"zeta": "ünï",
+"10": 0.5
+},
+{
+"a": 1e+22,
+"kkkkkkkkkkkk": [
+true,
+null,
+"None",
+"newline\nherenewline\nherenewline\nhere",
+null,
+1e-07
+],
+"Alpha": [
+1
+],
+"zeta": []
+},
+{
+"10": [
+1e-07
+],
+"": [
+false,
+0,
+-2.0
+],
+"zeta": -1000000001,
+"a": [
+1e-07,
+0,
+"value",
+0.5,
+1e-07,
+false
+],
+"b": {
+"": null,
+"b": -2.0,
+"kkkkkkkkkkkk": "ünï"
+}
+}
+],
+"a": "key",
+"2": [],
+"Alpha": [
+false,
+[
+1e-07,
+{
+"10": null,
+"": true,
+"kkkkkkkkkkkk": 0.5,
+"zeta": 1e-07,
+"b": true
+}
+]
+]
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 4
+},
+"expected": "{   '2': [],\n    'Alpha': [   False,\n                 [   1e-07,\n                     {   '': True,\n                         '10': None,\n                         'b': True,\n                         'kkkkkkkkkkkk': 0.5,\n                         'zeta': 1e-07}]],\n    'a': 'key',\n    'mid key': [   None,\n                   {   '10': 'tab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'heretab\\t'\n                             'here',\n                       'b': -7,\n                       'mid key': {   'mid key': 'value'},\n                       'zeta': {   }},\n                   {   '10': {   '': 0,\n                                 '10': 'NoneNoneNoneNoneNoneNoneNoneNone',\n                                 '2': 0,\n                                 'a': 1e-07},\n                       'kkkkkkkkkkkk': [   3.14159,\n                                           -7,\n                                           True,\n                                           False,\n                                           None,\n                                           True],\n                       'zeta': [   -2.0,\n                                   12345678]},\n                   {   '': [   ],\n                       '10': 0.5,\n                       'Alpha': {   '': 1e+22,\n                                    'Alpha': '00000000',\n                                    'b': 'x '\n                                         'y',\n                                    'kkkkkkkkkkkk': False,\n                                    'zeta': True},\n                       'b': \"quote's\",\n                       'zeta': 'ünï'},\n                   {   'Alpha': [   1],\n                       'a': 1e+22,\n                       'kkkkkkkkkkkk': [   True,\n                                           None,\n                                           'None',\n                                           'newline\\n'\n                                           'herenewline\\n'\n                                           'herenewline\\n'\n                                           'here',\n                                           None,\n                                           1e-07],\n                       'zeta': [   ]},\n                   {   '': [   False,\n                               0,\n                               -2.0],\n                       '10': [   1e-07],\n                       'a': [   1e-07,\n                                0,\n                                'value',\n                                0.5,\n                                1e-07,\n                                False],\n                       'b': {   '': None,\n                                'b': -2.0,\n                                'kkkkkkkkkkkk': 'ünï'},\n                       'zeta': -1000000001}]}"
+},
+{
+"args": [
+"tab\there"
+],
+"kwargs": {
+"width": 8,
+"compact": true
+},
+"expected": "('tab\\t'\n 'here')"
+},
+{
+"args": [
+""
+],
+"kwargs": {
+"width": 16,
+"indent": 4
+},
+"expected": "''"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 60,
+"compact": true
+},
+"expected": "True"
+},
+{
+"args": [
+[
+[
+{
+"zeta": true,
+"2": {
+"10": 12345678,
+"": "bb",
+"2": null,
+"a": null
+},
+"Alpha": {},
+"b": [
+"tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+null,
+-7
+]
+},
+false,
+{
+"Alpha": [
+0,
+0.5
+],
+"10": {
+"mid key": 3.14159,
+"zeta": -1000000001
+},
+"mid key": [
+"dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"",
+null,
+true,
+1e+22,
+1e-07,
+0
+],
+"b": {
+"zeta": null,
+"": -1000000001,
+"kkkkkkkkkkkk": false,
+"mid key": 1e+22
+},
+"zeta": -7
+},
+{
+"2": {
+"Alpha": 3.14159,
+"mid key": true
+},
+"": {
+"b": 1,
+"mid key": 12345678,
+"a": 3.14159
+},
+"kkkkkkkkkkkk": {},
+"mid key": {
+"zeta": true,
+"2": null
+}
+}
+],
+{
+"10": true,
+"zeta": "value"
+},
+-2.0,
+[
+[
+{
+"zeta": "newline\nhere",
+"a": false
+},
+null,
+3.14159,
+[
+1e-07,
+3.14159,
+"quote'squote'squote'squote'squote'squote'squote'squote's",
+3.14159,
+42,
+"NoneNoneNoneNoneNoneNoneNoneNone"
+],
+[
+1e-07,
+"bbbbbbbbbbbbbbbb",
+42,
+true,
+"quote'squote'squote's"
+]
+],
+[
+{
+"zeta": 0.5
+},
+"bbbbbbbbbbbbbbbb"
+],
+{
+"Alpha": [],
+"2": {
+"Alpha": "ünïünïünï",
+"b": -2.0,
+"kkkkkkkkkkkk": "a"
+},
+"mid key": [
+"bb",
+1e+22
+],
+"kkkkkkkkkkkk": [
+"quote'squote'squote's",
+12345678,
+"bbbbbbbbbbbbbbbb"
+]
+},
+false,
+{}
+],
+"quote'squote'squote'squote'squote'squote'squote'squote's"
+]
+],
+"kwargs": {
+"width": 8,
+"compact": true
+},
+"expected": "[[{'2': {'': 'bb',\n         '10': 12345678,\n         '2': None,\n         'a': None},\n   'Alpha': {},\n   'b': ['tab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'here',\n         None,\n         -7],\n   'zeta': True},\n  False,\n  {'10': {'mid key': 3.14159,\n          'zeta': -1000000001},\n   'Alpha': [0,\n             0.5],\n   'b': {'': -1000000001,\n         'kkkkkkkkkkkk': False,\n         'mid key': 1e+22,\n         'zeta': None},\n   'mid key': ['dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n               None,\n               True,\n               1e+22,\n               1e-07,\n               0],\n   'zeta': -7},\n  {'': {'a': 3.14159,\n        'b': 1,\n        'mid key': 12345678},\n   '2': {'Alpha': 3.14159,\n         'mid key': True},\n   'kkkkkkkkkkkk': {},\n   'mid key': {'2': None,\n               'zeta': True}}],\n {'10': True,\n  'zeta': 'value'},\n -2.0,\n [[{'a': False,\n    'zeta': 'newline\\n'\n            'here'},\n   None,\n   3.14159,\n   [1e-07,\n    3.14159,\n    \"quote'squote'squote'squote'squote'squote'squote'squote's\",\n    3.14159,\n    42,\n    'NoneNoneNoneNoneNoneNoneNoneNone'],\n   [1e-07,\n    'bbbbbbbbbbbbbbbb',\n    42,\n    True,\n    \"quote'squote'squote's\"]],\n  [{'zeta': 0.5},\n   'bbbbbbbbbbbbbbbb'],\n  {'2': {'Alpha': 'ünïünïünï',\n         'b': -2.0,\n         'kkkkkkkkkkkk': 'a'},\n   'Alpha': [],\n   'kkkkkkkkkkkk': [\"quote'squote'squote's\",\n                    12345678,\n                    'bbbbbbbbbbbbbbbb'],\n   'mid key': ['bb',\n               1e+22]},\n  False,\n  {}],\n \"quote'squote'squote'squote'squote'squote'squote'squote's\"]"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 60,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "None"
+},
+{
+"args": [
+{
+"2": null
+}
+],
+"kwargs": {
+"width": 16,
+"compact": true
+},
+"expected": "{'2': None}"
+},
+{
+"args": [
+{}
+],
+"kwargs": {
+"width": 80
+},
+"expected": "{}"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"width": 16
+},
+"expected": "-1000000001"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"indent": 0,
+"depth": 2,
+"compact": true
+},
+"expected": "[]"
+},
+{
+"args": [
+"None"
+],
+"kwargs": {
+"width": 80,
+"indent": 2,
+"depth": 1
+},
+"expected": "'None'"
+},
+{
+"args": [
+[
+[
+"a",
+false,
+1
+],
+false,
+[
+false,
+0.5
+],
+[
+3.14159,
+1e-07
+]
+]
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "[['a', False, 1],\n False,\n [False, 0.5],\n [3.14159, 1e-07]]"
+},
+{
+"args": [
+"bbbbbb"
+],
+"kwargs": {
+"width": 8,
+"indent": 0,
+"depth": 2
+},
+"expected": "'bbbbbb'"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 40,
+"indent": 0,
+"compact": true
+},
+"expected": "None"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": [
+-7,
+1e-07,
+1e-07,
+12345678
+],
+"b": [
+0.5
+],
+"Alpha": [
+1e+22,
+1e-07,
+"keykeykeykeykeykeykeykey",
+1000000000000,
+true
+],
+"zeta": 3.14159
+}
+],
+"kwargs": {
+"width": 12
+},
+"expected": "{'Alpha': [1e+22,\n           1e-07,\n           'keykeykeykeykeykeykeykey',\n           1000000000000,\n           True],\n 'b': [0.5],\n 'kkkkkkkkkkkk': [-7,\n                  1e-07,\n                  1e-07,\n                  12345678],\n 'zeta': 3.14159}"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 8
+},
+"expected": "None"
+},
+{
+"args": [
+"a"
+],
+"kwargs": {
+"width": 80
+},
+"expected": "'a'"
+},
+{
+"args": [
+{
+"zeta": true
+}
+],
+"kwargs": {
+"width": 80,
+"compact": true
+},
+"expected": "{'zeta': True}"
+},
+{
+"args": [
+{
+"kkkkkkkkkkkk": "long string with several words in itlong string with several words in itlong string with several words in it",
+"mid key": [
+"ünïünïünï",
+{
+"mid key": "NoneNoneNone"
+}
+],
+"2": [
+"bbbbbb",
+[
+"ünï",
+-7,
+"a"
+]
+],
+"Alpha": {
+"Alpha": {
+"kkkkkkkkkkkk": 1000000000000,
+"b": null,
+"10": -7,
+"2": true,
+"mid key": 1e-07
+},
+"": [
+"a",
+1e-07,
+0,
+null,
+1,
+false
+],
+"mid key": {},
+"2": [
+0,
+"newline\nhere"
+]
+}
+}
+],
+"kwargs": {
+"width": 40,
+"indent": 4
+},
+"expected": "{   '2': ['bbbbbb', ['ünï', -7, 'a']],\n    'Alpha': {   '': [   'a',\n                         1e-07,\n                         0,\n                         None,\n                         1,\n                         False],\n                 '2': [   0,\n                          'newline\\n'\n                          'here'],\n                 'Alpha': {   '10': -7,\n                              '2': True,\n                              'b': None,\n                              'kkkkkkkkkkkk': 1000000000000,\n                              'mid key': 1e-07},\n                 'mid key': {}},\n    'kkkkkkkkkkkk': 'long string with '\n                    'several words in '\n                    'itlong string '\n                    'with several '\n                    'words in itlong '\n                    'string with '\n                    'several words in '\n                    'it',\n    'mid key': [   'ünïünïünï',\n                   {   'mid key': 'NoneNoneNone'}]}"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 8,
+"indent": 2
+},
+"expected": "None"
+},
+{
+"args": [
+{
+"10": [
+"000",
+false,
+false,
+"bb",
+null
+],
+"kkkkkkkkkkkk": -2.0,
+"": null
+}
+],
+"kwargs": {
+"width": 30,
+"compact": true
+},
+"expected": "{'': None,\n '10': ['000', False, False,\n        'bb', None],\n 'kkkkkkkkkkkk': -2.0}"
+},
+{
+"args": [
+{
+"2": [
+1e-07,
+3.14159
+],
+"": "dq\"dq\"dq\""
+}
+],
+"kwargs": {
+"width": 60,
+"depth": 1,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'2': [...], '': 'dq\"dq\"dq\"'}"
+},
+{
+"args": [
+[
+"tab\there"
+]
+],
+"kwargs": {
+"width": 8
+},
+"expected": "['tab\\t'\n 'here']"
+},
+{
+"args": [
+[
+[
+false,
+"aaaaaaaa",
+false
+],
+{
+"2": false,
+"10": 1000000000000,
+"mid key": 1e-07
+},
+42,
+[
+0,
+1000000000000,
+"",
+3.14159
+],
+[
+12345678,
+null,
+12345678
+]
+]
+],
+"kwargs": {
+"width": 16,
+"sort_dicts": false
+},
+"expected": "[[False,\n  'aaaaaaaa',\n  False],\n {'2': False,\n  '10': 1000000000000,\n  'mid key': 1e-07},\n 42,\n [0,\n  1000000000000,\n  '',\n  3.14159],\n [12345678,\n  None,\n  12345678]]"
+},
+{
+"args": [
+3.14159
+],
+"kwargs": {
+"width": 12,
+"depth": 1
+},
+"expected": "3.14159"
+},
+{
+"args": [
+"long string with several words in it"
+],
+"kwargs": {
+"width": 30,
+"indent": 0,
+"sort_dicts": false
+},
+"expected": "('long string with several '\n 'words in it')"
+},
+{
+"args": [
+0.5
+],
+"kwargs": {
+"width": 20
+},
+"expected": "0.5"
+},
+{
+"args": [
+-7
+],
+"kwargs": {
+"indent": 0
+},
+"expected": "-7"
+},
+{
+"args": [
+{
+"a": true,
+"b": 1000000000000,
+"2": null,
+"mid key": null
+}
+],
+"kwargs": {
+"width": 30,
+"indent": 0,
+"sort_dicts": false
+},
+"expected": "{'a': True,\n'b': 1000000000000,\n'2': None,\n'mid key': None}"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 40,
+"indent": 2,
+"depth": 1
+},
+"expected": "1e+22"
+},
+{
+"args": [
+[
+[
+1e-07,
+-2.0,
+true,
+1e+22,
+1000000000000,
+-7
+],
+[],
+"valuevaluevalue",
+{
+"mid key": "valuevaluevalue",
+"b": true,
+"": 0
+},
+[
+1e-07,
+-2.0,
+false,
+false,
+0
+],
+false
+]
+],
+"kwargs": {
+"width": 80
+},
+"expected": "[[1e-07, -2.0, True, 1e+22, 1000000000000, -7],\n [],\n 'valuevaluevalue',\n {'': 0, 'b': True, 'mid key': 'valuevaluevalue'},\n [1e-07, -2.0, False, False, 0],\n False]"
+},
+{
+"args": [
+[
+1e+22,
+[
+true,
+"keykeykey",
+[
+12345678,
+-2.0,
+[
+-2.0,
+"long string with several words in it",
+0,
+1e+22,
+false,
+1e+22
+]
+]
+],
+{},
+{
+"kkkkkkkkkkkk": {
+"a": {
+"": false,
+"10": 3.14159,
+"a": 1,
+"zeta": 1
+},
+"": [
+-2.0,
+12345678,
+true,
+true,
+0.5
+],
+"zeta": [
+1000000000000,
+false,
+1e-07,
+null
+],
+"Alpha": 1e+22,
+"2": {
+"b": 42,
+"a": 1e-07,
+"10": 1e-07,
+"kkkkkkkkkkkk": false,
+"mid key": "dq\""
+}
+},
+"2": [
+1,
+-1000000001,
+[
+1e+22,
+"value",
+null,
+-7,
+"dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"",
+3.14159
+],
+"ünï",
+1,
+1
+],
+"Alpha": {
+"10": [
+""
+]
+}
+},
+[
+0,
+[
+{
+"b": null,
+"Alpha": -7,
+"zeta": "key",
+"a": "aaa"
+},
+3.14159,
+[
+null
+]
+],
+[
+{
+"zeta": 1e-07
+},
+false
+]
+]
+]
+],
+"kwargs": {
+"width": 16,
+"compact": true
+},
+"expected": "[1e+22,\n [True,\n  'keykeykey',\n  [12345678,\n   -2.0,\n   [-2.0,\n    'long '\n    'string '\n    'with '\n    'several '\n    'words in '\n    'it',\n    0, 1e+22,\n    False,\n    1e+22]]],\n {},\n {'2': [1,\n        -1000000001,\n        [1e+22,\n         'value',\n         None,\n         -7,\n         'dq\"dq\"dq\"dq\"dq\"dq\"dq\"dq\"',\n         3.14159],\n        'ünï',\n        1, 1],\n  'Alpha': {'10': ['']},\n  'kkkkkkkkkkkk': {'': [-2.0,\n                        12345678,\n                        True,\n                        True,\n                        0.5],\n                   '2': {'10': 1e-07,\n                         'a': 1e-07,\n                         'b': 42,\n                         'kkkkkkkkkkkk': False,\n                         'mid key': 'dq\"'},\n                   'Alpha': 1e+22,\n                   'a': {'': False,\n                         '10': 3.14159,\n                         'a': 1,\n                         'zeta': 1},\n                   'zeta': [1000000000000,\n                            False,\n                            1e-07,\n                            None]}},\n [0,\n  [{'Alpha': -7,\n    'a': 'aaa',\n    'b': None,\n    'zeta': 'key'},\n   3.14159,\n   [None]],\n  [{'zeta': 1e-07},\n   False]]]"
+},
+{
+"args": [
+{
+"2": [
+null,
+true,
+3.14159,
+-2.0
+],
+"Alpha": true,
+"zeta": {
+"": 1,
+"10": 1e-07,
+"kkkkkkkkkkkk": 42,
+"zeta": "",
+"mid key": true
+}
+}
+],
+"kwargs": {
+"width": 30,
+"indent": 0
+},
+"expected": "{'2': [None,\n     True,\n     3.14159,\n     -2.0],\n'Alpha': True,\n'zeta': {'': 1,\n        '10': 1e-07,\n        'kkkkkkkkkkkk': 42,\n        'mid key': True,\n        'zeta': ''}}"
+},
+{
+"args": [
+[
+12345678,
+[
+0.5,
+"tab\there"
+],
+"long string with several words in it",
+"newline\nherenewline\nherenewline\nhere"
+]
+],
+"kwargs": {
+"width": 12
+},
+"expected": "[12345678,\n [0.5,\n  'tab\\t'\n  'here'],\n 'long '\n 'string '\n 'with '\n 'several '\n 'words in '\n 'it',\n 'newline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'here']"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 30
+},
+"expected": "None"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 16
+},
+"expected": "[]"
+},
+{
+"args": [
+{
+"b": 42,
+"Alpha": {},
+"10": [],
+"zeta": -2.0
+}
+],
+"kwargs": {
+"width": 8,
+"indent": 4
+},
+"expected": "{   '10': [   ],\n    'Alpha': {   },\n    'b': 42,\n    'zeta': -2.0}"
+},
+{
+"args": [
+[
+0.5,
+-2.0,
+12345678,
+null,
+true,
+null
+]
+],
+"kwargs": {
+"width": 30,
+"compact": true
+},
+"expected": "[0.5, -2.0, 12345678, None,\n True, None]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 20,
+"indent": 2,
+"compact": true
+},
+"expected": "[]"
+},
+{
+"args": [
+-1000000001
+],
+"kwargs": {
+"width": 30
+},
+"expected": "-1000000001"
+},
+{
+"args": [
+{
+"b": 42,
+"Alpha": false
+}
+],
+"kwargs": {
+"width": 20,
+"depth": 1
+},
+"expected": "{'Alpha': False,\n 'b': 42}"
+},
+{
+"args": [
+[
+[
+1e-07,
+false,
+1000000000000,
+false,
+false,
+true
+],
+{
+"a": false,
+"": null,
+"10": true,
+"zeta": "bbbbbb",
+"Alpha": 0
+},
+[
+0.5,
+1e-07,
+"",
+"aaa"
+],
+0.5
+]
+],
+"kwargs": {
+"width": 40,
+"underscore_numbers": true
+},
+"expected": "[[1e-07,\n  False,\n  1_000_000_000_000,\n  False,\n  False,\n  True],\n {'': None,\n  '10': True,\n  'Alpha': 0,\n  'a': False,\n  'zeta': 'bbbbbb'},\n [0.5, 1e-07, '', 'aaa'],\n 0.5]"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 12,
+"indent": 2
+},
+"expected": "[]"
+},
+{
+"args": [
+"x yx yx yx yx yx yx yx y"
+],
+"kwargs": {
+"compact": true
+},
+"expected": "'x yx yx yx yx yx yx yx y'"
+},
+{
+"args": [
+1
+],
+"kwargs": {
+"width": 60,
+"underscore_numbers": true
+},
+"expected": "1"
+},
+{
+"args": [
+{
+"zeta": "",
+"10": [
+{
+"a": true
+},
+[
+"tab\there",
+false,
+1e+22,
+"long string with several words in it",
+1e-07,
+null
+],
+{},
+[
+"dq\"dq\"dq\"",
+-7,
+0.5
+],
+[
+"x y"
+],
+-7
+],
+"kkkkkkkkkkkk": {
+"": [
+true,
+null,
+-7,
+"tab\there"
+]
+},
+"b": {
+"": null
+}
+}
+],
+"kwargs": {
+"width": 40,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "{'zeta': '',\n '10': [{'a': True},\n        ['tab\\there',\n         False,\n         1e+22,\n         'long string with several '\n         'words in it',\n         1e-07,\n         None],\n        {},\n        ['dq\"dq\"dq\"', -7, 0.5],\n        ['x y'],\n        -7],\n 'kkkkkkkkkkkk': {'': [True,\n                       None,\n                       -7,\n                       'tab\\there']},\n 'b': {'': None}}"
+},
+{
+"args": [
+[
+[
+3.14159
+],
+[
+"0",
+1000000000000,
+-1000000001,
+1000000000000,
+"long string with several words in it"
+],
+[
+"newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere",
+0,
+-1000000001
+],
+null
+]
+],
+"kwargs": {
+"depth": 1,
+"underscore_numbers": true
+},
+"expected": "[[...], [...], [...], None]"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 12,
+"compact": true
+},
+"expected": "True"
+},
+{
+"args": [
+[
+[
+true,
+{
+"kkkkkkkkkkkk": 1,
+"2": "bb"
+},
+null,
+1,
+{
+"b": 0.5,
+"kkkkkkkkkkkk": true,
+"Alpha": ""
+},
+{
+"10": true,
+"Alpha": false
+}
+]
+]
+],
+"kwargs": {
+"width": 16,
+"depth": 1,
+"sort_dicts": false
+},
+"expected": "[[...]]"
+},
+{
+"args": [
+[
+true,
+-2.0,
+false,
+true
+]
+],
+"kwargs": {
+"width": 60,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[True, -2.0, False, True]"
+},
+{
+"args": [
+"newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere"
+],
+"kwargs": {
+"width": 80,
+"depth": 1,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "('newline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'herenewline\\n'\n 'here')"
+},
+{
+"args": [
+[
+[
+"ünï"
+],
+{
+"10": 1e-07,
+"b": false
+}
+]
+],
+"kwargs": {
+"width": 40,
+"depth": 2,
+"sort_dicts": false
+},
+"expected": "[['ünï'], {'10': 1e-07, 'b': False}]"
+},
+{
+"args": [
+[
+{
+"Alpha": "newline\nhere",
+"zeta": [
+false,
+null,
+"dq\"",
+-2.0,
+3.14159
+],
+"kkkkkkkkkkkk": [
+-1000000001,
+12345678,
+"",
+12345678
+],
+"2": {
+"10": -1000000001,
+"Alpha": -7,
+"b": 1e-07
+}
+},
+{
+"": {
+"a": -2.0,
+"10": -2.0,
+"Alpha": "None",
+"": 0
+},
+"Alpha": [
+1
+],
+"b": [
+-1000000001,
+null
+]
+},
+1e-07,
+{
+"mid key": {},
+"10": {
+"2": 12345678,
+"Alpha": 1
+},
+"2": {
+"zeta": false
+}
+},
+{
+"Alpha": false,
+"a": "long string with several words in it",
+"kkkkkkkkkkkk": 12345678,
+"10": [
+"long string with several words in it",
+0,
+null
+],
+"b": {
+"2": 12345678,
+"": false,
+"10": "newline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nherenewline\nhere",
+"kkkkkkkkkkkk": -1000000001,
+"a": 3.14159
+}
+},
+"x yx yx yx yx yx yx yx y"
+]
+],
+"kwargs": {
+"width": 80,
+"compact": true
+},
+"expected": "[{'2': {'10': -1000000001, 'Alpha': -7, 'b': 1e-07},\n  'Alpha': 'newline\\nhere',\n  'kkkkkkkkkkkk': [-1000000001, 12345678, '', 12345678],\n  'zeta': [False, None, 'dq\"', -2.0, 3.14159]},\n {'': {'': 0, '10': -2.0, 'Alpha': 'None', 'a': -2.0},\n  'Alpha': [1],\n  'b': [-1000000001, None]},\n 1e-07,\n {'10': {'2': 12345678, 'Alpha': 1}, '2': {'zeta': False}, 'mid key': {}},\n {'10': ['long string with several words in it', 0, None],\n  'Alpha': False,\n  'a': 'long string with several words in it',\n  'b': {'': False,\n        '10': 'newline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'herenewline\\n'\n              'here',\n        '2': 12345678,\n        'a': 3.14159,\n        'kkkkkkkkkkkk': -1000000001},\n  'kkkkkkkkkkkk': 12345678},\n 'x yx yx yx yx yx yx yx y']"
+},
+{
+"args": [
+[]
+],
+"kwargs": {
+"width": 40,
+"indent": 2,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[]"
+},
+{
+"args": [
+[
+[
+{
+"2": null,
+"a": 1e-07,
+"b": true
+}
+],
+[
+[
+"dq\"dq\"dq\"",
+"quote's",
+-1000000001,
+"a",
+"x y",
+true
+],
+0,
+[
+-2.0,
+"key",
+0.5,
+1000000000000,
+"value"
+],
+{
+"b": null,
+"a": null,
+"Alpha": "x yx yx yx yx yx yx yx y",
+"kkkkkkkkkkkk": 0.5
+},
+"0"
+],
+12345678,
+{
+"": {
+"zeta": 1e-07,
+"": 3.14159
+},
+"Alpha": 0.5,
+"2": {}
+}
+]
+],
+"kwargs": {
+"width": 12,
+"underscore_numbers": true
+},
+"expected": "[[{'2': None,\n   'a': 1e-07,\n   'b': True}],\n [['dq\"dq\"dq\"',\n   \"quote's\",\n   -1_000_000_001,\n   'a',\n   'x y',\n   True],\n  0,\n  [-2.0,\n   'key',\n   0.5,\n   1_000_000_000_000,\n   'value'],\n  {'Alpha': 'x '\n            'yx '\n            'yx '\n            'yx '\n            'yx '\n            'yx '\n            'yx '\n            'yx '\n            'y',\n   'a': None,\n   'b': None,\n   'kkkkkkkkkkkk': 0.5},\n  '0'],\n 12_345_678,\n {'': {'': 3.14159,\n       'zeta': 1e-07},\n  '2': {},\n  'Alpha': 0.5}]"
+},
+{
+"args": [
+"long string with several words in it"
+],
+"kwargs": {
+"width": 20,
+"indent": 4
+},
+"expected": "('long string with '\n 'several words in '\n 'it')"
+},
+{
+"args": [
+{
+"2": false,
+"a": [
+1e-07,
+-1000000001,
+"tab\there",
+null
+],
+"": {
+"Alpha": "long string with several words in it",
+"zeta": -1000000001,
+"kkkkkkkkkkkk": 1,
+"mid key": false
+}
+}
+],
+"kwargs": {
+"depth": 2,
+"underscore_numbers": true
+},
+"expected": "{'': {'Alpha': 'long string with several words in it',\n      'kkkkkkkkkkkk': 1,\n      'mid key': False,\n      'zeta': -1_000_000_001},\n '2': False,\n 'a': [1e-07, -1_000_000_001, 'tab\\there', None]}"
+},
+{
+"args": [
+[
+[
+[
+{
+"zeta": "a"
+},
+[],
+-1000000001,
+[
+1e+22
+]
+],
+[
+true
+],
+"None",
+[
+[
+"00000000",
+"0",
+42
+],
+[
+0.5,
+null,
+true,
+0.5,
+1e-07,
+1e-07
+],
+1000000000000,
+"bb",
+null,
+[
+null,
+"quote'squote'squote's",
+false,
+42
+]
+],
+[],
+0
+],
+{
+"b": {
+"zeta": [
+0,
+"bb",
+1e+22,
+1000000000000,
+1e+22,
+null
+],
+"10": 3.14159,
+"2": "long string with several words in it"
+},
+"": 0.5,
+"mid key": {
+"10": {
+"2": "long string with several words in it",
+"mid key": null,
+"a": true
+},
+"Alpha": [
+0,
+3.14159,
+1e+22,
+null,
+42
+],
+"mid key": [
+0,
+12345678,
+null,
+"tab\there",
+3.14159
+]
+},
+"10": [
+[],
+[]
+]
+},
+{
+"a": [
+[],
+[
+"0"
+],
+[],
+{
+"kkkkkkkkkkkk": false,
+"b": -2.0
+},
+[]
+],
+"Alpha": 0,
+"zeta": {
+"": {
+"2": 12345678,
+"": null,
+"mid key": ""
+},
+"kkkkkkkkkkkk": 1e-07
+},
+"mid key": [
+{
+"kkkkkkkkkkkk": null,
+"zeta": -2.0
+}
+]
+},
+"key",
+null
+]
+],
+"kwargs": {
+"width": 20,
+"indent": 4
+},
+"expected": "[   [   [   {   'zeta': 'a'},\n            [],\n            -1000000001,\n            [   1e+22]],\n        [True],\n        'None',\n        [   [   '00000000',\n                '0',\n                42],\n            [   0.5,\n                None,\n                True,\n                0.5,\n                1e-07,\n                1e-07],\n            1000000000000,\n            'bb',\n            None,\n            [   None,\n                \"quote'squote'squote's\",\n                False,\n                42]],\n        [],\n        0],\n    {   '': 0.5,\n        '10': [   [   ],\n                  [   ]],\n        'b': {   '10': 3.14159,\n                 '2': 'long '\n                      'string '\n                      'with '\n                      'several '\n                      'words '\n                      'in '\n                      'it',\n                 'zeta': [   0,\n                             'bb',\n                             1e+22,\n                             1000000000000,\n                             1e+22,\n                             None]},\n        'mid key': {   '10': {   '2': 'long '\n                                      'string '\n                                      'with '\n                                      'several '\n                                      'words '\n                                      'in '\n                                      'it',\n                                 'a': True,\n                                 'mid key': None},\n                       'Alpha': [   0,\n                                    3.14159,\n                                    1e+22,\n                                    None,\n                                    42],\n                       'mid key': [   0,\n                                      12345678,\n                                      None,\n                                      'tab\\t'\n                                      'here',\n                                      3.14159]}},\n    {   'Alpha': 0,\n        'a': [   [],\n                 [   '0'],\n                 [],\n                 {   'b': -2.0,\n                     'kkkkkkkkkkkk': False},\n                 [   ]],\n        'mid key': [   {   'kkkkkkkkkkkk': None,\n                           'zeta': -2.0}],\n        'zeta': {   '': {   '': None,\n                            '2': 12345678,\n                            'mid key': ''},\n                    'kkkkkkkkkkkk': 1e-07}},\n    'key',\n    None]"
+},
+{
+"args": [
+true
+],
+"kwargs": {
+"width": 80,
+"sort_dicts": false
+},
+"expected": "True"
+},
+{
+"args": [
+[
+{},
+[
+[],
+[
+true,
+-7,
+[
+true,
+-2.0
+],
+true,
+1,
+[
+1e+22,
+"tab\there",
+12345678,
+"dq\"",
+"long string with several words in it"
+]
+],
+null,
+3.14159
+],
+1e-07,
+[
+{
+"zeta": {
+"Alpha": 1,
+"zeta": 0,
+"b": 12345678
+},
+"Alpha": [
+"key",
+3.14159,
+""
+],
+"kkkkkkkkkkkk": {
+"Alpha": 12345678,
+"mid key": -2.0,
+"kkkkkkkkkkkk": -2.0,
+"zeta": 0,
+"a": 1e+22
+},
+"": [
+true
+]
+},
+{},
+3.14159
+],
+{
+"": {
+"Alpha": [
+3.14159,
+0,
+-7,
+-7,
+"value"
+],
+"2": 0.5,
+"mid key": 1000000000000,
+"a": [
+"long string with several words in it",
+null
+]
+},
+"b": [
+[
+1e-07,
+null,
+true,
+null,
+false
+],
+[
+"bb",
+1
+],
+[
+42,
+"tab\theretab\theretab\theretab\theretab\theretab\theretab\theretab\there",
+"long string with several words in itlong string with several words in itlong string with several words in it",
+42,
+null,
+0.5
+],
+[]
+],
+"zeta": {
+"10": 0,
+"2": [
+null
+]
+}
+}
+]
+],
+"kwargs": {
+"width": 8
+},
+"expected": "[{},\n [[],\n  [True,\n   -7,\n   [True,\n    -2.0],\n   True,\n   1,\n   [1e+22,\n    'tab\\t'\n    'here',\n    12345678,\n    'dq\"',\n    'long '\n    'string '\n    'with '\n    'several '\n    'words '\n    'in '\n    'it']],\n  None,\n  3.14159],\n 1e-07,\n [{'': [True],\n   'Alpha': ['key',\n             3.14159,\n             ''],\n   'kkkkkkkkkkkk': {'Alpha': 12345678,\n                    'a': 1e+22,\n                    'kkkkkkkkkkkk': -2.0,\n                    'mid key': -2.0,\n                    'zeta': 0},\n   'zeta': {'Alpha': 1,\n            'b': 12345678,\n            'zeta': 0}},\n  {},\n  3.14159],\n {'': {'2': 0.5,\n       'Alpha': [3.14159,\n                 0,\n                 -7,\n                 -7,\n                 'value'],\n       'a': ['long '\n             'string '\n             'with '\n             'several '\n             'words '\n             'in '\n             'it',\n             None],\n       'mid key': 1000000000000},\n  'b': [[1e-07,\n         None,\n         True,\n         None,\n         False],\n        ['bb',\n         1],\n        [42,\n         'tab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'heretab\\t'\n         'here',\n         'long '\n         'string '\n         'with '\n         'several '\n         'words '\n         'in '\n         'itlong '\n         'string '\n         'with '\n         'several '\n         'words '\n         'in '\n         'itlong '\n         'string '\n         'with '\n         'several '\n         'words '\n         'in '\n         'it',\n         42,\n         None,\n         0.5],\n        []],\n  'zeta': {'10': 0,\n           '2': [None]}}]"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 20
+},
+"expected": "1e+22"
+},
+{
+"args": [
+{
+"10": {
+"mid key": false,
+"a": 1e-07,
+"2": 0.5
+},
+"mid key": false
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 2,
+"sort_dicts": false
+},
+"expected": "{ '10': { 'mid key': False,\n          'a': 1e-07,\n          '2': 0.5},\n  'mid key': False}"
+},
+{
+"args": [
+false
+],
+"kwargs": {
+"width": 60,
+"indent": 0,
+"compact": true
+},
+"expected": "False"
+},
+{
+"args": [
+"valuevaluevalue"
+],
+"kwargs": {
+"width": 20,
+"indent": 0
+},
+"expected": "'valuevaluevalue'"
+},
+{
+"args": [
+1e-07
+],
+"kwargs": {
+"width": 12,
+"indent": 4,
+"compact": true
+},
+"expected": "1e-07"
+},
+{
+"args": [
+[
+[
+"bbbbbb"
+],
+{
+"10": "value",
+"": null,
+"a": 1e-07
+},
+{},
+{},
+[
+0.5,
+"NoneNoneNone"
+]
+]
+],
+"kwargs": {
+"width": 40,
+"depth": 1
+},
+"expected": "[[...], {...}, {}, {}, [...]]"
+},
+{
+"args": [
+[
+{
+"b": null,
+"a": 42,
+"mid key": -1000000001,
+"zeta": false
+},
+{
+"Alpha": 12345678,
+"b": -2.0,
+"a": true
+}
+]
+],
+"kwargs": {
+"width": 60,
+"compact": true,
+"sort_dicts": false
+},
+"expected": "[{'b': None,\n  'a': 42,\n  'mid key': -1000000001,\n  'zeta': False},\n {'Alpha': 12345678, 'b': -2.0, 'a': True}]"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"width": 60,
+"indent": 2
+},
+"expected": "None"
+},
+{
+"args": [
+3.14159
+],
+"kwargs": {
+"width": 80,
+"compact": true
+},
+"expected": "3.14159"
+},
+{
+"args": [
+{
+"2": [
+{
+"a": {
+"b": -2.0,
+"2": "bb",
+"mid key": -2.0,
+"Alpha": true,
+"a": 1
+}
+},
+[
+-1000000001,
+"tab\there",
+{
+"kkkkkkkkkkkk": 1e-07
+}
+],
+false
+],
+"": [
+"newline\nhere",
+[
+{
+"mid key": "ünïünïünï",
+"Alpha": 1000000000000,
+"b": 0,
+"": 1e+22,
+"zeta": 0
+}
+],
+[
+false,
+[
+0,
+12345678
+]
+],
+{
+"10": [
+-2.0,
+null
+],
+"2": [
+"key",
+false,
+1e-07,
+"long string with several words in it",
+"x y"
+],
+"a": [
+"",
+null,
+false,
+1e+22
+],
+"Alpha": {
+"a": 1e-07,
+"b": false,
+"Alpha": null,
+"": -2.0
+},
+"kkkkkkkkkkkk": [
+1,
+true,
+"tab\there",
+"ünï",
+12345678,
+true
+]
+},
+[
+[
+"bbbbbb",
+false,
+0,
+1e+22,
+1e+22,
+null
+],
+[
+"bb",
+1e-07
+],
+[
+1e+22,
+0.5,
+null,
+3.14159
+],
+[
+"bb",
+null,
+true
+],
+"key"
+]
+],
+"zeta": {
+"kkkkkkkkkkkk": {
+"a": [
+true,
+"value",
+false
+],
+"2": {}
+}
+},
+"Alpha": {
+"kkkkkkkkkkkk": {},
+"b": {
+"b": [
+true,
+"key",
+"000",
+false,
+0
+]
+}
+}
+}
+],
+"kwargs": {
+"width": 20,
+"indent": 4,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "{   '': [   'newline\\n'\n            'here',\n            [   {   '': 1e+22,\n                    'Alpha': 1_000_000_000_000,\n                    'b': 0,\n                    'mid key': 'ünïünïünï',\n                    'zeta': 0}],\n            [   False,\n                [   0,\n                    12_345_678]],\n            {   '10': [   -2.0,\n                          None],\n                '2': [   'key',\n                         False,\n                         1e-07,\n                         'long '\n                         'string '\n                         'with '\n                         'several '\n                         'words '\n                         'in '\n                         'it',\n                         'x '\n                         'y'],\n                'Alpha': {   '': -2.0,\n                             'Alpha': None,\n                             'a': 1e-07,\n                             'b': False},\n                'a': [   '',\n                         None,\n                         False,\n                         1e+22],\n                'kkkkkkkkkkkk': [   1,\n                                    True,\n                                    'tab\\t'\n                                    'here',\n                                    'ünï',\n                                    12_345_678,\n                                    True]},\n            [   [   'bbbbbb',\n                    False,\n                    0,\n                    1e+22,\n                    1e+22,\n                    None],\n                [   'bb',\n                    1e-07],\n                [   1e+22,\n                    0.5,\n                    None,\n                    3.14159],\n                [   'bb',\n                    None,\n                    True],\n                'key']],\n    '2': [   {   'a': {   '2': 'bb',\n                          'Alpha': True,\n                          'a': 1,\n                          'b': -2.0,\n                          'mid key': -2.0}},\n             [   -1_000_000_001,\n                 'tab\\t'\n                 'here',\n                 {   'kkkkkkkkkkkk': 1e-07}],\n             False],\n    'Alpha': {   'b': {   'b': [   True,\n                                   'key',\n                                   '000',\n                                   False,\n                                   0]},\n                 'kkkkkkkkkkkk': {   }},\n    'zeta': {   'kkkkkkkkkkkk': {   '2': {   },\n                                    'a': [   True,\n                                             'value',\n                                             False]}}}"
+},
+{
+"args": [
+1e+22
+],
+"kwargs": {
+"width": 20,
+"compact": true
+},
+"expected": "1e+22"
+},
+{
+"args": [
+{
+"": 1000000000000,
+"2": 42,
+"10": {
+"kkkkkkkkkkkk": "key",
+"a": null,
+"": 0.5,
+"b": -1000000001
+},
+"Alpha": {
+"kkkkkkkkkkkk": 1e-07,
+"mid key": 12345678,
+"10": 42,
+"a": "newline\nherenewline\nherenewline\nhere"
+}
+}
+],
+"kwargs": {
+"width": 12,
+"indent": 4,
+"compact": true
+},
+"expected": "{   '': 1000000000000,\n    '10': {   '': 0.5,\n              'a': None,\n              'b': -1000000001,\n              'kkkkkkkkkkkk': 'key'},\n    '2': 42,\n    'Alpha': {   '10': 42,\n                 'a': 'newline\\n'\n                      'herenewline\\n'\n                      'herenewline\\n'\n                      'here',\n                 'kkkkkkkkkkkk': 1e-07,\n                 'mid key': 12345678}}"
+},
+{
+"args": [
+null
+],
+"kwargs": {
+"depth": 1
+},
+"expected": "None"
+},
+{
+"args": [
+[
+"NoneNoneNoneNoneNoneNoneNoneNone",
+0,
+"key",
+"None"
+]
+],
+"kwargs": {
+"width": 12,
+"indent": 4,
+"compact": true,
+"underscore_numbers": true
+},
+"expected": "[   'NoneNoneNoneNoneNoneNoneNoneNone',\n    0,\n    'key',\n    'None']"
+},
+{
+"args": [
+[
+{
+"kkkkkkkkkkkk": {
+"b": "newline\nhere"
+},
+"mid key": "ünïünïünï",
+"Alpha": {
+"b": 0.5,
+"a": "000",
+"Alpha": 0.5,
+"kkkkkkkkkkkk": null,
+"2": true
+}
+},
+[],
+{
+"": "x yx yx yx yx yx yx yx y"
+},
+{
+"mid key": [],
+"2": {
+"zeta": 12345678,
+"": -2.0,
+"2": 1
+},
+"zeta": 1e+22,
+"10": {
+"b": "dq\""
+},
+"kkkkkkkkkkkk": {
+"kkkkkkkkkkkk": "keykeykeykeykeykeykeykey",
+"a": 0,
+"10": 1e-07
+}
+},
+true
+]
+],
+"kwargs": {
+"width": 20,
+"depth": 2,
+"underscore_numbers": true
+},
+"expected": "[{'Alpha': {...},\n  'kkkkkkkkkkkk': {'b': 'newline\\n'\n                        'here'},\n  'mid key': 'ünïünïünï'},\n [],\n {'': 'x yx yx yx '\n      'yx yx yx yx '\n      'y'},\n {'10': {...},\n  '2': {...},\n  'kkkkkkkkkkkk': {'10': 1e-07,\n                   'a': 0,\n                   'kkkkkkkkkkkk': 'keykeykeykeykeykeykeykey'},\n  'mid key': [],\n  'zeta': 1e+22},\n True]"
+},
+{
+"args": [
+[
+[
+"a"
+]
+]
+],
+"kwargs": {},
+"expected": "[['a']]"
+},
+{
+"args": [
+[
+"quote'squote'squote'squote'squote'squote'squote'squote's",
+false
+]
+],
+"kwargs": {
+"depth": 2,
+"sort_dicts": false
+},
+"expected": "[\"quote'squote'squote'squote'squote'squote'squote'squote's\", False]"
+},
+{
+"args": [
+[
+true,
+true,
+"keykeykey",
+0.5,
+0,
+1000000000000
+]
+],
+"kwargs": {
+"indent": 4,
+"depth": 2,
+"compact": true,
+"sort_dicts": false,
+"underscore_numbers": true
+},
+"expected": "[True, True, 'keykeykey', 0.5, 0, 1_000_000_000_000]"
+}
+]

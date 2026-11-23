@@ -1,0 +1,14777 @@
+[
+{
+"args": [
+"accaacccaaabb cbcc b  cccaa  aaabcbc cbcb",
+"b  a  acccccbca bcca aa  aaaacbc aaaa aaac cbcaacca b aacc a b aabb cbaac ca cca bacccabb b a cb bab a b ccbcab ccbbacbbb abab bb cabaaaaaaab  caab aabab baa aac babcabcaac aaacbaaaaaaaaa   caa aaabaaaca bbcaabaacababc aaaababbcacb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+41,
+0,
+231
+]
+]
+},
+{
+"args": [
+[
+"    return 1",
+"def f():",
+"}",
+"x = 2",
+"    return 1"
+],
+[
+"    return 1",
+"def f():",
+"pass",
+"x = 2",
+"    return 1",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+5,
+3,
+5
+],
+[
+"insert",
+5,
+5,
+5,
+6
+]
+]
+},
+{
+"args": [
+[
+"",
+"",
+"# c",
+"}",
+"",
+"}",
+"",
+"    return 1",
+"",
+"pass"
+],
+[
+"",
+"",
+"# c",
+"}",
+"",
+"}",
+"x = 2",
+"# c",
+"pass",
+"",
+"pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+6,
+0,
+6
+],
+[
+"replace",
+6,
+8,
+6,
+9
+],
+[
+"equal",
+8,
+10,
+9,
+11
+]
+]
+},
+{
+"args": [
+"  edcdd",
+"  eedcdd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+7,
+3,
+8
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"}",
+"    return 1",
+"    pass"
+],
+[
+"# c",
+"}",
+"}",
+"    pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+4,
+3,
+4
+]
+]
+},
+{
+"args": [
+" abbccbddebad",
+" abbcccebdebad"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+6,
+0,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+8
+],
+[
+"equal",
+6,
+7,
+8,
+9
+],
+[
+"delete",
+7,
+8,
+9,
+9
+],
+[
+"equal",
+8,
+13,
+9,
+14
+]
+]
+},
+{
+"args": [
+"  ccca  c cb acc aab",
+"bbcaca ababbaaba aaaabcb abba caca c bccaabaaaaaacaba  baa aaca bacabaaaabaaac b aacaaccabbaacaaab abcab cabaaa caaccac abbaaacaca cabaaacacacbcc ba bbbcaacaac baaaaaacaa b aa c  b  baaacccb a ba      b a caa acbc abcaacaac  b"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+20,
+0,
+226
+]
+]
+},
+{
+"args": [
+[
+"",
+"    pass",
+"    return 1"
+],
+[
+"",
+"pass",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+3,
+2,
+3
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"x = 2",
+"x = 2",
+"pass"
+],
+[
+"# c",
+"x = 2",
+"x = 2",
+"}",
+"# c"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+5
+]
+]
+},
+{
+"args": [
+"bbb  bcaab cabcbbb  bb bab a  ",
+"ababbaaa bacbac  aacc  abaabccabab acbaabaa abacaaabac baab bacacabbaabb aabca abacaba aacbb babbc a aca  abccbaacaaaaacca cac  a  cabab  ab  c aacbbac aac cba cb abacba a a ccbb aa a aabbaa baaaa baaab baa b aabaaaaacacb ac aaaa aba  aabaabbbaccbc"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+30,
+0,
+248
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"    return 1",
+"def f():",
+"# c",
+"pass",
+"def f():",
+""
+],
+[
+"    pass",
+"    return 1",
+"def f():",
+"# c",
+"    return 1",
+"def f():",
+""
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+5,
+4,
+5
+],
+[
+"equal",
+5,
+7,
+5,
+7
+]
+]
+},
+{
+"args": [
+" cca bc b  aa b bb bcccc  b bc",
+" ab a bab caa b abbbbab baacaacbacacaa cacaaa  bacaaa ac ab a  a aacb a b ababa  a  a baa a acaca   baab c ca b   b b a bbbbcc cbcabbacaacbac bacabcbaba  bb    abaa   accaaaac bac abcaaaacbaaac cabcbac babbaacbac ccc c bb"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+3,
+1,
+4
+],
+[
+"equal",
+3,
+6,
+4,
+7
+],
+[
+"replace",
+6,
+8,
+7,
+8
+],
+[
+"equal",
+8,
+10,
+8,
+10
+],
+[
+"replace",
+10,
+11,
+10,
+11
+],
+[
+"equal",
+11,
+16,
+11,
+16
+],
+[
+"insert",
+16,
+16,
+16,
+17
+],
+[
+"equal",
+16,
+17,
+17,
+18
+],
+[
+"insert",
+17,
+17,
+18,
+22
+],
+[
+"equal",
+17,
+20,
+22,
+25
+],
+[
+"insert",
+20,
+20,
+25,
+27
+],
+[
+"equal",
+20,
+21,
+27,
+28
+],
+[
+"insert",
+21,
+21,
+28,
+30
+],
+[
+"equal",
+21,
+22,
+30,
+31
+],
+[
+"insert",
+22,
+22,
+31,
+33
+],
+[
+"equal",
+22,
+23,
+33,
+34
+],
+[
+"insert",
+23,
+23,
+34,
+35
+],
+[
+"equal",
+23,
+24,
+35,
+36
+],
+[
+"insert",
+24,
+24,
+36,
+112
+],
+[
+"equal",
+24,
+29,
+112,
+117
+],
+[
+"insert",
+29,
+29,
+117,
+124
+],
+[
+"equal",
+29,
+30,
+124,
+125
+],
+[
+"insert",
+30,
+30,
+125,
+221
+]
+]
+},
+{
+"args": [
+[
+"",
+"",
+"}",
+"x = 2",
+"",
+"}",
+"    return 1",
+"pass",
+"x = 2",
+"def f():",
+"x = 2"
+],
+[
+"x = 2",
+"",
+"pass",
+"}",
+"x = 2",
+"",
+"}",
+"    return 1",
+"pass",
+"x = 2",
+"def f():",
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+],
+[
+"replace",
+1,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+11,
+3,
+12
+]
+]
+},
+{
+"args": [
+"dad aceadaed",
+"dad ceadacd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"delete",
+4,
+5,
+4,
+4
+],
+[
+"equal",
+5,
+10,
+4,
+9
+],
+[
+"replace",
+10,
+11,
+9,
+10
+],
+[
+"equal",
+11,
+12,
+10,
+11
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"x = 2",
+"def f():",
+"    pass",
+"}",
+"    pass",
+"}",
+"",
+"def f():",
+"# c",
+"}",
+"# c"
+],
+[
+"pass",
+"x = 2",
+"def f():",
+"    pass",
+"# c",
+"x = 2",
+"}",
+"",
+"    return 1",
+"# c",
+"}",
+"# c"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+6,
+4,
+6
+],
+[
+"equal",
+6,
+8,
+6,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+12,
+9,
+12
+]
+]
+},
+{
+"args": [
+"ba dddeec cc d",
+"za dddeeccc dx"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+9,
+1,
+9
+],
+[
+"delete",
+9,
+10,
+9,
+9
+],
+[
+"equal",
+10,
+14,
+9,
+13
+],
+[
+"insert",
+14,
+14,
+13,
+14
+]
+]
+},
+{
+"args": [
+"bca abbcacbaaab  bc  acc    a cab cbcbbcacab a cb  cb",
+"a  abcaa ababcbba  b cb abac   ab abcbbcbbaaabbbb aaca c aaaaa  cacacccac acb  c b abbcbcaaabacaabcaaababcbabcaabababbcaabaacaaba ac  a c ababb a ccbbaaa cc   cacbc a bccb ac  a bacbacb accac aaab abaaacaabbaaaa cc baa b ca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+53,
+0,
+223
+]
+]
+},
+{
+"args": [
+" cbaabbcacc ba accbc a  acb c bcbabcc ca b ccb acbbbbabc bcaaccbac ab   ba a",
+" aa abbcb aaabac ac cab b  aa bbaaa acc     caccabca  acba a a acbabbc acbcaa ba cacaaab abaaaabab abbc aabacccaa caaccb a aabaaca baaca a cbb ac a   cbaaa aa a  abca a  cc bc aaabaca b aaccbacbb abc acbcaaab aa aac bc caccacacbb"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+76,
+1,
+229
+]
+]
+},
+{
+"args": [
+"   ac ac a bcbba  abc cb  b abbbaacb ab",
+"aaaacbaacc caba aa ccb  bbaccc ca  baaba  aaba bcbabb abc   cbaabcbcaabb aaaca c bacba ca bccabbabaaacbc  bbca aaaab abbaacbac aaaa bcaca acaaab cac  abba  bcaaaacaaaaa ac babaaa   abcaca   aaba c aac a accacaab  cbbbcbaa aaaba  abcbbc a"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+39,
+0,
+237
+]
+]
+},
+{
+"args": [
+"cce cade dde bdecb cb",
+"cce cade dde bdecb cb"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+21,
+0,
+21
+]
+]
+},
+{
+"args": [
+"cacb  b a bcbbc   c cabbabb    c  a b cc  baa aa cabbacbacabb b cba",
+"caaa bccbaaaa bbcb ccbbaa b c abbaaa  b aabcc b cbbacabc ba a a accbb aaab bb  a aaa ba ac ca aaa  b  aa ac b aabbacabacc acbcaa   c   caaaaa bbc baccaaaaa  bbaca aacbabcabc b cb ccb cabcca abbaabaa c baa"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+67,
+2,
+204
+]
+]
+},
+{
+"args": [
+"acd aeaacc ",
+"ycd aeaacc "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+11,
+1,
+11
+]
+]
+},
+{
+"args": [
+" ddbbbe bedc",
+" ddbbbe cbedc"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+8,
+0,
+8
+],
+[
+"insert",
+8,
+8,
+8,
+9
+],
+[
+"equal",
+8,
+12,
+9,
+13
+]
+]
+},
+{
+"args": [
+"abc  cabbac b  acbaacc bc aba ac abaacb  aabbbbabbbb  baabcc b  ac bbb c  b",
+" abb baacabcba a bc cbacbacaccabcc b abbaccc  bbabb cbbaccaaaba caa bcc  bbc a aaacabaac caa abbc caacca c  caacabb abacaa  cbbbbb bca accaaa bacbaa b aaababaaa aaccaa  aaaacabbaca baabaacaabbabcaac aab  bcccacacaaaca abcbbb aa a"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+75,
+0,
+229
+]
+]
+},
+{
+"args": [
+"cbe",
+"ecb"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+2,
+1,
+3
+],
+[
+"delete",
+2,
+3,
+3,
+3
+]
+]
+},
+{
+"args": [
+"a ebe be bddabc dbdb eeba",
+"a eb ye bddybc adb eeba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"delete",
+4,
+5,
+4,
+4
+],
+[
+"equal",
+5,
+6,
+4,
+5
+],
+[
+"replace",
+6,
+7,
+5,
+6
+],
+[
+"equal",
+7,
+12,
+6,
+11
+],
+[
+"replace",
+12,
+13,
+11,
+12
+],
+[
+"equal",
+13,
+16,
+12,
+15
+],
+[
+"replace",
+16,
+18,
+15,
+16
+],
+[
+"equal",
+18,
+25,
+16,
+23
+]
+]
+},
+{
+"args": [
+" b c   cccbeeaa a  e ee ",
+" b c   cccbeea a e ee "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+14,
+0,
+14
+],
+[
+"delete",
+14,
+15,
+14,
+14
+],
+[
+"equal",
+15,
+17,
+14,
+16
+],
+[
+"delete",
+17,
+18,
+16,
+16
+],
+[
+"equal",
+18,
+24,
+16,
+22
+]
+]
+},
+{
+"args": [
+"cccaccacbbcaba abcc ca",
+" aa baabcaacacaabaa aaccbb cc a  ba a a   cba aaaaaabaaaaa aabcbcaccb ca bbcaca cb a ac caa acaaaaabaacb ab  aaacbacbb aabaaacaaacc acab  aabaababbac bca accca  a accba bccabaa cc aa c ab  bbaaacbaacaacaaba bccb acaaa  aa aa "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+22,
+0,
+225
+]
+]
+},
+{
+"args": [
+" c da a  eadbb d",
+" c da a  aadbb "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+9,
+0,
+9
+],
+[
+"replace",
+9,
+10,
+9,
+10
+],
+[
+"equal",
+10,
+15,
+10,
+15
+],
+[
+"delete",
+15,
+16,
+15,
+15
+]
+]
+},
+{
+"args": [
+"cbbaaca  a cbb cc  c  caaab bcb aabc    bc",
+"  cacccbaa  ac acbac accaa abca caa  aacacac ababb b a ac abaccaba acabaca aca abc c  bcbac  a  aa aa abcaabac ac aaaba cbaab a  a a ac acaa ccbcac abaaaabaaabbbaaaabbb    a  abaa bbaacaacbaabaac a acacabcaaaba  a bcc abacaabcccccc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+2
+],
+[
+"equal",
+0,
+1,
+2,
+3
+],
+[
+"insert",
+1,
+1,
+3,
+180
+],
+[
+"equal",
+1,
+7,
+180,
+186
+],
+[
+"replace",
+7,
+8,
+186,
+195
+],
+[
+"equal",
+8,
+11,
+195,
+198
+],
+[
+"insert",
+11,
+11,
+198,
+199
+],
+[
+"equal",
+11,
+12,
+199,
+200
+],
+[
+"insert",
+12,
+12,
+200,
+203
+],
+[
+"equal",
+12,
+13,
+203,
+204
+],
+[
+"delete",
+13,
+22,
+204,
+204
+],
+[
+"equal",
+22,
+27,
+204,
+209
+],
+[
+"insert",
+27,
+27,
+209,
+213
+],
+[
+"equal",
+27,
+30,
+213,
+216
+],
+[
+"insert",
+30,
+30,
+216,
+219
+],
+[
+"equal",
+30,
+31,
+219,
+220
+],
+[
+"replace",
+31,
+32,
+220,
+222
+],
+[
+"equal",
+32,
+36,
+222,
+226
+],
+[
+"delete",
+36,
+41,
+226,
+226
+],
+[
+"equal",
+41,
+42,
+226,
+227
+],
+[
+"insert",
+42,
+42,
+227,
+231
+]
+]
+},
+{
+"args": [
+[
+"}",
+"x = 2",
+"pass",
+"",
+"# c",
+"    return 1",
+"    pass",
+"",
+"}",
+"}",
+"# c"
+],
+[
+"}",
+"x = 2",
+"    pass",
+"pass",
+"",
+"}",
+"    pass",
+"    pass",
+"pass",
+"}",
+"}",
+"# c"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+4,
+3,
+5
+],
+[
+"replace",
+4,
+6,
+5,
+6
+],
+[
+"equal",
+6,
+7,
+6,
+7
+],
+[
+"replace",
+7,
+8,
+7,
+9
+],
+[
+"equal",
+8,
+11,
+9,
+12
+]
+]
+},
+{
+"args": [
+" b ac    c ababbcccc   bbc cb  ac  b bbbaa  bc aa  bbcc",
+"ba   acbbabaacaabbabbb aab acabcaba baacaaacc ccbac b ba abcaabcb aaaaacbbcaacab  aac aaaaabaaaacaaa accbbbbaacca aaaac a ccbbba  baaaaabaabcc aaaacbcabb abca baababbcacac ccacb baac aabacabaa  b aa abcaa bac aabbcaccbabcaccbcbbbbaaaaa cca bcabaaaaba bcaaaa "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+55,
+0,
+258
+]
+]
+},
+{
+"args": [
+"cc  bcabcbacbbbbac cb  cc",
+"b  bcbbacaaacbacc a abac bcbb  aacaba bcabaaa aca  a cbbacbaa b aa bcbb acab  aabcaabccababc babbacbcaabbabcba baacca caaba aaca caabab cacacbba c ca b ab abac baaabac cbcb  cabaaaacc  aa bbacaccbbcacbaa  accbbcabc   c "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+25,
+0,
+219
+]
+]
+},
+{
+"args": [
+"edcbd",
+"eddcybdd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+],
+[
+"insert",
+3,
+3,
+4,
+5
+],
+[
+"equal",
+3,
+5,
+5,
+7
+],
+[
+"insert",
+5,
+5,
+7,
+8
+]
+]
+},
+{
+"args": [
+[
+"    pass"
+],
+[
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+]
+]
+},
+{
+"args": [
+[
+""
+],
+[
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+]
+]
+},
+{
+"args": [
+[
+"    return 1",
+"def f():",
+"}",
+"x = 2"
+],
+[
+"pass",
+"    return 1",
+"def f():",
+"def f():",
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+2,
+1,
+3
+],
+[
+"replace",
+2,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+4,
+4,
+5
+]
+]
+},
+{
+"args": [
+"a cadc cc aeeabd",
+"a xcaac cc daeeabba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+4,
+3,
+5
+],
+[
+"replace",
+4,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+10,
+6,
+11
+],
+[
+"insert",
+10,
+10,
+11,
+12
+],
+[
+"equal",
+10,
+15,
+12,
+17
+],
+[
+"replace",
+15,
+16,
+17,
+19
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"pass",
+"def f():",
+"# c",
+"    pass",
+"x = 2",
+"}",
+"    return 1",
+"    return 1",
+"}"
+],
+[
+"x = 2",
+"pass",
+"def f():",
+"# c",
+"    pass",
+"x = 2",
+"}",
+"",
+"    return 1",
+"}"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"replace",
+7,
+8,
+7,
+8
+],
+[
+"equal",
+8,
+10,
+8,
+10
+]
+]
+},
+{
+"args": [
+"ec baedcdceddd cd",
+"eczbaecdedddacd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+6,
+3,
+6
+],
+[
+"delete",
+6,
+7,
+6,
+6
+],
+[
+"equal",
+7,
+9,
+6,
+8
+],
+[
+"delete",
+9,
+10,
+8,
+8
+],
+[
+"equal",
+10,
+14,
+8,
+12
+],
+[
+"replace",
+14,
+15,
+12,
+13
+],
+[
+"equal",
+15,
+17,
+13,
+15
+]
+]
+},
+{
+"args": [
+"c aaccbbba cb bb c  abc bb bcc a bc cac  accbc bbb  bcb cba a ab",
+"bac  aaa  caaacaab babccaaaaa baaaaacccacbaaabaaccbab aaaccaaaaaaaacaacaa aca bacbaa bbabacbacaaaaaa  cba aa c  abaaba  aabaa   aaa  bbbaaacccc bacbaca a  aa baaaaccaaaca  ba caaaa bcaca baab bbcaaaacc bab abaabcbc ca aaa c    baabaaab ca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+64,
+0,
+238
+]
+]
+},
+{
+"args": [
+[
+"    return 1",
+"",
+"    return 1",
+"}",
+"    pass",
+"# c",
+"x = 2"
+],
+[
+"# c",
+"",
+"",
+"",
+"    pass",
+"# c",
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+2,
+1,
+2
+],
+[
+"replace",
+2,
+4,
+2,
+4
+],
+[
+"equal",
+4,
+7,
+4,
+7
+]
+]
+},
+{
+"args": [
+"ad ab",
+"ad "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"delete",
+3,
+5,
+3,
+3
+]
+]
+},
+{
+"args": [
+"dccb ddeaca adbedacace db",
+"dccb ddeaca adbedcbacace d"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+17,
+0,
+17
+],
+[
+"insert",
+17,
+17,
+17,
+19
+],
+[
+"equal",
+17,
+24,
+19,
+26
+],
+[
+"delete",
+24,
+25,
+26,
+26
+]
+]
+},
+{
+"args": [
+"d",
+"y"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+]
+]
+},
+{
+"args": [
+"",
+"d"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+]
+]
+},
+{
+"args": [
+[
+"    return 1"
+],
+[
+"    return 1",
+"    pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+]
+]
+},
+{
+"args": [
+"caaab  ccc  ba b aabccac bcbcbb baccbbca acaaacabb ba cbbaacbca caaa",
+" cbcb b bacb  cbbacbabacba caaabbcaa abaccabc bacbaaccabaaaaaa  ca a b   bcabacaabaac caacb  bcbab aa ccccbaa caaacac bcaaaaaa  aabaab a bb cabcab cb ab c acca acaabcccbcbabaaa  aaabcbcc aca  baabacac bbbccbbaccc"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+68,
+0,
+212
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"x = 2"
+],
+[
+"    pass",
+"",
+"x = 2"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+2,
+2,
+3
+]
+]
+},
+{
+"args": [
+"b",
+""
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+]
+]
+},
+{
+"args": [
+"a edaabaaeeabacedcee b  c",
+"b edabaaeeaacedxee b  c"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+],
+[
+"delete",
+4,
+5,
+4,
+4
+],
+[
+"equal",
+5,
+12,
+4,
+11
+],
+[
+"delete",
+12,
+13,
+11,
+11
+],
+[
+"equal",
+13,
+17,
+11,
+15
+],
+[
+"replace",
+17,
+18,
+15,
+16
+],
+[
+"equal",
+18,
+25,
+16,
+23
+]
+]
+},
+{
+"args": [
+[
+"",
+"def f():",
+"}",
+"pass",
+"def f():",
+"}",
+"    return 1",
+"x = 2",
+"    pass",
+"    pass"
+],
+[
+"",
+"def f():",
+"}",
+"# c",
+"# c",
+"}",
+"    return 1",
+"x = 2",
+"    pass",
+"# c",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+5,
+3,
+5
+],
+[
+"equal",
+5,
+9,
+5,
+9
+],
+[
+"replace",
+9,
+10,
+9,
+11
+]
+]
+},
+{
+"args": [
+"ebdbddba",
+"xebdbddba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+8,
+1,
+9
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"x = 2",
+"pass",
+"pass",
+"",
+"def f():"
+],
+[
+"x = 2",
+"pass",
+"x = 2",
+"pass",
+"pass",
+"pass",
+"pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+4,
+2,
+5
+],
+[
+"replace",
+4,
+6,
+5,
+7
+]
+]
+},
+{
+"args": [
+"eaedbded  c",
+"eaedxbdced  ec"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+6,
+5,
+7
+],
+[
+"insert",
+6,
+6,
+7,
+8
+],
+[
+"equal",
+6,
+10,
+8,
+12
+],
+[
+"insert",
+10,
+10,
+12,
+13
+],
+[
+"equal",
+10,
+11,
+13,
+14
+]
+]
+},
+{
+"args": [
+"dd badb ea  bcdcd bdba",
+"dd badb ea  bcdcd bdb"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+21,
+0,
+21
+],
+[
+"delete",
+21,
+22,
+21,
+21
+]
+]
+},
+{
+"args": [
+"bbbcb  aaaabb accaaabac  aa c baba a ba bacb babb c abbcbcac baab",
+"bab acabaacaaa  abccbbcbcca abccaaaac caaacabbaca  b ccc     ba aa bca b bbaacbcac aabbaca a cbaa bcbaccaaabacb cac  baa a   ca b cccbc cac abaa   abcc ca bcab    bbbc a a aaaacaaabbc bcba cccccac cb babaaaaaacbbca cabcb bb aacaaababcbcaac  a ac  bac  a b"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+65,
+1,
+255
+]
+]
+},
+{
+"args": [
+"b bcab ccccbaacb  abaca b  a b baaaabc   a cca acaaaa bacccbbacbcabbb babcaca",
+"a   bcaabc  aac a  aaaccc aabaaabba aacbc  caaab  cab abaaa    a a aa  cca  cab bacb aa aa a ca cccccbabbaba acbcaaccaacbccbac cb  aba a   a cacacaaa  a ccbaaccaa cbbaabcc aaabaacb a cbccaa  aca cb aaacb  bcababacb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+77,
+0,
+214
+]
+]
+},
+{
+"args": [
+" beab",
+" beb"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"delete",
+3,
+4,
+3,
+3
+],
+[
+"equal",
+4,
+5,
+3,
+4
+]
+]
+},
+{
+"args": [
+"ababcacabb  aa c   ba",
+"abab ab  a  abaaba a aac   bacb a baac b babbcccbabaacaacccab cbaaaa  abbca a aaabbc caaaababcaab  acbc  a  accabbbb a ccca  c cabba acc caa  baac bcbbcaaabacac aabcb aaa aa abbcbbaaa  bb aabacacbb  a bacaaa aac b aacccaaaaac"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+21,
+4,
+225
+]
+]
+},
+{
+"args": [
+"aee eb ce   b  ee eeced",
+"aeebeb ce   b  ee eeced"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+23,
+4,
+23
+]
+]
+},
+{
+"args": [
+"a  dda  cdc aedcca ",
+"a  dda  cdc aedcca "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+19,
+0,
+19
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"def f():",
+"",
+"x = 2"
+],
+[
+"x = 2",
+"def f():",
+"",
+"pass",
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+4,
+4,
+5
+]
+]
+},
+{
+"args": [
+"bcbcbabcbbcaababbc ccaaa aa cabaabaaaabb acacb  b aaba bbcbc baccc cbb aaabbccb",
+"c abba cba c aaacba aacb b aabaa ca bbbac  ac b bc baa a  c acacaaaaaab  b  ccbaaaaaba a b ab abbabbababa bbbcccbbbacaaa a  bacc aca aabcaacaa  aa cccc  c a cbca a cb baccbcbabbbaaacb bcba ca aac babcaaabbabbac ccca bc c ac bacb c a"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+],
+[
+"equal",
+0,
+1,
+3,
+4
+],
+[
+"delete",
+1,
+2,
+4,
+4
+],
+[
+"equal",
+2,
+3,
+4,
+5
+],
+[
+"insert",
+3,
+3,
+5,
+7
+],
+[
+"equal",
+3,
+6,
+7,
+10
+],
+[
+"replace",
+6,
+7,
+10,
+16
+],
+[
+"equal",
+7,
+9,
+16,
+18
+],
+[
+"delete",
+9,
+23,
+18,
+18
+],
+[
+"equal",
+23,
+27,
+18,
+22
+],
+[
+"delete",
+27,
+44,
+22,
+22
+],
+[
+"equal",
+44,
+46,
+22,
+24
+],
+[
+"delete",
+46,
+47,
+24,
+24
+],
+[
+"equal",
+47,
+54,
+24,
+31
+],
+[
+"insert",
+54,
+54,
+31,
+35
+],
+[
+"equal",
+54,
+57,
+35,
+38
+],
+[
+"insert",
+57,
+57,
+38,
+40
+],
+[
+"equal",
+57,
+58,
+40,
+41
+],
+[
+"insert",
+58,
+58,
+41,
+48
+],
+[
+"equal",
+58,
+63,
+48,
+53
+],
+[
+"insert",
+63,
+63,
+53,
+148
+],
+[
+"equal",
+63,
+67,
+148,
+152
+],
+[
+"insert",
+67,
+67,
+152,
+157
+],
+[
+"equal",
+67,
+69,
+157,
+159
+],
+[
+"insert",
+69,
+69,
+159,
+165
+],
+[
+"equal",
+69,
+71,
+165,
+167
+],
+[
+"insert",
+71,
+71,
+167,
+200
+],
+[
+"equal",
+71,
+76,
+200,
+205
+],
+[
+"insert",
+76,
+76,
+205,
+211
+],
+[
+"equal",
+76,
+78,
+211,
+213
+],
+[
+"insert",
+78,
+78,
+213,
+216
+],
+[
+"equal",
+78,
+79,
+216,
+217
+],
+[
+"insert",
+79,
+79,
+217,
+232
+]
+]
+},
+{
+"args": [
+"a b ab cbcc cbcaacbac bacc  cb  cabb ababcc acaba  a cbcbaaa acaaaaac",
+"caababca baaaaacaacbba   abbcba ba  aab cacaa  aaaaacbabaaacbbc bcbcc  aabaabb aacaaaaaaaa bcba   caaaa aabbbbaacbabbbaaac bbaabacb abcac cb caba baac cb  a a cbcbc  abccbbcca b bbaab cbb aaa ca caaaaaacabbbcbaaaabaaa accabaaa aba aa aabaaca acaba"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+69,
+0,
+247
+]
+]
+},
+{
+"args": [
+"ebceca aadba a edccd",
+"ebceca aadba a  edccd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+15,
+0,
+15
+],
+[
+"insert",
+15,
+15,
+15,
+16
+],
+[
+"equal",
+15,
+20,
+16,
+21
+]
+]
+},
+{
+"args": [
+"d bddddc ae bcaceeb daa",
+"d bddddc ae bcaceeb daa"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+23,
+0,
+23
+]
+]
+},
+{
+"args": [
+"  c b c aacab  caaa bccaaabaa bca ccacc bb  babcbabb baabbbabbb",
+"caa  aacabcaccabaabacaccaa  acb bcaaabba   caaaab cbaaabca  baabcaaaaacbb ac bccabcaab aaaca ccabba abaaaac cbabaa cabac abaacaccaca  aca aa abbcb  ba  aaabbacacaa bacaa aa aacbccabbbaca    ccbac  bbbaaabc  aaacba"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+63,
+0,
+213
+]
+]
+},
+{
+"args": [
+"aacbeea aa",
+"aacbeea aa"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+10,
+0,
+10
+]
+]
+},
+{
+"args": [
+"cecde babc baeeecc",
+"xcecde bab  baeeecc"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+9,
+1,
+10
+],
+[
+"replace",
+9,
+10,
+10,
+11
+],
+[
+"equal",
+10,
+18,
+11,
+19
+]
+]
+},
+{
+"args": [
+"bb c aab cbbaa c baaca b bc abb abcbbba  cb bc bbb abbbbcb",
+" cb  cbb  cc aaa   bba  cb aabcca bcaba  aaaaaaa     bacacbc acca acaccc acaabca acaaabbcaabc cbcaa caa acaacc c  ba   baaacacc ba aaabbbbac a  aa aaaab aaab bb acaaaa abaaaaa a    b ca aaacac bbbacbabcabaccccbacacaa "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+58,
+0,
+217
+]
+]
+},
+{
+"args": [
+"eebdaa ",
+"eebcaae "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+6,
+4,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+7
+],
+[
+"equal",
+6,
+7,
+7,
+8
+]
+]
+},
+{
+"args": [
+" d acddbab  bdd",
+" daxcddbaz bdd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"delete",
+2,
+3,
+2,
+2
+],
+[
+"equal",
+3,
+4,
+2,
+3
+],
+[
+"insert",
+4,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+9,
+4,
+9
+],
+[
+"replace",
+9,
+11,
+9,
+10
+],
+[
+"equal",
+11,
+15,
+10,
+14
+]
+]
+},
+{
+"args": [
+[
+""
+],
+[
+"",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+]
+]
+},
+{
+"args": [
+"c bbaabc ac ca   b bbbacaac cba bb  b",
+"abab a bacaa aab aaaa ba aaaabcbbcaaa bbbbb aaaa aca abaca cbca acaac ab aaaa caa c ccc baa c ccaabcbb bbaaacabccbacacab   aacaabc  c  cba   c caa aaaca acabaaabcaba  abccabcaa bcaabcc c  aaabbabca aaaabaaa  bc  ac aac"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+37,
+0,
+218
+]
+]
+},
+{
+"args": [
+[
+"    return 1"
+],
+[
+"    return 1",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+]
+]
+},
+{
+"args": [
+"e ecc b cecab",
+"e ec c b cecab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+13,
+5,
+14
+]
+]
+},
+{
+"args": [
+"eeddbadaeba",
+"e e ddbbzdaebab"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+2,
+2,
+3
+],
+[
+"insert",
+2,
+2,
+3,
+4
+],
+[
+"equal",
+2,
+5,
+4,
+7
+],
+[
+"replace",
+5,
+6,
+7,
+9
+],
+[
+"equal",
+6,
+11,
+9,
+14
+],
+[
+"insert",
+11,
+11,
+14,
+15
+]
+]
+},
+{
+"args": [
+[
+"",
+"",
+"def f():"
+],
+[
+"",
+"",
+"# c",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+]
+]
+},
+{
+"args": [
+"eedaadeadccacdaeddcaa",
+"eedaadeadcacacdaeddcaaax"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+10,
+0,
+10
+],
+[
+"insert",
+10,
+10,
+10,
+11
+],
+[
+"equal",
+10,
+21,
+11,
+22
+],
+[
+"insert",
+21,
+21,
+22,
+24
+]
+]
+},
+{
+"args": [
+"badaacc baeaab baeec   ",
+"badaacc baeaab baeec   "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+23,
+0,
+23
+]
+]
+},
+{
+"args": [
+[
+"",
+"def f():",
+"}",
+"pass",
+"def f():"
+],
+[
+"",
+"def f():",
+"}",
+"    pass",
+"pass",
+"pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+4,
+4,
+5
+],
+[
+"replace",
+4,
+5,
+5,
+6
+]
+]
+},
+{
+"args": [
+" dbbdcbbc ca ac  d de   ",
+" dbbdcbbc ca acy  d de b  "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+15,
+0,
+15
+],
+[
+"insert",
+15,
+15,
+15,
+16
+],
+[
+"equal",
+15,
+22,
+16,
+23
+],
+[
+"insert",
+22,
+22,
+23,
+24
+],
+[
+"equal",
+22,
+24,
+24,
+26
+]
+]
+},
+{
+"args": [
+" cccccccaac  cbacbacb  c babb   bbaccabbabacaac b ac ccb cb aab ",
+"aa ab cbaaabaa cabcaccabaacc  aaaacaaabcacb aa a c  a    abcba baaaabccab  baaccaa aaaab a aca baccaa abbaacacaa ba  aab caba  abbbbaa b bb bac ab ccabb bcaaac bbca aabcacbaca aacbcabbbcbcaaaaa  a  abbcabbaaaaba aaab accaaaa babcb "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+5
+],
+[
+"equal",
+0,
+2,
+5,
+7
+],
+[
+"insert",
+2,
+2,
+7,
+20
+],
+[
+"equal",
+2,
+4,
+20,
+22
+],
+[
+"insert",
+4,
+4,
+22,
+26
+],
+[
+"equal",
+4,
+6,
+26,
+28
+],
+[
+"insert",
+6,
+6,
+28,
+78
+],
+[
+"equal",
+6,
+10,
+78,
+82
+],
+[
+"insert",
+10,
+10,
+82,
+142
+],
+[
+"equal",
+10,
+12,
+142,
+144
+],
+[
+"insert",
+12,
+12,
+144,
+146
+],
+[
+"equal",
+12,
+14,
+146,
+148
+],
+[
+"insert",
+14,
+14,
+148,
+150
+],
+[
+"equal",
+14,
+15,
+150,
+151
+],
+[
+"insert",
+15,
+15,
+151,
+169
+],
+[
+"equal",
+15,
+20,
+169,
+174
+],
+[
+"insert",
+20,
+20,
+174,
+179
+],
+[
+"equal",
+20,
+21,
+179,
+180
+],
+[
+"delete",
+21,
+23,
+180,
+180
+],
+[
+"equal",
+23,
+24,
+180,
+181
+],
+[
+"delete",
+24,
+26,
+181,
+181
+],
+[
+"equal",
+26,
+29,
+181,
+184
+],
+[
+"insert",
+29,
+29,
+184,
+193
+],
+[
+"equal",
+29,
+31,
+193,
+195
+],
+[
+"insert",
+31,
+31,
+195,
+196
+],
+[
+"equal",
+31,
+32,
+196,
+197
+],
+[
+"insert",
+32,
+32,
+197,
+199
+],
+[
+"equal",
+32,
+34,
+199,
+201
+],
+[
+"delete",
+34,
+36,
+201,
+201
+],
+[
+"equal",
+36,
+41,
+201,
+206
+],
+[
+"insert",
+41,
+41,
+206,
+209
+],
+[
+"equal",
+41,
+43,
+209,
+211
+],
+[
+"replace",
+43,
+44,
+211,
+212
+],
+[
+"equal",
+44,
+46,
+212,
+214
+],
+[
+"replace",
+46,
+48,
+214,
+215
+],
+[
+"equal",
+48,
+52,
+215,
+219
+],
+[
+"insert",
+52,
+52,
+219,
+224
+],
+[
+"equal",
+52,
+53,
+224,
+225
+],
+[
+"replace",
+53,
+54,
+225,
+228
+],
+[
+"equal",
+54,
+57,
+228,
+231
+],
+[
+"delete",
+57,
+64,
+231,
+231
+]
+]
+},
+{
+"args": [
+"abed cbb a",
+"xabd bb xac"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+2,
+1,
+3
+],
+[
+"delete",
+2,
+3,
+3,
+3
+],
+[
+"equal",
+3,
+5,
+3,
+5
+],
+[
+"delete",
+5,
+6,
+5,
+5
+],
+[
+"equal",
+6,
+9,
+5,
+8
+],
+[
+"insert",
+9,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+10,
+9,
+10
+],
+[
+"insert",
+10,
+10,
+10,
+11
+]
+]
+},
+{
+"args": [
+"beacebdbddeaebcede be",
+"beacebybdxdebebcede be"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+6,
+0,
+6
+],
+[
+"replace",
+6,
+7,
+6,
+7
+],
+[
+"equal",
+7,
+9,
+7,
+9
+],
+[
+"insert",
+9,
+9,
+9,
+10
+],
+[
+"equal",
+9,
+11,
+10,
+12
+],
+[
+"replace",
+11,
+12,
+12,
+13
+],
+[
+"equal",
+12,
+21,
+13,
+22
+]
+]
+},
+{
+"args": [
+[
+"}",
+"x = 2",
+""
+],
+[
+"}",
+"x = 2",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+]
+]
+},
+{
+"args": [
+" babcccacc c  a abcb babaacc  acbbb  aaa a aa a abc c  c aabc acb baccbcb  c ",
+" aa b c a aabcbacaacbbb  c a   ccc bb abcabcaa aaacccaacbacaabababaaba ca abaaca aa a aacaaaaabaccaaaa cbab abbcaa  aacbabb   c  cbaaacacaccaacaba bb aacabb bcab aaacbca bcbc ca baa abcabbacca  accbb c aa   acaabb aa  aaaa aaaaa  bb b"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+],
+[
+"equal",
+0,
+2,
+3,
+5
+],
+[
+"delete",
+2,
+10,
+5,
+5
+],
+[
+"equal",
+10,
+12,
+5,
+7
+],
+[
+"delete",
+12,
+13,
+7,
+7
+],
+[
+"equal",
+13,
+17,
+7,
+11
+],
+[
+"insert",
+17,
+17,
+11,
+12
+],
+[
+"equal",
+17,
+20,
+12,
+15
+],
+[
+"delete",
+20,
+25,
+15,
+15
+],
+[
+"equal",
+25,
+27,
+15,
+17
+],
+[
+"replace",
+27,
+30,
+17,
+18
+],
+[
+"equal",
+30,
+37,
+18,
+25
+],
+[
+"insert",
+37,
+37,
+25,
+47
+],
+[
+"equal",
+37,
+40,
+47,
+50
+],
+[
+"insert",
+40,
+40,
+50,
+70
+],
+[
+"equal",
+40,
+41,
+70,
+71
+],
+[
+"insert",
+41,
+41,
+71,
+79
+],
+[
+"equal",
+41,
+49,
+79,
+87
+],
+[
+"insert",
+49,
+49,
+87,
+110
+],
+[
+"equal",
+49,
+51,
+110,
+112
+],
+[
+"insert",
+51,
+51,
+112,
+125
+],
+[
+"equal",
+51,
+56,
+125,
+130
+],
+[
+"insert",
+56,
+56,
+130,
+149
+],
+[
+"equal",
+56,
+59,
+149,
+152
+],
+[
+"insert",
+59,
+59,
+152,
+172
+],
+[
+"equal",
+59,
+62,
+172,
+175
+],
+[
+"insert",
+62,
+62,
+175,
+176
+],
+[
+"equal",
+62,
+63,
+176,
+177
+],
+[
+"insert",
+63,
+63,
+177,
+184
+],
+[
+"equal",
+63,
+64,
+184,
+185
+],
+[
+"insert",
+64,
+64,
+185,
+186
+],
+[
+"equal",
+64,
+65,
+186,
+187
+],
+[
+"delete",
+65,
+66,
+187,
+187
+],
+[
+"equal",
+66,
+70,
+187,
+191
+],
+[
+"replace",
+70,
+71,
+191,
+196
+],
+[
+"equal",
+71,
+73,
+196,
+198
+],
+[
+"replace",
+73,
+74,
+198,
+199
+],
+[
+"equal",
+74,
+77,
+199,
+202
+],
+[
+"insert",
+77,
+77,
+202,
+234
+]
+]
+},
+{
+"args": [
+"adabb",
+"aday"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+5,
+3,
+4
+]
+]
+},
+{
+"args": [
+"cca abbbccaa  abbbcabbbbc",
+"aaa aacaacbbbaaca cba ba b aaa aaaacabab  ca  ccaaaaaacbac b cacbaa c aaaababa  b b aaabbabbc baaaaabbaab  cbaba ccaaabca caabbcabaaacbbcbaacbba ccaaa accbcbaaa  c babca ababc  a    aa ccbabaacacccc b bcbaa aca cc b  c c ba"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+25,
+0,
+223
+]
+]
+},
+{
+"args": [
+"bc  aeaa  a ",
+"bc  aeaa  a "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+12,
+0,
+12
+]
+]
+},
+{
+"args": [
+"b ad",
+"b ad"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+]
+]
+},
+{
+"args": [
+" cceedee",
+" aceedce"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+6,
+2,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+7
+],
+[
+"equal",
+6,
+7,
+7,
+8
+],
+[
+"delete",
+7,
+8,
+8,
+8
+]
+]
+},
+{
+"args": [
+"bbbca bcbbac cacbabb",
+"aaaacbbacaccab  caaabccaab cbac b aaaabbaabb cbaa c aabcabbbacca cb acbbaacac aaaacab ab  a baa ab baaacaaab ba b abcccaaaba ca cbacbc b  acaaaacaacaa  abccacbbbabaaa b a aa aaa ab c c abca bccaabacbb bab  caaacabaaabb  aabbcccac b  cab c b a aaaccccabbb aaaa"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+20,
+0,
+259
+]
+]
+},
+{
+"args": [
+"eebbadaad d  bae ecbd",
+"eebbadaad d yae ecbd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+12,
+0,
+12
+],
+[
+"replace",
+12,
+14,
+12,
+13
+],
+[
+"equal",
+14,
+21,
+13,
+20
+]
+]
+},
+{
+"args": [
+[
+"def f():",
+"    return 1",
+"x = 2",
+"pass"
+],
+[
+"def f():",
+"    return 1",
+"    pass",
+"x = 2",
+"pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+4,
+3,
+5
+]
+]
+},
+{
+"args": [
+[
+"}",
+"pass",
+"# c",
+"",
+"    pass"
+],
+[
+"}",
+"pass",
+"    return 1",
+"    pass",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+4
+],
+[
+"equal",
+3,
+4,
+4,
+5
+],
+[
+"delete",
+4,
+5,
+5,
+5
+]
+]
+},
+{
+"args": [
+"eadaaabb ",
+"eadyabb "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+5,
+3,
+4
+],
+[
+"equal",
+5,
+9,
+4,
+8
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"    return 1",
+"x = 2",
+"# c",
+"pass",
+"def f():",
+"def f():",
+"    return 1",
+"",
+"# c",
+"# c"
+],
+[
+"pass",
+"    return 1",
+"}",
+"# c",
+"pass",
+"def f():",
+"def f():",
+"    return 1",
+"def f():",
+"# c",
+"pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+2,
+1,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+8,
+3,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+10,
+9,
+10
+],
+[
+"replace",
+10,
+11,
+10,
+11
+]
+]
+},
+{
+"args": [
+" b bacbcb ccc ccba accb b  accaba cc a aab",
+" c aaa acac ca b aa acab babacbcaabb baacaaaabaa cc bab  a ab ac b aa b bab bacaba cbaaac a  aaaca bcaccaaaa a caababc aaacc abbaa babba cab bba  a ab  aca  aaaacaaaacaacbaaacbbacba a aaccca  aba aaabb aaacca c"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+69
+],
+[
+"equal",
+0,
+5,
+69,
+74
+],
+[
+"delete",
+5,
+22,
+74,
+74
+],
+[
+"equal",
+22,
+25,
+74,
+77
+],
+[
+"delete",
+25,
+27,
+77,
+77
+],
+[
+"equal",
+27,
+28,
+77,
+78
+],
+[
+"delete",
+28,
+29,
+78,
+78
+],
+[
+"equal",
+29,
+35,
+78,
+84
+],
+[
+"insert",
+35,
+35,
+84,
+88
+],
+[
+"equal",
+35,
+36,
+88,
+89
+],
+[
+"insert",
+36,
+36,
+89,
+181
+],
+[
+"equal",
+36,
+41,
+181,
+186
+],
+[
+"insert",
+41,
+41,
+186,
+193
+],
+[
+"equal",
+41,
+42,
+193,
+194
+],
+[
+"insert",
+42,
+42,
+194,
+210
+]
+]
+},
+{
+"args": [
+[],
+[]
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"ae ceeadaaba d b ",
+"ae ceeacdaaba d bx"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"insert",
+7,
+7,
+7,
+8
+],
+[
+"equal",
+7,
+16,
+8,
+17
+],
+[
+"replace",
+16,
+17,
+17,
+18
+]
+]
+},
+{
+"args": [
+" caaaa cbacc abcba ab aa ccaacc a baaa bc cb babb",
+"ab a ca caaaaaabcabcbaabc a  acbabcaccabaacbab aabbbbab b ccbb a caba a ccc baaaaa  cbcb ccc b aaaaababbb cabbabaaaccaabb a acacabbbbbacbc acaaaacbaaaaaa  aaab caaaaca baaaaa aaa bbac b aaacc acccabcbbc aaaa a"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+49,
+0,
+209
+]
+]
+},
+{
+"args": [
+"aadaabac acebcb e",
+"aadaayac azcebbcb e"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+5,
+0,
+5
+],
+[
+"replace",
+5,
+6,
+5,
+6
+],
+[
+"equal",
+6,
+10,
+6,
+10
+],
+[
+"insert",
+10,
+10,
+10,
+11
+],
+[
+"equal",
+10,
+12,
+11,
+13
+],
+[
+"insert",
+12,
+12,
+13,
+14
+],
+[
+"equal",
+12,
+17,
+14,
+19
+]
+]
+},
+{
+"args": [
+"eacb",
+"eacb"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+]
+]
+},
+{
+"args": [
+"aabb bc  a a  aab abbbbbab baacbbc  b cc c bbcbbc c  b a  abab  aac c cbabb",
+"aba aa bacabacaaaaaaabbc  aaabababca abb abaca ccabcbbacaccaabaabcabbcccaaaa aaaa  b a bbacacc bcbb cccbcaab  a bcaacaccaa  abacc ab caaca  cbaaaa acb acabb  ccaabac a c a b baacbcc c acc aacc baba a aab  acba aabacaa"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+75,
+1,
+217
+]
+]
+},
+{
+"args": [
+"a a aa aaacb bacaa b  bbbbcb  bacaacc b ac b c bab  bcaa   ",
+"cabb aac  bbba a a b ba aa  cc aaaccabaa ac aabaaaccba  b   acaabaaabbaaac   babaa ccaa  a ba aab ab a bbcbcccaac baaabaa ca  bb baaba babcbabaaca  baacabcaac  cca a bbaa b  b aaac babccab ba abaaaaaaacaa abaa cbbcc b acac  abab aabbaabcb b acc bbaacbc ac a b"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+59,
+0,
+259
+]
+]
+},
+{
+"args": [
+"ce d eb ",
+"ye d eb "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+8,
+1,
+8
+]
+]
+},
+{
+"args": [
+"cc  cb bac b   cc c  caccbacaaba bbaaccabcabc abac c",
+"a cca abcca abbccaaaacccaacccaaba acb  a  bbcaacabbbaabbaca aab caacacbabbbaacbbcbbc acbb  bacacbaaaa ac a babaacacaab cacaac  ac  cacacac  b a aacbb c aacacbaaabcaaabccacac bbbbacaaacaca cac c ab  a  bcaaaab aba a abacaacaaaa  a abbca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+52,
+0,
+235
+]
+]
+},
+{
+"args": [
+"dae bbe",
+"daec bbxe"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+6,
+4,
+7
+],
+[
+"insert",
+6,
+6,
+7,
+8
+],
+[
+"equal",
+6,
+7,
+8,
+9
+]
+]
+},
+{
+"args": [
+"a eb  bdde becaec",
+"aeyb x bdde becaec"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"delete",
+1,
+2,
+1,
+1
+],
+[
+"equal",
+2,
+3,
+1,
+2
+],
+[
+"insert",
+3,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+5,
+3,
+5
+],
+[
+"insert",
+5,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+17,
+6,
+18
+]
+]
+},
+{
+"args": [
+"cbbcc baac aaab a  b",
+"acca bcbaa abaa aaaaba aacbaaca  aabbcaa a baacabccacabbbcaabcabcabccba aba  bb a ababaaba cbbaaa  acc a aabcaacba abcababac c acaabb c  aa bcaaaac cacbacabaaaaacc a acb a caabbcaabcba a acaaac aaaa b  abb ca c"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+91
+],
+[
+"equal",
+0,
+3,
+91,
+94
+],
+[
+"insert",
+3,
+3,
+94,
+100
+],
+[
+"equal",
+3,
+6,
+100,
+103
+],
+[
+"insert",
+6,
+6,
+103,
+107
+],
+[
+"equal",
+6,
+7,
+107,
+108
+],
+[
+"insert",
+7,
+7,
+108,
+190
+],
+[
+"equal",
+7,
+14,
+190,
+197
+],
+[
+"insert",
+14,
+14,
+197,
+199
+],
+[
+"equal",
+14,
+16,
+199,
+201
+],
+[
+"insert",
+16,
+16,
+201,
+207
+],
+[
+"equal",
+16,
+18,
+207,
+209
+],
+[
+"replace",
+18,
+20,
+209,
+210
+]
+]
+},
+{
+"args": [
+[
+"",
+"pass",
+"def f():",
+"x = 2",
+"    return 1"
+],
+[
+"",
+"pass",
+"def f():",
+"x = 2",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+5,
+0,
+5
+]
+]
+},
+{
+"args": [
+"acaba aba  cc acacaab",
+"a aaabb   ca b baa baabcbbcccba aaa a aa ccbcc bacacabbaacbc bcaab caccaaa a bbb ccaabaa aab bb cbcaab cbabb  b ab caac aabcabbacc  acbaabcb aa caab baac aaabab caa ababcaacba acccac  aa cba  caab  aacbaaa ccaacbcc cbca aa abac"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+21,
+1,
+227
+]
+]
+},
+{
+"args": [
+"aeceaab bab c cada",
+"aeceaaxzebbab c cada"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+6,
+0,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+9
+],
+[
+"equal",
+6,
+7,
+9,
+10
+],
+[
+"delete",
+7,
+8,
+10,
+10
+],
+[
+"equal",
+8,
+18,
+10,
+20
+]
+]
+},
+{
+"args": [
+[
+"",
+"}",
+"pass",
+""
+],
+[
+"",
+"pass",
+"pass",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+4,
+2,
+4
+]
+]
+},
+{
+"args": [
+"ca",
+"cyy "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+4
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"    return 1",
+"}",
+"    pass",
+"}",
+"x = 2",
+"",
+"}",
+"    pass"
+],
+[
+"# c",
+"",
+"}",
+"def f():",
+"}",
+"x = 2",
+"",
+"}",
+"    pass",
+"    pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+3,
+2,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+9,
+4,
+9
+],
+[
+"insert",
+9,
+9,
+9,
+10
+]
+]
+},
+{
+"args": [
+"eccb baddacbc e beb dd",
+"eccb baddaacbc beb ad"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+10,
+0,
+10
+],
+[
+"insert",
+10,
+10,
+10,
+11
+],
+[
+"equal",
+10,
+13,
+11,
+14
+],
+[
+"delete",
+13,
+15,
+14,
+14
+],
+[
+"equal",
+15,
+20,
+14,
+19
+],
+[
+"insert",
+20,
+20,
+19,
+20
+],
+[
+"equal",
+20,
+21,
+20,
+21
+],
+[
+"delete",
+21,
+22,
+21,
+21
+]
+]
+},
+{
+"args": [
+[
+"def f():",
+"",
+"x = 2",
+"pass",
+"# c",
+"    return 1",
+"# c",
+"    pass"
+],
+[
+"def f():",
+"    return 1",
+"x = 2",
+"}",
+"pass",
+"# c",
+"    return 1",
+"# c",
+"x = 2"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+3,
+2,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+7,
+4,
+8
+],
+[
+"replace",
+7,
+8,
+8,
+9
+]
+]
+},
+{
+"args": [
+" bcbc cccc  a bbaa aab cbcc cbb cbcccbcca cb  c b aa bbba bca bbaa c aaacaa",
+"bac  baaaaa aaaaacabac b caaacca aaa abc ccacacabbb baac abaabbbabaa b  aaaab a aaba bbaabbaacaaacaaababbaacbccaa baabcb bcaabbaababcbaa bcaaaaa abaaaaacccaaaacba bbaaaabaaacbaaaa acaabcbb acaba cbbaabb a  caaac  ccbcaaacc "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+75,
+0,
+223
+]
+]
+},
+{
+"args": [
+"aeba eacae",
+"eeaeacaex"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+2
+],
+[
+"equal",
+0,
+1,
+2,
+3
+],
+[
+"delete",
+1,
+5,
+3,
+3
+],
+[
+"equal",
+5,
+10,
+3,
+8
+],
+[
+"insert",
+10,
+10,
+8,
+9
+]
+]
+},
+{
+"args": [
+[
+"}",
+"x = 2",
+"}",
+"    pass"
+],
+[
+"}",
+"# c",
+"}",
+"    pass",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+4,
+2,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"",
+"# c",
+"    pass",
+"def f():",
+"x = 2",
+"pass"
+],
+[
+"}",
+"",
+"# c",
+"    pass",
+"    pass",
+"x = 2",
+"pass",
+"pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+],
+[
+"replace",
+4,
+5,
+4,
+5
+],
+[
+"equal",
+5,
+7,
+5,
+7
+],
+[
+"insert",
+7,
+7,
+7,
+8
+]
+]
+},
+{
+"args": [
+[
+"x = 2"
+],
+[
+"    return 1"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+]
+]
+},
+{
+"args": [
+"c baa abcdeeecbeded",
+"c baa aybdeeecbebed"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"insert",
+7,
+7,
+7,
+8
+],
+[
+"equal",
+7,
+8,
+8,
+9
+],
+[
+"delete",
+8,
+9,
+9,
+9
+],
+[
+"equal",
+9,
+16,
+9,
+16
+],
+[
+"replace",
+16,
+17,
+16,
+17
+],
+[
+"equal",
+17,
+19,
+17,
+19
+]
+]
+},
+{
+"args": [
+"dce cdabcbecede d d",
+"dce cdaxbcbeceded d"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"insert",
+7,
+7,
+7,
+8
+],
+[
+"equal",
+7,
+15,
+8,
+16
+],
+[
+"delete",
+15,
+16,
+16,
+16
+],
+[
+"equal",
+16,
+19,
+16,
+19
+]
+]
+},
+{
+"args": [
+"bdee  cc",
+"bdeey cc"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+5,
+4,
+5
+],
+[
+"equal",
+5,
+8,
+5,
+8
+]
+]
+},
+{
+"args": [
+"de a",
+"dye a"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+4,
+2,
+5
+]
+]
+},
+{
+"args": [
+"cb cc b a  cb cbbabc bb  a bcbaaab aacb ccacb a c   aabc   cbcbcbcbcacbb  caa b",
+"babbaab caabac ba ab acc aaaaa abcabcbac cabcca  aabcbb aca  aacc bacaaa ab bbccaaba   cba abccb aacaa abbbcaaba  abab aaaa baca  acc aabab cacbaaabcac  abbcbacacacbaaccb cbabaa a aaaaa  ca babaacaaabac  baaaab abccccaaca a acaabbcb a   cb b bcbaaaca abac"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+79,
+0,
+255
+]
+]
+},
+{
+"args": [
+[
+"    return 1"
+],
+[
+"}",
+"    return 1"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+]
+]
+},
+{
+"args": [
+"bbdaacbc ",
+"bbaacbc "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"delete",
+2,
+3,
+2,
+2
+],
+[
+"equal",
+3,
+9,
+2,
+8
+]
+]
+},
+{
+"args": [
+" aacebabd  eba",
+" aacbabd  eba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"delete",
+4,
+5,
+4,
+4
+],
+[
+"equal",
+5,
+14,
+4,
+13
+]
+]
+},
+{
+"args": [
+"cc cbcc aabaa cb aabb cbcb cacab ac ba  ccbbaaba c bbabbabcacb  aab  ac ba   ",
+"acaacbcc abcaab  baacbb aacaaa baaaba bccaaaac aa b  aaaabbaac baacacacacb a a     ab acabba abbbabacaccacacab cbaacca aca bcbbac aaa aabbbbcaabaabbcbbaba a bcacbcabba     cb aaab a caaaacccbccabaa abcababbbcaabaaaccb  caa aaaaaa cabcacb  bbc aab"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+77,
+0,
+246
+]
+]
+},
+{
+"args": [
+"cbdae  ac  cdecc ",
+"cbdae  ac  cdecc "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+17,
+0,
+17
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"pass",
+"    return 1",
+"    return 1",
+"pass",
+"}",
+"    return 1",
+"def f():",
+"def f():",
+"",
+"x = 2",
+"}"
+],
+[
+"x = 2",
+"pass",
+"    return 1",
+"    return 1",
+"    return 1",
+"x = 2",
+"    return 1",
+"def f():",
+"",
+"    pass",
+"",
+"x = 2",
+"}"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+6,
+4,
+6
+],
+[
+"equal",
+6,
+8,
+6,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+10
+],
+[
+"equal",
+9,
+12,
+10,
+13
+]
+]
+},
+{
+"args": [
+"edcde aa ae",
+"edyde aa  aee"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+9,
+3,
+9
+],
+[
+"insert",
+9,
+9,
+9,
+10
+],
+[
+"equal",
+9,
+11,
+10,
+12
+],
+[
+"insert",
+11,
+11,
+12,
+13
+]
+]
+},
+{
+"args": [
+"bdcebee  c eabdddadbd dd",
+"bdcebee  c eabdddadbd dd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+24,
+0,
+24
+]
+]
+},
+{
+"args": [
+"acacaa  abaaaccbac abb  cb  cbbabc acac  cbcab  baaac",
+"ccb a b  aabac bb cc aabcbbac abaccabbaa ab ccbbcaaba cb  caaaabaa bca bbc    bcaaaaaa b abaa cab  b cabcbaaacccbb    aaaaba  cbb babcac aabacaabaccacabc ccaabacacaab abbaabaa  acb aaaaaaa cca abba  c c  cb ac baca ac aaa ca"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+159
+],
+[
+"equal",
+0,
+6,
+159,
+165
+],
+[
+"insert",
+6,
+6,
+165,
+166
+],
+[
+"equal",
+6,
+7,
+166,
+167
+],
+[
+"replace",
+7,
+8,
+167,
+171
+],
+[
+"equal",
+8,
+12,
+171,
+175
+],
+[
+"insert",
+12,
+12,
+175,
+177
+],
+[
+"equal",
+12,
+14,
+177,
+179
+],
+[
+"insert",
+14,
+14,
+179,
+189
+],
+[
+"equal",
+14,
+15,
+189,
+190
+],
+[
+"replace",
+15,
+16,
+190,
+191
+],
+[
+"equal",
+16,
+17,
+191,
+192
+],
+[
+"delete",
+17,
+18,
+192,
+192
+],
+[
+"equal",
+18,
+22,
+192,
+196
+],
+[
+"insert",
+22,
+22,
+196,
+202
+],
+[
+"equal",
+22,
+27,
+202,
+207
+],
+[
+"insert",
+27,
+27,
+207,
+209
+],
+[
+"equal",
+27,
+28,
+209,
+210
+],
+[
+"delete",
+28,
+30,
+210,
+210
+],
+[
+"equal",
+30,
+32,
+210,
+212
+],
+[
+"replace",
+32,
+33,
+212,
+216
+],
+[
+"equal",
+33,
+36,
+216,
+219
+],
+[
+"insert",
+36,
+36,
+219,
+222
+],
+[
+"equal",
+36,
+38,
+222,
+224
+],
+[
+"delete",
+38,
+53,
+224,
+224
+]
+]
+},
+{
+"args": [
+[
+"",
+"x = 2",
+"}",
+"",
+"    pass",
+"    pass",
+"def f():"
+],
+[
+"",
+"x = 2",
+"    return 1",
+"",
+"# c",
+"    pass",
+"    pass",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+4,
+3,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+7,
+5,
+8
+]
+]
+},
+{
+"args": [
+[
+"    return 1"
+],
+[
+"}",
+"}"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+2
+]
+]
+},
+{
+"args": [
+"c ba aaaabbcbaba b b b  bcba  ab cbccccabb",
+"aab bccc caaacaa acaabbbab cbacbab aa bcaa caba ca aa a ccba ab baccccaaaaaca caacacaa   bacaa  caabacacbacbbca  aa aabac baaaaa  cabbccca ccc b  bb ab b caaa abcabac aacc caaabaca  aaab ca   aaa  a bc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+120
+],
+[
+"equal",
+0,
+4,
+120,
+124
+],
+[
+"delete",
+4,
+5,
+124,
+124
+],
+[
+"equal",
+5,
+9,
+124,
+128
+],
+[
+"insert",
+9,
+9,
+128,
+132
+],
+[
+"equal",
+9,
+12,
+132,
+135
+],
+[
+"replace",
+12,
+15,
+135,
+137
+],
+[
+"equal",
+15,
+17,
+137,
+139
+],
+[
+"replace",
+17,
+20,
+139,
+142
+],
+[
+"equal",
+20,
+25,
+142,
+147
+],
+[
+"insert",
+25,
+25,
+147,
+154
+],
+[
+"equal",
+25,
+26,
+154,
+155
+],
+[
+"insert",
+26,
+26,
+155,
+160
+],
+[
+"equal",
+26,
+27,
+160,
+161
+],
+[
+"insert",
+27,
+27,
+161,
+179
+],
+[
+"equal",
+27,
+31,
+179,
+183
+],
+[
+"insert",
+31,
+31,
+183,
+185
+],
+[
+"equal",
+31,
+34,
+185,
+188
+],
+[
+"insert",
+34,
+34,
+188,
+199
+],
+[
+"equal",
+34,
+36,
+199,
+201
+],
+[
+"delete",
+36,
+42,
+201,
+201
+]
+]
+},
+{
+"args": [
+"c b dcaba  ",
+"c b dcaba  "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+11,
+0,
+11
+]
+]
+},
+{
+"args": [
+"deaccddebac",
+"edeeaccbaebaec"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+],
+[
+"insert",
+1,
+1,
+2,
+3
+],
+[
+"equal",
+1,
+5,
+3,
+7
+],
+[
+"replace",
+5,
+7,
+7,
+9
+],
+[
+"equal",
+7,
+10,
+9,
+12
+],
+[
+"insert",
+10,
+10,
+12,
+13
+],
+[
+"equal",
+10,
+11,
+13,
+14
+]
+]
+},
+{
+"args": [
+[
+"}",
+"x = 2",
+"def f():",
+"pass",
+"def f():",
+"pass",
+"def f():",
+"pass",
+"    pass"
+],
+[
+"    pass",
+"x = 2",
+"pass",
+"pass",
+"def f():",
+"pass",
+"def f():",
+"pass",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+2,
+1,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+8,
+3,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+]
+]
+},
+{
+"args": [
+"edd  cbcce bc  b",
+"ebaa cbcecebc  b"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+4,
+1,
+4
+],
+[
+"equal",
+4,
+8,
+4,
+8
+],
+[
+"insert",
+8,
+8,
+8,
+9
+],
+[
+"equal",
+8,
+10,
+9,
+11
+],
+[
+"delete",
+10,
+11,
+11,
+11
+],
+[
+"equal",
+11,
+16,
+11,
+16
+]
+]
+},
+{
+"args": [
+"",
+" ec"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+]
+]
+},
+{
+"args": [
+"ebec  c  a eebbaeaadb",
+"ebec  c  a eebbaeaadb"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+21,
+0,
+21
+]
+]
+},
+{
+"args": [
+"c ccadea dbeccbaaeeb",
+"b ccdea dbeccbaaex"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+],
+[
+"delete",
+4,
+5,
+4,
+4
+],
+[
+"equal",
+5,
+18,
+4,
+17
+],
+[
+"replace",
+18,
+20,
+17,
+18
+]
+]
+},
+{
+"args": [
+"e ",
+"e "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+]
+]
+},
+{
+"args": [
+" baac  c cac   abcac  ac a cb     ccc bba cbc ac c  aba abba bbcbac ab",
+"acbaababaacbaac acaccabcabbb abaab  aaaaaaa aabcabbbcbc cbbaa bc b c ca cca b cabab ac  cacba a a b   bcb  aaabc abccbbaab ac  cb abc  acca  cb baaaa   aaaacccacabbacacaaaabb abbcbcbabbcbc  aaaaabc acabc a baaaa  ac a ba  aaa  abb babbcab aca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+70,
+0,
+242
+]
+]
+},
+{
+"args": [
+"bccddabbe ab aab dbdbcaa",
+"bccddabbe ab aab dbdbcaa"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+24,
+0,
+24
+]
+]
+},
+{
+"args": [
+"aeadccde bd",
+"aeadccde bd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+11,
+0,
+11
+]
+]
+},
+{
+"args": [
+"acaca",
+"bxcaa"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+2
+],
+[
+"equal",
+1,
+3,
+2,
+4
+],
+[
+"delete",
+3,
+4,
+4,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+]
+]
+},
+{
+"args": [
+"bcb bbacaccb  babaaa ccacccc cbc c c ccabb cbc  a",
+"aab b  a bacac aabac baabc a  baaac cbbbac ccaca bc a  aabaaabc aab aa     a acbaaaacaa  cabbccacacabbaaabaa abcaabaabaacac cab a aacccaacacccab caaab baaaaaccaabc abcbaca baa   aaaababaaacaa aaaabb aac abbaa aa ba  bcbaaaaacaabca ab"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+49,
+0,
+233
+]
+]
+},
+{
+"args": [
+"c  d e dca  cd",
+"c d xd edca  ca"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"delete",
+1,
+2,
+1,
+1
+],
+[
+"equal",
+2,
+5,
+1,
+4
+],
+[
+"insert",
+5,
+5,
+4,
+7
+],
+[
+"equal",
+5,
+6,
+7,
+8
+],
+[
+"delete",
+6,
+7,
+8,
+8
+],
+[
+"equal",
+7,
+13,
+8,
+14
+],
+[
+"replace",
+13,
+14,
+14,
+15
+]
+]
+},
+{
+"args": [
+"dabdaacebdb be aaeb",
+"dxbdaacbdb be aaeb"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+7,
+2,
+7
+],
+[
+"delete",
+7,
+8,
+7,
+7
+],
+[
+"equal",
+8,
+19,
+7,
+18
+]
+]
+},
+{
+"args": [
+"dc  a cddede caad",
+"dc a czddede caa"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"delete",
+2,
+3,
+2,
+2
+],
+[
+"equal",
+3,
+7,
+2,
+6
+],
+[
+"insert",
+7,
+7,
+6,
+7
+],
+[
+"equal",
+7,
+16,
+7,
+16
+],
+[
+"delete",
+16,
+17,
+16,
+16
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"",
+"    return 1",
+"def f():",
+"    return 1"
+],
+[
+"    pass",
+"",
+"    return 1",
+"x = 2",
+"    return 1"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"    return 1",
+"x = 2",
+"}"
+],
+[
+"pass",
+"    pass",
+"x = 2",
+"}"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+4,
+2,
+4
+]
+]
+},
+{
+"args": [
+" b bbcc aac bacc  bc  cbabbcabbbcbb",
+"b aaa b caaaaa caa acbaaaa   baacaacba  b ababbaabc baca aaa bcba b ab b a bbbbaaacbacabb cacccb cacaaaa ba cc accbba abcb accab b cbacc bcacbaabccc ccb accabc a bbcba abc aa ab acaabac aaa aacabc bba  bac "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+5
+],
+[
+"equal",
+0,
+3,
+5,
+8
+],
+[
+"insert",
+3,
+3,
+8,
+45
+],
+[
+"equal",
+3,
+5,
+45,
+47
+],
+[
+"delete",
+5,
+8,
+47,
+47
+],
+[
+"equal",
+8,
+10,
+47,
+49
+],
+[
+"insert",
+10,
+10,
+49,
+50
+],
+[
+"equal",
+10,
+15,
+50,
+55
+],
+[
+"replace",
+15,
+16,
+55,
+56
+],
+[
+"equal",
+16,
+17,
+56,
+57
+],
+[
+"insert",
+17,
+17,
+57,
+60
+],
+[
+"equal",
+17,
+20,
+60,
+63
+],
+[
+"insert",
+20,
+20,
+63,
+65
+],
+[
+"equal",
+20,
+21,
+65,
+66
+],
+[
+"insert",
+21,
+21,
+66,
+130
+],
+[
+"equal",
+21,
+25,
+130,
+134
+],
+[
+"replace",
+25,
+26,
+134,
+137
+],
+[
+"equal",
+26,
+29,
+137,
+140
+],
+[
+"insert",
+29,
+29,
+140,
+141
+],
+[
+"equal",
+29,
+30,
+141,
+142
+],
+[
+"insert",
+30,
+30,
+142,
+162
+],
+[
+"equal",
+30,
+34,
+162,
+166
+],
+[
+"insert",
+34,
+34,
+166,
+169
+],
+[
+"equal",
+34,
+35,
+169,
+170
+],
+[
+"insert",
+35,
+35,
+170,
+206
+]
+]
+},
+{
+"args": [
+"b bc a  c acbabbabc    ca a babaa    ab c",
+" bbba   bcbab a  ababccac acaaac  caaababa cbabaccaaa ba bbbaaaa bacabccabcacaacbc aaaa bcba aba ac c  bacb b bbbaabbcccab baac aca aaaab ba ca  cbccaa ccac caabacbc ab ac a cba aaa aac ac ac abaabaacbaa cca aa  caacbc aac baaacba bccabbb aac"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+41,
+0,
+242
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"    pass"
+],
+[
+"    pass",
+"    pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+]
+]
+},
+{
+"args": [
+"dceadcadb   cbbe ecaaccc",
+"dcadcadby   cbbe beycaccc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"delete",
+2,
+3,
+2,
+2
+],
+[
+"equal",
+3,
+9,
+2,
+8
+],
+[
+"insert",
+9,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+17,
+9,
+17
+],
+[
+"insert",
+17,
+17,
+17,
+18
+],
+[
+"equal",
+17,
+18,
+18,
+19
+],
+[
+"insert",
+18,
+18,
+19,
+20
+],
+[
+"equal",
+18,
+19,
+20,
+21
+],
+[
+"delete",
+19,
+20,
+21,
+21
+],
+[
+"equal",
+20,
+24,
+21,
+25
+]
+]
+},
+{
+"args": [
+"ddc cdc dc    ddba ad",
+"ddcc cdc dc y    xdba ad"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+11,
+3,
+12
+],
+[
+"insert",
+11,
+11,
+12,
+13
+],
+[
+"equal",
+11,
+14,
+13,
+16
+],
+[
+"replace",
+14,
+15,
+16,
+18
+],
+[
+"equal",
+15,
+21,
+18,
+24
+]
+]
+},
+{
+"args": [
+"bdb dd  daabe b c",
+"bdb dd  yaabe ac c"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+8,
+0,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+14,
+9,
+14
+],
+[
+"replace",
+14,
+15,
+14,
+16
+],
+[
+"equal",
+15,
+17,
+16,
+18
+]
+]
+},
+{
+"args": [
+"bcaddc cecbce e d",
+"bcaddc cecbce e d"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+17,
+0,
+17
+]
+]
+},
+{
+"args": [
+"    abaaa  b accaab acc",
+"ba  aacaccaaa ab aaaaba aacbc   acaaaa abab acca cbaabaaaa aa bac baca aa cabacacbaaa abaaaaaaacbbbbcacacbaa c acabaaabacabaaaaacabb bcbc  aaaaabcbc  aaaa  aabaacaa aaababaaa  acac  c ab bbcaaabaab bcac bbbaaacabbcccbc aab  acbb aaa "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+23,
+0,
+233
+]
+]
+},
+{
+"args": [
+"ca c bcbbccba bcccaba bcb a aa baaa  ac bcc",
+"bca ac ba  acaca a babcaaabaacab cbc aa a baababaab aacc aaaabaa a bab caa abbcababc ab abbbab aa a  ca b  aaaaa aca b c  bb  c aabaa a abccababaab a ca bcabcabcabacaaa c abbbcccaba bbbcb a acba bacbcbbba  bbabc   a  aaaabcaa cacaaaaaaaba caaaba"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+43,
+0,
+245
+]
+]
+},
+{
+"args": [
+" abcb b bcb     c caa",
+"a  abab b aab aaabaccca a  cacaabcabacaa cba bbcaccc bba  a bbb ccbcabbacbcab acbabcacaba acaa a c acaaa bbcbccabc cab baaaacaaccabcabaacb aaaaac accabbcc aaaa    aaaaa aabcaa  ccbabb a  ba  caaac baa aab  cc a b ac ab"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+21,
+0,
+218
+]
+]
+},
+{
+"args": [
+"d eedc  eae",
+"deeyyc  zae"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"delete",
+1,
+2,
+1,
+1
+],
+[
+"equal",
+2,
+4,
+1,
+3
+],
+[
+"replace",
+4,
+5,
+3,
+5
+],
+[
+"equal",
+5,
+8,
+5,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+11,
+9,
+11
+]
+]
+},
+{
+"args": [
+" aabbccabac abbac abbb",
+"bca aabbaabcabcbaa aaabcaaccbaaaaacbaaacbbaac  babc acbaaba caacabaac aaaabaaaa abba acbaacaacca bbc  abbaa c b acac aaaac cb a acbb cbb cabcabacaa aacaaa  aabbbca caa acab a aa acaaacbc cc aaacaacc  cbba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+],
+[
+"equal",
+0,
+5,
+3,
+8
+],
+[
+"insert",
+5,
+5,
+8,
+11
+],
+[
+"equal",
+5,
+6,
+11,
+12
+],
+[
+"insert",
+6,
+6,
+12,
+140
+],
+[
+"equal",
+6,
+11,
+140,
+145
+],
+[
+"insert",
+11,
+11,
+145,
+147
+],
+[
+"equal",
+11,
+13,
+147,
+149
+],
+[
+"delete",
+13,
+15,
+149,
+149
+],
+[
+"equal",
+15,
+17,
+149,
+151
+],
+[
+"insert",
+17,
+17,
+151,
+154
+],
+[
+"equal",
+17,
+18,
+154,
+155
+],
+[
+"insert",
+18,
+18,
+155,
+157
+],
+[
+"equal",
+18,
+22,
+157,
+161
+],
+[
+"insert",
+22,
+22,
+161,
+204
+]
+]
+},
+{
+"args": [
+"a b cc ac  b caccba a   ac cc c  bacaabb c ababcbcbbba ",
+" b a bc abbaaabbaca bababbabaaaabbcaaccaaacabaaaaa b aaaaaca ccb baccaaa aabcc ba abc aaaaacc aabacbc cabbaaaaaa cb ccb b  babbaac cbc cbc  cabb   a aa bccccbaa cb  baacababcababbaa aab a abbcc ccbcaaaa ccabc aa aaaaaaba caacaacabaaaaaa baccca bbb acc aba b "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+49
+],
+[
+"equal",
+0,
+4,
+49,
+53
+],
+[
+"insert",
+4,
+4,
+53,
+91
+],
+[
+"equal",
+4,
+8,
+91,
+95
+],
+[
+"insert",
+8,
+8,
+95,
+137
+],
+[
+"equal",
+8,
+11,
+137,
+140
+],
+[
+"insert",
+11,
+11,
+140,
+143
+],
+[
+"equal",
+11,
+13,
+143,
+145
+],
+[
+"insert",
+13,
+13,
+145,
+153
+],
+[
+"equal",
+13,
+14,
+153,
+154
+],
+[
+"replace",
+14,
+15,
+154,
+155
+],
+[
+"equal",
+15,
+19,
+155,
+159
+],
+[
+"insert",
+19,
+19,
+159,
+185
+],
+[
+"equal",
+19,
+22,
+185,
+188
+],
+[
+"delete",
+22,
+24,
+188,
+188
+],
+[
+"equal",
+24,
+25,
+188,
+189
+],
+[
+"insert",
+25,
+25,
+189,
+192
+],
+[
+"equal",
+25,
+29,
+192,
+196
+],
+[
+"insert",
+29,
+29,
+196,
+202
+],
+[
+"equal",
+29,
+31,
+202,
+204
+],
+[
+"insert",
+31,
+31,
+204,
+208
+],
+[
+"equal",
+31,
+32,
+208,
+209
+],
+[
+"insert",
+32,
+32,
+209,
+236
+],
+[
+"equal",
+32,
+36,
+236,
+240
+],
+[
+"insert",
+36,
+36,
+240,
+242
+],
+[
+"equal",
+36,
+37,
+242,
+243
+],
+[
+"replace",
+37,
+38,
+243,
+245
+],
+[
+"equal",
+38,
+41,
+245,
+248
+],
+[
+"insert",
+41,
+41,
+248,
+250
+],
+[
+"equal",
+41,
+46,
+250,
+255
+],
+[
+"insert",
+46,
+46,
+255,
+256
+],
+[
+"equal",
+46,
+47,
+256,
+257
+],
+[
+"delete",
+47,
+54,
+257,
+257
+],
+[
+"equal",
+54,
+55,
+257,
+258
+]
+]
+},
+{
+"args": [
+" c e daeccdc",
+" c e daeccdc"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+12,
+0,
+12
+]
+]
+},
+{
+"args": [
+"ddebae bce  e",
+"dde abae bce de"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+5
+],
+[
+"equal",
+3,
+11,
+5,
+13
+],
+[
+"replace",
+11,
+12,
+13,
+14
+],
+[
+"equal",
+12,
+13,
+14,
+15
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"    return 1"
+],
+[
+"    pass",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+]
+]
+},
+{
+"args": [
+"",
+"ay"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+2
+]
+]
+},
+{
+"args": [
+"a cbacaacc  ccb aa bcabb abc cb  bbac cb a baa",
+" baab bb aa  a c abbcc  cca aacaaaac  aabcaaccca caaa  b aacbaccccac cbabb ac aa aacaba aaabccaa bbacaa aba aaaccb cbabbab aabbacc acaaaaaca ab caaaaaaa aabaaa aabbacaaaaaa bab aca acaabacbaabca abc aababc cbc a acaaab ca baaaaaaa aabcacb ccacbcac bb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+46,
+0,
+250
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"def f():",
+"    return 1",
+"def f():"
+],
+[
+"pass",
+"",
+"    return 1",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+2,
+0,
+2
+],
+[
+"equal",
+2,
+4,
+2,
+4
+]
+]
+},
+{
+"args": [
+"accc c  a cabbcacbbb  acaababaacc    b aa bb  aac",
+"babccbcac c a aaacaac bcaaa ac aac a aaaaabb  aacacc ccac   aa baaac  cab  cacaccacbbacababaa ca bcaacabcacaaccaaaaaabcca ca aaa aa acaab aa  cbaca cbbc cb aabbaacbba ccaaccb  a cc babbb  abccb cbacca acaacc abcabcb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+49,
+0,
+215
+]
+]
+},
+{
+"args": [
+" bbb  abba ac b  ca ba cca abbccaaa cca bbbb ccccaba  cca ccb ab baccbaaabaaa c",
+"ba acc accaacacaaaca ccaac  caaaacbcaaac bba   aaabaacac  baa   abcb ab b abcaab b a b  acba cbbabbbacaca abb aa caca acbcbcaaa b bbacabbacbbb bbcaa bccacbaa cbbaaacbb abaa abacbaabac aaac a  aaacababaacaabaac abaabaaab a  aabbcbc a a abbc abaaaa a"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+79,
+0,
+248
+]
+]
+},
+{
+"args": [
+"eacdeeabca ebcbe",
+"eadeeabca abybe"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"delete",
+2,
+3,
+2,
+2
+],
+[
+"equal",
+3,
+11,
+2,
+10
+],
+[
+"replace",
+11,
+12,
+10,
+11
+],
+[
+"equal",
+12,
+13,
+11,
+12
+],
+[
+"replace",
+13,
+14,
+12,
+13
+],
+[
+"equal",
+14,
+16,
+13,
+15
+]
+]
+},
+{
+"args": [
+" aaacbcc b bbabcbaacab c baacbc b bbabcbbbacaabaaaba aaaabaa cc   c ccbba",
+"aca a acaacc cacaaaca a ac a abcccabaaa abb acb  aac cc ccb c cc  a caaba   c cbc bbccaa a bcac a aa a b aa aabc abbaaccaacaa  bbac cacbba aabaacaba bbbababaab acaacbccca abacaacaa  caaa c cbaac aba a"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+],
+[
+"equal",
+0,
+2,
+3,
+5
+],
+[
+"insert",
+2,
+2,
+5,
+162
+],
+[
+"equal",
+2,
+8,
+162,
+168
+],
+[
+"insert",
+8,
+8,
+168,
+170
+],
+[
+"equal",
+8,
+9,
+170,
+171
+],
+[
+"replace",
+9,
+12,
+171,
+172
+],
+[
+"equal",
+12,
+14,
+172,
+174
+],
+[
+"replace",
+14,
+15,
+174,
+189
+],
+[
+"equal",
+15,
+20,
+189,
+194
+],
+[
+"delete",
+20,
+22,
+194,
+194
+],
+[
+"equal",
+22,
+23,
+194,
+195
+],
+[
+"delete",
+23,
+49,
+195,
+195
+],
+[
+"equal",
+49,
+54,
+195,
+200
+],
+[
+"delete",
+54,
+73,
+200,
+200
+]
+]
+},
+{
+"args": [
+" ebbaceb  cacdecdce a",
+" eabbaceb  acdecdce a"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+10,
+3,
+11
+],
+[
+"delete",
+10,
+11,
+11,
+11
+],
+[
+"equal",
+11,
+21,
+11,
+21
+]
+]
+},
+{
+"args": [
+"aabadc",
+"aaabdc"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+3,
+1,
+4
+],
+[
+"delete",
+3,
+4,
+4,
+4
+],
+[
+"equal",
+4,
+6,
+4,
+6
+]
+]
+},
+{
+"args": [
+[
+"}",
+"    pass",
+"def f():",
+"def f():",
+"    return 1",
+"}",
+"    return 1",
+"}",
+"x = 2"
+],
+[
+"}",
+"    pass",
+"pass",
+"def f():",
+"    return 1",
+"}",
+"x = 2",
+"    return 1",
+"x = 2"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+6,
+3,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+7
+],
+[
+"equal",
+6,
+7,
+7,
+8
+],
+[
+"delete",
+7,
+8,
+8,
+8
+],
+[
+"equal",
+8,
+9,
+8,
+9
+]
+]
+},
+{
+"args": [
+"ab accbb  ac b cabaab c bc ab babacbc  bbcc a cbcabbbbaac  c",
+"abbccc bc  aaaaacabbcc bca abbb  cbb aaababbc cc a cabbcbaac aa aacc aa b  a ab aba aaaccca b aaaa aa c aabbaa  c cbaa b babca  b cb acba bba  a bacbbbbba ccacbcaaaaaaabbac aabbaa bba b bcbcaababaac aaaaa"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+4,
+2,
+3
+],
+[
+"equal",
+4,
+6,
+3,
+5
+],
+[
+"delete",
+6,
+22,
+5,
+5
+],
+[
+"equal",
+22,
+27,
+5,
+10
+],
+[
+"insert",
+27,
+27,
+10,
+17
+],
+[
+"equal",
+27,
+29,
+17,
+19
+],
+[
+"insert",
+29,
+29,
+19,
+22
+],
+[
+"equal",
+29,
+30,
+22,
+23
+],
+[
+"insert",
+30,
+30,
+23,
+40
+],
+[
+"equal",
+30,
+33,
+40,
+43
+],
+[
+"delete",
+33,
+35,
+43,
+43
+],
+[
+"equal",
+35,
+38,
+43,
+46
+],
+[
+"delete",
+38,
+41,
+46,
+46
+],
+[
+"equal",
+41,
+47,
+46,
+52
+],
+[
+"insert",
+47,
+47,
+52,
+123
+],
+[
+"equal",
+47,
+50,
+123,
+126
+],
+[
+"insert",
+50,
+50,
+126,
+149
+],
+[
+"equal",
+50,
+55,
+149,
+154
+],
+[
+"insert",
+55,
+55,
+154,
+170
+],
+[
+"equal",
+55,
+58,
+170,
+173
+],
+[
+"insert",
+58,
+58,
+173,
+179
+],
+[
+"equal",
+58,
+59,
+179,
+180
+],
+[
+"insert",
+59,
+59,
+180,
+187
+],
+[
+"equal",
+59,
+60,
+187,
+188
+],
+[
+"insert",
+60,
+60,
+188,
+204
+]
+]
+},
+{
+"args": [
+"b bccaac b bbbcc ab c ccc aaaac   aa a cbc ",
+"baa  a a  aabacabccbcaaac a cabcb baac a  ba ca abbbabbbb c b a  cb ccac aacb cb abaacaababcb aca a c aaba ba   caaccccabbbab  aaabaaaaaabbbabaa  c aa aa c a b bbaba acbab  aaaa aaabaac aab ca b baaaaba a a a"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+32
+],
+[
+"equal",
+0,
+3,
+32,
+35
+],
+[
+"insert",
+3,
+3,
+35,
+37
+],
+[
+"equal",
+3,
+4,
+37,
+38
+],
+[
+"insert",
+4,
+4,
+38,
+112
+],
+[
+"equal",
+4,
+8,
+112,
+116
+],
+[
+"insert",
+8,
+8,
+116,
+157
+],
+[
+"equal",
+8,
+13,
+157,
+162
+],
+[
+"insert",
+13,
+13,
+162,
+163
+],
+[
+"equal",
+13,
+14,
+163,
+164
+],
+[
+"insert",
+14,
+14,
+164,
+167
+],
+[
+"equal",
+14,
+15,
+167,
+168
+],
+[
+"replace",
+15,
+17,
+168,
+169
+],
+[
+"equal",
+17,
+20,
+169,
+172
+],
+[
+"delete",
+20,
+25,
+172,
+172
+],
+[
+"equal",
+25,
+30,
+172,
+177
+],
+[
+"insert",
+30,
+30,
+177,
+184
+],
+[
+"equal",
+30,
+32,
+184,
+186
+],
+[
+"insert",
+32,
+32,
+186,
+189
+],
+[
+"equal",
+32,
+33,
+189,
+190
+],
+[
+"insert",
+33,
+33,
+190,
+192
+],
+[
+"equal",
+33,
+34,
+192,
+193
+],
+[
+"insert",
+34,
+34,
+193,
+196
+],
+[
+"equal",
+34,
+35,
+196,
+197
+],
+[
+"insert",
+35,
+35,
+197,
+201
+],
+[
+"equal",
+35,
+39,
+201,
+205
+],
+[
+"replace",
+39,
+42,
+205,
+206
+],
+[
+"equal",
+42,
+43,
+206,
+207
+],
+[
+"insert",
+43,
+43,
+207,
+208
+]
+]
+},
+{
+"args": [
+"",
+" a "
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+3
+]
+]
+},
+{
+"args": [
+[
+"    return 1",
+"",
+"    pass",
+"x = 2",
+"}",
+"",
+"",
+"    pass",
+"}",
+"def f():"
+],
+[
+"# c",
+"    return 1",
+"    pass",
+"x = 2",
+"}",
+"    return 1",
+"",
+"",
+"    pass",
+"}",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+],
+[
+"delete",
+1,
+2,
+2,
+2
+],
+[
+"equal",
+2,
+5,
+2,
+5
+],
+[
+"insert",
+5,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+10,
+6,
+11
+]
+]
+},
+{
+"args": [
+" cacec",
+" cacce"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+5,
+5,
+6
+],
+[
+"delete",
+5,
+6,
+6,
+6
+]
+]
+},
+{
+"args": [
+[
+"",
+"    return 1",
+"def f():",
+"    return 1",
+"pass",
+"# c",
+"}"
+],
+[
+"pass",
+"def f():",
+"x = 2",
+"def f():",
+"    return 1",
+"pass",
+"# c",
+"# c"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+2,
+0,
+3
+],
+[
+"equal",
+2,
+6,
+3,
+7
+],
+[
+"replace",
+6,
+7,
+7,
+8
+]
+]
+},
+{
+"args": [
+"eccc c",
+" eccc c"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+6,
+1,
+7
+]
+]
+},
+{
+"args": [
+" bbccbcbb cbbcbaba aa babcbbbac  ab ccab c a cbabab  c cacccbcaccaaac abbabbb",
+"caca cbacba c c aa abccabaaaaabac bcb a bcacba aaac acbcbb cabaacaabcc bcab bbc baacba aaabaabbb   aab bb abac acaacbacca bcc cbaaabaa bc a  abaa c aabaa b  a aabacbb ca bacaabaacabbc b bcaa bbbacabab ca abaaccacbcaa a a  ba a b acbaa aaac"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+33
+],
+[
+"equal",
+0,
+2,
+33,
+35
+],
+[
+"insert",
+2,
+2,
+35,
+40
+],
+[
+"equal",
+2,
+4,
+40,
+42
+],
+[
+"insert",
+4,
+4,
+42,
+53
+],
+[
+"equal",
+4,
+11,
+53,
+60
+],
+[
+"insert",
+11,
+11,
+60,
+76
+],
+[
+"equal",
+11,
+14,
+76,
+79
+],
+[
+"insert",
+14,
+14,
+79,
+80
+],
+[
+"equal",
+14,
+16,
+80,
+82
+],
+[
+"insert",
+16,
+16,
+82,
+84
+],
+[
+"equal",
+16,
+21,
+84,
+89
+],
+[
+"insert",
+21,
+21,
+89,
+169
+],
+[
+"equal",
+21,
+24,
+169,
+172
+],
+[
+"insert",
+24,
+24,
+172,
+181
+],
+[
+"equal",
+24,
+26,
+181,
+183
+],
+[
+"insert",
+26,
+26,
+183,
+191
+],
+[
+"equal",
+26,
+31,
+191,
+196
+],
+[
+"delete",
+31,
+47,
+196,
+196
+],
+[
+"equal",
+47,
+52,
+196,
+201
+],
+[
+"insert",
+52,
+52,
+201,
+203
+],
+[
+"equal",
+52,
+53,
+203,
+204
+],
+[
+"replace",
+53,
+56,
+204,
+207
+],
+[
+"equal",
+56,
+59,
+207,
+210
+],
+[
+"insert",
+59,
+59,
+210,
+211
+],
+[
+"equal",
+59,
+63,
+211,
+215
+],
+[
+"insert",
+63,
+63,
+215,
+230
+],
+[
+"equal",
+63,
+64,
+230,
+231
+],
+[
+"replace",
+64,
+65,
+231,
+235
+],
+[
+"equal",
+65,
+69,
+235,
+239
+],
+[
+"delete",
+69,
+77,
+239,
+239
+]
+]
+},
+{
+"args": [
+"      aa aaacbccaaccaccbbcbaabacbaaab acbbbaaaacbcbb ccbbbbbc aaa",
+"bc  caca bbbccaa  acab a abbcbc abca abbaaaacaaacbabcc  aaaabca cac ab cbbca cba  baaabb   cc b a a ac baaaa ba ca aaaa     aca b caac aaa a cb aaaa bacbaaaa baba bbcccaab aabbb baaaba aaaa abaac ac aaa aaa"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+2
+],
+[
+"equal",
+0,
+1,
+2,
+3
+],
+[
+"insert",
+1,
+1,
+3,
+119
+],
+[
+"equal",
+1,
+7,
+119,
+125
+],
+[
+"insert",
+7,
+7,
+125,
+126
+],
+[
+"equal",
+7,
+8,
+126,
+127
+],
+[
+"insert",
+8,
+8,
+127,
+134
+],
+[
+"equal",
+8,
+12,
+134,
+138
+],
+[
+"insert",
+12,
+12,
+138,
+141
+],
+[
+"equal",
+12,
+14,
+141,
+143
+],
+[
+"replace",
+14,
+16,
+143,
+144
+],
+[
+"equal",
+16,
+18,
+144,
+146
+],
+[
+"delete",
+18,
+27,
+146,
+146
+],
+[
+"equal",
+27,
+29,
+146,
+148
+],
+[
+"insert",
+29,
+29,
+148,
+149
+],
+[
+"equal",
+29,
+36,
+149,
+156
+],
+[
+"insert",
+36,
+36,
+156,
+170
+],
+[
+"equal",
+36,
+39,
+170,
+173
+],
+[
+"replace",
+39,
+40,
+173,
+174
+],
+[
+"equal",
+40,
+42,
+174,
+176
+],
+[
+"insert",
+42,
+42,
+176,
+178
+],
+[
+"equal",
+42,
+46,
+178,
+182
+],
+[
+"insert",
+46,
+46,
+182,
+193
+],
+[
+"equal",
+46,
+48,
+193,
+195
+],
+[
+"delete",
+48,
+52,
+195,
+195
+],
+[
+"equal",
+52,
+53,
+195,
+196
+],
+[
+"replace",
+53,
+60,
+196,
+197
+],
+[
+"equal",
+60,
+65,
+197,
+202
+],
+[
+"insert",
+65,
+65,
+202,
+206
+]
+]
+},
+{
+"args": [
+"abbcac bccb ac  cc ab b",
+"cc a aacaa ba  cbcbca c ababcaacbaba a bcaaaacaba   aaaac aabbabaccccabacba cac  babbcab acba ab   a aacbbb baaab ac acaababaaaaaaaa a    bbaa bcaba baaccaaaaccc c   c aabaabbaac c acaa caacbca caa aa  ababcbb a ab"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+82
+],
+[
+"equal",
+0,
+5,
+82,
+87
+],
+[
+"insert",
+5,
+5,
+87,
+90
+],
+[
+"equal",
+5,
+6,
+90,
+91
+],
+[
+"insert",
+6,
+6,
+91,
+107
+],
+[
+"equal",
+6,
+8,
+107,
+109
+],
+[
+"replace",
+8,
+10,
+109,
+112
+],
+[
+"equal",
+10,
+15,
+112,
+117
+],
+[
+"insert",
+15,
+15,
+117,
+132
+],
+[
+"equal",
+15,
+16,
+132,
+133
+],
+[
+"insert",
+16,
+16,
+133,
+159
+],
+[
+"equal",
+16,
+19,
+159,
+162
+],
+[
+"insert",
+19,
+19,
+162,
+169
+],
+[
+"equal",
+19,
+21,
+169,
+171
+],
+[
+"insert",
+21,
+21,
+171,
+178
+],
+[
+"equal",
+21,
+22,
+178,
+179
+],
+[
+"insert",
+22,
+22,
+179,
+190
+],
+[
+"equal",
+22,
+23,
+190,
+191
+],
+[
+"insert",
+23,
+23,
+191,
+214
+]
+]
+},
+{
+"args": [
+[
+"def f():",
+"    pass",
+"# c",
+"}",
+"x = 2",
+"}",
+"    pass",
+"    return 1"
+],
+[
+"def f():",
+"    pass",
+"# c",
+"",
+"x = 2",
+"}",
+"    return 1",
+"    return 1"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+6,
+4,
+6
+],
+[
+"delete",
+6,
+7,
+6,
+6
+],
+[
+"equal",
+7,
+8,
+6,
+7
+],
+[
+"insert",
+8,
+8,
+7,
+8
+]
+]
+},
+{
+"args": [
+"bcacd  ecd aeaaa dc b b",
+"cacd ecd aaaa dc b cb"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+],
+[
+"equal",
+1,
+5,
+0,
+4
+],
+[
+"delete",
+5,
+6,
+4,
+4
+],
+[
+"equal",
+6,
+12,
+4,
+10
+],
+[
+"delete",
+12,
+13,
+10,
+10
+],
+[
+"equal",
+13,
+22,
+10,
+19
+],
+[
+"insert",
+22,
+22,
+19,
+20
+],
+[
+"equal",
+22,
+23,
+20,
+21
+]
+]
+},
+{
+"args": [
+"aaaaaccacaa c bcbaa  acba c ccaac cc aaca abbcbbca cabccbc ",
+"bcbabaccbc cba  ab  aaaac baaa  baaabab   bc ab  abbb acaaabcc acbbc bcaa bcbbaaacaa aaac  c aaaac baacaaaa  b cccbcbaccc c aaca baabc aca ba bba acbaaa ab cba  abb aacb c ca aa bacbcbacaaab b aaaa aab"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+59,
+0,
+201
+]
+]
+},
+{
+"args": [
+"ec  ecc ac ebeae",
+"ec  eecc ac ebeae"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+16,
+5,
+17
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"}",
+"    pass",
+"pass",
+"}"
+],
+[
+"",
+"}",
+"    pass",
+"# c",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+3,
+1,
+3
+],
+[
+"replace",
+3,
+5,
+3,
+5
+]
+]
+},
+{
+"args": [
+" ecbbdceadc cdedcc bca ",
+" ecbbdceadc cdedcc bca "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+23,
+0,
+23
+]
+]
+},
+{
+"args": [
+"bbbbcccc b acb  aabcaaccbaa cab a   cbcbc a",
+"a c aca aaa baaaaa  ccacbcaabbccac abcca  aab ccabc baa caaa   abbca aaa ba  bacaaa bbbaac abacbccbacacb aa aa a  ccaa aabcaaba  bca abc aca acbacc aacaab baa caa aca ccbcac aaaa caaa abbcbaca  cb ab caac baabaaaabca abccacaaa abb  caca bba a baaaacc  bcc"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+43,
+0,
+255
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"    pass",
+"",
+"    pass",
+"x = 2",
+"# c",
+"}"
+],
+[
+"x = 2",
+"pass",
+"    pass",
+"",
+"x = 2",
+"x = 2",
+"# c",
+"}"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+3,
+2,
+4
+],
+[
+"replace",
+3,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+7,
+5,
+8
+]
+]
+},
+{
+"args": [
+" aba cc abcba cbcaaaa baacbabab acc ac  caacbacbb bca bccbaac ",
+"b  a ccaabaccaaaaccacabcac bb   a  ba a cca a ba bacaccacbaacb abaabcabab bcaa c a bb acabc a   accb a aac aaaa bba ccc abcbb ca baaaac bbcbbacca a ababa aa  aa ccab bbaac acbbcbaacabbcab baab b abaacaa bbca abbcaccb ab   caacc aaacbabbba caa"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+62,
+0,
+242
+]
+]
+},
+{
+"args": [
+"dbcdb bec d cdbabbbcac",
+"dbcdb be d cbabbbac"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+8,
+0,
+8
+],
+[
+"delete",
+8,
+9,
+8,
+8
+],
+[
+"equal",
+9,
+13,
+8,
+12
+],
+[
+"delete",
+13,
+14,
+12,
+12
+],
+[
+"equal",
+14,
+19,
+12,
+17
+],
+[
+"delete",
+19,
+20,
+17,
+17
+],
+[
+"equal",
+20,
+22,
+17,
+19
+]
+]
+},
+{
+"args": [
+" ecbbbdbc  b",
+" aeybbbydbc  "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+2
+],
+[
+"equal",
+1,
+2,
+2,
+3
+],
+[
+"replace",
+2,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+6,
+4,
+7
+],
+[
+"insert",
+6,
+6,
+7,
+8
+],
+[
+"equal",
+6,
+11,
+8,
+13
+],
+[
+"delete",
+11,
+12,
+13,
+13
+]
+]
+},
+{
+"args": [
+"bde  a ed d",
+"bd ea xa ed d"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+],
+[
+"insert",
+3,
+3,
+4,
+5
+],
+[
+"equal",
+3,
+4,
+5,
+6
+],
+[
+"replace",
+4,
+5,
+6,
+7
+],
+[
+"equal",
+5,
+11,
+7,
+13
+]
+]
+},
+{
+"args": [
+[
+"def f():",
+"",
+"}",
+"# c",
+"    pass",
+"pass",
+"def f():",
+"    pass",
+"}",
+"x = 2",
+"",
+"    return 1"
+],
+[
+"def f():",
+"x = 2",
+"}",
+"# c",
+"    pass",
+"x = 2",
+"pass",
+"def f():",
+"    pass",
+"}",
+"x = 2",
+"",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+5,
+2,
+5
+],
+[
+"insert",
+5,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+12,
+6,
+13
+]
+]
+},
+{
+"args": [
+"aaca  aababbcaaa  acbb ",
+"a caba a  ccaacabaa abac baa acaaaa aba babacbaaab aaabaab cab cbac aa  cc ac  b  cbaababc cabaaab  baaaacabaa aab c a baa   aa acbb a bbbbba a aabbccbaca  c  b cc  bccab aaccbab  ca bc cc acacc bbbabcccbb acacbcacbb    acaa a"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+23,
+1,
+226
+]
+]
+},
+{
+"args": [
+[
+"}",
+"",
+"# c",
+"",
+"# c",
+"    pass"
+],
+[
+"}",
+"",
+"# c",
+"",
+"# c",
+"pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+5,
+0,
+5
+],
+[
+"replace",
+5,
+6,
+5,
+6
+]
+]
+},
+{
+"args": [
+"b becacdab",
+"baabecacdab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+3
+],
+[
+"equal",
+2,
+10,
+3,
+11
+]
+]
+},
+{
+"args": [
+"ecbeedddceeaaac",
+"exeeddceeaaaec"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+3,
+1,
+2
+],
+[
+"equal",
+3,
+5,
+2,
+4
+],
+[
+"delete",
+5,
+6,
+4,
+4
+],
+[
+"equal",
+6,
+14,
+4,
+12
+],
+[
+"insert",
+14,
+14,
+12,
+13
+],
+[
+"equal",
+14,
+15,
+13,
+14
+]
+]
+},
+{
+"args": [
+"ccaccb cba ccac  bac  acbcb  abaa  ba  aabbcccbbbbc bcb a",
+"a aaacbccacabbaa aa cbc acbcacaca aab bbbaa cabbabaabcabbcaacaa bbcbca ccaaaba caba ac aaa aaaa aaacab acababbaabaaaaa a abacaaacbb bbbbaacaabccab cacabaaa  b a baaca bbcaaa bcca  bc  bbcabaa cc accacabbc a ccbac ccaaaaaacb bcacacabcaabcb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+57,
+0,
+238
+]
+]
+},
+{
+"args": [
+"eeccead ccedaeccbb  dee",
+"eeccead ccedaeccbb  dee"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+23,
+0,
+23
+]
+]
+},
+{
+"args": [
+"d",
+""
+],
+"kwargs": {},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+]
+]
+},
+{
+"args": [
+"baabb ddbdb",
+"babb ddbdb"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"delete",
+1,
+2,
+1,
+1
+],
+[
+"equal",
+2,
+11,
+1,
+10
+]
+]
+},
+{
+"args": [
+"bab caa a baaacabbcb  bbbc bc acc bbc b ccabcc   a  babb ab ",
+" aa bbba ab  caacaacccaabaaca  cccaabacac  aaaaaabaab caabac  a bc aa cbbb bcabca   aaab acaa cbccccc acacccacbcaaacaca babaabcabaa  aaaaababba abc   aacac baab caabbbacbc a a a baaaacbc a cab aaacaccaaca aacabaabbaaa a aaaa ac ba"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+4
+],
+[
+"equal",
+0,
+1,
+4,
+5
+],
+[
+"insert",
+1,
+1,
+5,
+51
+],
+[
+"equal",
+1,
+6,
+51,
+56
+],
+[
+"insert",
+6,
+6,
+56,
+174
+],
+[
+"equal",
+6,
+14,
+174,
+182
+],
+[
+"insert",
+14,
+14,
+182,
+183
+],
+[
+"equal",
+14,
+15,
+183,
+184
+],
+[
+"delete",
+15,
+27,
+184,
+184
+],
+[
+"equal",
+27,
+31,
+184,
+188
+],
+[
+"insert",
+31,
+31,
+188,
+189
+],
+[
+"equal",
+31,
+32,
+189,
+190
+],
+[
+"insert",
+32,
+32,
+190,
+226
+],
+[
+"equal",
+32,
+35,
+226,
+229
+],
+[
+"delete",
+35,
+42,
+229,
+229
+],
+[
+"equal",
+42,
+43,
+229,
+230
+],
+[
+"delete",
+43,
+60,
+230,
+230
+]
+]
+},
+{
+"args": [
+[
+"x = 2",
+"",
+"x = 2",
+"}",
+""
+],
+[
+"x = 2",
+"",
+"    pass",
+"x = 2",
+""
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+],
+[
+"delete",
+3,
+4,
+4,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"",
+"def f():",
+"",
+"    return 1",
+"}"
+],
+[
+"",
+"",
+"def f():",
+"x = 2",
+"    return 1",
+"    pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+3,
+1,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+],
+[
+"replace",
+5,
+6,
+5,
+6
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"    return 1",
+"    pass",
+""
+],
+[
+"# c",
+"# c",
+"    pass",
+""
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+4,
+2,
+4
+]
+]
+},
+{
+"args": [
+[
+"    return 1",
+"pass",
+"x = 2",
+"",
+"    return 1",
+"# c",
+"pass",
+"x = 2",
+"x = 2"
+],
+[
+"",
+"pass",
+"x = 2",
+"",
+"    return 1",
+"# c",
+"pass",
+"x = 2",
+"x = 2"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+9,
+1,
+9
+]
+]
+},
+{
+"args": [
+[
+"",
+"def f():",
+"    pass",
+"x = 2",
+"",
+"    return 1",
+"# c",
+"# c",
+"def f():",
+"    return 1",
+""
+],
+[
+"",
+"def f():",
+"x = 2",
+"x = 2",
+"def f():",
+"    pass",
+"    return 1",
+"# c",
+"# c",
+"def f():",
+"    return 1",
+"pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+5
+],
+[
+"equal",
+2,
+3,
+5,
+6
+],
+[
+"delete",
+3,
+5,
+6,
+6
+],
+[
+"equal",
+5,
+10,
+6,
+11
+],
+[
+"replace",
+10,
+11,
+11,
+12
+]
+]
+},
+{
+"args": [
+"b   aab bcccabaac bc b ",
+"baccaacab ccc a  c   baac abac  acbaaaa aabaaac  bcbac bca  aabcaccaabccc cbcbaaab cbca cbaca bbbcccaa ab    baacc c aaaaa cc cabb babbcacbcaa  ba cbab   baabbbabb b ac  cc  cabbaaacab aacbcb aabbcabaa a "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+8
+],
+[
+"equal",
+0,
+2,
+8,
+10
+],
+[
+"insert",
+2,
+2,
+10,
+58
+],
+[
+"equal",
+2,
+7,
+58,
+63
+],
+[
+"insert",
+7,
+7,
+63,
+73
+],
+[
+"equal",
+7,
+8,
+73,
+74
+],
+[
+"insert",
+8,
+8,
+74,
+96
+],
+[
+"equal",
+8,
+13,
+96,
+101
+],
+[
+"insert",
+13,
+13,
+101,
+109
+],
+[
+"equal",
+13,
+17,
+109,
+113
+],
+[
+"insert",
+17,
+17,
+113,
+130
+],
+[
+"equal",
+17,
+19,
+130,
+132
+],
+[
+"insert",
+19,
+19,
+132,
+135
+],
+[
+"equal",
+19,
+20,
+135,
+136
+],
+[
+"insert",
+20,
+20,
+136,
+163
+],
+[
+"equal",
+20,
+23,
+163,
+166
+],
+[
+"insert",
+23,
+23,
+166,
+204
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"    return 1"
+],
+[
+"pass",
+"    return 1"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+]
+]
+},
+{
+"args": [
+"e",
+""
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+]
+]
+},
+{
+"args": [
+"eedccc",
+"eedxcc"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+5,
+4,
+6
+],
+[
+"delete",
+5,
+6,
+6,
+6
+]
+]
+},
+{
+"args": [
+[],
+[]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": []
+},
+{
+"args": [
+"caaedba bebbdc d",
+"caaeda bebbc x"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+5,
+0,
+5
+],
+[
+"delete",
+5,
+6,
+5,
+5
+],
+[
+"equal",
+6,
+12,
+5,
+11
+],
+[
+"delete",
+12,
+13,
+11,
+11
+],
+[
+"equal",
+13,
+15,
+11,
+13
+],
+[
+"replace",
+15,
+16,
+13,
+14
+]
+]
+},
+{
+"args": [
+"aabb bbbba  cccc  c abbacacabacc c acbcca bccc ab",
+" cbccac b babaa  a accbacaba  ccaab c aabbcbaaaaba ca a c    acaa   aacca  a ab bcaaaabb aaaaacaaaaacbaabaacccaa cbcccc  ccbbb abc acaaa bccbbb acabaa cb aa aaba aca aaccaabb  acacc b  aa baa abaccba a"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+49,
+0,
+201
+]
+]
+},
+{
+"args": [
+"beceee",
+"ecxxee"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+],
+[
+"equal",
+1,
+3,
+0,
+2
+],
+[
+"insert",
+3,
+3,
+2,
+4
+],
+[
+"equal",
+3,
+5,
+4,
+6
+],
+[
+"delete",
+5,
+6,
+6,
+6
+]
+]
+},
+{
+"args": [
+"dd aaee  deaca bbaedd",
+"dd aaee  deaca bbaedd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+21,
+0,
+21
+]
+]
+},
+{
+"args": [
+"abbbaabaccbbbcaca bbbbaaacb cca bc a   bb bbcacccc   bcb  abcc ac",
+"aaaaa cbcbbbcacbaaaaaaba ccaaababa baaacabc    ca caba  caaaabb accaabaa bab caccacaab  acbabaacbabcabacbba caaaaaccc bcacba bcb  bacbccabb a  ab aab c b bbb caacba  a cbbca a aabba  caacb a aacc b aaacc bb   abaacbaaaa aa   ba caabcbaabba"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+65,
+1,
+239
+]
+]
+},
+{
+"args": [
+"  bcacc  bcbba a bacc abbcbca a cc  bbbcccaccbbbbaa    b ccc b",
+"caaabc abac bcab aa c ccbbaaa ca   ac a aab aa   aaaa aaa  a ccaaba aca  aab c a acacba caabca  ccabab  aa a ba a bc b  bcb ba abbbaaabaaabcc cbc  a ab baacb ac cabacaba aa  a a c aaa ba aabcac c baaacc  cccabbbccb  cca aca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+62,
+0,
+223
+]
+]
+},
+{
+"args": [
+"adb dbacc d bae",
+"adb dbacc d bae"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+15,
+0,
+15
+]
+]
+},
+{
+"args": [
+[
+"",
+"",
+"pass",
+"",
+"x = 2"
+],
+[
+"# c",
+"x = 2",
+"",
+"pass",
+"",
+"def f():"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+2
+],
+[
+"equal",
+1,
+4,
+2,
+5
+],
+[
+"replace",
+4,
+5,
+5,
+6
+]
+]
+},
+{
+"args": [
+[
+"    pass",
+"pass",
+"# c",
+"# c",
+"def f():",
+"",
+"pass"
+],
+[
+"    pass",
+"pass",
+"# c",
+"pass",
+"def f():",
+"def f():",
+"    pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"replace",
+3,
+4,
+3,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+],
+[
+"replace",
+5,
+7,
+5,
+7
+]
+]
+},
+{
+"args": [
+" aecdadbebae bcabaa",
+"aecdxebae cabaa"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+],
+[
+"equal",
+1,
+5,
+0,
+4
+],
+[
+"replace",
+5,
+8,
+4,
+5
+],
+[
+"equal",
+8,
+13,
+5,
+10
+],
+[
+"delete",
+13,
+14,
+10,
+10
+],
+[
+"equal",
+14,
+19,
+10,
+15
+]
+]
+},
+{
+"args": [
+"b d a",
+"ayada"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+2,
+0,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+],
+[
+"delete",
+3,
+4,
+4,
+4
+],
+[
+"equal",
+4,
+5,
+4,
+5
+]
+]
+},
+{
+"args": [
+"dbda bdebcebdacdc beab",
+"dbda bdebcebdacdc beab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+22,
+0,
+22
+]
+]
+},
+{
+"args": [
+"bac cbabacaccb     bcbcb ",
+"acbcabaa  cacbaccb aaaabababaaba a bcbab bb babaac bcab c baccbbc a aaa acaa bca a  aaa c cba ac aacacba b c c ccb bcbca b c   abcca baa caabccbacbbcaaa c a  baaaaaac bcccaababa aacaa a abba a acca acaaacbb  abcaa b accaacc  aa bb  aacaa"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+25,
+0,
+237
+]
+]
+},
+{
+"args": [
+"edcbb c",
+"edcbb c"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+]
+]
+},
+{
+"args": [
+"b",
+""
+],
+"kwargs": {},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+]
+]
+},
+{
+"args": [
+" c a b abc aa   c bacbc   cbcab ",
+"ccabcc  bb caa   bcaabbbacbbacaacaabaaba  cc ababcacacbc a baaacc cbab bcaa bbacb aa aaabacabacc bcbcacaacacbbacabcac cabcbcaa bbccccc cccaacac  abbab bc abaa baaa ababbabbaaaba acaacaaa ccb bb  ac  aaa babac   baaccbaaabba  cacbbc abcaab "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+6
+],
+[
+"equal",
+0,
+1,
+6,
+7
+],
+[
+"insert",
+1,
+1,
+7,
+55
+],
+[
+"equal",
+1,
+6,
+55,
+60
+],
+[
+"insert",
+6,
+6,
+60,
+231
+],
+[
+"equal",
+6,
+10,
+231,
+235
+],
+[
+"delete",
+10,
+11,
+235,
+235
+],
+[
+"equal",
+11,
+12,
+235,
+236
+],
+[
+"delete",
+12,
+29,
+236,
+236
+],
+[
+"equal",
+29,
+32,
+236,
+239
+]
+]
+},
+{
+"args": [
+" abaeceeddceac",
+" azaeceeydcyac"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"replace",
+2,
+3,
+2,
+3
+],
+[
+"equal",
+3,
+8,
+3,
+8
+],
+[
+"replace",
+8,
+9,
+8,
+9
+],
+[
+"equal",
+9,
+11,
+9,
+11
+],
+[
+"replace",
+11,
+12,
+11,
+12
+],
+[
+"equal",
+12,
+14,
+12,
+14
+]
+]
+},
+{
+"args": [
+"abaaaa cbcbcbbcb  bcb bba caacaa ab bcaaaac a bcbb  caacaa",
+"cacaaccc ab bb aaaacbca cabaabb b  bba aca c bbabb aab aaabb c  acbc aab b  c cbbaaacbbabaabbbbaaaac a bcc cb acabcbaacbcabacaca aaa  a b acb cacacc   bac aac ba acbaccabb aababaaa ca    aaac aaabaabacb bb bcbc  "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+58,
+0,
+212
+]
+]
+},
+{
+"args": [
+[
+"",
+"x = 2",
+"x = 2",
+"}",
+"}",
+"pass",
+"# c",
+"}",
+"x = 2",
+"",
+"}",
+""
+],
+[
+"",
+"x = 2",
+"x = 2",
+"}",
+"x = 2",
+"pass",
+"# c",
+"}",
+"    pass",
+"def f():",
+"}",
+""
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+5,
+4,
+5
+],
+[
+"equal",
+5,
+8,
+5,
+8
+],
+[
+"replace",
+8,
+10,
+8,
+10
+],
+[
+"equal",
+10,
+12,
+10,
+12
+]
+]
+},
+{
+"args": [
+"bbbbaaabccb caaba  cab  aa bbbbc bbaca bbb c abbbba b b",
+"c aaaaaaccabaacaaaaa aa   c bbbbbba bc baacbaaaaaa  cccbaaa aa acaaabba  a aacabca bb a ab acbabca acaabaaaaa aabaca   ca accaaaaab  c  a  a c  aaababbbabbcacaab aab aaaaaaa ba bbaaba ba  aaa ab aacbbcbcacbba a a cbaaabaacccb aa b ac "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+55,
+0,
+234
+]
+]
+},
+{
+"args": [
+"cbed ce dbee",
+"cbed cexx dbab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"insert",
+7,
+7,
+7,
+9
+],
+[
+"equal",
+7,
+10,
+9,
+12
+],
+[
+"replace",
+10,
+12,
+12,
+14
+]
+]
+},
+{
+"args": [
+"dcd cdbdbed cec cb b",
+"dcd cdbdbed yec c b"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+12,
+0,
+12
+],
+[
+"replace",
+12,
+13,
+12,
+13
+],
+[
+"equal",
+13,
+17,
+13,
+17
+],
+[
+"delete",
+17,
+18,
+17,
+17
+],
+[
+"equal",
+18,
+20,
+17,
+19
+]
+]
+},
+{
+"args": [
+"ddc",
+"dc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+1,
+0,
+0
+],
+[
+"equal",
+1,
+3,
+0,
+2
+]
+]
+},
+{
+"args": [
+" aabbabab ca cc cb  ca cccbcbababa",
+" bab c aa aaabbacaacc caabacacba c   cabcaabaa a  ba cba bbac cababccacc accaaaacaaaaac abbaa aacaaaa aaaa cc ca bcaaabccccaaacaa b cccbaa babab c bcabaac c cbcaac cacaabcabacbbaaabac bbb  acacaaa aaaacbcb acaab cccc c bb cccc c  baaaaacaaaaab aba b acaab   b "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+6
+],
+[
+"equal",
+0,
+3,
+6,
+9
+],
+[
+"insert",
+3,
+3,
+9,
+13
+],
+[
+"equal",
+3,
+4,
+13,
+14
+],
+[
+"insert",
+4,
+4,
+14,
+139
+],
+[
+"equal",
+4,
+11,
+139,
+146
+],
+[
+"insert",
+11,
+11,
+146,
+195
+],
+[
+"equal",
+11,
+13,
+195,
+197
+],
+[
+"insert",
+13,
+13,
+197,
+214
+],
+[
+"equal",
+13,
+17,
+214,
+218
+],
+[
+"insert",
+17,
+17,
+218,
+219
+],
+[
+"equal",
+17,
+18,
+219,
+220
+],
+[
+"replace",
+18,
+22,
+220,
+221
+],
+[
+"equal",
+22,
+26,
+221,
+225
+],
+[
+"insert",
+26,
+26,
+225,
+230
+],
+[
+"equal",
+26,
+27,
+230,
+231
+],
+[
+"insert",
+27,
+27,
+231,
+236
+],
+[
+"equal",
+27,
+28,
+236,
+237
+],
+[
+"insert",
+28,
+28,
+237,
+242
+],
+[
+"equal",
+28,
+29,
+242,
+243
+],
+[
+"insert",
+29,
+29,
+243,
+244
+],
+[
+"equal",
+29,
+32,
+244,
+247
+],
+[
+"insert",
+32,
+32,
+247,
+248
+],
+[
+"equal",
+32,
+33,
+248,
+249
+],
+[
+"insert",
+33,
+33,
+249,
+250
+],
+[
+"equal",
+33,
+34,
+250,
+251
+],
+[
+"insert",
+34,
+34,
+251,
+260
+]
+]
+},
+{
+"args": [
+"c ababc  cabacc  bbab  abcacc cbc ba acb bbbcacbc caca baabba",
+"bb abca abac acaabbcbcc  a cbbb ca  aa a b a b c accc c ccca ccaa bacbcac cbaba cbaaa bcbc cbca ca bbb  ba aaaaa ccaab ababaaaa abaacbbaacbaabc b caaaaca aabacaabbcacaca c abcaaaa baaacaaaaaaacaabccc caaa baababaaabcbcaca  accc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+5
+],
+[
+"equal",
+0,
+1,
+5,
+6
+],
+[
+"insert",
+1,
+1,
+6,
+118
+],
+[
+"equal",
+1,
+6,
+118,
+123
+],
+[
+"insert",
+6,
+6,
+123,
+142
+],
+[
+"equal",
+6,
+8,
+142,
+144
+],
+[
+"insert",
+8,
+8,
+144,
+145
+],
+[
+"equal",
+8,
+10,
+145,
+147
+],
+[
+"insert",
+10,
+10,
+147,
+155
+],
+[
+"equal",
+10,
+14,
+155,
+159
+],
+[
+"replace",
+14,
+17,
+159,
+161
+],
+[
+"equal",
+17,
+19,
+161,
+163
+],
+[
+"insert",
+19,
+19,
+163,
+164
+],
+[
+"equal",
+19,
+20,
+164,
+165
+],
+[
+"replace",
+20,
+21,
+165,
+169
+],
+[
+"equal",
+21,
+22,
+169,
+170
+],
+[
+"insert",
+22,
+22,
+170,
+171
+],
+[
+"equal",
+22,
+27,
+171,
+176
+],
+[
+"insert",
+27,
+27,
+176,
+197
+],
+[
+"equal",
+27,
+31,
+197,
+201
+],
+[
+"delete",
+31,
+35,
+201,
+201
+],
+[
+"equal",
+35,
+36,
+201,
+202
+],
+[
+"delete",
+36,
+37,
+202,
+202
+],
+[
+"equal",
+37,
+38,
+202,
+203
+],
+[
+"delete",
+38,
+53,
+203,
+203
+],
+[
+"equal",
+53,
+59,
+203,
+209
+],
+[
+"insert",
+59,
+59,
+209,
+210
+],
+[
+"equal",
+59,
+61,
+210,
+212
+],
+[
+"insert",
+61,
+61,
+212,
+227
+]
+]
+},
+{
+"args": [
+"cbbc cc bb bbcaacbacccbcbb  ccabbacaccacacbacc caacccac c bca  aabca ",
+"aab  cabbacaababaaa accbcacaba aaa abaaccaabcaaaaa aa caaaababa  caab aaaccbabacbbaa cacabaaabb bacaaaabbbcac  abaacbac b  bca ca baabcbaa acbbc baaacbbbac b aaaaabab  c ccccabab caaacca bbc abb bccbacc aababbaabaacabbac cbb ccaaabcaabbcabba "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+14,
+0,
+0
+],
+[
+"equal",
+14,
+16,
+0,
+2
+],
+[
+"delete",
+16,
+25,
+2,
+2
+],
+[
+"equal",
+25,
+28,
+2,
+5
+],
+[
+"delete",
+28,
+29,
+5,
+5
+],
+[
+"equal",
+29,
+36,
+5,
+12
+],
+[
+"insert",
+36,
+36,
+12,
+21
+],
+[
+"equal",
+36,
+37,
+21,
+22
+],
+[
+"insert",
+37,
+37,
+22,
+24
+],
+[
+"equal",
+37,
+41,
+24,
+28
+],
+[
+"insert",
+41,
+41,
+28,
+197
+],
+[
+"equal",
+41,
+47,
+197,
+203
+],
+[
+"replace",
+47,
+48,
+203,
+212
+],
+[
+"equal",
+48,
+51,
+212,
+215
+],
+[
+"replace",
+51,
+53,
+215,
+218
+],
+[
+"equal",
+53,
+57,
+218,
+222
+],
+[
+"insert",
+57,
+57,
+222,
+224
+],
+[
+"equal",
+57,
+58,
+224,
+225
+],
+[
+"replace",
+58,
+59,
+225,
+226
+],
+[
+"equal",
+59,
+61,
+226,
+228
+],
+[
+"delete",
+61,
+63,
+228,
+228
+],
+[
+"equal",
+63,
+68,
+228,
+233
+],
+[
+"insert",
+68,
+68,
+233,
+241
+],
+[
+"equal",
+68,
+69,
+241,
+242
+]
+]
+},
+{
+"args": [
+"bcc accbbba a acc c  b",
+"aacba bbaaacbaaa a b a abb a aa bb aabc bbba aaba  abbcbbaabb  aaacba aaaababbaa  caaaccbaa  aba c  abba aa baca ba cba bcacbabccaacbcaa bb bb caacaabcca  bbbbb ccaaaac c bacabbbcac cabaccb aaacaaca cbb acacaababaaacbcacbaaa aac"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+37
+],
+[
+"equal",
+0,
+2,
+37,
+39
+],
+[
+"delete",
+2,
+3,
+39,
+39
+],
+[
+"equal",
+3,
+4,
+39,
+40
+],
+[
+"delete",
+4,
+7,
+40,
+40
+],
+[
+"equal",
+7,
+13,
+40,
+46
+],
+[
+"insert",
+13,
+13,
+46,
+50
+],
+[
+"equal",
+13,
+15,
+50,
+52
+],
+[
+"insert",
+15,
+15,
+52,
+54
+],
+[
+"equal",
+15,
+16,
+54,
+55
+],
+[
+"insert",
+16,
+16,
+55,
+167
+],
+[
+"equal",
+16,
+20,
+167,
+171
+],
+[
+"insert",
+20,
+20,
+171,
+181
+],
+[
+"equal",
+20,
+21,
+181,
+182
+],
+[
+"insert",
+21,
+21,
+182,
+184
+],
+[
+"equal",
+21,
+22,
+184,
+185
+],
+[
+"insert",
+22,
+22,
+185,
+228
+]
+]
+},
+{
+"args": [
+"ba c b    a acbbc  ab  babbaa c   cb aa  ba bbc ccbabc c c bac b aca   ",
+" abaaaa  ccababaaaaaaaca a  aac caaccab ccb cc bc b ba  baabb  cabb bccaabc aaa a baacc ccba bba b baaab   bacabcaaaabaabcc  aca   bbbc aba cacaaaaa  b caa ab b abb acb bc  aa acabc   c   a  a ca babbaaaa acbcabc aaa abaaa caabcaacabc b acaacbc bc  "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+137
+],
+[
+"equal",
+0,
+4,
+137,
+141
+],
+[
+"insert",
+4,
+4,
+141,
+149
+],
+[
+"equal",
+4,
+7,
+149,
+152
+],
+[
+"insert",
+7,
+7,
+152,
+185
+],
+[
+"equal",
+7,
+12,
+185,
+190
+],
+[
+"delete",
+12,
+18,
+190,
+190
+],
+[
+"equal",
+18,
+20,
+190,
+192
+],
+[
+"delete",
+20,
+21,
+192,
+192
+],
+[
+"equal",
+21,
+22,
+192,
+193
+],
+[
+"insert",
+22,
+22,
+193,
+195
+],
+[
+"equal",
+22,
+29,
+195,
+202
+],
+[
+"delete",
+29,
+37,
+202,
+202
+],
+[
+"equal",
+37,
+40,
+202,
+205
+],
+[
+"delete",
+40,
+42,
+205,
+205
+],
+[
+"equal",
+42,
+43,
+205,
+206
+],
+[
+"replace",
+43,
+45,
+206,
+207
+],
+[
+"equal",
+45,
+47,
+207,
+209
+],
+[
+"delete",
+47,
+51,
+209,
+209
+],
+[
+"equal",
+51,
+55,
+209,
+213
+],
+[
+"replace",
+55,
+56,
+213,
+222
+],
+[
+"equal",
+56,
+58,
+222,
+224
+],
+[
+"replace",
+58,
+59,
+224,
+226
+],
+[
+"equal",
+59,
+60,
+226,
+227
+],
+[
+"insert",
+60,
+60,
+227,
+228
+],
+[
+"equal",
+60,
+61,
+228,
+229
+],
+[
+"insert",
+61,
+61,
+229,
+233
+],
+[
+"equal",
+61,
+68,
+233,
+240
+],
+[
+"insert",
+68,
+68,
+240,
+247
+],
+[
+"equal",
+68,
+70,
+247,
+249
+],
+[
+"delete",
+70,
+71,
+249,
+249
+]
+]
+},
+{
+"args": [
+" cccabbc aa ab acc cab c cabaccabbb abaac a acaac ab acbcb bca bacaaabbb",
+"baab bca cc  b cc cbaaaaaba aac aaacaa  ab  abcaa  aba ccacbcabbcaaa cacccaabba abaacaaa caaccbacbbb acb bbaa  c accaaaacbac cccba ca  a acbaa  aaccacbabcbabaaaac  abbacbca abac aaccaa aaba caa acc bbaaccaacc aa aaaaaabc b  ba  aa aaac bbcbcaab "
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+72,
+0,
+245
+]
+]
+},
+{
+"args": [
+"adcc edbabaeacbcaddab",
+"adccc edbabaeacbcaddab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+21,
+3,
+22
+]
+]
+},
+{
+"args": [
+"ceadaa  ",
+"ceadaa  "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+8,
+0,
+8
+]
+]
+},
+{
+"args": [
+"abacb  b e   ad",
+"abac b eb  ab"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"delete",
+4,
+6,
+4,
+4
+],
+[
+"equal",
+6,
+10,
+4,
+8
+],
+[
+"replace",
+10,
+11,
+8,
+9
+],
+[
+"equal",
+11,
+14,
+9,
+12
+],
+[
+"replace",
+14,
+15,
+12,
+13
+]
+]
+},
+{
+"args": [
+"aa  b  bc  ccca bababccc c aaa ac",
+"aabbbbaca acbbbab caaaab  ccbab bac ac caccaaabaacab aab b aa acaaacb cac aab baccaa   aaacbb aaba acbaac cacab a acaa c bc cab  bcccc a abaa aab baa aac aacccb  accbaabaababbbbacac bcc acaa babbcb a aaaac bacbaa a bcaacbbbbccacaaaac cbbbabbab"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+82
+],
+[
+"equal",
+0,
+4,
+82,
+86
+],
+[
+"insert",
+4,
+4,
+86,
+126
+],
+[
+"equal",
+4,
+9,
+126,
+131
+],
+[
+"delete",
+9,
+11,
+131,
+131
+],
+[
+"equal",
+11,
+14,
+131,
+134
+],
+[
+"insert",
+14,
+14,
+134,
+189
+],
+[
+"equal",
+14,
+19,
+189,
+194
+],
+[
+"delete",
+19,
+20,
+194,
+194
+],
+[
+"equal",
+20,
+22,
+194,
+196
+],
+[
+"replace",
+22,
+24,
+196,
+197
+],
+[
+"equal",
+24,
+25,
+197,
+198
+],
+[
+"replace",
+25,
+26,
+198,
+199
+],
+[
+"equal",
+26,
+30,
+199,
+203
+],
+[
+"insert",
+30,
+30,
+203,
+212
+],
+[
+"equal",
+30,
+32,
+212,
+214
+],
+[
+"insert",
+32,
+32,
+214,
+216
+],
+[
+"equal",
+32,
+33,
+216,
+217
+],
+[
+"insert",
+33,
+33,
+217,
+243
+]
+]
+},
+{
+"args": [
+" ecbdbacaccaaabcc baadae ",
+" ecbdbacaccaaabcc baadxe "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+22,
+0,
+22
+],
+[
+"replace",
+22,
+23,
+22,
+23
+],
+[
+"equal",
+23,
+25,
+23,
+25
+]
+]
+},
+{
+"args": [
+"ac aebbb ",
+"ac aebb "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+7,
+0,
+7
+],
+[
+"delete",
+7,
+8,
+7,
+7
+],
+[
+"equal",
+8,
+9,
+7,
+8
+]
+]
+},
+{
+"args": [
+" ca",
+"  ca"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+3,
+1,
+4
+]
+]
+},
+{
+"args": [
+"aa  b caa  acca  c  bbbba bcb",
+"aa  acac abbaacc  cbc  abaccaaccb a a    aacaaabcbabcca aaabacca a ac  abaacb a abbc aabbcabaa bcbcaa bbbaaa baaca aacccaacaa  aaaacaaaaaaaab  abccbbbbbbacb cc ab aac ac  cc  bcabaaaaaaaaaab bbcbacccaaaabb   cac cc cabaaaaa bbbbb aacaa ac cb cbb aa a bb aaab"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+29,
+4,
+258
+]
+]
+},
+{
+"args": [
+"cca abec db a a dead",
+"cyeca abec  db a a deyaxd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"insert",
+1,
+1,
+1,
+3
+],
+[
+"equal",
+1,
+8,
+3,
+10
+],
+[
+"insert",
+8,
+8,
+10,
+11
+],
+[
+"equal",
+8,
+18,
+11,
+21
+],
+[
+"insert",
+18,
+18,
+21,
+22
+],
+[
+"equal",
+18,
+19,
+22,
+23
+],
+[
+"insert",
+19,
+19,
+23,
+24
+],
+[
+"equal",
+19,
+20,
+24,
+25
+]
+]
+},
+{
+"args": [
+" ccc b b bcac  bc c baab a acccaccbbc cb ba ab abca",
+"bcb baa   caa aaa aaa ccaaaa aa a a aaaaccabaa  ab a aac    aaccbbcabcc ba ac ca cccb  cabcaabab aaab c c ca cccabaabac aacaca a baabaa ca c  bccc  ccaa  aababcbaaa acaacbbaacacaac a acc ba a acaabaaa cacaaaa baaa bcccaaaa abacb aaccc bacaa  aacb"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+51,
+0,
+246
+]
+]
+},
+{
+"args": [
+"ddeeade cea eaea  ad ea",
+"ddeeade cea zaea  ad ea"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+12,
+0,
+12
+],
+[
+"replace",
+12,
+13,
+12,
+13
+],
+[
+"equal",
+13,
+23,
+13,
+23
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"pass",
+"}",
+"",
+"    pass",
+"    pass",
+"x = 2",
+"def f():",
+"pass",
+"x = 2",
+"    return 1"
+],
+[
+"# c",
+"pass",
+"}",
+"",
+"    pass",
+"    pass",
+"x = 2",
+"def f():",
+"pass",
+"    pass",
+"x = 2"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+9,
+0,
+9
+],
+[
+"insert",
+9,
+9,
+9,
+10
+],
+[
+"equal",
+9,
+10,
+10,
+11
+],
+[
+"delete",
+10,
+11,
+11,
+11
+]
+]
+},
+{
+"args": [
+"ccbec dbdbaaac",
+"xcbeb dbdbaac"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+],
+[
+"replace",
+4,
+5,
+4,
+5
+],
+[
+"equal",
+5,
+12,
+5,
+12
+],
+[
+"delete",
+12,
+13,
+12,
+12
+],
+[
+"equal",
+13,
+14,
+12,
+13
+]
+]
+},
+{
+"args": [
+"ebebcabd",
+"cebebdabd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+4,
+1,
+5
+],
+[
+"replace",
+4,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+8,
+6,
+9
+]
+]
+},
+{
+"args": [
+"",
+"ec"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+2
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"    pass",
+"pass",
+"def f():"
+],
+[
+"# c",
+"    pass",
+"pass",
+"def f():"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+]
+]
+},
+{
+"args": [
+"e ececcc",
+"e yececca"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+7,
+3,
+8
+],
+[
+"replace",
+7,
+8,
+8,
+9
+]
+]
+},
+{
+"args": [
+"cceacbbddbcaccd a ",
+"cc eacbbddbcaccd z "
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+16,
+3,
+17
+],
+[
+"replace",
+16,
+17,
+17,
+18
+],
+[
+"equal",
+17,
+18,
+18,
+19
+]
+]
+},
+{
+"args": [
+"acc  dbeadea dcd",
+"acc  dedea dcd"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+6,
+0,
+6
+],
+[
+"delete",
+6,
+7,
+6,
+6
+],
+[
+"equal",
+7,
+8,
+6,
+7
+],
+[
+"delete",
+8,
+9,
+7,
+7
+],
+[
+"equal",
+9,
+16,
+7,
+14
+]
+]
+},
+{
+"args": [
+[
+"}",
+"",
+"",
+"def f():",
+"}",
+"x = 2",
+"    pass",
+"",
+"}",
+"    pass"
+],
+[
+"}",
+"}",
+"",
+"",
+"def f():",
+"x = 2",
+"x = 2",
+"    pass",
+"",
+"}",
+"    pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+4,
+1,
+5
+],
+[
+"replace",
+4,
+5,
+5,
+6
+],
+[
+"equal",
+5,
+10,
+6,
+11
+]
+]
+},
+{
+"args": [
+"cccc ccc abcaabcba cc a c b bca  cbbcbc abacca a cabbbbb",
+" ccbac aabb aacaacba cacac accababbabcbca  cbb  baacbb a aa acbaaa aaa    ccac bb  aaabbbaca aacbacccc aac abcaaaaaca c ca  bbcccbaaabcab aaa   bcc a bb cbbcabb abbaca a caacbaaa abbbaa aa caaaaba abaaa aaca caababaabaabaaaaaaca b c aacaaccbb a"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"delete",
+0,
+4,
+0,
+0
+],
+[
+"equal",
+4,
+7,
+0,
+3
+],
+[
+"insert",
+7,
+7,
+3,
+5
+],
+[
+"equal",
+7,
+10,
+5,
+8
+],
+[
+"insert",
+10,
+10,
+8,
+9
+],
+[
+"equal",
+10,
+11,
+9,
+10
+],
+[
+"insert",
+11,
+11,
+10,
+14
+],
+[
+"equal",
+11,
+14,
+14,
+17
+],
+[
+"delete",
+14,
+15,
+17,
+17
+],
+[
+"equal",
+15,
+20,
+17,
+22
+],
+[
+"insert",
+20,
+20,
+22,
+25
+],
+[
+"equal",
+20,
+23,
+25,
+28
+],
+[
+"delete",
+23,
+24,
+28,
+28
+],
+[
+"equal",
+24,
+25,
+28,
+29
+],
+[
+"replace",
+25,
+26,
+29,
+31
+],
+[
+"equal",
+26,
+27,
+31,
+32
+],
+[
+"replace",
+27,
+28,
+32,
+38
+],
+[
+"equal",
+28,
+36,
+38,
+46
+],
+[
+"insert",
+36,
+36,
+46,
+51
+],
+[
+"equal",
+36,
+38,
+51,
+53
+],
+[
+"insert",
+38,
+38,
+53,
+105
+],
+[
+"equal",
+38,
+42,
+105,
+109
+],
+[
+"insert",
+42,
+42,
+109,
+114
+],
+[
+"equal",
+42,
+44,
+114,
+116
+],
+[
+"insert",
+44,
+44,
+116,
+165
+],
+[
+"equal",
+44,
+51,
+165,
+172
+],
+[
+"insert",
+51,
+51,
+172,
+180
+],
+[
+"equal",
+51,
+54,
+180,
+183
+],
+[
+"insert",
+54,
+54,
+183,
+240
+],
+[
+"equal",
+54,
+56,
+240,
+242
+],
+[
+"insert",
+56,
+56,
+242,
+244
+]
+]
+},
+{
+"args": [
+[
+"# c",
+"pass",
+"",
+"pass"
+],
+[
+"# c",
+"pass",
+"",
+"pass",
+"pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"    pass"
+],
+[
+"}",
+"    pass"
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+2,
+1,
+2
+]
+]
+},
+{
+"args": [
+"aebbaadbdab eacebbeedd d",
+"aebabaadbdab eacebbeedd d"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+24,
+4,
+25
+]
+]
+},
+{
+"args": [
+"abbaa  b bcaa bbab c cababca c ",
+"cbbaa aa b a caabcaa acacacaabcabcbbac cabcbcaba baaabab  ca  ba aa bba ab acbbbbbaabab a b acabaababacaaacbc baaab ba a caaaa bc bca acacaabbacbacba  bbbbac aa bc acaabbbbacbaacccc abbbbca caaccc  baaaa"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+6,
+1,
+6
+],
+[
+"insert",
+6,
+6,
+6,
+8
+],
+[
+"equal",
+6,
+9,
+8,
+11
+],
+[
+"insert",
+9,
+9,
+11,
+16
+],
+[
+"equal",
+9,
+11,
+16,
+18
+],
+[
+"insert",
+11,
+11,
+18,
+65
+],
+[
+"equal",
+11,
+17,
+65,
+71
+],
+[
+"insert",
+17,
+17,
+71,
+73
+],
+[
+"equal",
+17,
+19,
+73,
+75
+],
+[
+"insert",
+19,
+19,
+75,
+76
+],
+[
+"equal",
+19,
+20,
+76,
+77
+],
+[
+"insert",
+20,
+20,
+77,
+87
+],
+[
+"equal",
+20,
+21,
+87,
+88
+],
+[
+"insert",
+21,
+21,
+88,
+93
+],
+[
+"equal",
+21,
+25,
+93,
+97
+],
+[
+"insert",
+25,
+25,
+97,
+186
+],
+[
+"equal",
+25,
+30,
+186,
+191
+],
+[
+"insert",
+30,
+30,
+191,
+196
+],
+[
+"equal",
+30,
+31,
+196,
+197
+],
+[
+"insert",
+31,
+31,
+197,
+203
+]
+]
+},
+{
+"args": [
+"",
+"x"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+]
+]
+},
+{
+"args": [
+"aedeb  ccedddbbe aeaaecc",
+"aeydeb  ccedddbbe aeaaecc"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+2,
+0,
+2
+],
+[
+"insert",
+2,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+24,
+3,
+25
+]
+]
+},
+{
+"args": [
+[
+"}",
+"}",
+""
+],
+[
+"# c",
+"}",
+"def f():",
+""
+]
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+],
+[
+"replace",
+1,
+2,
+2,
+3
+],
+[
+"equal",
+2,
+3,
+3,
+4
+]
+]
+},
+{
+"args": [
+" b aa ca cbc  cbaabbc ccbbcbbb ba   cc bcacb abcba",
+"ac cc bcbcbba ba aaccb     caaaaaaacccca aacccccacaaa   bc ccaabb  ccb  ca c acc bac  c aabac ab ab abac ababbcaaabaaaaaa acacbaac aaa c cbabacbcaabbbacbbbaaaa bbaaabc  caaac  caaa aabbc acabcaccaac abc b bccaaccaa aca aac c a baa"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+50,
+0,
+230
+]
+]
+},
+{
+"args": [
+" ea bdc  b",
+" za bdc z"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+1,
+0,
+1
+],
+[
+"replace",
+1,
+2,
+1,
+2
+],
+[
+"equal",
+2,
+8,
+2,
+8
+],
+[
+"replace",
+8,
+10,
+8,
+9
+]
+]
+},
+{
+"args": [
+"a  ccbbbbcaaabcb  ccbbbbcab a abaca  abb abb   aab cabacbcbbacbc cc  ",
+"baaa caaba  accca   cbba  ac  b aabacccaaaaacabcaacaacca  aabaaaca aca c acbbaaa acbcbaac a cbaa ccaa aaca abaaabaaaaaa abbcccaaab bb caaaaaaa  bcbbaacaacaa b bbaacbaaaca aa ac aa cc abbcaaababbaaa bbabac bcabbaca"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+69,
+0,
+213
+]
+]
+},
+{
+"args": [
+[
+"}",
+"",
+"# c"
+],
+[
+"}",
+"",
+"# c"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+]
+]
+},
+{
+"args": [
+[
+"pass",
+"x = 2",
+"def f():",
+"}",
+"    return 1",
+"# c",
+"pass",
+"    return 1",
+"    pass"
+],
+[
+"pass",
+"x = 2",
+"def f():",
+"}",
+"",
+"x = 2",
+"pass",
+"pass",
+"    return 1",
+"    pass"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+4,
+0,
+4
+],
+[
+"replace",
+4,
+6,
+4,
+7
+],
+[
+"equal",
+6,
+9,
+7,
+10
+]
+]
+},
+{
+"args": [
+"ddeeaeadca a",
+"ddeeaeadcdcy a"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+9,
+0,
+9
+],
+[
+"replace",
+9,
+10,
+9,
+12
+],
+[
+"equal",
+10,
+12,
+12,
+14
+]
+]
+},
+{
+"args": [
+"cbce c bccbbb dbddd",
+"cbce c bcbcbbb dbddd"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+9,
+0,
+9
+],
+[
+"insert",
+9,
+9,
+9,
+10
+],
+[
+"equal",
+9,
+19,
+10,
+20
+]
+]
+},
+{
+"args": [
+"bddbeaadbecdcdbeaadecac",
+"bddbeaadbecdcdbeaadecac"
+],
+"kwargs": {},
+"expected": [
+[
+"equal",
+0,
+23,
+0,
+23
+]
+]
+},
+{
+"args": [
+"daebdddcedbcbdcddbae ",
+"daedddcedbcbdcddbae "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"delete",
+3,
+4,
+3,
+3
+],
+[
+"equal",
+4,
+21,
+3,
+20
+]
+]
+},
+{
+"args": [
+" ddbcbadeee",
+"addbycbadeee"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+],
+[
+"equal",
+1,
+4,
+1,
+4
+],
+[
+"insert",
+4,
+4,
+4,
+5
+],
+[
+"equal",
+4,
+11,
+5,
+12
+]
+]
+},
+{
+"args": [
+[
+"    pass"
+],
+[
+"# c"
+]
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+1,
+0,
+1
+]
+]
+},
+{
+"args": [
+"da",
+"y "
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"replace",
+0,
+2,
+0,
+2
+]
+]
+},
+{
+"args": [
+"dcdeddbd",
+"xbdeddby"
+],
+"kwargs": {},
+"expected": [
+[
+"replace",
+0,
+2,
+0,
+2
+],
+[
+"equal",
+2,
+7,
+2,
+7
+],
+[
+"replace",
+7,
+8,
+7,
+8
+]
+]
+},
+{
+"args": [
+"b",
+"ab"
+],
+"kwargs": {},
+"expected": [
+[
+"insert",
+0,
+0,
+0,
+1
+],
+[
+"equal",
+0,
+1,
+1,
+2
+]
+]
+},
+{
+"args": [
+"dbebbccceda",
+"dbeebbdcccedda"
+],
+"kwargs": {
+"autojunk": false
+},
+"expected": [
+[
+"equal",
+0,
+3,
+0,
+3
+],
+[
+"insert",
+3,
+3,
+3,
+4
+],
+[
+"equal",
+3,
+5,
+4,
+6
+],
+[
+"insert",
+5,
+5,
+6,
+7
+],
+[
+"equal",
+5,
+10,
+7,
+12
+],
+[
+"insert",
+10,
+10,
+12,
+13
+],
+[
+"equal",
+10,
+11,
+13,
+14
+]
+]
+}
+]
