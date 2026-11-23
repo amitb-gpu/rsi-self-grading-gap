@@ -1,0 +1,2905 @@
+[
+{
+"args": [
+"db8:0:1:1:db8:FFFF::0:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"254.1.7.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.1.7.168"
+]
+},
+{
+"args": [
+"::"
+],
+"kwargs": {},
+"expected": [
+6,
+"::"
+]
+},
+{
+"args": [
+"ffff:0:ffff:0000:0:0000:db8:2001"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:0:ffff::db8:2001"
+]
+},
+{
+"args": [
+"1.255.168.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.255.168.254"
+]
+},
+{
+"args": [
+"255.254.84.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.254.84.255"
+]
+},
+{
+"args": [
+"1.2.3.4/24"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1:2:3:4:5:6:7:8:9"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"168.254.210.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"168.254.210.1"
+]
+},
+{
+"args": [
+"1.2.3"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:0000:00a0:1:00a0:0::0:abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:ffff:0000:00a0:1:FFFF:fe80:abcd"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:ffff:0:a0:1:ffff:fe80:abcd"
+]
+},
+{
+"args": [
+"255.192.255.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.192.255.255"
+]
+},
+{
+"args": [
+"127.1.127.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.1.127.0"
+]
+},
+{
+"args": [
+"ffff:fe80:0:0:fe80:ffff:10.0.254.10"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:fe80::fe80:ffff:a00:fe0a"
+]
+},
+{
+"args": [
+"255.127.255.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.127.255.0"
+]
+},
+{
+"args": [
+"128.45.255.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"128.45.255.127"
+]
+},
+{
+"args": [
+"2001:0:0:2001:db8:db8:0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"2001::2001:db8:db8:0:0"
+]
+},
+{
+"args": [
+"fe80:fe80:1:1:FFFF:2001:2001::%"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"[FFFF:00a0::FFFF:00a0:db8:0000:abcd:abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.7.0.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.7.0.7"
+]
+},
+{
+"args": [
+"1:2:3:4:5:6:7:8"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:2:3:4:5:6:7:8"
+]
+},
+{
+"args": [
+"254.127.168.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.127.168.192"
+]
+},
+{
+"args": [
+"0:00a0:0:db8:0:fe80:7.127.7.0"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:a0:0:db8:0:fe80:77f:700"
+]
+},
+{
+"args": [
+" 00a0:00a0:ffff:00a0:fe80:ffff:db8:abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"33.7.192.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"33.7.192.1"
+]
+},
+{
+"args": [
+" fe80:abcd:1:fe80::0:abcd:fe80:db8"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:ffff:abcd:abcd:0:0:0:abcd"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:ffff:abcd:abcd::abcd"
+]
+},
+{
+"args": [
+"ffff:ffff:0000:0:0:fe80:1.17.1.168"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:ffff::fe80:111:1a8"
+]
+},
+{
+"args": [
+"1:FFFF:0:1:ABCD:DB8::FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:ffff:0:1:abcd:db8:0:ffff"
+]
+},
+{
+"args": [
+"fe80:::fe80:0:0000:db8:2001:db8:0000"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:fe80:fe80:fe80:db8:0:161.127.10.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:fe80:fe80:fe80:db8:0:a17f:a01"
+]
+},
+{
+"args": [
+"fe80::1%eth0"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80::1%eth0"
+]
+},
+{
+"args": [
+"1.254.192.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.254.192.168"
+]
+},
+{
+"args": [
+"10.168.168.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.168.168.192"
+]
+},
+{
+"args": [
+"FFFF:abcd:db8:db8:fe80:FFFF:db8:FFFF:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:ffff:0000:fe80:1:2001:7.7.254.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:ffff:0:fe80:1:2001:707:fe01"
+]
+},
+{
+"args": [
+"1.254.168.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.254.168.0"
+]
+},
+{
+"args": [
+"1.168.254.168%"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"185.254.1.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"185.254.1.0"
+]
+},
+{
+"args": [
+"255.10.254.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.10.254.254"
+]
+},
+{
+"args": [
+"2001:0:fe80:0:0:00a0:0:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"2001:0:fe80::a0:0:ffff"
+]
+},
+{
+"args": [
+"1:2:3:4:5:6:7::"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:2:3:4:5:6:7:0"
+]
+},
+{
+"args": [
+"10.168.10.198"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.168.10.198"
+]
+},
+{
+"args": [
+"0:::0:00a0:2001:1:1:0000:fe80"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.127.168.168%/x"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"FFFF:db8:0::1:0:0000"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:db8::1:0:0"
+]
+},
+{
+"args": [
+"0000:ffff:2001::fe80:db8:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:ffff:2001::fe80:db8:ffff"
+]
+},
+{
+"args": [
+"ffff:FFFF::00a0:fe80:fe80:ffff:FFFF:fe80"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"25627.254.192.10"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"FFFF:00a0:1:0:fe80:fe80:ffff:abcd"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:a0:1:0:fe80:fe80:ffff:abcd"
+]
+},
+{
+"args": [
+"140.129.0.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"140.129.0.127"
+]
+},
+{
+"args": [
+"10.123.1.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.123.1.0"
+]
+},
+{
+"args": [
+"139.251.254.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"139.251.254.255"
+]
+},
+{
+"args": [
+"::2001:db8:00a0:0000"
+],
+"kwargs": {},
+"expected": [
+6,
+"::2001:db8:a0:0"
+]
+},
+{
+"args": [
+"1:2001:ffff:FFFF:abcd:fe80:00a0:abcd"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:2001:ffff:ffff:abcd:fe80:a0:abcd"
+]
+},
+{
+"args": [
+"FFFF:2001:0:2001:2001:0:ffff:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:2001:0:2001:2001:0:ffff:ffff"
+]
+},
+{
+"args": [
+"FFFF:FFFF:00g0:0::abcd:db8"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"ffff:0:FFFF:fe80:1:ffff:168.168.0.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:0:ffff:fe80:1:ffff:a8a8:1"
+]
+},
+{
+"args": [
+"192.168.1.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.168.1.10"
+]
+},
+{
+"args": [
+"00a0:db8:0:0000:0::0000:FFFF:fe80"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"2001:fe80:0000::ffff:0%a%b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:0000:0:0:FFFF:FFFF:0::FFFF"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"::168.255.255.254"
+],
+"kwargs": {},
+"expected": [
+6,
+"::a8ff:fffe"
+]
+},
+{
+"args": [
+"::1.2.3.4"
+],
+"kwargs": {},
+"expected": [
+6,
+"::102:304"
+]
+},
+{
+"args": [
+"254.168.1.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.168.1.192"
+]
+},
+{
+"args": [
+"FE80:DB8:ABCD:0000::"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:db8:abcd::"
+]
+},
+{
+"args": [
+"0:::00a0:0000:0:00a0:fe80:10.7.0.254"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.7.216.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.7.216.168"
+]
+},
+{
+"args": [
+"::10.10.127.192"
+],
+"kwargs": {},
+"expected": [
+6,
+"::a0a:7fc0"
+]
+},
+{
+"args": [
+"::2:3:4:5:6:7:8"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:2:3:4:5:6:7:8"
+]
+},
+{
+"args": [
+"189.254.1.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"189.254.1.254"
+]
+},
+{
+"args": [
+"0000:FFFF:abcd:abcd:0:0000:0:0/24"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"::ffff:1.2.3.4"
+],
+"kwargs": {},
+"expected": [
+6,
+"::ffff:102:304"
+]
+},
+{
+"args": [
+"254.10.7.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.10.7.10"
+]
+},
+{
+"args": [
+"254.10.0.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.10.0.10"
+]
+},
+{
+"args": [
+"0:0000:fe80:0000:0:FFFF:0:2001"
+],
+"kwargs": {},
+"expected": [
+6,
+"::fe80:0:0:ffff:0:2001"
+]
+},
+{
+"args": [
+"FE80:2001:DB8:FFFF:FFFF:FE80:DB8:1"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:2001:db8:ffff:ffff:fe80:db8:1"
+]
+},
+{
+"args": [
+"255.10.192.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.10.192.7"
+]
+},
+{
+"args": [
+"0:0:abcd:FFFF:0000:1::2001:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0000:::0:fe80:db8:1:abcd:fe80:db8"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1:0:1:0:FFFF:fe80:1.127.127.127"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:0:1:0:ffff:fe80:17f:7f7f"
+]
+},
+{
+"args": [
+"1.01.10.10"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1:00a0:db8::db8:0:FFFF:0000:0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"22.254.95.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"22.254.95.1"
+]
+},
+{
+"args": [
+"0::abcd:FFFF:0:0:00a0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::abcd:ffff:0:0:a0"
+]
+},
+{
+"args": [
+"255.10.127.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.10.127.127"
+]
+},
+{
+"args": [
+"127.00.221.192"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"254.10.125.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.10.125.255"
+]
+},
+{
+"args": [
+"7.107.192.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.107.192.192"
+]
+},
+{
+"args": [
+"fe80:256:1:ffff:0000:1:0:db8"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:256:1:ffff:0:1:0:db8"
+]
+},
+{
+"args": [
+"2001:0:0:abcd:abcd::1"
+],
+"kwargs": {},
+"expected": [
+6,
+"2001::abcd:abcd:0:0:1"
+]
+},
+{
+"args": [
+"ge80:00a0:ffff:0000:1::FFFF:2001"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"255.168.0.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.168.0.10"
+]
+},
+{
+"args": [
+"abcd:0:0:abcd:FFFF:FFFF:254.192.192.255"
+],
+"kwargs": {},
+"expected": [
+6,
+"abcd::abcd:ffff:ffff:fec0:c0ff"
+]
+},
+{
+"args": [
+"DB8:DB8:0000:FE80:00A0:FE80:00A0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:db8:0:fe80:a0:fe80:a0:0"
+]
+},
+{
+"args": [
+"0:1:db8:db8:0000:FFFF:0:db8"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:1:db8:db8:0:ffff:0:db8"
+]
+},
+{
+"args": [
+"168.1.192.24"
+],
+"kwargs": {},
+"expected": [
+4,
+"168.1.192.24"
+]
+},
+{
+"args": [
+"db8:0000:1:1:gbcd:0:0000:0000"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"::00a0:0:0:2001"
+],
+"kwargs": {},
+"expected": [
+6,
+"::a0:0:0:2001"
+]
+},
+{
+"args": [
+"ffff:0:abcd::0:0:0000:00a0"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:0:abcd::a0"
+]
+},
+{
+"args": [
+"167.192.10.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"167.192.10.168"
+]
+},
+{
+"args": [
+"0.0.254.0%1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:0000:00a0:abcd::2001"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:0:a0:abcd::2001"
+]
+},
+{
+"args": [
+"127.168.127.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.168.127.255"
+]
+},
+{
+"args": [
+"0:db8:0:fe80:ffff:0000:255.251.0.254"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:db8:0:fe80:ffff:0:fffb:fe"
+]
+},
+{
+"args": [
+"255.254.255.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.254.255.168"
+]
+},
+{
+"args": [
+"192.194.254.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.194.254.0"
+]
+},
+{
+"args": [
+"::0:0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::"
+]
+},
+{
+"args": [
+"192.7.192.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.7.192.255"
+]
+},
+{
+"args": [
+"::ffff:0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::ffff:0:0"
+]
+},
+{
+"args": [
+"ABCD:0:1:FFFF:DB8:00A0:0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"abcd:0:1:ffff:db8:a0::"
+]
+},
+{
+"args": [
+"1.10.255.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.10.255.127"
+]
+},
+{
+"args": [
+"1.254.255.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.254.255.0"
+]
+},
+{
+"args": [
+"254.10.168.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.10.168.10"
+]
+},
+{
+"args": [
+"0:0000:0:db8::1:db8:ffff:0%1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"00.0.192.10"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.255.168.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.255.168.192"
+]
+},
+{
+"args": [
+"1:0:ffff:0000:2001:0:abcd:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:0:ffff:0:2001:0:abcd:0"
+]
+},
+{
+"args": [
+"localhost"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"255.233.168.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.233.168.1"
+]
+},
+{
+"args": [
+"127.254.254.255%eth0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"[255.127.1.10"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"7.255.254.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.255.254.127"
+]
+},
+{
+"args": [
+"0:2001::00a0:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:2001::a0:ffff"
+]
+},
+{
+"args": [
+"[::1]"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"FFFF:00000:abcd:2001::"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"127.168.0.254/24"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:::db8:0:0:0:1:7.168.255.105"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:db8:2001:00a0:0000:00a0:db8:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:db8:2001:a0:0:a0:db8:0"
+]
+},
+{
+"args": [
+"255.254.10.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.254.10.255"
+]
+},
+{
+"args": [
+"1:1:0:0:0:0:0:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:1::"
+]
+},
+{
+"args": [
+"fe80:2001:db8:00a0:0:0:192.10.0.254"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:2001:db8:a0::c00a:fe"
+]
+},
+{
+"args": [
+"10.192.1.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.192.1.127"
+]
+},
+{
+"args": [
+"0:2001:00a0:fe80:db8:abcd:0.254.0.171"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:2001:a0:fe80:db8:abcd:fe:ab"
+]
+},
+{
+"args": [
+" 254.254.168.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:1:00a0:2001:2001:0:abcd:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:1:a0:2001:2001:0:abcd:0"
+]
+},
+{
+"args": [
+"ffff:2001:FFFF:0:1:0000:ffff:db8:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"2001:2001:1:0000:0000:0:abcd:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"2001:2001:1::abcd:ffff"
+]
+},
+{
+"args": [
+"::fe80:FFFF:db8:FFFF:db8:ffff::db8"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.10.127.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.10.127.255"
+]
+},
+{
+"args": [
+"FFFF:1:0000:0::fe80:0%a%b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.0.0.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.0.0.0"
+]
+},
+{
+"args": [
+"254.7.00000.10"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:db8:0:2001:FFFF:0:124.7.192.0"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:db8:0:2001:ffff:0:7c07:c000"
+]
+},
+{
+"args": [
+"01.2.3.4"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1.10.204.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.10.204.168"
+]
+},
+{
+"args": [
+"203.7.192.192 "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"192.110.254.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.110.254.127"
+]
+},
+{
+"args": [
+"254.192.0.64"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.192.0.64"
+]
+},
+{
+"args": [
+"[1.1.10.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:::abcd:FFFF:0:db8::0:ffff"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"254.01.7.39"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"127.7.10.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.7.10.7"
+]
+},
+{
+"args": [
+"146.226.255.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"146.226.255.127"
+]
+},
+{
+"args": [
+"10.10.10.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.10.10.7"
+]
+},
+{
+"args": [
+"0::0:00a0:fe80:0000:2001:db8%a%b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"192.1.198.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.1.198.254"
+]
+},
+{
+"args": [
+"ffff:abcd:0:00a0:db8:1:192.192.254.168"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:abcd:0:a0:db8:1:c0c0:fea8"
+]
+},
+{
+"args": [
+"00a0:db8:abcd:db8:abcd:FFFF:0::"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:db8:abcd:db8:abcd:ffff::"
+]
+},
+{
+"args": [
+"fff:ffff:db8:fe80:0:FFFF:0000:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"fff:ffff:db8:fe80:0:ffff:0:ffff"
+]
+},
+{
+"args": [
+"1:2001:FFFF:0:1:00a0:192.127.0.168"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:2001:ffff:0:1:a0:c07f:a8"
+]
+},
+{
+"args": [
+"7.168.192.0%1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:256:2001:1:0000:0000:ffff:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:256:2001:1::ffff:ffff"
+]
+},
+{
+"args": [
+"ffff:::ffff:2001:FFFF:0:ffff:254.38.0.254"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.192.249.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.192.249.10"
+]
+},
+{
+"args": [
+"0:0:0000:0000:FFFF:0:168.192.192.168%eth0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::ffff:0:a8c0:c0a8%eth0"
+]
+},
+{
+"args": [
+"DB8:00A0:FFFF:00A0:DB8:ABCD:13.127.255.0"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:a0:ffff:a0:db8:abcd:d7f:ff00"
+]
+},
+{
+"args": [
+"0:FFFF:0:0:ffff:abcd:255.1.192.192"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:ffff::ffff:abcd:ff01:c0c0"
+]
+},
+{
+"args": [
+"fe80:0000:abcd:ffff:FFFF:0:7.0.192.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:0:abcd:ffff:ffff:0:700:c001"
+]
+},
+{
+"args": [
+"::1:db8:0:0:fe80:2001:db8:0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"abcd:0:0:0:0:1:FFFF:00a0"
+],
+"kwargs": {},
+"expected": [
+6,
+"abcd::1:ffff:a0"
+]
+},
+{
+"args": [
+"168.7.168.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"168.7.168.168"
+]
+},
+{
+"args": [
+"7.255.254.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.255.254.254"
+]
+},
+{
+"args": [
+"0:00a0:0:db8:00a0:db8:2001:0/24"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:fe80:0::"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:fe80::"
+]
+},
+{
+"args": [
+"7.83.1.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.83.1.192"
+]
+},
+{
+"args": [
+"0:FFFF:1:1::FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:ffff:1:1::ffff"
+]
+},
+{
+"args": [
+"255.0168.10.41"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1::0000:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"1::ffff"
+]
+},
+{
+"args": [
+"7.10.127.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.10.127.7"
+]
+},
+{
+"args": [
+"::192.7.255.84"
+],
+"kwargs": {},
+"expected": [
+6,
+"::c007:ff54"
+]
+},
+{
+"args": [
+"FFFF:0:00a0:1:00a0:0000:0:1"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:0:a0:1:a0::1"
+]
+},
+{
+"args": [
+"ffff:2001:0:FFFF:ffff:0000:0::abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"192.127.10.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.127.10.0"
+]
+},
+{
+"args": [
+"db8:0:abcd::FFFF:2001:0:db8:0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"168.35.127.48"
+],
+"kwargs": {},
+"expected": [
+4,
+"168.35.127.48"
+]
+},
+{
+"args": [
+"192.127.0.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.127.0.168"
+]
+},
+{
+"args": [
+"10.0192.10.220"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.1.7.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.1.7.255"
+]
+},
+{
+"args": [
+"1:0:0:00a0:0:2001:255.192.7.0"
+],
+"kwargs": {},
+"expected": [
+6,
+"1::a0:0:2001:ffc0:700"
+]
+},
+{
+"args": [
+"fe80::0:0:db8:2001:"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"fe80:0000:00a0:1:fe80:0:1.192.7.168.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:0:FE80:FFFF:1::FFFF:0:FFFF"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:db8:2001:1::"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:db8:2001:1::"
+]
+},
+{
+"args": [
+"0:0:2001:0:db8:fe80:10.192.127.254"
+],
+"kwargs": {},
+"expected": [
+6,
+"::2001:0:db8:fe80:ac0:7ffe"
+]
+},
+{
+"args": [
+"FFFF:0000:00A0:FE80:2001::"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:0:a0:fe80:2001::"
+]
+},
+{
+"args": [
+"10.255.10.0%a%b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:db8:fe80:00a0:FFFF:2001:7.35.255.187"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:db8:fe80:a0:ffff:2001:723:ffbb"
+]
+},
+{
+"args": [
+"254.00.0.168"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.168.7.201"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.168.7.201"
+]
+},
+{
+"args": [
+"255.7.7.249"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.7.7.249"
+]
+},
+{
+"args": [
+"::1"
+],
+"kwargs": {},
+"expected": [
+6,
+"::1"
+]
+},
+{
+"args": [
+"fe80:abcd:fe80:1:0000::1:0:0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"FFFF:fe80:2001:0:1:fe80:fe80:0000"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:fe80:2001:0:1:fe80:fe80:0"
+]
+},
+{
+"args": [
+"00a0:1:ffff:db8::2001:1:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:1:ffff:db8:0:2001:1:0"
+]
+},
+{
+"args": [
+"00a0:::FFFF:FFFF:abcd:1:ffff:0:abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"ffff::FFFF:db8:ffff:fe80"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff::ffff:db8:ffff:fe80"
+]
+},
+{
+"args": [
+"0:db8:fe80:2001:fe80:1:0:1"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:db8:fe80:2001:fe80:1:0:1"
+]
+},
+{
+"args": [
+"0:0000:00a0:FFFF:0000:1:0.162.1.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"::a0:ffff:0:1:a2:101"
+]
+},
+{
+"args": [
+"ffff:0:db8:2001:FFFF:FFFF:00a0:abcd "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"FFFF:ffff:0000:0:1:db8:db8:FFFF.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"192.7.7.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.7.7.168"
+]
+},
+{
+"args": [
+":::1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"02001:0000:db8:FFFF:0:1:254.192.7.0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"192.10.127.10%/x"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"188.10.192.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"188.10.192.192"
+]
+},
+{
+"args": [
+"[2001:0:db8:ffff:0:0000:225.152.255.255"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"127.192.254.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.192.254.0"
+]
+},
+{
+"args": [
+"1.254.192.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"1.254.192.10"
+]
+},
+{
+"args": [
+"168.255.168.0.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:0:FFFF:DB8:0:FFFF:114.127.0.7"
+],
+"kwargs": {},
+"expected": [
+6,
+"::ffff:db8:0:ffff:727f:7"
+]
+},
+{
+"args": [
+"00a0:0000:FFFF:1:00a0:abcd:0:fe80"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:0:ffff:1:a0:abcd:0:fe80"
+]
+},
+{
+"args": [
+"00a0:fe80:db8:0000:0:FFFF:ffff:00a0"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:fe80:db8::ffff:ffff:a0"
+]
+},
+{
+"args": [
+"db8:abcd:00a0:db8:1:1:1:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:abcd:a0:db8:1:1:1:ffff"
+]
+},
+{
+"args": [
+"fe80:abcd:fe80:ffff:0:fe80:1.10.36.1"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:abcd:fe80:ffff:0:fe80:10a:2401"
+]
+},
+{
+"args": [
+"::2001:0:2001:0:0:FFFF:fe80:0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.1.127.192"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.1.127.192"
+]
+},
+{
+"args": [
+"127.254.7.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.254.7.254"
+]
+},
+{
+"args": [
+"1:2:3:4:5:6:1.2.3.4"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:2:3:4:5:6:102:304"
+]
+},
+{
+"args": [
+"192.254.10.10"
+],
+"kwargs": {},
+"expected": [
+4,
+"192.254.10.10"
+]
+},
+{
+"args": [
+"fe80:0000:abcd:ffff:0000:1:0:fe80"
+],
+"kwargs": {},
+"expected": [
+6,
+"fe80:0:abcd:ffff:0:1:0:fe80"
+]
+},
+{
+"args": [
+"1:fe80:2001:1:abcd::"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:fe80:2001:1:abcd::"
+]
+},
+{
+"args": [
+"0000:::abcd:FFFF:1:fe80:2001:232.192.168.254"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0000:fe80::ffff:00a0:00a0:fe80:1:1%"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"254.255.1.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"254.255.1.0"
+]
+},
+{
+"args": [
+"FFFF:0000:0000:2001:fe80:0:FFFF:FFFF"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff::2001:fe80:0:ffff:ffff"
+]
+},
+{
+"args": [
+"255.7.10.0"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.7.10.0"
+]
+},
+{
+"args": [
+":::"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:::FFFF:db8::0:0:2001"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"00a0:00a0:FFFF:FFFF:0000:db8:1:0000:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.1.1.7/24"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0.28.168.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.28.168.7"
+]
+},
+{
+"args": [
+"0:0:ffff:abcd:ffff:1:0::"
+],
+"kwargs": {},
+"expected": [
+6,
+"::ffff:abcd:ffff:1:0:0"
+]
+},
+{
+"args": [
+"0000:fe80:abcd:fe80:abcd::ffff:fe80"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:fe80:abcd:fe80:abcd:0:ffff:fe80"
+]
+},
+{
+"args": [
+"00a0:FFFF:0:0000:abcd:1:0000::0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.192.192.7"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.192.192.7"
+]
+},
+{
+"args": [
+"127.254.192.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.254.192.255"
+]
+},
+{
+"args": [
+"10.1.1.255"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.1.1.255"
+]
+},
+{
+"args": [
+"1:00000bcd:db8:0:db8:00a0:171.254.0.192"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"::0000:00a0:1:db8:db8:FFFF:192.91.168.127"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"127.7.127.1%1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"10.192.7.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"10.192.7.254"
+]
+},
+{
+"args": [
+"0:0:0000:00a0:0:0:1:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::a0:0:0:1:0"
+]
+},
+{
+"args": [
+"0::db8:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"::db8:ffff"
+]
+},
+{
+"args": [
+"abcd:0:db8:FFFF:FFFF:FFFF:255.010.168.0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"00a0:0:abcd:FFFF:1:0:0:ffff"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:0:abcd:ffff:1::ffff"
+]
+},
+{
+"args": [
+"::7.254.127.127"
+],
+"kwargs": {},
+"expected": [
+6,
+"::7fe:7f7f"
+]
+},
+{
+"args": [
+"1:0::fe80:0%eth0"
+],
+"kwargs": {},
+"expected": [
+6,
+"1::fe80:0%eth0"
+]
+},
+{
+"args": [
+"0.254.254.168%/x"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"2001:00a0:ffff:fe80:00a0:ffff:168.254.241.10 "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"7.100.10.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.100.10.254"
+]
+},
+{
+"args": [
+"0000:ffff:abcd:1:db8:FFFF:1.255.10.192"
+],
+"kwargs": {},
+"expected": [
+6,
+"0:ffff:abcd:1:db8:ffff:1ff:ac0"
+]
+},
+{
+"args": [
+"1:1:00a0:FFFF:FFFF:db8::"
+],
+"kwargs": {},
+"expected": [
+6,
+"1:1:a0:ffff:ffff:db8::"
+]
+},
+{
+"args": [
+"222.10.255.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"222.10.255.254"
+]
+},
+{
+"args": [
+"0.10.192.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"0.10.192.254"
+]
+},
+{
+"args": [
+"255.192.10.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.192.10.127"
+]
+},
+{
+"args": [
+"FFFF:2001:fe80:db8:abcd:00a0:fe80:0%1"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:2001:fe80:db8:abcd:a0:fe80:0%1"
+]
+},
+{
+"args": [
+"127.168.127.127:1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"7.255.168.51"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.255.168.51"
+]
+},
+{
+"args": [
+"0:0000:0000:0000:0000:0:0000:fe80"
+],
+"kwargs": {},
+"expected": [
+6,
+"::fe80"
+]
+},
+{
+"args": [
+"0:FFFF:db8:00a0:abcd:256fff::2001"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"00a0:0:2001:1:00a0:fe80:00a0:1"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:0:2001:1:a0:fe80:a0:1"
+]
+},
+{
+"args": [
+"7.255.1.168"
+],
+"kwargs": {},
+"expected": [
+4,
+"7.255.1.168"
+]
+},
+{
+"args": [
+"1.127.0.0%eth0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"255.192.127.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"255.192.127.1"
+]
+},
+{
+"args": [
+"0000:2001:00a0:0000:00a0:1:192.01.1.168"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"88.127.127.10%1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"256:db8:0000:ffff:ffff:0:0:2001"
+],
+"kwargs": {},
+"expected": [
+6,
+"256:db8:0:ffff:ffff::2001"
+]
+},
+{
+"args": [
+"00a0:0000:fe80:0:00a0:0000:0.7.136.254"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:0:fe80:0:a0:0:7:88fe"
+]
+},
+{
+"args": [
+"ffff:0000:0:0:0:FFFF:ffff:0000"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff::ffff:ffff:0"
+]
+},
+{
+"args": [
+"127.7.254.254"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.7.254.254"
+]
+},
+{
+"args": [
+"127.118.168.170%eth0"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0:0::0:db8"
+],
+"kwargs": {},
+"expected": [
+6,
+"::db8"
+]
+},
+{
+"args": [
+"::1:1"
+],
+"kwargs": {},
+"expected": [
+6,
+"::1:1"
+]
+},
+{
+"args": [
+"00A0:ABCD:FFFF:00A0:0000:0:254.159.127.255"
+],
+"kwargs": {},
+"expected": [
+6,
+"a0:abcd:ffff:a0::fe9f:7fff"
+]
+},
+{
+"args": [
+"::fe80:fe80:ffff:ffff:db8:ffff:7.0.255.254"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"127.192.7.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"127.192.7.127"
+]
+},
+{
+"args": [
+"168.7.95.127"
+],
+"kwargs": {},
+"expected": [
+4,
+"168.7.95.127"
+]
+},
+{
+"args": [
+"1:::db8:00a0:db8::"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"db8:2001:00a0:FFFF::0:abcd:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:2001:a0:ffff::abcd:0"
+]
+},
+{
+"args": [
+"::0:0000:2001:0000:2001:1:0000"
+],
+"kwargs": {},
+"expected": [
+6,
+"::2001:0:2001:1:0"
+]
+},
+{
+"args": [
+"0FFFF:0:0000:1:0:2001:ffff:abcd"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"::0000:0"
+],
+"kwargs": {},
+"expected": [
+6,
+"::"
+]
+},
+{
+"args": [
+"ffff:fe80:0000:2001:db8:abcd:FFFF:db8"
+],
+"kwargs": {},
+"expected": [
+6,
+"ffff:fe80:0:2001:db8:abcd:ffff:db8"
+]
+},
+{
+"args": [
+"FFFF:ffff:0000:ffff:0000:0:db8:1.1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"0db8:1:0:FFFF:ffff:1:254.127.255.10"
+],
+"kwargs": {},
+"expected": [
+6,
+"db8:1:0:ffff:ffff:1:fe7f:ff0a"
+]
+},
+{
+"args": [
+"224.168.127.1"
+],
+"kwargs": {},
+"expected": [
+4,
+"224.168.127.1"
+]
+},
+{
+"args": [
+"0:0000:fe80:0000:0:ffff:254.254.255.10"
+],
+"kwargs": {},
+"expected": [
+6,
+"::fe80:0:0:ffff:fefe:ff0a"
+]
+}
+]

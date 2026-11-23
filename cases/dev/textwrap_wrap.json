@@ -1,0 +1,5929 @@
+[
+{
+"args": [
+"word Mr. Why? Mr. \"quote.\" -- \f end. supercalifragilistic word x--y",
+70
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"max_lines": 3,
+"placeholder": ""
+},
+"expected": [
+"word Mr. Why? Mr. \"quote.\" -- \f end. supercalifragilistic word x--y"
+]
+},
+{
+"args": [
+"a   \f the word    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Why? supercalifragilistic -dash x--y   \f",
+30
+],
+"kwargs": {
+"break_on_hyphens": false,
+"subsequent_indent": "  "
+},
+"expected": [
+"a     the word    aaaaaaaaaaaa",
+"  aaaaaaaaaaaaaaaaaaaaa Why?",
+"  supercalifragilistic -dash",
+"  x--y"
+]
+},
+{
+"args": [
+"x--y supercalifragilistic e-mail    \f tab\tbed",
+0
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1,000 Why? well-known e-mail \u000b \u000b",
+3
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"replace_whitespace": false
+},
+"expected": [
+"1,0",
+"00 ",
+"Why",
+"? w",
+"ell",
+"-kn",
+"own",
+" e-",
+"mai",
+"l \u000b",
+" \u000b"
+]
+},
+{
+"args": [
+"\u000b well-known -- a \t   \u000b \t an \u000b",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"initial_indent": "",
+"subsequent_indent": "-- ",
+"tabsize": 0
+},
+"expected": [
+"  well-known -- a",
+"-- an"
+]
+},
+{
+"args": [
+"Mr.",
+1
+],
+"kwargs": {
+"fix_sentence_endings": false,
+"initial_indent": " "
+},
+"expected": [
+" M",
+"r",
+"."
+]
+},
+{
+"args": [
+"",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"expand_tabs": true,
+"replace_whitespace": true,
+"tabsize": 1,
+"max_lines": 2,
+"placeholder": "..."
+},
+"expected": []
+},
+{
+"args": [
+"-- \u000b word Mr.",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"subsequent_indent": " "
+},
+"expected": [
+"--   word Mr."
+]
+},
+{
+"args": [
+"-- tab\tbed well-known 1,000 re-re-re-entry tab\tbed \"quote.\" \r \t end.   word -- -dash",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"fix_sentence_endings": true
+},
+"expected": [
+"-- tab  bed",
+"well-known",
+"1,000 re-re-re-",
+"entry tab bed",
+"\"quote.\"",
+"end.   word --",
+"-dash"
+]
+},
+{
+"args": [
+"an a well-known wrapping tab\tbed supercalifragilistic -- -dash",
+5
+],
+"kwargs": {
+"expand_tabs": true
+},
+"expected": [
+"an a",
+"well-",
+"known",
+"wrapp",
+"ing",
+"tab",
+"bed s",
+"uperc",
+"alifr",
+"agili",
+"stic",
+"--",
+"-dash"
+]
+},
+{
+"args": [
+"Mr.",
+8
+],
+"kwargs": {
+"replace_whitespace": false,
+"max_lines": 3,
+"placeholder": ""
+},
+"expected": [
+"Mr."
+]
+},
+{
+"args": [
+"-dash \r Why? \"quote.\" well-known Why?",
+2
+],
+"kwargs": {
+"break_on_hyphens": true,
+"initial_indent": ""
+},
+"expected": [
+"-d",
+"as",
+"h",
+"Wh",
+"y?",
+"\"q",
+"uo",
+"te",
+".\"",
+"we",
+"ll",
+"-k",
+"no",
+"wn",
+"Wh",
+"y?"
+]
+},
+{
+"args": [
+"\t Mr. Done! wrapping aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r wrapping an",
+12
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"fix_sentence_endings": false,
+"max_lines": 2
+},
+"expected": [
+"         Mr.",
+" Done! [...]"
+]
+},
+{
+"args": [
+"\t 1,000 \n e-mail well-known \"quote.\" \t    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -- \"quote.\" well-known re-re-re-entry ok.",
+70
+],
+"kwargs": {
+"break_on_hyphens": true
+},
+"expected": [
+"         1,000   e-mail well-known \"quote.\"",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -- \"quote.\" well-known re-re-re-",
+"entry ok."
+]
+},
+{
+"args": [
+"tab\tbed -dash   Done! Done! e-mail the aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Done! e-mail Mr. well-known word",
+3
+],
+"kwargs": {
+"drop_whitespace": true,
+"initial_indent": " "
+},
+"expected": [
+" ta",
+"b",
+"bed",
+"-da",
+"sh",
+"Don",
+"e! ",
+"Don",
+"e! ",
+"e-",
+"mai",
+"l",
+"the",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"Don",
+"e! ",
+"e-",
+"mai",
+"l",
+"Mr.",
+"wel",
+"l-k",
+"now",
+"n w",
+"ord"
+]
+},
+{
+"args": [
+"\f \f -dash e-mail Why? \r word x--y \"quote.\" well-known -dash \"quote.\"",
+8
+],
+"kwargs": {
+"drop_whitespace": false,
+"replace_whitespace": false,
+"initial_indent": "\t",
+"tabsize": 0
+},
+"expected": [
+"\t\f \f ",
+"-dash ",
+"e-mail ",
+"Why? \r ",
+"word x--",
+"y ",
+"\"quote.\"",
+" well-",
+"known ",
+"-dash ",
+"\"quote.\""
+]
+},
+{
+"args": [
+"Done! -- an supercalifragilistic -dash \u000b re-re-re-entry -dash Mr. \"quote.\" a word \r",
+10
+],
+"kwargs": {
+"replace_whitespace": false
+},
+"expected": [
+"Done! --",
+"an superca",
+"lifragilis",
+"tic -dash",
+"re-re-re-",
+"entry",
+"-dash Mr.",
+"\"quote.\" a",
+"word"
+]
+},
+{
+"args": [
+"well-known Done! (paren) Done! -dash ok. well-known Why? \u000b (paren) \r tab\tbed \r",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"fix_sentence_endings": false,
+"initial_indent": "* "
+},
+"expected": [
+"* well-known Done! (paren)",
+"Done! -dash ok. well-known",
+"Why?   (paren)   tab    bed"
+]
+},
+{
+"args": [
+"-dash wrapping (paren) end. 1,000 word ok. ok.",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": true
+},
+"expected": [
+"-dash wrapping (paren) end.",
+"1,000 word ok. ok."
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \t \"quote.\" an a (paren) end.    \n Mr.    end. an",
+8
+],
+"kwargs": {
+"expand_tabs": true,
+"tabsize": 4,
+"max_lines": 3,
+"placeholder": "..."
+},
+"expected": [
+"aaaaaaaa",
+"aaaaaaaa",
+"..."
+]
+},
+{
+"args": [
+"\u000b supercalifragilistic",
+2
+],
+"kwargs": {
+"drop_whitespace": true,
+"expand_tabs": false,
+"replace_whitespace": true
+},
+"expected": [
+"  ",
+"su",
+"pe",
+"rc",
+"al",
+"if",
+"ra",
+"gi",
+"li",
+"st",
+"ic"
+]
+},
+{
+"args": [
+"supercalifragilistic -dash end. \f x--y Why? an   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa x--y -- tab\tbed",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"fix_sentence_endings": true,
+"subsequent_indent": "-- "
+},
+"expected": [
+"supercalifragilistic -dash",
+"-- end.   x--y Why?  an   aaaa",
+"-- aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"-- aa x--y -- tab  bed"
+]
+},
+{
+"args": [
+"a \n re-re-re-entry re-re-re-entry \r word \f supercalifragilistic the end. tab\tbed",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"fix_sentence_endings": false,
+"tabsize": 4
+},
+"expected": [
+"a   re-re-re-entry",
+"re-re-re-entry",
+"word",
+"supercalifragilistic",
+"the end. tab   bed"
+]
+},
+{
+"args": [
+"end. a wrapping x--y Done! \u000b supercalifragilistic the end. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 1,000 -dash e-mail",
+12
+],
+"kwargs": {
+"break_long_words": true
+},
+"expected": [
+"end. a",
+"wrapping x--",
+"y Done!   su",
+"percalifragi",
+"listic the",
+"end. aaaaaaa",
+"aaaaaaaaaaaa",
+"aaaaaaaaaaaa",
+"aa 1,000",
+"-dash e-mail"
+]
+},
+{
+"args": [
+"\"quote.\" -dash \"quote.\"   ",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"expand_tabs": true,
+"replace_whitespace": false
+},
+"expected": [
+"\"quot",
+"e.\"",
+"-dash",
+"\"quot",
+"e.\""
+]
+},
+{
+"args": [
+"word",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"Mr. well-known x--y 1,000 x--y",
+70
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"subsequent_indent": "-- "
+},
+"expected": [
+"Mr. well-known x--y 1,000 x--y"
+]
+},
+{
+"args": [
+"a    Mr. a -dash end.    \n   \u000b x--y supercalifragilistic",
+20
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": " "
+},
+"expected": [
+"a    Mr. a -dash",
+" end.          x--y ",
+" supercalifragilisti",
+" c"
+]
+},
+{
+"args": [
+"  \r re-re-re-entry -dash re-re-re-entry \r \u000b word tab\tbed \r well-known \f tab\tbed",
+-1
+],
+"kwargs": {
+"break_long_words": true,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"subsequent_indent": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\t \r \r word",
+2
+],
+"kwargs": {
+"break_long_words": true,
+"expand_tabs": true,
+"fix_sentence_endings": false
+},
+"expected": [
+" w",
+"or",
+"d"
+]
+},
+{
+"args": [
+"e-mail",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"expand_tabs": true,
+"fix_sentence_endings": true
+},
+"expected": [
+"e-mail"
+]
+},
+{
+"args": [
+"re-re-re-entry -dash Why? re-re-re-entry \f word \u000b -dash",
+8
+],
+"kwargs": {
+"break_long_words": true
+},
+"expected": [
+"re-re-",
+"re-entry",
+"-dash",
+"Why? re-",
+"re-re-",
+"entry",
+"word",
+"-dash"
+]
+},
+{
+"args": [
+"x--y ok. an a -- Done! Mr.",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"expand_tabs": true,
+"subsequent_indent": "",
+"tabsize": 1
+},
+"expected": [
+"x",
+"--",
+"y",
+"ok.",
+"an",
+"a",
+"--",
+"Done!",
+"Mr."
+]
+},
+{
+"args": [
+"tab\tbed Mr. \r \r ok. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa e-mail \u000b  ",
+70
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"initial_indent": ">>> "
+},
+"expected": [
+">>> tab     bed Mr. \r \r ok. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa e-mail",
+" \u000b  "
+]
+},
+{
+"args": [
+"the aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -dash supercalifragilistic aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -dash an supercalifragilistic well-known -- \n Mr. -dash",
+8
+],
+"kwargs": {
+"fix_sentence_endings": false
+},
+"expected": [
+"the aaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaa",
+"-dash su",
+"percalif",
+"ragilist",
+"ic aaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaa",
+"-dash an",
+"supercal",
+"ifragili",
+"stic",
+"well-",
+"known --",
+"Mr.",
+"-dash"
+]
+},
+{
+"args": [
+"",
+30
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"expand_tabs": false,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"tabsize": 4
+},
+"expected": []
+},
+{
+"args": [
+"   \r \n Why?",
+70
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"expand_tabs": true,
+"initial_indent": "",
+"max_lines": 3,
+"placeholder": "..."
+},
+"expected": [
+"       Why?"
+]
+},
+{
+"args": [
+"",
+0
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"",
+20
+],
+"kwargs": {
+"drop_whitespace": false,
+"expand_tabs": false
+},
+"expected": []
+},
+{
+"args": [
+"word \t tab\tbed (paren) -dash Why? the",
+12
+],
+"kwargs": {
+"fix_sentence_endings": false,
+"initial_indent": ">>> ",
+"subsequent_indent": "  "
+},
+"expected": [
+">>> word",
+"  tab    bed",
+"  (paren)",
+"  -dash Why?",
+"  the"
+]
+},
+{
+"args": [
+"the word supercalifragilistic Why? Mr. well-known \f",
+3
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": true
+},
+"expected": [
+"the",
+"wor",
+"d s",
+"upe",
+"rca",
+"lif",
+"rag",
+"ili",
+"sti",
+"c W",
+"hy?",
+"Mr.",
+"wel",
+"l-k",
+"now",
+"n"
+]
+},
+{
+"args": [
+"word tab\tbed \r \r word an an \f \f    \f \f supercalifragilistic",
+15
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": true,
+"subsequent_indent": " "
+},
+"expected": [
+"word tab bed",
+" word an an",
+" supercalifragi",
+" listic"
+]
+},
+{
+"args": [
+"\n -dash wrapping ok. re-re-re-entry Mr. wrapping wrapping \f supercalifragilistic 1,000 \n",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"subsequent_indent": "",
+"tabsize": 4
+},
+"expected": [
+"  -dash",
+"wrapping ok.",
+"re-re-re-entry",
+"Mr. wrapping",
+"wrapping",
+"supercalifragilistic",
+"1,000"
+]
+},
+{
+"args": [
+"re-re-re-entry ok. an tab\tbed -- \f",
+70
+],
+"kwargs": {
+"break_long_words": true,
+"expand_tabs": false,
+"initial_indent": ""
+},
+"expected": [
+"re-re-re-entry ok. an tab bed --"
+]
+},
+{
+"args": [
+"end.",
+8
+],
+"kwargs": {
+"break_on_hyphens": true,
+"replace_whitespace": true,
+"subsequent_indent": " "
+},
+"expected": [
+"end."
+]
+},
+{
+"args": [
+"",
+30
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": false,
+"initial_indent": "* ",
+"tabsize": 8
+},
+"expected": []
+},
+{
+"args": [
+"",
+15
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"fix_sentence_endings": true
+},
+"expected": []
+},
+{
+"args": [
+"ok. 1,000 (paren) x--y   end. word well-known \n   -dash",
+70
+],
+"kwargs": {
+"tabsize": 1
+},
+"expected": [
+"ok. 1,000 (paren) x--y   end. word well-known     -dash"
+]
+},
+{
+"args": [
+"an Why? ok. \f (paren) an a x--y the tab\tbed aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa end.",
+8
+],
+"kwargs": {},
+"expected": [
+"an Why?",
+"ok.",
+"(paren)",
+"an a x--",
+"y the",
+"tab bed ",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"a end."
+]
+},
+{
+"args": [
+"end. \r",
+12
+],
+"kwargs": {
+"expand_tabs": true,
+"replace_whitespace": false
+},
+"expected": [
+"end."
+]
+},
+{
+"args": [
+"--",
+0
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": false,
+"initial_indent": "\t"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa   -- wrapping \"quote.\" 1,000 Why? a (paren)   ",
+1
+],
+"kwargs": {},
+"expected": [
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"-",
+"-",
+"w",
+"r",
+"a",
+"p",
+"p",
+"i",
+"n",
+"g",
+"\"",
+"q",
+"u",
+"o",
+"t",
+"e",
+".",
+"\"",
+"1",
+",",
+"0",
+"0",
+"0",
+"W",
+"h",
+"y",
+"?",
+"a",
+"(",
+"p",
+"a",
+"r",
+"e",
+"n",
+")"
+]
+},
+{
+"args": [
+"e-mail -dash e-mail an end.",
+2
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"expand_tabs": true,
+"replace_whitespace": true,
+"subsequent_indent": ""
+},
+"expected": [
+"e-",
+"ma",
+"il",
+"-d",
+"as",
+"h ",
+"e-",
+"ma",
+"il",
+"an",
+"en",
+"d."
+]
+},
+{
+"args": [
+"(paren) \u000b \f \t (paren) aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa supercalifragilistic   ",
+-1
+],
+"kwargs": {
+"replace_whitespace": true,
+"tabsize": 4,
+"max_lines": 3,
+"placeholder": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"   Done! Done! \n Mr. (paren)",
+15
+],
+"kwargs": {
+"break_on_hyphens": false,
+"initial_indent": " ",
+"subsequent_indent": "-- "
+},
+"expected": [
+"    Done! Done!",
+"-- Mr. (paren)"
+]
+},
+{
+"args": [
+"wrapping Mr. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r tab\tbed    --",
+0
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"fix_sentence_endings": false,
+"initial_indent": ">>> "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  \n re-re-re-entry the \f Mr. Done! \"quote.\" \r \r",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true,
+"expand_tabs": true,
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\t \t word aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r wrapping    \n 1,000 Done! \u000b well-known",
+3
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true
+},
+"expected": [
+"  w",
+"ord",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"wra",
+"ppi",
+"ng",
+"1,0",
+"00 ",
+"Don",
+"e!",
+"wel",
+"l-k",
+"now",
+"n"
+]
+},
+{
+"args": [
+"\u000b \"quote.\" a supercalifragilistic ok. an ok. 1,000 e-mail x--y well-known an re-re-re-entry",
+8
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"subsequent_indent": "-- "
+},
+"expected": [
+"  ",
+"-- \"quot",
+"-- e.\" a",
+"--  supe",
+"-- rcali",
+"-- fragi",
+"-- listi",
+"-- c ok.",
+"--  an ",
+"-- ok. ",
+"-- 1,000",
+"--  e-",
+"-- mail ",
+"-- x--y ",
+"-- well-",
+"-- known",
+"--  an ",
+"-- re-",
+"-- re-",
+"-- re-",
+"-- entry"
+]
+},
+{
+"args": [
+"end. supercalifragilistic \u000b Why?       Mr. (paren) \n   the re-re-re-entry",
+12
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"expand_tabs": true,
+"replace_whitespace": false,
+"initial_indent": " ",
+"tabsize": 1
+},
+"expected": [
+" end. superc",
+"alifragilist",
+"ic \u000b Why?",
+"       Mr. ",
+"(paren) \n   ",
+"the re-re-",
+"re-entry"
+]
+},
+{
+"args": [
+"Why? an Done! 1,000 well-known 1,000 \n \r \n (paren) \f   ",
+30
+],
+"kwargs": {
+"fix_sentence_endings": true,
+"tabsize": 0
+},
+"expected": [
+"Why?  an Done!  1,000 well-",
+"known 1,000       (paren)"
+]
+},
+{
+"args": [
+"(paren) \f Mr. supercalifragilistic e-mail",
+1
+],
+"kwargs": {
+"drop_whitespace": false,
+"fix_sentence_endings": false,
+"initial_indent": "* "
+},
+"expected": [
+"* (",
+"p",
+"a",
+"r",
+"e",
+"n",
+")",
+" ",
+" ",
+" ",
+"M",
+"r",
+".",
+" ",
+"s",
+"u",
+"p",
+"e",
+"r",
+"c",
+"a",
+"l",
+"i",
+"f",
+"r",
+"a",
+"g",
+"i",
+"l",
+"i",
+"s",
+"t",
+"i",
+"c",
+" ",
+"e",
+"-",
+"m",
+"a",
+"i",
+"l"
+]
+},
+{
+"args": [
+"well-known Why? word end. \u000b well-known the ok. an aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r",
+0
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n re-re-re-entry tab\tbed e-mail",
+12
+],
+"kwargs": {
+"drop_whitespace": true,
+"replace_whitespace": false,
+"subsequent_indent": ""
+},
+"expected": [
+"\n re-re-re-",
+"entry tab",
+"bed e-mail"
+]
+},
+{
+"args": [
+"\n \t the re-re-re-entry \n \n \t tab\tbed -dash   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r",
+-1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": true,
+"tabsize": 4
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\f 1,000 ok. Why? the --    \t",
+0
+],
+"kwargs": {
+"max_lines": 3,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"end.",
+70
+],
+"kwargs": {
+"fix_sentence_endings": true
+},
+"expected": [
+"end."
+]
+},
+{
+"args": [
+"tab\tbed 1,000 e-mail word an \u000b supercalifragilistic",
+20
+],
+"kwargs": {
+"break_long_words": true,
+"fix_sentence_endings": false
+},
+"expected": [
+"tab     bed 1,000",
+"e-mail word an",
+"supercalifragilistic"
+]
+},
+{
+"args": [
+"1,000 Done! \r an \f ok. Why? -dash Mr. \u000b -- supercalifragilistic",
+1
+],
+"kwargs": {
+"fix_sentence_endings": false
+},
+"expected": [
+"1",
+",",
+"0",
+"0",
+"0",
+"D",
+"o",
+"n",
+"e",
+"!",
+"a",
+"n",
+"o",
+"k",
+".",
+"W",
+"h",
+"y",
+"?",
+"-",
+"d",
+"a",
+"s",
+"h",
+"M",
+"r",
+".",
+"-",
+"-",
+"s",
+"u",
+"p",
+"e",
+"r",
+"c",
+"a",
+"l",
+"i",
+"f",
+"r",
+"a",
+"g",
+"i",
+"l",
+"i",
+"s",
+"t",
+"i",
+"c"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa well-known \u000b -- the e-mail well-known",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"the \"quote.\" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (paren) e-mail \n a",
+8
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"replace_whitespace": false
+},
+"expected": [
+"the",
+"\"quote.\"",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"(paren)",
+"e-mail",
+"a"
+]
+},
+{
+"args": [
+"tab\tbed (paren) well-known   ",
+0
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"initial_indent": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry",
+-1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": "-- "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic    -- wrapping the",
+8
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": true,
+"initial_indent": "",
+"subsequent_indent": ""
+},
+"expected": [
+"supercal",
+"ifragili",
+"stic",
+"--",
+"wrapping",
+"the"
+]
+},
+{
+"args": [
+"Done! x--y Done! x--y \u000b Mr. (paren) x--y (paren) -- wrapping tab\tbed end.",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": true,
+"fix_sentence_endings": true,
+"initial_indent": ">>> ",
+"max_lines": 2
+},
+"expected": [
+">>> Done!  x--y",
+"Done!  x [...]"
+]
+},
+{
+"args": [
+"\t end. well-known -dash \n e-mail -dash an \u000b \f e-mail -dash",
+15
+],
+"kwargs": {
+"tabsize": 8
+},
+"expected": [
+"         end.",
+"well-known",
+"-dash   e-mail",
+"-dash an",
+"e-mail -dash"
+]
+},
+{
+"args": [
+"re-re-re-entry a \f Done! e-mail \n \u000b",
+-1
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic \u000b tab\tbed a \r wrapping",
+8
+],
+"kwargs": {
+"break_on_hyphens": false
+},
+"expected": [
+"supercal",
+"ifragili",
+"stic",
+"tab",
+"bed a",
+"wrapping"
+]
+},
+{
+"args": [
+"   wrapping",
+12
+],
+"kwargs": {
+"break_long_words": true,
+"fix_sentence_endings": true
+},
+"expected": [
+"   wrapping"
+]
+},
+{
+"args": [
+"\f re-re-re-entry supercalifragilistic    x--y",
+10
+],
+"kwargs": {
+"expand_tabs": false,
+"subsequent_indent": "",
+"tabsize": 8
+},
+"expected": [
+"  re-re-",
+"re-entry s",
+"upercalifr",
+"agilistic",
+"x--y"
+]
+},
+{
+"args": [
+"\u000b -dash word tab\tbed -dash --   ",
+12
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"expand_tabs": false,
+"subsequent_indent": "  ",
+"tabsize": 8
+},
+"expected": [
+"  -dash word",
+"   tab bed ",
+"  -dash --",
+"     "
+]
+},
+{
+"args": [
+"e-mail   an --",
+30
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"subsequent_indent": ""
+},
+"expected": [
+"e-mail   an --"
+]
+},
+{
+"args": [
+"Why? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -- a ok. e-mail word",
+0
+],
+"kwargs": {
+"break_on_hyphens": false,
+"tabsize": 8,
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-- an the tab\tbed Why? word \u000b \"quote.\" word -- \"quote.\" \u000b aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \r",
+8
+],
+"kwargs": {
+"drop_whitespace": true,
+"expand_tabs": true
+},
+"expected": [
+"-- an",
+"the tab",
+"bed Why?",
+"word",
+"\"quote.\"",
+"word --",
+"\"quote.\"",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"a"
+]
+},
+{
+"args": [
+"wrapping \f an x--y \u000b the ok. Why? Why? \f Why? wrapping well-known",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"fix_sentence_endings": true,
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"wrapping   an x--y   the ok.  ",
+"Why?  Why?   Why?  wrapping"
+]
+},
+{
+"args": [
+"-dash ok. re-re-re-entry a \r x--y 1,000 Done! supercalifragilistic a -- word a",
+0
+],
+"kwargs": {
+"expand_tabs": false,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"initial_indent": "\t",
+"tabsize": 0,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa word \n supercalifragilistic end. an a a \n ok. Why? ok. ok.",
+-1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"replace_whitespace": true,
+"initial_indent": "* "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-- Done! Done! end.    1,000 well-known x--y \u000b wrapping Mr. \"quote.\" re-re-re-entry",
+15
+],
+"kwargs": {
+"expand_tabs": true,
+"max_lines": 3,
+"placeholder": " ~"
+},
+"expected": [
+"-- Done! Done!",
+"end.    1,000",
+"well-known x ~"
+]
+},
+{
+"args": [
+"\r end. the \f an the e-mail end. well-known Why? ok. Done!",
+0
+],
+"kwargs": {
+"drop_whitespace": false,
+"fix_sentence_endings": true,
+"subsequent_indent": "  "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u000b the -dash \n aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --",
+70
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"expand_tabs": true,
+"fix_sentence_endings": false
+},
+"expected": [
+"  the -dash   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --"
+]
+},
+{
+"args": [
+"1,000 e-mail word an \f    \u000b Why? \n",
+8
+],
+"kwargs": {},
+"expected": [
+"1,000",
+"e-mail",
+"word an",
+"Why?"
+]
+},
+{
+"args": [
+"\u000b the a    e-mail Why? the re-re-re-entry",
+3
+],
+"kwargs": {
+"expand_tabs": true,
+"replace_whitespace": true,
+"initial_indent": "\t"
+},
+"expected": [
+"\t  ",
+"the",
+"a",
+"e-",
+"mai",
+"l W",
+"hy?",
+"the",
+"re-",
+"re-",
+"re-",
+"ent",
+"ry"
+]
+},
+{
+"args": [
+"tab\tbed wrapping an",
+10
+],
+"kwargs": {},
+"expected": [
+"tab",
+"bed",
+"wrapping",
+"an"
+]
+},
+{
+"args": [
+"well-known ok. supercalifragilistic well-known Why? -dash -dash wrapping \"quote.\" -dash Why? the supercalifragilistic",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"fix_sentence_endings": true,
+"initial_indent": "",
+"tabsize": 8
+},
+"expected": [
+"well-known ok.",
+"supercalifragilistic well-",
+"known Why?  -dash -dash",
+"wrapping \"quote.\"  -dash Why?",
+"the supercalifragilistic"
+]
+},
+{
+"args": [
+"-dash Done! end. -- wrapping (paren)",
+20
+],
+"kwargs": {
+"replace_whitespace": true,
+"subsequent_indent": " ",
+"tabsize": 8
+},
+"expected": [
+"-dash Done! end. --",
+" wrapping (paren)"
+]
+},
+{
+"args": [
+"a well-known an -dash well-known   \u000b Why? wrapping word",
+1
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": true,
+"subsequent_indent": " ",
+"tabsize": 8
+},
+"expected": [
+"a",
+" well-",
+" known",
+" an",
+" -dash",
+" well-",
+" known",
+" Why?",
+" wrapping",
+" word"
+]
+},
+{
+"args": [
+"well-known -- Mr. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+-1
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": true,
+"replace_whitespace": false,
+"fix_sentence_endings": true,
+"initial_indent": ">>> "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry -- -dash x--y (paren) \n \t end. well-known word a ok. 1,000",
+15
+],
+"kwargs": {
+"break_on_hyphens": true,
+"max_lines": 3,
+"placeholder": " ~"
+},
+"expected": [
+"re-re-re-entry",
+"-- -dash x--y",
+"(paren) ~"
+]
+},
+{
+"args": [
+"word Done! ok. e-mail supercalifragilistic",
+-1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"max_lines": 3,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"word re-re-re-entry (paren) a supercalifragilistic word Why?   ",
+70
+],
+"kwargs": {
+"replace_whitespace": false,
+"initial_indent": ""
+},
+"expected": [
+"word re-re-re-entry (paren) a supercalifragilistic word Why?"
+]
+},
+{
+"args": [
+"  -dash an wrapping supercalifragilistic \t the ok. \u000b Why?",
+0
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-- Why? --     Mr. a end. well-known",
+8
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"expand_tabs": true
+},
+"expected": [
+"-- Why?",
+"--",
+"Mr. a",
+"end.",
+"well-",
+"known"
+]
+},
+{
+"args": [
+"1,000 ok. \"quote.\" re-re-re-entry wrapping \t \u000b \n tab\tbed re-re-re-entry e-mail",
+-1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": false,
+"initial_indent": " ",
+"subsequent_indent": " "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"the",
+70
+],
+"kwargs": {
+"replace_whitespace": false,
+"subsequent_indent": "",
+"tabsize": 8
+},
+"expected": [
+"the"
+]
+},
+{
+"args": [
+"\f 1,000 \r \t -- \u000b well-known Done! well-known",
+15
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"max_lines": 3,
+"placeholder": ""
+},
+"expected": [
+"  1,000",
+"           --",
+"   well-known"
+]
+},
+{
+"args": [
+"Mr. word ok. \n word a -dash tab\tbed aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa well-known",
+20
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": true
+},
+"expected": [
+"Mr. word ok.   word",
+"a -dash tab",
+"bed aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaa",
+"well-known"
+]
+},
+{
+"args": [
+"tab\tbed ok. (paren) wrapping re-re-re-entry \f",
+3
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"replace_whitespace": false,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry \f Done! \t    an \t re-re-re-entry \u000b tab\tbed Done!",
+-1
+],
+"kwargs": {
+"replace_whitespace": false,
+"initial_indent": "* ",
+"max_lines": 1,
+"placeholder": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x--y    the a -- -dash e-mail   wrapping wrapping a a re-re-re-entry \f",
+-1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"tabsize": 4
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"Why? end.   tab\tbed \"quote.\" x--y \u000b",
+3
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"max_lines": 1
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-- -- the \n supercalifragilistic word Mr. word Done! \t  ",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": false,
+"expand_tabs": true,
+"initial_indent": " "
+},
+"expected": [
+" -- -- the   ",
+"supercalifragilistic",
+" word Mr. word Done!",
+"         "
+]
+},
+{
+"args": [
+"tab\tbed \u000b the",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"fix_sentence_endings": false
+},
+"expected": [
+"tab",
+"     ",
+"bed",
+" \u000b ",
+"the"
+]
+},
+{
+"args": [
+"e-mail -- 1,000 \u000b wrapping (paren)",
+-1
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"tab\tbed wrapping Mr. a \"quote.\" wrapping an",
+-1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"max_lines": 1,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--",
+2
+],
+"kwargs": {
+"break_on_hyphens": false
+},
+"expected": [
+"--"
+]
+},
+{
+"args": [
+"supercalifragilistic supercalifragilistic \f Done!",
+12
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": true
+},
+"expected": [
+"supercalifra",
+"gilistic sup",
+"ercalifragil",
+"istic",
+"Done!"
+]
+},
+{
+"args": [
+"tab\tbed Done! -- Why? \r \r 1,000 \u000b",
+30
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": false
+},
+"expected": [
+"tab bed Done! -- Why?",
+"1,000"
+]
+},
+{
+"args": [
+"end.",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"fix_sentence_endings": false
+},
+"expected": [
+"end."
+]
+},
+{
+"args": [
+"supercalifragilistic \r ok. an \u000b Done! supercalifragilistic the",
+2
+],
+"kwargs": {
+"replace_whitespace": false,
+"initial_indent": ""
+},
+"expected": [
+"su",
+"pe",
+"rc",
+"al",
+"if",
+"ra",
+"gi",
+"li",
+"st",
+"ic",
+"ok",
+".",
+"an",
+"Do",
+"ne",
+"! ",
+"su",
+"pe",
+"rc",
+"al",
+"if",
+"ra",
+"gi",
+"li",
+"st",
+"ic",
+"th",
+"e"
+]
+},
+{
+"args": [
+"the word an \t",
+1
+],
+"kwargs": {
+"tabsize": 4,
+"max_lines": 3,
+"placeholder": " [...]"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -dash",
+0
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": true,
+"fix_sentence_endings": false,
+"subsequent_indent": "-- ",
+"tabsize": 0
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a a supercalifragilistic an",
+-1
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic x--y -dash well-known wrapping Why? --",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"initial_indent": ""
+},
+"expected": [
+"supercalifragilistic",
+"x--y -dash",
+"well-known",
+"wrapping Why?",
+"--"
+]
+},
+{
+"args": [
+"ok. 1,000 \f 1,000",
+30
+],
+"kwargs": {
+"break_on_hyphens": true,
+"initial_indent": "\t",
+"tabsize": 0
+},
+"expected": [
+"\tok. 1,000   1,000"
+]
+},
+{
+"args": [
+"an wrapping -dash Mr. wrapping end. e-mail x--y Mr.",
+30
+],
+"kwargs": {
+"expand_tabs": false,
+"replace_whitespace": true
+},
+"expected": [
+"an wrapping -dash Mr. wrapping",
+"end. e-mail x--y Mr."
+]
+},
+{
+"args": [
+"word the Done! -- end. 1,000 \u000b \f \u000b    \t",
+0
+],
+"kwargs": {
+"break_long_words": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a the \n aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ok. \t    word Done!",
+1
+],
+"kwargs": {
+"replace_whitespace": true
+},
+"expected": [
+"a",
+"t",
+"h",
+"e",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"o",
+"k",
+".",
+"w",
+"o",
+"r",
+"d",
+"D",
+"o",
+"n",
+"e",
+"!"
+]
+},
+{
+"args": [
+"re-re-re-entry    a Mr. Why? the \u000b \r Mr. -dash x--y \f",
+3
+],
+"kwargs": {
+"expand_tabs": true,
+"initial_indent": ""
+},
+"expected": [
+"re-",
+"re-",
+"re-",
+"ent",
+"ry",
+"a",
+"Mr.",
+"Why",
+"?",
+"the",
+"Mr.",
+"-da",
+"sh",
+"x--",
+"y"
+]
+},
+{
+"args": [
+"Mr. Done! (paren) \t supercalifragilistic Why? x--y an (paren)",
+10
+],
+"kwargs": {
+"replace_whitespace": false
+},
+"expected": [
+"Mr. Done!",
+"(paren)",
+"supercalif",
+"ragilistic",
+"Why? x--y",
+"an (paren)"
+]
+},
+{
+"args": [
+"\u000b   ",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"expand_tabs": true,
+"replace_whitespace": true,
+"subsequent_indent": "",
+"tabsize": 4,
+"max_lines": 1
+},
+"expected": [
+"    "
+]
+},
+{
+"args": [
+"\n a \t  ",
+12
+],
+"kwargs": {
+"break_on_hyphens": true,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"subsequent_indent": "  "
+},
+"expected": [
+"  a"
+]
+},
+{
+"args": [
+"\t wrapping -dash Mr. tab\tbed wrapping supercalifragilistic end. re-re-re-entry e-mail",
+15
+],
+"kwargs": {
+"break_on_hyphens": false,
+"max_lines": 2,
+"placeholder": " ~"
+},
+"expected": [
+"wrapping -dash",
+"Mr. tab bed ~"
+]
+},
+{
+"args": [
+"wrapping re-re-re-entry well-known end. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \"quote.\" re-re-re-entry \t -- ok. Done!",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"initial_indent": ""
+},
+"expected": [
+"wrapp",
+"ing",
+"re-",
+"re-",
+"re-",
+"entry",
+"well-",
+"known",
+"end. ",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaa \"",
+"quote",
+".\"",
+"re-",
+"re-",
+"re-",
+"entry",
+"--",
+"ok.",
+"Done!"
+]
+},
+{
+"args": [
+"word Done! \r",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": false
+},
+"expected": [
+"word",
+"Done!"
+]
+},
+{
+"args": [
+"1,000 \"quote.\" -- \u000b \n",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"max_lines": 1,
+"placeholder": " [...]"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry word end. 1,000 a well-known \t x--y",
+10
+],
+"kwargs": {
+"break_long_words": false,
+"fix_sentence_endings": true,
+"initial_indent": "\t",
+"subsequent_indent": " ",
+"max_lines": 1,
+"placeholder": " ~"
+},
+"expected": [
+"\tre-re- ~"
+]
+},
+{
+"args": [
+"   supercalifragilistic the Mr. Why? Done! Done! --",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": false,
+"fix_sentence_endings": false
+},
+"expected": [
+" ",
+"s",
+"u",
+"p",
+"e",
+"r",
+"c",
+"a",
+"l",
+"i",
+"f",
+"r",
+"a",
+"g",
+"i",
+"l",
+"i",
+"s",
+"t",
+"i",
+"c",
+"t",
+"h",
+"e",
+"M",
+"r",
+".",
+"W",
+"h",
+"y",
+"?",
+"D",
+"o",
+"n",
+"e",
+"!",
+"D",
+"o",
+"n",
+"e",
+"!",
+"-",
+"-"
+]
+},
+{
+"args": [
+"\f x--y wrapping    tab\tbed   Why? x--y Mr.  ",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"initial_indent": " ",
+"subsequent_indent": ""
+},
+"expected": [
+"   x--y",
+"wrapping    tab",
+"bed   Why? x--y",
+"Mr."
+]
+},
+{
+"args": [
+"\u000b x--y a (paren) aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ok. a Why? \u000b \f an   x--y x--y",
+8
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"max_lines": 3
+},
+"expected": [
+"  x--y a",
+"(paren) ",
+"[...]"
+]
+},
+{
+"args": [
+"e-mail (paren) Mr. \r aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -dash Done! \f Mr. \n supercalifragilistic \u000b \t",
+0
+],
+"kwargs": {
+"drop_whitespace": false,
+"replace_whitespace": true,
+"initial_indent": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--",
+70
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false,
+"max_lines": 3
+},
+"expected": [
+"--"
+]
+},
+{
+"args": [
+"(paren) --   \t (paren)    \u000b Why? the",
+5
+],
+"kwargs": {
+"expand_tabs": false,
+"subsequent_indent": "  ",
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u000b tab\tbed -dash    well-known \f wrapping word \r",
+3
+],
+"kwargs": {
+"break_on_hyphens": true
+},
+"expected": [
+"tab",
+"bed",
+"-da",
+"sh",
+"wel",
+"l-k",
+"now",
+"n",
+"wra",
+"ppi",
+"ng ",
+"wor",
+"d"
+]
+},
+{
+"args": [
+"well-known (paren) aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa well-known well-known x--y \"quote.\" tab\tbed re-re-re-entry   supercalifragilistic an \"quote.\" wrapping",
+2
+],
+"kwargs": {
+"break_on_hyphens": true,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"tabsize": 1
+},
+"expected": [
+"we",
+"ll",
+"-k",
+"no",
+"wn",
+"(p",
+"ar",
+"en",
+") ",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"a ",
+"we",
+"ll",
+"-k",
+"no",
+"wn",
+"we",
+"ll",
+"-k",
+"no",
+"wn",
+"x",
+"--",
+"y ",
+"\"q",
+"uo",
+"te",
+".\"",
+"ta",
+"b ",
+"be",
+"d ",
+"re",
+"-r",
+"e-",
+"re",
+"-e",
+"nt",
+"ry",
+"su",
+"pe",
+"rc",
+"al",
+"if",
+"ra",
+"gi",
+"li",
+"st",
+"ic",
+"an",
+"\"q",
+"uo",
+"te",
+".\"",
+"wr",
+"ap",
+"pi",
+"ng"
+]
+},
+{
+"args": [
+"-- supercalifragilistic Why? re-re-re-entry well-known \r ok. Done! 1,000 Mr. \r -dash \u000b",
+30
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true,
+"tabsize": 0
+},
+"expected": [
+"-- supercalifragilistic Why?",
+"re-re-re-entry well-known",
+"ok. Done! 1,000 Mr.   -dash"
+]
+},
+{
+"args": [
+"\u000b tab\tbed \n Done! an \u000b e-mail an x--y x--y",
+8
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"tabsize": 8
+},
+"expected": [
+"  tab   ",
+"bed   ",
+"Done! an",
+"   ",
+"e-mail ",
+"an x--y ",
+"x--y"
+]
+},
+{
+"args": [
+"",
+8
+],
+"kwargs": {
+"subsequent_indent": " "
+},
+"expected": []
+},
+{
+"args": [
+"Why? 1,000",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false,
+"initial_indent": ">>> ",
+"subsequent_indent": "-- ",
+"max_lines": 1
+},
+"expected": [
+">>> Why? 1,000"
+]
+},
+{
+"args": [
+"wrapping aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa re-re-re-entry wrapping",
+0
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"max_lines": 1
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(paren)",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"expand_tabs": true,
+"replace_whitespace": true,
+"initial_indent": "\t"
+},
+"expected": [
+"\t(",
+"p",
+"a",
+"r",
+"e",
+"n",
+")"
+]
+},
+{
+"args": [
+"the Mr. \r an",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"initial_indent": "\t"
+},
+"expected": [
+"\tthe Mr. \r an"
+]
+},
+{
+"args": [
+"",
+12
+],
+"kwargs": {
+"initial_indent": "\t",
+"subsequent_indent": "",
+"tabsize": 8
+},
+"expected": []
+},
+{
+"args": [
+"\t --",
+1
+],
+"kwargs": {
+"replace_whitespace": true,
+"initial_indent": "\t",
+"subsequent_indent": "-- ",
+"tabsize": 4
+},
+"expected": [
+"\t-",
+"-- -"
+]
+},
+{
+"args": [
+"Why? tab\tbed word",
+0
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"tabsize": 8,
+"max_lines": 1,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa an -dash",
+8
+],
+"kwargs": {
+"expand_tabs": true,
+"fix_sentence_endings": true
+},
+"expected": [
+"supercal",
+"ifragili",
+"stic   a",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"an -dash"
+]
+},
+{
+"args": [
+"re-re-re-entry \"quote.\" supercalifragilistic tab\tbed ok. \n wrapping re-re-re-entry wrapping \n",
+1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"fix_sentence_endings": false,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"end. ok. a supercalifragilistic supercalifragilistic",
+12
+],
+"kwargs": {
+"break_long_words": false
+},
+"expected": [
+"end. ok. a",
+"supercalifragilistic",
+"supercalifragilistic"
+]
+},
+{
+"args": [
+"re-re-re-entry re-re-re-entry (paren) \f \f \t   well-known ok. Mr. ok. \u000b aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+30
+],
+"kwargs": {
+"drop_whitespace": false,
+"expand_tabs": true,
+"fix_sentence_endings": false,
+"tabsize": 8
+},
+"expected": [
+"re-re-re-entry re-re-re-entry ",
+"(paren)              well-",
+"known ok. Mr. ok.   aaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaaa"
+]
+},
+{
+"args": [
+"   supercalifragilistic 1,000 x--y -- x--y",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"fix_sentence_endings": true,
+"subsequent_indent": " "
+},
+"expected": [
+"   ",
+" supercalifragilistic",
+"  ",
+" 1,000",
+"  ",
+" x",
+" --",
+" y",
+"  ",
+" --",
+"  ",
+" x",
+" --",
+" y"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa x--y re-re-re-entry well-known end. a \u000b the supercalifragilistic a",
+0
+],
+"kwargs": {
+"drop_whitespace": false,
+"expand_tabs": true,
+"replace_whitespace": false,
+"fix_sentence_endings": false,
+"subsequent_indent": "-- "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  \r wrapping",
+8
+],
+"kwargs": {
+"break_long_words": false,
+"initial_indent": "* ",
+"tabsize": 4
+},
+"expected": [
+"* wrapping"
+]
+},
+{
+"args": [
+"\"quote.\" -- Done!    supercalifragilistic supercalifragilistic",
+1
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": true,
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"\"",
+"q"
+]
+},
+{
+"args": [
+"\n -dash supercalifragilistic ok. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (paren) Why? \r \r well-known \t",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"tabsize": 4
+},
+"expected": [
+"  -dash",
+"supercalifragilistic",
+"ok.",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"(paren) Why?",
+"well-known"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa word a 1,000 wrapping",
+8
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": false,
+"fix_sentence_endings": false,
+"initial_indent": "",
+"subsequent_indent": " ",
+"tabsize": 8,
+"max_lines": 2,
+"placeholder": "..."
+},
+"expected": [
+"aaaaaaaa",
+" ..."
+]
+},
+{
+"args": [
+"wrapping \u000b -dash end. \f a",
+-1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"expand_tabs": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-dash word an Why? \r tab\tbed wrapping supercalifragilistic -dash",
+0
+],
+"kwargs": {
+"expand_tabs": true,
+"initial_indent": "",
+"subsequent_indent": "-- "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"end.   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Done! \r Why? supercalifragilistic tab\tbed",
+1
+],
+"kwargs": {},
+"expected": [
+"e",
+"n",
+"d",
+".",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"D",
+"o",
+"n",
+"e",
+"!",
+"W",
+"h",
+"y",
+"?",
+"s",
+"u",
+"p",
+"e",
+"r",
+"c",
+"a",
+"l",
+"i",
+"f",
+"r",
+"a",
+"g",
+"i",
+"l",
+"i",
+"s",
+"t",
+"i",
+"c",
+"t",
+"a",
+"b",
+"b",
+"e",
+"d"
+]
+},
+{
+"args": [
+"tab\tbed",
+5
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"expand_tabs": false,
+"replace_whitespace": false
+},
+"expected": [
+"tab",
+"bed"
+]
+},
+{
+"args": [
+"word -dash x--y \"quote.\" word -- Why? e-mail -dash --",
+-1
+],
+"kwargs": {
+"replace_whitespace": true,
+"subsequent_indent": "-- ",
+"tabsize": 1
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r \n Done!",
+30
+],
+"kwargs": {
+"drop_whitespace": true,
+"subsequent_indent": "  "
+},
+"expected": [
+"    Done!"
+]
+},
+{
+"args": [
+"e-mail \t well-known Mr. --   -dash \n ok. \t    tab\tbed",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"expand_tabs": false,
+"subsequent_indent": ""
+},
+"expected": [
+"e-mail",
+"well-known Mr.",
+"--   -dash",
+"ok.      tab",
+"bed"
+]
+},
+{
+"args": [
+"   -- re-re-re-entry tab\tbed \f 1,000 end.",
+10
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"initial_indent": "\t"
+},
+"expected": [
+"\t   -- ",
+"re-re-re-entry",
+" tab",
+"        ",
+"bed   ",
+"1,000 end."
+]
+},
+{
+"args": [
+"-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa the Why?",
+8
+],
+"kwargs": {
+"expand_tabs": true,
+"fix_sentence_endings": false,
+"max_lines": 2
+},
+"expected": [
+"-- aaaaa",
+"[...]"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \u000b \u000b re-re-re-entry end. \u000b",
+8
+],
+"kwargs": {},
+"expected": [
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"aaaaaaaa",
+"a",
+"re-re-",
+"re-entry",
+"end."
+]
+},
+{
+"args": [
+"wrapping Done! Done! Mr.    end.    x--y -dash",
+15
+],
+"kwargs": {
+"break_on_hyphens": true,
+"replace_whitespace": true,
+"subsequent_indent": "-- ",
+"max_lines": 2,
+"placeholder": " [...]"
+},
+"expected": [
+"wrapping Done!",
+"-- Done! [...]"
+]
+},
+{
+"args": [
+"wrapping tab\tbed Mr. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa wrapping an Done! tab\tbed tab\tbed 1,000 \r \f",
+10
+],
+"kwargs": {
+"drop_whitespace": true,
+"expand_tabs": true,
+"subsequent_indent": "-- ",
+"max_lines": 3,
+"placeholder": " ~"
+},
+"expected": [
+"wrapping",
+"-- tab",
+"-- bed ~"
+]
+},
+{
+"args": [
+"supercalifragilistic -- \f re-re-re-entry \"quote.\" a e-mail Mr. \u000b a end.",
+3
+],
+"kwargs": {
+"break_long_words": false,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"subsequent_indent": ""
+},
+"expected": [
+"* supercalifragilistic",
+"--",
+"re-",
+"re-",
+"re-",
+"entry",
+"\"quote.\"",
+"a",
+"e-mail",
+"Mr.",
+"a",
+"end."
+]
+},
+{
+"args": [
+"",
+1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"tabsize": 4
+},
+"expected": []
+},
+{
+"args": [
+"the an tab\tbed (paren) x--y ok. \u000b",
+3
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"subsequent_indent": "-- "
+},
+"expected": [
+"* t",
+"-- h",
+"-- e",
+"-- a",
+"-- n",
+"-- t",
+"-- a",
+"-- b",
+"-- b",
+"-- e",
+"-- d",
+"-- (",
+"-- p",
+"-- a",
+"-- r",
+"-- e",
+"-- n",
+"-- )",
+"-- x",
+"-- -",
+"-- -",
+"-- y",
+"-- o",
+"-- k",
+"-- ."
+]
+},
+{
+"args": [
+"tab\tbed end. -- Mr. -dash re-re-re-entry wrapping \"quote.\" Done! a",
+3
+],
+"kwargs": {
+"break_on_hyphens": true,
+"expand_tabs": false,
+"initial_indent": "",
+"subsequent_indent": " "
+},
+"expected": [
+"tab",
+" be",
+" d ",
+" en",
+" d.",
+" --",
+" Mr",
+" . ",
+" -d",
+" as",
+" h ",
+" re",
+" -r",
+" e-",
+" re",
+" -e",
+" nt",
+" ry",
+" wr",
+" ap",
+" pi",
+" ng",
+" \"q",
+" uo",
+" te",
+" .\"",
+" Do",
+" ne",
+" !",
+" a"
+]
+},
+{
+"args": [
+"Done! wrapping tab\tbed \r -- word ok. ok. Mr.",
+15
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false
+},
+"expected": [
+"Done! wrapping ",
+"tab      bed   ",
+"-- word ok. ok.",
+" Mr."
+]
+},
+{
+"args": [
+"word Why? \u000b  ",
+10
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": true,
+"replace_whitespace": true,
+"subsequent_indent": " ",
+"tabsize": 4
+},
+"expected": [
+"word Why?"
+]
+},
+{
+"args": [
+"Why? \"quote.\" ok. word",
+20
+],
+"kwargs": {
+"drop_whitespace": true,
+"expand_tabs": true,
+"tabsize": 4,
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"Why? \"quote.\" ok.",
+"word"
+]
+},
+{
+"args": [
+"an    word wrapping (paren) the Done! \r -- \f aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+1
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": false
+},
+"expected": [
+"a",
+"n",
+"w",
+"o",
+"r",
+"d",
+"w",
+"r",
+"a",
+"p",
+"p",
+"i",
+"n",
+"g",
+"(",
+"p",
+"a",
+"r",
+"e",
+"n",
+")",
+"t",
+"h",
+"e",
+"D",
+"o",
+"n",
+"e",
+"!",
+"-",
+"-",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a"
+]
+},
+{
+"args": [
+"1,000 Why? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa re-re-re-entry \u000b \n -dash",
+20
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"max_lines": 2,
+"placeholder": "..."
+},
+"expected": [
+"1,000 Why?  aaaaaaaa",
+"..."
+]
+},
+{
+"args": [
+"\t wrapping tab\tbed well-known a -dash re-re-re-entry supercalifragilistic -dash \n \"quote.\" \"quote.\"",
+5
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": false,
+"fix_sentence_endings": true,
+"subsequent_indent": "-- ",
+"tabsize": 1
+},
+"expected": [
+"wrapping",
+"-- tab",
+"-- bed",
+"-- well-",
+"-- known",
+"-- a",
+"-- -dash",
+"-- re-",
+"-- re-",
+"-- re-",
+"-- entry",
+"-- supercalifragilistic",
+"-- -dash",
+"-- \"quote.\"",
+"-- \"quote.\""
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -- well-known \"quote.\" re-re-re-entry e-mail \r Done! tab\tbed Why? -dash",
+-1
+],
+"kwargs": {
+"initial_indent": "* ",
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"Mr. word the an re-re-re-entry e-mail    an the Done! \f (paren) a",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"fix_sentence_endings": true,
+"initial_indent": ">>> ",
+"subsequent_indent": "-- "
+},
+"expected": [
+">>> M",
+"-- r.",
+"-- wo",
+"-- rd",
+"-- th",
+"-- e",
+"-- an",
+"-- re",
+"-- -r",
+"-- e-",
+"-- re",
+"-- -e",
+"-- nt",
+"-- ry",
+"-- e-",
+"-- ma",
+"-- il",
+"-- an",
+"-- th",
+"-- e ",
+"-- Do",
+"-- ne",
+"-- !",
+"-- (p",
+"-- ar",
+"-- en",
+"-- )",
+"-- a"
+]
+},
+{
+"args": [
+"",
+-1
+],
+"kwargs": {
+"replace_whitespace": false,
+"subsequent_indent": "  "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n \f well-known",
+1
+],
+"kwargs": {
+"replace_whitespace": true,
+"tabsize": 8
+},
+"expected": [
+" ",
+"w",
+"e",
+"l",
+"l",
+"-",
+"k",
+"n",
+"o",
+"w",
+"n"
+]
+},
+{
+"args": [
+"wrapping re-re-re-entry Done! well-known    \"quote.\"",
+8
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": "",
+"tabsize": 0
+},
+"expected": [
+"wrapping",
+"re-re-",
+"re-entry",
+"Done!",
+"well-",
+"known",
+"\"quote.\""
+]
+},
+{
+"args": [
+"\u000b 1,000 a    Mr. \"quote.\" re-re-re-entry",
+30
+],
+"kwargs": {
+"break_long_words": false,
+"fix_sentence_endings": false,
+"max_lines": 3
+},
+"expected": [
+"  1,000 a    Mr. \"quote.\" re-",
+"re-re-entry"
+]
+},
+{
+"args": [
+"a \"quote.\" x--y \f 1,000 supercalifragilistic -dash x--y tab\tbed -- \u000b Why? \f --",
+3
+],
+"kwargs": {
+"expand_tabs": false,
+"initial_indent": "* ",
+"tabsize": 8
+},
+"expected": [
+"* a",
+"\"qu",
+"ote",
+".\"",
+"x--",
+"y",
+"1,0",
+"00 ",
+"sup",
+"erc",
+"ali",
+"fra",
+"gil",
+"ist",
+"ic ",
+"-da",
+"sh",
+"x--",
+"y",
+"tab",
+"bed",
+"--",
+"Why",
+"?",
+"--"
+]
+},
+{
+"args": [
+"\t Done! a   (paren)   Done! a \r",
+70
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"fix_sentence_endings": false,
+"subsequent_indent": ""
+},
+"expected": [
+"         Done! a   (paren)   Done! a  "
+]
+},
+{
+"args": [
+"  re-re-re-entry well-known Mr.",
+3
+],
+"kwargs": {
+"replace_whitespace": false
+},
+"expected": [
+"re-",
+"re-",
+"re-",
+"ent",
+"ry ",
+"wel",
+"l-k",
+"now",
+"n",
+"Mr."
+]
+},
+{
+"args": [
+"e-mail Mr. the a aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \n re-re-re-entry",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": false,
+"subsequent_indent": "  ",
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"e-mail Mr. the ",
+"  a"
+]
+},
+{
+"args": [
+"\"quote.\" Mr. -dash   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa supercalifragilistic \r Done! 1,000 x--y",
+0
+],
+"kwargs": {
+"expand_tabs": false,
+"initial_indent": " "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"   -dash e-mail Mr.",
+2
+],
+"kwargs": {
+"drop_whitespace": true
+},
+"expected": [
+" -",
+"da",
+"sh",
+"e-",
+"ma",
+"il",
+"Mr",
+"."
+]
+},
+{
+"args": [
+"1,000 \t well-known   tab\tbed   ok. \"quote.\"    -dash",
+8
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": false
+},
+"expected": [
+"1,000   ",
+"well-kno",
+"wn   tab",
+"bed",
+"ok.",
+"\"quote.\"",
+"-dash"
+]
+},
+{
+"args": [
+"supercalifragilistic well-known (paren) \t Mr. \"quote.\" \f \f well-known 1,000 supercalifragilistic \r Done! wrapping",
+15
+],
+"kwargs": {
+"max_lines": 3,
+"placeholder": " [...]"
+},
+"expected": [
+"supercalifragil",
+"istic well-",
+"known [...]"
+]
+},
+{
+"args": [
+"",
+0
+],
+"kwargs": {
+"break_on_hyphens": true,
+"expand_tabs": false,
+"replace_whitespace": false,
+"fix_sentence_endings": false,
+"subsequent_indent": ""
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"an ok. Mr. a an a end. an",
+20
+],
+"kwargs": {
+"drop_whitespace": true,
+"fix_sentence_endings": true,
+"tabsize": 8
+},
+"expected": [
+"an ok.  Mr.  a an a",
+"end.  an"
+]
+},
+{
+"args": [
+"word word \r end.    an Done! \u000b",
+30
+],
+"kwargs": {
+"expand_tabs": false,
+"subsequent_indent": "",
+"tabsize": 1
+},
+"expected": [
+"word word   end.    an Done!"
+]
+},
+{
+"args": [
+"-dash",
+1
+],
+"kwargs": {
+"break_long_words": false
+},
+"expected": [
+"-dash"
+]
+},
+{
+"args": [
+"(paren) \u000b \n \f   \u000b 1,000 \t (paren)",
+3
+],
+"kwargs": {
+"break_on_hyphens": true,
+"expand_tabs": true,
+"replace_whitespace": false,
+"initial_indent": "* ",
+"subsequent_indent": "  ",
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa supercalifragilistic \f \f x--y \f ok. -- re-re-re-entry \r    Mr. 1,000 \r",
+3
+],
+"kwargs": {
+"break_on_hyphens": false,
+"fix_sentence_endings": false
+},
+"expected": [
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"sup",
+"erc",
+"ali",
+"fra",
+"gil",
+"ist",
+"ic",
+"x--",
+"y",
+"ok.",
+"-- ",
+"re-",
+"re-",
+"re-",
+"ent",
+"ry",
+"Mr.",
+"1,0",
+"00"
+]
+},
+{
+"args": [
+"",
+3
+],
+"kwargs": {
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"well-known \f",
+1
+],
+"kwargs": {
+"expand_tabs": false
+},
+"expected": [
+"w",
+"e",
+"l",
+"l",
+"-",
+"k",
+"n",
+"o",
+"w",
+"n"
+]
+},
+{
+"args": [
+"\n \t e-mail an ok. an word word",
+2
+],
+"kwargs": {
+"break_on_hyphens": false,
+"subsequent_indent": "-- "
+},
+"expected": [
+"  ",
+"-- e",
+"-- -",
+"-- m",
+"-- a",
+"-- i",
+"-- l",
+"-- a",
+"-- n",
+"-- o",
+"-- k",
+"-- .",
+"-- a",
+"-- n",
+"-- w",
+"-- o",
+"-- r",
+"-- d",
+"-- w",
+"-- o",
+"-- r",
+"-- d"
+]
+},
+{
+"args": [
+"\r an e-mail end. a ok.",
+1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"initial_indent": "\t"
+},
+"expected": [
+"\ta",
+"n",
+"e",
+"-",
+"m",
+"a",
+"i",
+"l",
+"e",
+"n",
+"d",
+".",
+"a",
+"o",
+"k",
+"."
+]
+},
+{
+"args": [
+"1,000",
+12
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"expand_tabs": false,
+"tabsize": 4
+},
+"expected": [
+"1,000"
+]
+},
+{
+"args": [
+"tab\tbed re-re-re-entry supercalifragilistic a Done! e-mail x--y e-mail x--y \t \t word 1,000 the",
+30
+],
+"kwargs": {
+"fix_sentence_endings": true
+},
+"expected": [
+"tab     bed re-re-re-entry",
+"supercalifragilistic a Done!",
+"e-mail x--y e-mail x--y",
+"word 1,000 the"
+]
+},
+{
+"args": [
+"Done! re-re-re-entry an      (paren) \n \t wrapping   ",
+3
+],
+"kwargs": {
+"drop_whitespace": true,
+"subsequent_indent": "-- ",
+"tabsize": 0
+},
+"expected": [
+"Don",
+"-- e",
+"-- !",
+"-- r",
+"-- e",
+"-- -",
+"-- r",
+"-- e",
+"-- -",
+"-- r",
+"-- e",
+"-- -",
+"-- e",
+"-- n",
+"-- t",
+"-- r",
+"-- y",
+"-- a",
+"-- n",
+"-- (",
+"-- p",
+"-- a",
+"-- r",
+"-- e",
+"-- n",
+"-- )",
+"-- w",
+"-- r",
+"-- a",
+"-- p",
+"-- p",
+"-- i",
+"-- n",
+"-- g"
+]
+},
+{
+"args": [
+"  \f -dash Why? -dash \f 1,000",
+8
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"replace_whitespace": false,
+"max_lines": 1,
+"placeholder": ""
+},
+"expected": [
+""
+]
+},
+{
+"args": [
+"well-known wrapping well-known end. supercalifragilistic    the",
+10
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": " "
+},
+"expected": [
+"well-known",
+" wrapping",
+" well-",
+" known",
+" end. supe",
+" rcalifrag",
+" ilistic",
+" the"
+]
+},
+{
+"args": [
+"\n  ",
+3
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"tabsize": 0,
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1,000 Done! \t",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"1,000",
+"Done!"
+]
+},
+{
+"args": [
+"wrapping (paren)",
+10
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"subsequent_indent": "-- "
+},
+"expected": [
+"wrapping ",
+"-- (paren)"
+]
+},
+{
+"args": [
+"supercalifragilistic re-re-re-entry Why? \n \t    Why? \u000b -dash 1,000 a wrapping x--y",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"initial_indent": ">>> ",
+"max_lines": 1
+},
+"expected": [
+">>> [...]"
+]
+},
+{
+"args": [
+"a    an aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa an e-mail -dash the \n \r word 1,000",
+10
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"tabsize": 8
+},
+"expected": [
+"a    an ",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+" an e-mail",
+" -dash the",
+"     word ",
+"1,000"
+]
+},
+{
+"args": [
+"\"quote.\" Mr. the Mr.   Mr. \t \r \r",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"initial_indent": "\t"
+},
+"expected": [
+"\t\"quote.\" Mr. the",
+"Mr.   Mr."
+]
+},
+{
+"args": [
+"an re-re-re-entry x--y    a supercalifragilistic \r",
+8
+],
+"kwargs": {
+"break_long_words": true,
+"fix_sentence_endings": false
+},
+"expected": [
+"an re-",
+"re-re-",
+"entry x",
+"--y    a",
+"supercal",
+"ifragili",
+"stic"
+]
+},
+{
+"args": [
+"a Mr. Mr. supercalifragilistic wrapping   (paren) well-known \"quote.\"",
+15
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false
+},
+"expected": [
+"a Mr. Mr.",
+"supercalifragilistic",
+"wrapping",
+"(paren) well-",
+"known \"quote.\""
+]
+},
+{
+"args": [
+"",
+3
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": true,
+"tabsize": 8
+},
+"expected": []
+},
+{
+"args": [
+"a \n aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \n \r a \u000b Done! ok. supercalifragilistic \r ok. wrapping",
+12
+],
+"kwargs": {
+"fix_sentence_endings": false
+},
+"expected": [
+"a   aaaaaaaa",
+"aaaaaaaaaaaa",
+"aaaaaaaaaaaa",
+"a     a",
+"Done! ok. su",
+"percalifragi",
+"listic   ok.",
+"wrapping"
+]
+},
+{
+"args": [
+"Why? (paren) -- tab\tbed well-known",
+10
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"fix_sentence_endings": true,
+"initial_indent": "",
+"subsequent_indent": " ",
+"max_lines": 1
+},
+"expected": [
+"Why? [...]"
+]
+},
+{
+"args": [
+"",
+3
+],
+"kwargs": {
+"max_lines": 1
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic \t the Why? wrapping e-mail   an ok.     ok. Done!",
+15
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true,
+"expand_tabs": true,
+"max_lines": 1
+},
+"expected": [
+"[...]"
+]
+},
+{
+"args": [
+"\"quote.\" \t ok. (paren) aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa word e-mail word \u000b",
+2
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false
+},
+"expected": [
+"\"q",
+"uo",
+"te",
+".\"",
+"  ",
+"  ",
+"  ",
+"  ",
+" o",
+"k.",
+" (",
+"pa",
+"re",
+"n)",
+" a",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+"aa",
+" w",
+"or",
+"d ",
+"e-",
+"ma",
+"il",
+" w",
+"or",
+"d",
+"  "
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \u000b word ok. word   1,000 end. \f aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \n -dash Done!",
+30
+],
+"kwargs": {
+"break_long_words": true,
+"initial_indent": "\t"
+},
+"expected": [
+"\taaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"aaaa   word ok. word   1,000",
+"end.   aaaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaa   -dash Done!"
+]
+},
+{
+"args": [
+"wrapping \t  ",
+-1
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": true,
+"initial_indent": " "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"end. \n Why? the re-re-re-entry e-mail word a re-re-re-entry",
+12
+],
+"kwargs": {
+"expand_tabs": true,
+"replace_whitespace": false,
+"fix_sentence_endings": true,
+"initial_indent": " "
+},
+"expected": [
+" end. \n Why?",
+"the re-re-",
+"re-entry",
+"e-mail word",
+"a re-re-re-",
+"entry"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa    \t --",
+12
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": true
+},
+"expected": [
+"aaaaaaaaaaaa",
+"aaaaaaaaaaaa",
+"aaaaaaaaa",
+"--"
+]
+},
+{
+"args": [
+"well-known    ok. word   \t    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a \n",
+10
+],
+"kwargs": {
+"tabsize": 8
+},
+"expected": [
+"well-known",
+"ok. word",
+"aaaaaaaaaa",
+"aaaaaaaaaa",
+"aaaaaaaaaa",
+"aaa a"
+]
+},
+{
+"args": [
+"Done! --   word Why? Done! word \r well-known word supercalifragilistic a \t a",
+20
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"expand_tabs": true,
+"replace_whitespace": true,
+"subsequent_indent": "-- "
+},
+"expected": [
+"Done! --   word Why?",
+"-- Done! word",
+"-- well-known word s",
+"-- upercalifragilist",
+"-- ic a          a"
+]
+},
+{
+"args": [
+"Why?   an -- supercalifragilistic -- \t aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+0
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"subsequent_indent": "",
+"max_lines": 1,
+"placeholder": " [...]"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"     -dash word aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa word Done!",
+70
+],
+"kwargs": {
+"break_on_hyphens": false,
+"replace_whitespace": true,
+"initial_indent": ""
+},
+"expected": [
+"     -dash word aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa word Done!"
+]
+},
+{
+"args": [
+"Done! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa an \t well-known \n word \f 1,000",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"expand_tabs": false
+},
+"expected": [
+"D",
+"o",
+"n",
+"e",
+"!",
+" ",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+"a",
+" ",
+"a",
+"n",
+" ",
+" ",
+" ",
+"w",
+"e",
+"l",
+"l",
+"-",
+"k",
+"n",
+"o",
+"w",
+"n",
+" ",
+" ",
+" ",
+"w",
+"o",
+"r",
+"d",
+" ",
+" ",
+" ",
+"1",
+",",
+"0",
+"0",
+"0"
+]
+},
+{
+"args": [
+"",
+20
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": false,
+"tabsize": 1
+},
+"expected": []
+},
+{
+"args": [
+"wrapping      \n end. word well-known   ",
+5
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": true,
+"replace_whitespace": false,
+"max_lines": 3
+},
+"expected": [
+"wrapping",
+"end.",
+"[...]"
+]
+},
+{
+"args": [
+"Why?   wrapping x--y Done! 1,000 well-known \r end. -dash -dash",
+15
+],
+"kwargs": {},
+"expected": [
+"Why?   wrapping",
+"x--y Done!",
+"1,000 well-",
+"known   end.",
+"-dash -dash"
+]
+},
+{
+"args": [
+"the (paren) e-mail Why? ok. \t \n",
+8
+],
+"kwargs": {
+"break_long_words": true,
+"fix_sentence_endings": true,
+"initial_indent": " ",
+"subsequent_indent": " "
+},
+"expected": [
+" the",
+" (paren)",
+" e-mail",
+" Why?",
+" ok."
+]
+},
+{
+"args": [
+"Mr. supercalifragilistic Done! the an -- -- Done! Done! \r",
+5
+],
+"kwargs": {
+"expand_tabs": false,
+"replace_whitespace": true
+},
+"expected": [
+"Mr. s",
+"uperc",
+"alifr",
+"agili",
+"stic",
+"Done!",
+"the",
+"an --",
+"--",
+"Done!",
+"Done!"
+]
+},
+{
+"args": [
+"\n \f -dash (paren) the aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a re-re-re-entry -dash \f word e-mail   ",
+1
+],
+"kwargs": {
+"expand_tabs": false,
+"fix_sentence_endings": false,
+"subsequent_indent": "-- ",
+"max_lines": 2,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry \t aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa tab\tbed",
+20
+],
+"kwargs": {
+"break_on_hyphens": false
+},
+"expected": [
+"re-re-re-entry   aaa",
+"aaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaa aaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaa",
+"aaaa tab        bed"
+]
+},
+{
+"args": [
+"Done! word \r supercalifragilistic \n an re-re-re-entry \r tab\tbed",
+2
+],
+"kwargs": {
+"subsequent_indent": "  "
+},
+"expected": [
+"Do",
+"  n",
+"  e",
+"  !",
+"  w",
+"  o",
+"  r",
+"  d",
+"  s",
+"  u",
+"  p",
+"  e",
+"  r",
+"  c",
+"  a",
+"  l",
+"  i",
+"  f",
+"  r",
+"  a",
+"  g",
+"  i",
+"  l",
+"  i",
+"  s",
+"  t",
+"  i",
+"  c",
+"  a",
+"  n",
+"  r",
+"  e",
+"  -",
+"  r",
+"  e",
+"  -",
+"  r",
+"  e",
+"  -",
+"  e",
+"  n",
+"  t",
+"  r",
+"  y",
+"  t",
+"  a",
+"  b",
+"  b",
+"  e",
+"  d"
+]
+},
+{
+"args": [
+"  tab\tbed a -- an tab\tbed wrapping    \t aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa supercalifragilistic Done!",
+20
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": " "
+},
+"expected": [
+"  tab   bed a -- an",
+" tab bed wrapping",
+" aaaaaaaaaaaaaaaaaaa",
+" aaaaaaaaaaaaaa supe",
+" rcalifragilistic",
+" Done!"
+]
+},
+{
+"args": [
+"-- an",
+1
+],
+"kwargs": {
+"break_on_hyphens": true,
+"replace_whitespace": false,
+"fix_sentence_endings": true
+},
+"expected": [
+"-",
+"-",
+"a",
+"n"
+]
+},
+{
+"args": [
+"supercalifragilistic   \u000b Mr. 1,000 ok. end.    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa the Mr.",
+1
+],
+"kwargs": {
+"drop_whitespace": true,
+"tabsize": 4,
+"max_lines": 2,
+"placeholder": " ~"
+},
+"expected": [
+"s",
+"~"
+]
+},
+{
+"args": [
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Mr. -- re-re-re-entry",
+3
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"fix_sentence_endings": true,
+"max_lines": 1
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a \"quote.\"",
+8
+],
+"kwargs": {
+"replace_whitespace": true,
+"max_lines": 2
+},
+"expected": [
+"a",
+"\"quote.\""
+]
+},
+{
+"args": [
+"word well-known aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa    Why? -- (paren)    Why? a the re-re-re-entry aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \f",
+12
+],
+"kwargs": {
+"break_long_words": false,
+"subsequent_indent": " ",
+"tabsize": 0
+},
+"expected": [
+"word well-",
+" known",
+" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+" Why? --",
+" (paren)",
+" Why? a the",
+" re-re-re-",
+" entry",
+" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+]
+},
+{
+"args": [
+"Done! \u000b \t wrapping re-re-re-entry   \u000b Mr. an Why?   ",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"expand_tabs": false,
+"replace_whitespace": true
+},
+"expected": [
+"D",
+"o",
+"n",
+"e",
+"!",
+" ",
+" ",
+" ",
+" ",
+" ",
+"w",
+"r",
+"a",
+"p",
+"p",
+"i",
+"n",
+"g",
+" ",
+"r",
+"e",
+"-",
+"r",
+"e",
+"-",
+"r",
+"e",
+"-",
+"e",
+"n",
+"t",
+"r",
+"y",
+" ",
+" ",
+" ",
+" ",
+" ",
+"M",
+"r",
+".",
+" ",
+"a",
+"n",
+" ",
+"W",
+"h",
+"y",
+"?",
+" ",
+" ",
+" "
+]
+},
+{
+"args": [
+"Done! \n word Done! \n",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": true,
+"max_lines": 1,
+"placeholder": " [...]"
+},
+"expected": [
+"Done!   word Done!"
+]
+},
+{
+"args": [
+"a e-mail an x--y   supercalifragilistic    Why? re-re-re-entry \"quote.\" end.   \t",
+2
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"initial_indent": " ",
+"subsequent_indent": " ",
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"re-re-re-entry \r the (paren) word wrapping \t Done! (paren) Done! tab\tbed wrapping end.",
+20
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"tabsize": 1,
+"max_lines": 2
+},
+"expected": [
+"re-re-re-entry   the",
+" (paren) word [...]"
+]
+},
+{
+"args": [
+"the \"quote.\" Mr.",
+0
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false,
+"replace_whitespace": true,
+"fix_sentence_endings": true,
+"initial_indent": " "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  wrapping x--y x--y \r Done! \u000b wrapping    \u000b  ",
+8
+],
+"kwargs": {
+"break_long_words": false,
+"drop_whitespace": true,
+"expand_tabs": false
+},
+"expected": [
+"wrapping",
+"x--y x--",
+"y",
+"Done!",
+"wrapping"
+]
+},
+{
+"args": [
+"an   x--y \f \t (paren) word well-known e-mail \f end. \r well-known -dash",
+70
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true,
+"initial_indent": ">>> ",
+"tabsize": 4
+},
+"expected": [
+">>> an   x--y        (paren) word well-known e-mail   end.   well-",
+"known -dash"
+]
+},
+{
+"args": [
+"\"quote.\" Why? Mr. (paren)   \"quote.\" -dash 1,000 end.",
+2
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"drop_whitespace": true,
+"replace_whitespace": true,
+"tabsize": 8
+},
+"expected": [
+"\"quote.\"",
+"Why?",
+"Mr.",
+"(paren)",
+"\"quote.\"",
+"-dash",
+"1,000",
+"end."
+]
+},
+{
+"args": [
+"\u000b the Mr. 1,000",
+-1
+],
+"kwargs": {
+"drop_whitespace": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\t \r (paren) well-known a Why? Done! re-re-re-entry",
+0
+],
+"kwargs": {
+"replace_whitespace": true,
+"tabsize": 0
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1,000 (paren) a \f -dash an \u000b tab\tbed \r tab\tbed Done!",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": true
+},
+"expected": [
+"1,000",
+"(pare",
+"n) a",
+"-dash",
+"an",
+"tab",
+"bed",
+"tab",
+"bed",
+"Done!"
+]
+},
+{
+"args": [
+"well-known \r",
+0
+],
+"kwargs": {
+"replace_whitespace": true,
+"fix_sentence_endings": false,
+"subsequent_indent": "-- ",
+"tabsize": 0,
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"an -dash 1,000 word the an",
+8
+],
+"kwargs": {
+"expand_tabs": false,
+"tabsize": 4
+},
+"expected": [
+"an -dash",
+"1,000",
+"word the",
+"an"
+]
+},
+{
+"args": [
+"an tab\tbed supercalifragilistic \"quote.\" an end. tab\tbed Why? (paren) -dash wrapping tab\tbed aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+5
+],
+"kwargs": {
+"break_long_words": true,
+"subsequent_indent": "",
+"max_lines": 2,
+"placeholder": ""
+},
+"expected": [
+"an",
+"tab"
+]
+},
+{
+"args": [
+"  ",
+20
+],
+"kwargs": {
+"break_on_hyphens": false,
+"subsequent_indent": "  ",
+"max_lines": 3,
+"placeholder": "..."
+},
+"expected": []
+},
+{
+"args": [
+"-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \"quote.\" ok.    ok. \t ok. the \f \r end. \"quote.\" the",
+5
+],
+"kwargs": {
+"subsequent_indent": "-- ",
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r \r Done! \"quote.\" Mr.  ",
+12
+],
+"kwargs": {
+"replace_whitespace": false
+},
+"expected": [
+"\r \r Done!",
+"\"quote.\" Mr."
+]
+},
+{
+"args": [
+"--       (paren) a    \"quote.\" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a (paren) Why?",
+3
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false
+},
+"expected": [
+"--",
+"(paren)",
+"a",
+"\"quote.\"",
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+"a",
+"(paren)",
+"Why?"
+]
+},
+{
+"args": [
+"\r \r",
+15
+],
+"kwargs": {
+"replace_whitespace": true,
+"tabsize": 8
+},
+"expected": []
+},
+{
+"args": [
+"\f (paren) x--y \f \u000b",
+1
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": false,
+"initial_indent": "* ",
+"subsequent_indent": "-- ",
+"max_lines": 2
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"supercalifragilistic \f \u000b -- an \u000b supercalifragilistic the (paren) tab\tbed",
+0
+],
+"kwargs": {
+"break_on_hyphens": true,
+"subsequent_indent": " ",
+"tabsize": 4,
+"max_lines": 3
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"the supercalifragilistic Mr. \r supercalifragilistic Done! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -- end. \f supercalifragilistic",
+-1
+],
+"kwargs": {
+"drop_whitespace": true,
+"tabsize": 8
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \"quote.\" re-re-re-entry \f \f \r -dash wrapping well-known",
+3
+],
+"kwargs": {
+"break_on_hyphens": true
+},
+"expected": [
+"a a",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aaa",
+"aa ",
+"\"qu",
+"ote",
+".\"",
+"re-",
+"re-",
+"re-",
+"ent",
+"ry",
+"-da",
+"sh ",
+"wra",
+"ppi",
+"ng ",
+"wel",
+"l-k",
+"now",
+"n"
+]
+},
+{
+"args": [
+"\n a supercalifragilistic e-mail 1,000 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa x--y",
+5
+],
+"kwargs": {},
+"expected": [
+"  a s",
+"uperc",
+"alifr",
+"agili",
+"stic ",
+"e-",
+"mail",
+"1,000",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaa a",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aaaaa",
+"aa x",
+"--y"
+]
+},
+{
+"args": [
+"Why? \n 1,000 \u000b the Done! \r supercalifragilistic",
+10
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": false,
+"expand_tabs": true,
+"fix_sentence_endings": false,
+"max_lines": 2
+},
+"expected": [
+"Why? [...]"
+]
+},
+{
+"args": [
+"\r",
+0
+],
+"kwargs": {
+"break_on_hyphens": false,
+"subsequent_indent": "-- "
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"the x--y a -dash aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ok. e-mail",
+30
+],
+"kwargs": {
+"break_long_words": false,
+"initial_indent": "* ",
+"subsequent_indent": " ",
+"tabsize": 8
+},
+"expected": [
+"* the x--y a -dash",
+" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+" ok. e-mail"
+]
+},
+{
+"args": [
+"",
+15
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": true,
+"max_lines": 1,
+"placeholder": " ~"
+},
+"expected": []
+},
+{
+"args": [
+"an 1,000 supercalifragilistic an tab\tbed well-known the \t re-re-re-entry word    \f",
+12
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"initial_indent": "",
+"max_lines": 2
+},
+"expected": [
+"an 1,000",
+"[...]"
+]
+},
+{
+"args": [
+"-- an -dash ok. the    \u000b Done! tab\tbed",
+1
+],
+"kwargs": {
+"fix_sentence_endings": false,
+"tabsize": 4
+},
+"expected": [
+"-",
+"-",
+"a",
+"n",
+"-",
+"d",
+"a",
+"s",
+"h",
+"o",
+"k",
+".",
+"t",
+"h",
+"e",
+"D",
+"o",
+"n",
+"e",
+"!",
+"t",
+"a",
+"b",
+"b",
+"e",
+"d"
+]
+},
+{
+"args": [
+"\t tab\tbed the Done! Mr. well-known a supercalifragilistic    ok. -dash wrapping (paren) Why?",
+12
+],
+"kwargs": {
+"break_on_hyphens": false,
+"drop_whitespace": false,
+"expand_tabs": true,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"subsequent_indent": " "
+},
+"expected": [
+"*          ",
+" tab    bed ",
+" the Done!  ",
+" Mr.  ",
+" well-known ",
+" a supercali",
+" fragilistic",
+"     ok.  ",
+" -dash ",
+" wrapping ",
+" (paren) ",
+" Why?"
+]
+},
+{
+"args": [
+"supercalifragilistic a \f the the \n word Why? -- -dash word \r aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+10
+],
+"kwargs": {
+"fix_sentence_endings": true,
+"max_lines": 1
+},
+"expected": [
+"[...]"
+]
+},
+{
+"args": [
+"well-known end. tab\tbed",
+70
+],
+"kwargs": {
+"break_long_words": false,
+"expand_tabs": false,
+"replace_whitespace": false,
+"initial_indent": ""
+},
+"expected": [
+"well-known end. tab\tbed"
+]
+},
+{
+"args": [
+"an e-mail Why? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa the",
+30
+],
+"kwargs": {
+"fix_sentence_endings": false,
+"initial_indent": ">>> ",
+"subsequent_indent": "  "
+},
+"expected": [
+">>> an e-mail Why? aaaaaaaaaaa",
+"  aaaaaaaaaaaaaaaaaaaaaa the"
+]
+},
+{
+"args": [
+"supercalifragilistic   \r Done! Why? end. e-mail -- \t -dash \"quote.\" wrapping 1,000",
+70
+],
+"kwargs": {
+"break_long_words": true,
+"replace_whitespace": true,
+"max_lines": 1
+},
+"expected": [
+"supercalifragilistic     Done! Why? end. e-mail --       -dash [...]"
+]
+},
+{
+"args": [
+"\"quote.\"",
+8
+],
+"kwargs": {
+"break_on_hyphens": false,
+"expand_tabs": true
+},
+"expected": [
+"\"quote.\""
+]
+},
+{
+"args": [
+"\t wrapping word \f ok. tab\tbed an supercalifragilistic Done! end. well-known \r \t",
+20
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"tabsize": 4
+},
+"expected": [
+"     wrapping word",
+"ok. tab    bed an",
+"supercalifragilistic",
+"Done! end. well-",
+"known"
+]
+},
+{
+"args": [
+"end. wrapping well-known (paren) end. -dash Done! a e-mail",
+5
+],
+"kwargs": {
+"break_on_hyphens": false,
+"fix_sentence_endings": true,
+"initial_indent": "* ",
+"max_lines": 3
+},
+"expected": [
+"* end",
+".  wr",
+"[...]"
+]
+},
+{
+"args": [
+"e-mail Done! the word wrapping word \u000b the re-re-re-entry \r \r the",
+30
+],
+"kwargs": {
+"break_long_words": true,
+"drop_whitespace": false,
+"fix_sentence_endings": false,
+"initial_indent": ""
+},
+"expected": [
+"e-mail Done! the word wrapping",
+" word   the re-re-re-entry",
+"     the"
+]
+},
+{
+"args": [
+"-- end. \"quote.\" Why? \"quote.\" word -- re-re-re-entry \f    supercalifragilistic ok.",
+70
+],
+"kwargs": {
+"break_long_words": false,
+"replace_whitespace": false,
+"fix_sentence_endings": true,
+"initial_indent": " ",
+"subsequent_indent": "  ",
+"max_lines": 3
+},
+"expected": [
+" -- end.  \"quote.\"  Why?  \"quote.\"  word -- re-re-re-entry",
+"  supercalifragilistic ok."
+]
+},
+{
+"args": [
+"",
+8
+],
+"kwargs": {
+"break_on_hyphens": true,
+"initial_indent": ">>> "
+},
+"expected": []
+},
+{
+"args": [
+"supercalifragilistic \u000b supercalifragilistic ok. (paren) the \"quote.\" Why?",
+5
+],
+"kwargs": {
+"initial_indent": "* "
+},
+"expected": [
+"* sup",
+"ercal",
+"ifrag",
+"ilist",
+"ic   ",
+"super",
+"calif",
+"ragil",
+"istic",
+"ok. (",
+"paren",
+") the",
+"\"quot",
+"e.\"",
+"Why?"
+]
+},
+{
+"args": [
+"re-re-re-entry word -dash tab\tbed Done! re-re-re-entry tab\tbed    \r 1,000 Done! tab\tbed tab\tbed end.",
+12
+],
+"kwargs": {
+"break_long_words": true,
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"subsequent_indent": "-- ",
+"max_lines": 2
+},
+"expected": [
+"re-re-re-",
+"-- [...]"
+]
+},
+{
+"args": [
+"",
+70
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"expand_tabs": false,
+"replace_whitespace": true,
+"initial_indent": "* ",
+"subsequent_indent": "-- ",
+"tabsize": 8,
+"max_lines": 2,
+"placeholder": " [...]"
+},
+"expected": []
+},
+{
+"args": [
+"\n -dash   ok. word \f",
+12
+],
+"kwargs": {
+"break_long_words": false,
+"break_on_hyphens": true,
+"replace_whitespace": true,
+"max_lines": 1,
+"placeholder": "..."
+},
+"expected": [
+"  -dash..."
+]
+},
+{
+"args": [
+"a end. \n e-mail",
+20
+],
+"kwargs": {
+"subsequent_indent": " "
+},
+"expected": [
+"a end.   e-mail"
+]
+},
+{
+"args": [
+"\t \t \"quote.\" the",
+15
+],
+"kwargs": {
+"break_on_hyphens": true,
+"drop_whitespace": false,
+"initial_indent": " "
+},
+"expected": [
+"               ",
+"   \"quote.\" the"
+]
+},
+{
+"args": [
+"x--y (paren) (paren) the    \f -- word well-known",
+0
+],
+"kwargs": {
+"tabsize": 0,
+"max_lines": 2,
+"placeholder": "..."
+},
+"expected": {
+"raises": "ValueError"
+}
+}
+]

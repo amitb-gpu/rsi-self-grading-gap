@@ -1,0 +1,10574 @@
+[
+{
+"args": [
+"  ''"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"''"
+]
+},
+{
+"args": [
+"fooé\"a\\\"b\"\\\\\\\n;\"x y\"'a\\'\\\\"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"fooé\"a\\\"b\"\\\\\\",
+";\"x",
+"y\"'a\\'\\\\"
+]
+},
+{
+"args": [
+"*a b# c\"\" a b "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*a",
+"b"
+]
+},
+{
+"args": [
+"\"x y\";\"$HOMEx#y\"\"\\\n"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\\"\r\t '"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*"
+]
+},
+{
+"args": [
+")''\n\n\r$HOME'x y'"
+],
+"kwargs": {},
+"expected": [
+")",
+"$HOMEx y"
+]
+},
+{
+"args": [
+"#x#y"
+],
+"kwargs": {},
+"expected": [
+"#x#y"
+]
+},
+{
+"args": [
+"é|(x#y'x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é|(x#y'x",
+"y'"
+]
+},
+{
+"args": [
+"''\t'a\\'\"\"'x y' \\'~\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"",
+"a\\x y",
+"'~\""
+]
+},
+{
+"args": [
+"\\\"\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\"\"\""
+]
+},
+{
+"args": [
+"\\\\\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"* &&"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*",
+"&&"
+]
+},
+{
+"args": [
+" \\\\\"\"\\ bar&& # c"
+],
+"kwargs": {},
+"expected": [
+"\\ bar&&",
+"#",
+"c"
+]
+},
+{
+"args": [
+"--opt=\"a\\\"b\"''-# c"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt=\"a\\\"b\"''-#",
+"c"
+]
+},
+{
+"args": [
+")\\\\)-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")\\)-"
+]
+},
+{
+"args": [
+"($HOME\n\\"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"($HOME",
+"\\"
+]
+},
+{
+"args": [
+"*bar\\\"'x y'é\t--opt"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"*bar\\\"'x",
+"y'é",
+"--opt"
+]
+},
+{
+"args": [
+"\t(\\\\\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"(\\a\"b"
+]
+},
+{
+"args": [
+"\"x y\" #"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+"\\\né"
+],
+"kwargs": {},
+"expected": [
+"\né"
+]
+},
+{
+"args": [
+"(\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(~-\";\"x y\"*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r--opt\"\""
+],
+"kwargs": {},
+"expected": [
+"--opt"
+]
+},
+{
+"args": [
+"'a\\'\r`&&fooé)a b("
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'a\\'",
+"`&&fooé)a",
+"b("
+]
+},
+{
+"args": [
+"\\\" é\t\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"",
+"é"
+]
+},
+{
+"args": [
+"\\ \\'-bar"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"\\'-bar"
+]
+},
+{
+"args": [
+"bar\"\"\\\"|"
+],
+"kwargs": {},
+"expected": [
+"bar\"|"
+]
+},
+{
+"args": [
+")\"x y\"  \r''a=b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")x y",
+"a=b"
+]
+},
+{
+"args": [
+"\\\n;a=b''#'a\\'=|\"x y\""
+],
+"kwargs": {},
+"expected": [
+"\n;a=b#a\\=|x y"
+]
+},
+{
+"args": [
+"\")*&&|"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\"("
+],
+"kwargs": {},
+"expected": [
+"a\"b("
+]
+},
+{
+"args": [
+"# c\"\"'x y'x#y a b \\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\"x y\"\"\"foo"
+],
+"kwargs": {},
+"expected": [
+"x yfoo"
+]
+},
+{
+"args": [
+"'a\\' `#"
+],
+"kwargs": {},
+"expected": [
+"a\\",
+"`#"
+]
+},
+{
+"args": [
+"'a\\'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"'a\\'"
+]
+},
+{
+"args": [
+"--opt\"*#"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n\"a=bé\"\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b-\"a=b*a=b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"#'x y'--"
+],
+"kwargs": {},
+"expected": [
+"#x y--"
+]
+},
+{
+"args": [
+"--opt\\\"a\\\"b\"~a=b\\\"\\\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt\\\"a\\\"b\"~a=b\\\"\\"
+]
+},
+{
+"args": [
+");&&\\ *"
+],
+"kwargs": {},
+"expected": [
+");&& *"
+]
+},
+{
+"args": [
+"=bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"=bar"
+]
+},
+{
+"args": [
+"~)`--opta=bbar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"~)`--opta=bbar"
+]
+},
+{
+"args": [
+"(-\\\\&&\n-"
+],
+"kwargs": {},
+"expected": [
+"(-\\&&",
+"-"
+]
+},
+{
+"args": [
+"\\\\a=b|\"x y\"éfoofoo"
+],
+"kwargs": {},
+"expected": [
+"\\a=b|x yéfoofoo"
+]
+},
+{
+"args": [
+"\\ \"a\\\"b\"-\\\n$HOMEéa b"
+],
+"kwargs": {},
+"expected": [
+" a\"b-\n$HOMEéa",
+"b"
+]
+},
+{
+"args": [
+"'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"''|\"a\\\"b\" "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"''",
+"|\"a\\\"b\""
+]
+},
+{
+"args": [
+"\r~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"~"
+]
+},
+{
+"args": [
+"é)\n\"a\\\"b\"\"x y\"\\ \""
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"`'\"\"a\\\"b\"\"\"\"\"\"x y\"bar'x y'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=b(=\\ &&\\\\"
+],
+"kwargs": {},
+"expected": [
+"a=b(= &&\\"
+]
+},
+{
+"args": [
+"&&bar\\\"  \\'$HOME\\a b~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"&&bar\\\"",
+"\\'$HOME\\a",
+"b~"
+]
+},
+{
+"args": [
+" \"x y\"-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"x y\"",
+"-"
+]
+},
+{
+"args": [
+"--a b# c\\\"\"\"'a\\'"
+],
+"kwargs": {},
+"expected": [
+"--a",
+"b#",
+"c\"a\\"
+]
+},
+{
+"args": [
+"a=b(#'a\\';-foobar"
+],
+"kwargs": {},
+"expected": [
+"a=b(#a\\;-foobar"
+]
+},
+{
+"args": [
+"--opt;* \t*"
+],
+"kwargs": {},
+"expected": [
+"--opt;*",
+"*"
+]
+},
+{
+"args": [
+"\\\";\\ \r"
+],
+"kwargs": {},
+"expected": [
+"\"; "
+]
+},
+{
+"args": [
+"\\';"
+],
+"kwargs": {},
+"expected": [
+"';"
+]
+},
+{
+"args": [
+"\"\"'a\\'=~\\\n(x#y"
+],
+"kwargs": {},
+"expected": [
+"a\\=~\n(x#y"
+]
+},
+{
+"args": [
+"*\\\n\\&&`a ba bbar"
+],
+"kwargs": {},
+"expected": [
+"*\n&&`a",
+"ba",
+"bbar"
+]
+},
+{
+"args": [
+"\\'&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'&&"
+]
+},
+{
+"args": [
+"--opté'a\\'"
+],
+"kwargs": {},
+"expected": [
+"--optéa\\"
+]
+},
+{
+"args": [
+"("
+],
+"kwargs": {},
+"expected": [
+"("
+]
+},
+{
+"args": [
+";\\'\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c-\"\t\r'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'-*foo-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'-*foo-"
+]
+},
+{
+"args": [
+"'a\\'# c ~'x y'$HOME|;"
+],
+"kwargs": {},
+"expected": [
+"a\\#",
+"c",
+"~x y$HOME|;"
+]
+},
+{
+"args": [
+"'a\\'\" \\'# c  $HOMEa=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"foo$HOME*\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foo$HOME*"
+]
+},
+{
+"args": [
+"`==)# c\t' "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'\\\nbar~a b=\"\"`\"\""
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\'\\",
+"bar~a",
+"b=\"\"`\"\""
+]
+},
+{
+"args": [
+"$HOME\\\n\\\\"
+],
+"kwargs": {},
+"expected": [
+"$HOME\n\\"
+]
+},
+{
+"args": [
+"\"x y\"$HOMEa b\"x y\"\\\n"
+],
+"kwargs": {},
+"expected": [
+"x y$HOMEa",
+"bx y\n"
+]
+},
+{
+"args": [
+"\t'a\\'\\\né\\\"bar'x y'"
+],
+"kwargs": {},
+"expected": [
+"a\\\né\"barx y"
+]
+},
+{
+"args": [
+"\\~*$HOME\r("
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\~*$HOME",
+"("
+]
+},
+{
+"args": [
+"&&''"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&"
+]
+},
+{
+"args": [
+"*''\"\""
+],
+"kwargs": {},
+"expected": [
+"*"
+]
+},
+{
+"args": [
+"\\'\\\n&&$HOME"
+],
+"kwargs": {},
+"expected": [
+"'\n&&$HOME"
+]
+},
+{
+"args": [
+"a b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b"
+]
+},
+{
+"args": [
+"bar$HOME\"\""
+],
+"kwargs": {},
+"expected": [
+"bar$HOME"
+]
+},
+{
+"args": [
+"\\\\baré\n\\'"
+],
+"kwargs": {},
+"expected": [
+"\\baré",
+"'"
+]
+},
+{
+"args": [
+"'a\\'$HOME;\\\"&&\"-*"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b\\`\\\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n\\'\n\"  é$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x#y`é# ca=b  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y`é#",
+"ca=b"
+]
+},
+{
+"args": [
+"# c\\-"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c-"
+]
+},
+{
+"args": [
+"foo'\té\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"x y\"\\*\n\"a\\\"b\"~;\\\\# c"
+],
+"kwargs": {},
+"expected": [
+"x y*",
+"a\"b~;\\#",
+"c"
+]
+},
+{
+"args": [
+"--opt\\ ')'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=bé;bar \n\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=bé;bar",
+""
+]
+},
+{
+"args": [
+"é\"a\\\"b\"|\r  &&é#"
+],
+"kwargs": {},
+"expected": [
+"éa\"b|",
+"&&é#"
+]
+},
+{
+"args": [
+"\n\\\\-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\-"
+]
+},
+{
+"args": [
+"\n\\$HOME"
+],
+"kwargs": {},
+"expected": [
+"$HOME"
+]
+},
+{
+"args": [
+" bar$HOMEbar-\"\"(# cbar"
+],
+"kwargs": {},
+"expected": [
+"bar$HOMEbar-(#",
+"cbar"
+]
+},
+{
+"args": [
+"-|''\\')"
+],
+"kwargs": {},
+"expected": [
+"-|')"
+]
+},
+{
+"args": [
+"\n'a\\'="
+],
+"kwargs": {},
+"expected": [
+"a\\="
+]
+},
+{
+"args": [
+"|\n"
+],
+"kwargs": {},
+"expected": [
+"|"
+]
+},
+{
+"args": [
+"'foo#\\\"bar\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"' 'a\\'*\"a\\\"b\"\\\nx#ya b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+" a'*a\"b\nx"
+]
+},
+{
+"args": [
+"\t\r$HOME\\\n'x y'\"x y\" \r\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"$HOME\\",
+"'x y'",
+"\"x y\"",
+"\\'"
+]
+},
+{
+"args": [
+"\\ ''\\ -(''é\\\n)"
+],
+"kwargs": {},
+"expected": [
+"  -(é\n)"
+]
+},
+{
+"args": [
+"`--opté;\"`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\\"|\\\\'x y'a b  &&\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'(  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'("
+]
+},
+{
+"args": [
+"x#y'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~='x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"~=x y"
+]
+},
+{
+"args": [
+"#''\\\n#\n$HOME"
+],
+"kwargs": {},
+"expected": [
+"#\n#",
+"$HOME"
+]
+},
+{
+"args": [
+"|'x y'a b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\a=b\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b"
+]
+},
+{
+"args": [
+"    -*\\ &&\\ "
+],
+"kwargs": {},
+"expected": [
+"-* && "
+]
+},
+{
+"args": [
+"\"\"é"
+],
+"kwargs": {},
+"expected": [
+"é"
+]
+},
+{
+"args": [
+"&&-a b*a=b"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"&&-a",
+"b*a=b"
+]
+},
+{
+"args": [
+")\\'\n\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")'",
+"\n"
+]
+},
+{
+"args": [
+"\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\\'\"x y\"\"x y\"\n\\\\\"\"# c"
+],
+"kwargs": {},
+"expected": [
+"'x yx y",
+"\\#",
+"c"
+]
+},
+{
+"args": [
+"'a\\''x y'\"a\\\"b\"\"\"\"\"\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'a\\'",
+"'x y'",
+"\"a\\\"",
+"b\"\"\"\"\""
+]
+},
+{
+"args": [
+"   foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo"
+]
+},
+{
+"args": [
+"foo\\'\"x y\"\\\"'a\\'\\ "
+],
+"kwargs": {},
+"expected": [
+"foo'x y\"a\\ "
+]
+},
+{
+"args": [
+"  \t\\\" \"x y\"`'x y'--opt"
+],
+"kwargs": {},
+"expected": [
+"\"",
+"x y`x y--opt"
+]
+},
+{
+"args": [
+" \"x y\"\\\n"
+],
+"kwargs": {},
+"expected": [
+"x y\n"
+]
+},
+{
+"args": [
+"\\\\=''"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\\=''"
+]
+},
+{
+"args": [
+"~--\nfoo\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\"\"'x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt\"\"'x",
+"y'"
+]
+},
+{
+"args": [
+"\té"
+],
+"kwargs": {},
+"expected": [
+"é"
+]
+},
+{
+"args": [
+";~\\'# ca=b"
+],
+"kwargs": {},
+"expected": [
+";~'#",
+"ca=b"
+]
+},
+{
+"args": [
+"\\\n  ("
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\n",
+"("
+]
+},
+{
+"args": [
+"=''\"\\\" $HOMEfoo-\\\n"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'x#y\\x#y*\"x y\"-|  "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\'x"
+]
+},
+{
+"args": [
+"\t\\\\'a\\')-\"\"-'a\\'bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\a\\)--a\\bar"
+]
+},
+{
+"args": [
+"$HOME~~'x y'bar\\\n&&"
+],
+"kwargs": {},
+"expected": [
+"$HOME~~x ybar\n&&"
+]
+},
+{
+"args": [
+"'a\\''x y'\\'foo"
+],
+"kwargs": {},
+"expected": [
+"a\\x y'foo"
+]
+},
+{
+"args": [
+"#  &&\\\\`|"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"--opt\"a\\\"b\"'\\\\ \"x y\"x#y\\\\# c"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"*\"a\\\"b\"-\t\"a\\\"b\"'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*a\"b-",
+"a\"bx y"
+]
+},
+{
+"args": [
+"(\n  ))\\\n--opt|'a\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(",
+"))\\",
+"--opt|'a\\'"
+]
+},
+{
+"args": [
+"~\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"~a\"b"
+]
+},
+{
+"args": [
+"~`a=b\\'"
+],
+"kwargs": {},
+"expected": [
+"~`a=b'"
+]
+},
+{
+"args": [
+"é)é--optbar"
+],
+"kwargs": {},
+"expected": [
+"é)é--optbar"
+]
+},
+{
+"args": [
+"foo-é#\\&&foo --opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo-é"
+]
+},
+{
+"args": [
+"$HOME\"a b$HOME\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=|\n`\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"=|",
+"`"
+]
+},
+{
+"args": [
+"a=b#`"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a=b"
+]
+},
+{
+"args": [
+"\\'\r&&"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\'",
+"&&"
+]
+},
+{
+"args": [
+"'a\\'|\\ ;\t\r **"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\| ;",
+"**"
+]
+},
+{
+"args": [
+"#&&\"\"# c;\"\"(;*"
+],
+"kwargs": {},
+"expected": [
+"#&&#",
+"c;(;*"
+]
+},
+{
+"args": [
+"&&\\''' ~'--opt'a\\'"
+],
+"kwargs": {},
+"expected": [
+"&&'",
+"~--opta'"
+]
+},
+{
+"args": [
+"éé\r\"x y\"\t"
+],
+"kwargs": {},
+"expected": [
+"éé",
+"x y"
+]
+},
+{
+"args": [
+"~`\\\n\t=''\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"~`\\",
+"=''\""
+]
+},
+{
+"args": [
+"\\ )$HOME\r`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+")$HOME",
+"`"
+]
+},
+{
+"args": [
+"é\"\"x#ybar\"\\\\(foo\"x y\""
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"é\"\"x"
+]
+},
+{
+"args": [
+"*foo\\\\;&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*foo\\;&&"
+]
+},
+{
+"args": [
+"'a\\'\"\"*# c&&foo$HOME"
+],
+"kwargs": {},
+"expected": [
+"a\\*#",
+"c&&foo$HOME"
+]
+},
+{
+"args": [
+"--opt  ' '"
+],
+"kwargs": {},
+"expected": [
+"--opt",
+" "
+]
+},
+{
+"args": [
+"--opt\\ \\\"\"x y\"\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"--opt \"x ya\"b"
+]
+},
+{
+"args": [
+"'x y'"
+],
+"kwargs": {},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+")"
+],
+"kwargs": {},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"\\\\\"\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\"\\\n"
+],
+"kwargs": {},
+"expected": [
+"\n"
+]
+},
+{
+"args": [
+"~*\"\" foo"
+],
+"kwargs": {},
+"expected": [
+"~*",
+"foo"
+]
+},
+{
+"args": [
+"a=b&&#$HOME\\\n\\\\~\n$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b&&",
+"\\~",
+"$HOME"
+]
+},
+{
+"args": [
+"#&&#(#\\\"# c"
+],
+"kwargs": {},
+"expected": [
+"#&&#(#\"#",
+"c"
+]
+},
+{
+"args": [
+" \\\nx#y;#a b~"
+],
+"kwargs": {},
+"expected": [
+"\nx#y;#a",
+"b~"
+]
+},
+{
+"args": [
+"~foo"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"~foo"
+]
+},
+{
+"args": [
+"\"x y\"# c$HOMEfoo--opt# c&&*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+"\\\"x#y  a=b-a b"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\\"x"
+]
+},
+{
+"args": [
+"foo''# c\t"
+],
+"kwargs": {},
+"expected": [
+"foo#",
+"c"
+]
+},
+{
+"args": [
+"='#\n~"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"='~"
+]
+},
+{
+"args": [
+";a=b=$HOME|x#y"
+],
+"kwargs": {},
+"expected": [
+";a=b=$HOME|x#y"
+]
+},
+{
+"args": [
+"&&a b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"&&a",
+"b"
+]
+},
+{
+"args": [
+"\\ \"x y\" (a b\\~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"\"x y\"",
+"(a",
+"b\\~"
+]
+},
+{
+"args": [
+"a=b\t\t*# c\\ *''*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b",
+"*"
+]
+},
+{
+"args": [
+"|  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|"
+]
+},
+{
+"args": [
+"\\\\é\\\\x#y("
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\é\\x"
+]
+},
+{
+"args": [
+"\"x y\"'`|bar\n\"\""
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+")~\n\\'\\ =`"
+],
+"kwargs": {},
+"expected": [
+")~",
+"' =`"
+]
+},
+{
+"args": [
+"--opt"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt"
+]
+},
+{
+"args": [
+"~\"#foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\"# c`\"\""
+],
+"kwargs": {},
+"expected": [
+"a\"b#",
+"c`"
+]
+},
+{
+"args": [
+"#\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\"foo\"a\\\"b\"\t(bar("
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\"bfooa\"b",
+"(bar("
+]
+},
+{
+"args": [
+"\\&&'')"
+],
+"kwargs": {},
+"expected": [
+"&&)"
+]
+},
+{
+"args": [
+"--opt$HOME\r\"\"-a=b="
+],
+"kwargs": {},
+"expected": [
+"--opt$HOME",
+"-a=b="
+]
+},
+{
+"args": [
+"foo\r"
+],
+"kwargs": {},
+"expected": [
+"foo"
+]
+},
+{
+"args": [
+"\\\\\nfoo\n=''\r'a\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\\",
+"foo",
+"=''",
+"'a\\'"
+]
+},
+{
+"args": [
+"'x y'#;a b#''\"a\\\"b\"a b\\\\"
+],
+"kwargs": {},
+"expected": [
+"x y#;a",
+"b#a\"ba",
+"b\\"
+]
+},
+{
+"args": [
+"\\\\\"\"&&#\rfoo"
+],
+"kwargs": {},
+"expected": [
+"\\&&#",
+"foo"
+]
+},
+{
+"args": [
+"#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"-#$HOME\\\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\"'a\\'`\tbarbar# c"
+],
+"kwargs": {},
+"expected": [
+"a\\`",
+"barbar#",
+"c"
+]
+},
+{
+"args": [
+"\"a\\\"b\"--opt\\ ''x y'\"\"a bé--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(~\\\\\"x y\"  #$HOME-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(~\\x y"
+]
+},
+{
+"args": [
+"\"x y\"bar*~\n'x y'-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"x y\"",
+"bar*~",
+"'x y'",
+"-"
+]
+},
+{
+"args": [
+"~\\\"'x y'\\ "
+],
+"kwargs": {},
+"expected": [
+"~\"x y "
+]
+},
+{
+"args": [
+"*\r=\\\""
+],
+"kwargs": {},
+"expected": [
+"*",
+"=\""
+]
+},
+{
+"args": [
+"\\'\r~bar# cfoo\\')'x y'"
+],
+"kwargs": {},
+"expected": [
+"'",
+"~bar#",
+"cfoo')x y"
+]
+},
+{
+"args": [
+"\\\n# c="
+],
+"kwargs": {},
+"expected": [
+"\n#",
+"c="
+]
+},
+{
+"args": [
+"\\\"x#y\\\n-\\\\`"
+],
+"kwargs": {},
+"expected": [
+"\"x#y\n-\\`"
+]
+},
+{
+"args": [
+"a b--opt\\'bar&&\\'"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b--opt'bar&&'"
+]
+},
+{
+"args": [
+"  "
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"'a\\')\\\\`~# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\)\\`~"
+]
+},
+{
+"args": [
+"# c\"\"\t*=-| )"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c",
+"*=-|",
+")"
+]
+},
+{
+"args": [
+"\\\\*\\\\# c\"  "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\\\*\\\\"
+]
+},
+{
+"args": [
+"|-  ="
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"|-",
+"="
+]
+},
+{
+"args": [
+"(('a\\'\\\"`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(('a\\'\\\"`"
+]
+},
+{
+"args": [
+"-~x#y=foo\r|''|"
+],
+"kwargs": {},
+"expected": [
+"-~x#y=foo",
+"||"
+]
+},
+{
+"args": [
+"**|\\\\|"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"**|\\\\|"
+]
+},
+{
+"args": [
+"-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"-"
+]
+},
+{
+"args": [
+" \"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\"b"
+]
+},
+{
+"args": [
+"\\\n`)\\\\"
+],
+"kwargs": {},
+"expected": [
+"\n`)\\"
+]
+},
+{
+"args": [
+"\r|\\\t\\\\\n"
+],
+"kwargs": {},
+"expected": [
+"|\t\\"
+]
+},
+{
+"args": [
+"\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"'x y'é\"'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"x y\"~\ta=ba b\\'a=b  "
+],
+"kwargs": {},
+"expected": [
+"x y~",
+"a=ba",
+"b'a=b"
+]
+},
+{
+"args": [
+"\n\t\"x y\"\"\"''\"x y\"bar\\')"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"x y\"",
+"\"\"",
+"''",
+"\"x y\"",
+"bar\\')"
+]
+},
+{
+"args": [
+"--opt\n-''"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"--opt",
+"-''"
+]
+},
+{
+"args": [
+"'a\\'bar\n=a=b*\\ \\\""
+],
+"kwargs": {},
+"expected": [
+"a\\bar",
+"=a=b* \""
+]
+},
+{
+"args": [
+"\\'\\ \\ (~('*\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'  (~(*\\"
+]
+},
+{
+"args": [
+"&&\\\\'a\\'\"a\\\"b\"\\\n\\'barbar&&"
+],
+"kwargs": {},
+"expected": [
+"&&\\a\\a\"b\n'barbar&&"
+]
+},
+{
+"args": [
+"--opt'x y'&&$HOME\t-\\\n\r"
+],
+"kwargs": {},
+"expected": [
+"--optx y&&$HOME",
+"-\n"
+]
+},
+{
+"args": [
+"\\\";a=b\\\n(## c\\ "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\";a=b\\",
+"(##",
+"c\\"
+]
+},
+{
+"args": [
+"*$HOME\\\\'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"$HOME \\\n|\\\\a=bx#y\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME",
+"\n|\\a=bx"
+]
+},
+{
+"args": [
+"  'x y'` ;é\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y`",
+";é "
+]
+},
+{
+"args": [
+" ;"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+";"
+]
+},
+{
+"args": [
+"\"\"=\\  |--opt''"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"= ",
+"|--opt"
+]
+},
+{
+"args": [
+"\"a\\\"b\"--optbar"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"a\\\"",
+"b\"--optbar"
+]
+},
+{
+"args": [
+"**\"a\\\"b\"\"x y\") \r"
+],
+"kwargs": {},
+"expected": [
+"**a\"bx y)"
+]
+},
+{
+"args": [
+"\\ \\&&\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"\\&&"
+]
+},
+{
+"args": [
+"  &&\n--opt\"a\\\"b\"\n*\"\"&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&",
+"--opta\"b",
+"*&&"
+]
+},
+{
+"args": [
+"\\ "
+],
+"kwargs": {},
+"expected": [
+" "
+]
+},
+{
+"args": [
+"\"x y\""
+],
+"kwargs": {},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+"foo\n a=b~~="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo",
+"a=b~~="
+]
+},
+{
+"args": [
+"a b\\\na=ba=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b\\",
+"a=ba=b"
+]
+},
+{
+"args": [
+"\\\n)\\\\\\ 'x y''|"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"|$HOME;&&|"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|$HOME;&&|"
+]
+},
+{
+"args": [
+"\\\n\\'#foo\\\"\\'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\",
+"\\'"
+]
+},
+{
+"args": [
+"\\\"# c\nbar'a\\'#a b--opt\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"",
+"bara\\"
+]
+},
+{
+"args": [
+"  # c  $HOME\r~\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"foox#y|\"x y\";=a=b"
+],
+"kwargs": {},
+"expected": [
+"foox#y|x y;=a=b"
+]
+},
+{
+"args": [
+"|"
+],
+"kwargs": {},
+"expected": [
+"|"
+]
+},
+{
+"args": [
+"\"x y\"~-&&'x y'\\\"#'a\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y~-&&x y\""
+]
+},
+{
+"args": [
+"  \\\\'# c\\'~a=b="
+],
+"kwargs": {},
+"expected": [
+"\\# c\\~a=b="
+]
+},
+{
+"args": [
+"\t\\\\  \\'|\"a\\\"b\"|\"a b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(=\"\"a b\\\"\"x y\"~\t&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(=a",
+"b\"x y~",
+"&&"
+]
+},
+{
+"args": [
+"foo\\'\"a\\\"b\"\"\"\\'x#y#='a\\'"
+],
+"kwargs": {},
+"expected": [
+"foo'a\"b'x#y#=a\\"
+]
+},
+{
+"args": [
+"(  \r\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(",
+"\""
+]
+},
+{
+"args": [
+"&&\"x y\")"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&x y)"
+]
+},
+{
+"args": [
+"\"\"`\\ *;)*\"\""
+],
+"kwargs": {},
+"expected": [
+"` *;)*"
+]
+},
+{
+"args": [
+"\\|\\\"  $HOME#-x#y"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|\"",
+"$HOME"
+]
+},
+{
+"args": [
+"foo'a\\'\t('x#ybar#\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"## cfoo\\\\)\n\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\ \t-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+" ",
+"-"
+]
+},
+{
+"args": [
+"\\ $HOME\"\\''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\ "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"-)\n*-\\$HOME"
+],
+"kwargs": {},
+"expected": [
+"-)",
+"*-$HOME"
+]
+},
+{
+"args": [
+"&&$HOME'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=b\"'("
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"é'a\\';;\t;'x y'x#y"
+],
+"kwargs": {},
+"expected": [
+"éa\\;;",
+";x yx#y"
+]
+},
+{
+"args": [
+"\"a=b\r"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b*-foo'';bara=b-"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b*-foo;bara=b-"
+]
+},
+{
+"args": [
+"a b()\\'\\\\\\\n\\'é''"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"b()\\'\\\\\\",
+"\\'é''"
+]
+},
+{
+"args": [
+"'a\\'|'x y'\"x y\" \"')\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"|\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"|a\"b"
+]
+},
+{
+"args": [
+"x#y|\\'\r# c\\\n\\\\\"a\\\"b\"*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x",
+"\\a\"b*"
+]
+},
+{
+"args": [
+"$HOME=~(\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"$HOME=~(\""
+]
+},
+{
+"args": [
+"|~foo&&\\|='a\\'|"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"|~foo&&\\|='a\\'|"
+]
+},
+{
+"args": [
+"\"a\\\"b\")a=b|\nx#y  ';"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~`a b'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=x#y\"a=b|&&# c\""
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"=x"
+]
+},
+{
+"args": [
+"\\\"`\\\\---opt*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"`\\---opt*"
+]
+},
+{
+"args": [
+"a=b'# c'a\\'--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b# ca'--opt"
+]
+},
+{
+"args": [
+"\\\\a b\r\n\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\a",
+"b",
+"\\"
+]
+},
+{
+"args": [
+"#  \\\n\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-"
+],
+"kwargs": {},
+"expected": [
+"-"
+]
+},
+{
+"args": [
+"''a=b|\"x y\"#\"\t\"a=b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b|x y"
+]
+},
+{
+"args": [
+"\" *\n\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"x y\"'\" \"a\\\"b\"\"\" foo\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"é\r\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é",
+"\n"
+]
+},
+{
+"args": [
+"\r)"
+],
+"kwargs": {},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"#\"\"\\\\\\\n--opt# c*\"a\\\"b\";"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--opt"
+]
+},
+{
+"args": [
+"\\ \"\"a b)'\r*"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'\r\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt )'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--opt",
+")x y"
+]
+},
+{
+"args": [
+"é*'a\\'  =~\n# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é*a\\",
+"=~"
+]
+},
+{
+"args": [
+"\"a\\\"b\"a=b$HOMEé\\\"&&x#y\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\"ba=b$HOMEé\"&&x"
+]
+},
+{
+"args": [
+"\\' -~|*"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\'",
+"-~|*"
+]
+},
+{
+"args": [
+"x#y(a b="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"(&&''*"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"(&&''*"
+]
+},
+{
+"args": [
+"# c|#''\tfoo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"-\n'\t\"x y\"("
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt="
+],
+"kwargs": {},
+"expected": [
+"--opt="
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {},
+"expected": [
+";"
+]
+},
+{
+"args": [
+"foo&&bar\"\\\"\")\\'\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo&&bar\")'\n"
+]
+},
+{
+"args": [
+"\"a\\\"b\"foo''\\\\\nfoo\n\"\"\r"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"a\\\"",
+"b\"foo''\\\\",
+"foo",
+"\"\""
+]
+},
+{
+"args": [
+"=)~\\' \\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"='x y' #\"a\\\"b\"|"
+],
+"kwargs": {},
+"expected": [
+"=x y",
+"#a\"b|"
+]
+},
+{
+"args": [
+"#\\\")--opt\"a\\\"b\"--optbar&&;"
+],
+"kwargs": {},
+"expected": [
+"#\")--opta\"b--optbar&&;"
+]
+},
+{
+"args": [
+"a=b''$HOME\\\"\\ "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a=b''$HOME\\\"\\"
+]
+},
+{
+"args": [
+"x#y)\\'''\\ &&;\\\n)"
+],
+"kwargs": {},
+"expected": [
+"x#y)' &&;\n)"
+]
+},
+{
+"args": [
+"\\a=bfooa b#\rbar"
+],
+"kwargs": {},
+"expected": [
+"a=bfooa",
+"b#",
+"bar"
+]
+},
+{
+"args": [
+"'x y'&&\\\\\\\n`"
+],
+"kwargs": {},
+"expected": [
+"x y&&\\\n`"
+]
+},
+{
+"args": [
+")~'x y'\\\n "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+")~'x",
+"y'\\"
+]
+},
+{
+"args": [
+"$HOME"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"$HOME"
+]
+},
+{
+"args": [
+"\ta=b\"x y\"a=b|# c|  "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a=b\"x",
+"y\"a=b|"
+]
+},
+{
+"args": [
+"-\"a\\\"b\";#'a\\'('')"
+],
+"kwargs": {},
+"expected": [
+"-a\"b;#a\\()"
+]
+},
+{
+"args": [
+"`'  é"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"`'",
+"é"
+]
+},
+{
+"args": [
+"\r'''a\\'"
+],
+"kwargs": {},
+"expected": [
+"a\\"
+]
+},
+{
+"args": [
+"--opt\\\\#;\r"
+],
+"kwargs": {},
+"expected": [
+"--opt\\#;"
+]
+},
+{
+"args": [
+"\\\\\\'"
+],
+"kwargs": {},
+"expected": [
+"\\'"
+]
+},
+{
+"args": [
+"(\\'\\'--opt"
+],
+"kwargs": {},
+"expected": [
+"(''--opt"
+]
+},
+{
+"args": [
+"\\\n "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"&&=a b\"\"&&--opt\"x y\""
+],
+"kwargs": {},
+"expected": [
+"&&=a",
+"b&&--optx y"
+]
+},
+{
+"args": [
+"-&&&&''\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"-&&&&"
+]
+},
+{
+"args": [
+"''\\(\"foo*a=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"''",
+"\\(\"foo*a=b"
+]
+},
+{
+"args": [
+"'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=ba=b"
+],
+"kwargs": {},
+"expected": [
+"a=ba=b"
+]
+},
+{
+"args": [
+"\"x y\"\\\n~(\"\")=\\bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y\n~()=bar"
+]
+},
+{
+"args": [
+"\\'&&~)*"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\'&&~)*"
+]
+},
+{
+"args": [
+"x#y\"\"\"x y\"$HOME#|\"\"'a\\'"
+],
+"kwargs": {},
+"expected": [
+"x#yx y$HOME#|a\\"
+]
+},
+{
+"args": [
+"=a b# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"=a",
+"b"
+]
+},
+{
+"args": [
+"--opt|foo'x y'`~"
+],
+"kwargs": {},
+"expected": [
+"--opt|foox y`~"
+]
+},
+{
+"args": [
+"a=b\r&&foo~"
+],
+"kwargs": {},
+"expected": [
+"a=b",
+"&&foo~"
+]
+},
+{
+"args": [
+"''é;\"a\\\"b\"("
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"''",
+"é;\"a\\\"b\"("
+]
+},
+{
+"args": [
+"'x y'\\ foo=\"a\\\"b\"#~\\\""
+],
+"kwargs": {},
+"expected": [
+"x y foo=a\"b#~\""
+]
+},
+{
+"args": [
+"a=b;\"a\\\"b\"));\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b;a\"b));\""
+]
+},
+{
+"args": [
+"é\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é"
+]
+},
+{
+"args": [
+"&& x#y"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"&&",
+"x"
+]
+},
+{
+"args": [
+"\\\"\"x y\"\"\"\\\n"
+],
+"kwargs": {},
+"expected": [
+"\"x y\n"
+]
+},
+{
+"args": [
+"  \"a\\\"b\"a bfoo'a=b''=x#y"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"a\\\"",
+"b\"a",
+"bfoo'a=b''=x#y"
+]
+},
+{
+"args": [
+"\\\"=\rx#yx#y"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\"=",
+"x#yx#y"
+]
+},
+{
+"args": [
+"(\\ bar  --opt''\"$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'x y'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"'x y'"
+]
+},
+{
+"args": [
+"`'x y'é&&$HOME"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"`'x",
+"y'é&&$HOME"
+]
+},
+{
+"args": [
+"\nx#yé"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#yé"
+]
+},
+{
+"args": [
+"-\\\n'a\\'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"-\\",
+"'a\\'"
+]
+},
+{
+"args": [
+"'x y'&&\"x y\"barbarfoo"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'x y'",
+"&&\"x",
+"y\"barbarfoo"
+]
+},
+{
+"args": [
+"''a b;;--opt"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b;;--opt"
+]
+},
+{
+"args": [
+"&&\\ `&&\t="
+],
+"kwargs": {},
+"expected": [
+"&& `&&",
+"="
+]
+},
+{
+"args": [
+"éfooa=b#\"\"`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"éfooa=b"
+]
+},
+{
+"args": [
+"\"a\\\"b\"\\\"'\\\n|"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b`\n'x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b`",
+"'x y'"
+]
+},
+{
+"args": [
+"\\\\$HOME'x y'\r$HOME|bar\"\r"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r*"
+],
+"kwargs": {},
+"expected": [
+"*"
+]
+},
+{
+"args": [
+"\t''  "
+],
+"kwargs": {},
+"expected": [
+""
+]
+},
+{
+"args": [
+"\r(# c'a\\''x y'a=b"
+],
+"kwargs": {},
+"expected": [
+"(#",
+"ca\\x ya=b"
+]
+},
+{
+"args": [
+"\"x y\"'\r(\r-"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"~\"\""
+]
+},
+{
+"args": [
+"*'a\\'$HOME\\ "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"*'a\\'$HOME\\"
+]
+},
+{
+"args": [
+"\\\\\\  \"a\\\"b\"\\ (="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\ ",
+"a\"b (="
+]
+},
+{
+"args": [
+"\n\"a\\\"b\"&&#a=b#\\\"\\')"
+],
+"kwargs": {},
+"expected": [
+"a\"b&&#a=b#\"')"
+]
+},
+{
+"args": [
+"*foo~foo-)"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"*foo~foo-)"
+]
+},
+{
+"args": [
+"'x y'\"\"x y\"  \n="
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"foo#"
+],
+"kwargs": {},
+"expected": [
+"foo#"
+]
+},
+{
+"args": [
+"\t`# c~~)\"x y\"\\'  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`"
+]
+},
+{
+"args": [
+")bar  "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+")bar"
+]
+},
+{
+"args": [
+"\\\"\"\"x y\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"*''\"x y\"&&&&\\\"`-"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"*''\"x",
+"y\"&&&&\\\"`-"
+]
+},
+{
+"args": [
+"\\'\\\\\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'\\"
+]
+},
+{
+"args": [
+"\\ ''# c\\\"\\#"
+],
+"kwargs": {},
+"expected": [
+" #",
+"c\"#"
+]
+},
+{
+"args": [
+"\"*-\\\n"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";#a b\t\t;\\;--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+";"
+]
+},
+{
+"args": [
+"a b'\\'"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b\\"
+]
+},
+{
+"args": [
+"'|~\\\"a b)-'a\\'\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|~\\\"a b)-a'a\"b"
+]
+},
+{
+"args": [
+"\r'a\\'\\'bar  --opt"
+],
+"kwargs": {},
+"expected": [
+"a\\'bar",
+"--opt"
+]
+},
+{
+"args": [
+"x#yx#y\"x y\""
+],
+"kwargs": {},
+"expected": [
+"x#yx#yx y"
+]
+},
+{
+"args": [
+"\t)"
+],
+"kwargs": {},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"'x y'\"x y\"\"x y\" "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x yx yx y"
+]
+},
+{
+"args": [
+"*~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*~"
+]
+},
+{
+"args": [
+" \"\"&&'\\x#y"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";a=b(=-"
+],
+"kwargs": {},
+"expected": [
+";a=b(=-"
+]
+},
+{
+"args": [
+"fooé'a\\'\"x y\"*#--opt`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"fooéa\\x y*"
+]
+},
+{
+"args": [
+"\né\r\\\n~\r x#y$HOME"
+],
+"kwargs": {},
+"expected": [
+"é",
+"\n~",
+"x#y$HOME"
+]
+},
+{
+"args": [
+"'a\\'\n\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\",
+"\\"
+]
+},
+{
+"args": [
+";\"a\\\"b\"\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+";a\"b\n"
+]
+},
+{
+"args": [
+"'x y'\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y\\"
+]
+},
+{
+"args": [
+"foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo"
+]
+},
+{
+"args": [
+"|a bfoo"
+],
+"kwargs": {},
+"expected": [
+"|a",
+"bfoo"
+]
+},
+{
+"args": [
+"bar#~\t`x#y'x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"bar#~",
+"`x#y'x",
+"y'"
+]
+},
+{
+"args": [
+"(\r\\\"'a\\'# c)\\\"\"x y\"x#y"
+],
+"kwargs": {},
+"expected": [
+"(",
+"\"a\\#",
+"c)\"x yx#y"
+]
+},
+{
+"args": [
+"(\"|`"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=b"
+],
+"kwargs": {},
+"expected": [
+"a=b"
+]
+},
+{
+"args": [
+"$HOME\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"$HOME\"\""
+]
+},
+{
+"args": [
+"\\\"\r\\\\\\\""
+],
+"kwargs": {},
+"expected": [
+"\"",
+"\\\""
+]
+},
+{
+"args": [
+"\"--opt'x y'#foo'a\\'\\'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c|\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"é\\\"'-foo"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" ==foo"
+],
+"kwargs": {},
+"expected": [
+"==foo"
+]
+},
+{
+"args": [
+"&&\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&\n"
+]
+},
+{
+"args": [
+"a=b\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a=b\\'"
+]
+},
+{
+"args": [
+"\t|)*bar\n="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|)*bar",
+"="
+]
+},
+{
+"args": [
+"\\';'a\\';\\=é"
+],
+"kwargs": {},
+"expected": [
+"';a\\;=é"
+]
+},
+{
+"args": [
+"''a\\'\"bar&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c\\'("
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"--opt# c''\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt#",
+"c''"
+]
+},
+{
+"args": [
+"''"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"''"
+]
+},
+{
+"args": [
+"`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`"
+]
+},
+{
+"args": [
+"\\'foo\\\\\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'foo\\"
+]
+},
+{
+"args": [
+"x#y\\\"# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"`  \"x y\"'' \t\"*="
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b\"\"\\\"=\\' &&~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b\"\"\\\"=\\'",
+"&&~"
+]
+},
+{
+"args": [
+"\"~~"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"~"
+]
+},
+{
+"args": [
+"\r# c\"\"'(\\\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"é\\bar ''\\a b#)"
+],
+"kwargs": {},
+"expected": [
+"ébar",
+"a",
+"b#)"
+]
+},
+{
+"args": [
+"|=  a b\"$HOMEé\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"bar\rx#y|\\  '\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"foobar~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foobar~"
+]
+},
+{
+"args": [
+"\\\\ ;\nx#y#"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\\",
+";",
+"x#y#"
+]
+},
+{
+"args": [
+"( \r# c\\ ;\\ \"a\\\"b\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(",
+"#",
+"c\\",
+";\\",
+"\"a\\\"",
+"b\""
+]
+},
+{
+"args": [
+"\"\""
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"\""
+]
+},
+{
+"args": [
+"a=b\\\"#&&--opt"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a=b\\\"#&&--opt"
+]
+},
+{
+"args": [
+")# c#"
+],
+"kwargs": {},
+"expected": [
+")#",
+"c#"
+]
+},
+{
+"args": [
+"\\ *# c\\\\;foo''"
+],
+"kwargs": {},
+"expected": [
+" *#",
+"c\\;foo"
+]
+},
+{
+"args": [
+"\\ |a b;  =bar'x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"|a",
+"b;",
+"=bar'x",
+"y'"
+]
+},
+{
+"args": [
+"\\\")--opt"
+],
+"kwargs": {},
+"expected": [
+"\")--opt"
+]
+},
+{
+"args": [
+"--opt''\"x y\"(\\\"bar$HOMEé"
+],
+"kwargs": {},
+"expected": [
+"--optx y(\"bar$HOMEé"
+]
+},
+{
+"args": [
+"&&\"a\\\"b\"#"
+],
+"kwargs": {},
+"expected": [
+"&&a\"b#"
+]
+},
+{
+"args": [
+"'a\\'\\'&&  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'a\\'",
+"\\'&&"
+]
+},
+{
+"args": [
+"x#y\\ "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y\\"
+]
+},
+{
+"args": [
+"a b  \"a\\\"b\"\\\na b''a b"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b",
+"a\"b\na",
+"ba",
+"b"
+]
+},
+{
+"args": [
+"'a\\'-;$HOME"
+],
+"kwargs": {},
+"expected": [
+"a\\-;$HOME"
+]
+},
+{
+"args": [
+"\tfoo*#é"
+],
+"kwargs": {},
+"expected": [
+"foo*#é"
+]
+},
+{
+"args": [
+"\\\na b''--opt#bar"
+],
+"kwargs": {},
+"expected": [
+"\na",
+"b--opt#bar"
+]
+},
+{
+"args": [
+"\\\n\\\\é--opt\\$HOME\"x#y$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~\"x y\"\n~"
+],
+"kwargs": {},
+"expected": [
+"~x y",
+"~"
+]
+},
+{
+"args": [
+"  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"x#y'''="
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";#;'*#\\--opt\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"--optx#y\"\"\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"$HOME--opt"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"$HOME--opt"
+]
+},
+{
+"args": [
+"'a\\'a b|# c*=\\\"( "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'a\\'",
+"a",
+"b|#",
+"c*=\\\"("
+]
+},
+{
+"args": [
+"--opta=b\"\""
+],
+"kwargs": {},
+"expected": [
+"--opta=b"
+]
+},
+{
+"args": [
+"')=(\r\\\n~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"*\r"
+],
+"kwargs": {},
+"expected": [
+"*"
+]
+},
+{
+"args": [
+"`\n\"-"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+")\\' \\\n\\\n~é\r#"
+],
+"kwargs": {},
+"expected": [
+")'",
+"\n\n~é",
+"#"
+]
+},
+{
+"args": [
+"  (;"
+],
+"kwargs": {},
+"expected": [
+"(;"
+]
+},
+{
+"args": [
+"\"a\\\"b\"\r'a\\'\\\")a ba b"
+],
+"kwargs": {},
+"expected": [
+"a\"b",
+"a\\\")a",
+"ba",
+"b"
+]
+},
+{
+"args": [
+"\r&&$HOME\"a\\\"b\"'x y'\\;\"x y\"\n"
+],
+"kwargs": {},
+"expected": [
+"&&$HOMEa\"bx y;x y"
+]
+},
+{
+"args": [
+"&&;\t\\\\=\"\""
+],
+"kwargs": {},
+"expected": [
+"&&;",
+"\\="
+]
+},
+{
+"args": [
+"\r&&"
+],
+"kwargs": {},
+"expected": [
+"&&"
+]
+},
+{
+"args": [
+"\\a b x#y\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b",
+"x"
+]
+},
+{
+"args": [
+"\"a\\\"b\"foobar'a\\'"
+],
+"kwargs": {},
+"expected": [
+"a\"bfoobara\\"
+]
+},
+{
+"args": [
+"\n\"\r"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-*a=b  #\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"-*a=b",
+"#"
+]
+},
+{
+"args": [
+"=\\\"#a b|\"*x#y"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"=\\\""
+]
+},
+{
+"args": [
+"bar'|)(\\\\#(é"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\ta b$HOME&&"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"b$HOME&&"
+]
+},
+{
+"args": [
+"(`*foo*;"
+],
+"kwargs": {},
+"expected": [
+"(`*foo*;"
+]
+},
+{
+"args": [
+"\\ --opta b\\\" ''x y'\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c|;---opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"  \n~"
+],
+"kwargs": {},
+"expected": [
+"~"
+]
+},
+{
+"args": [
+"\"a\\\"b\"\t\"a\\\"b\"*;`~\"x y\""
+],
+"kwargs": {},
+"expected": [
+"a\"b",
+"a\"b*;`~x y"
+]
+},
+{
+"args": [
+"'-\n\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"''\\\"`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"''\\\"",
+"`"
+]
+},
+{
+"args": [
+"\\\\ a b\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\\",
+"a",
+"b"
+]
+},
+{
+"args": [
+"--opt)\\;|"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt)\\;|"
+]
+},
+{
+"args": [
+"bar*\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt&&'# c\\  # c\r\"x y\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'\"\";\"'|"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"'\"\";\"'",
+"|"
+]
+},
+{
+"args": [
+"\"# c"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"''`\t# c''x y'\"a\\\"b\"bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`"
+]
+},
+{
+"args": [
+")#  \\''x y'\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+")#",
+"\\''x",
+"y'"
+]
+},
+{
+"args": [
+"|\"a\\\"b\"'\\'"
+],
+"kwargs": {},
+"expected": [
+"|a\"b\\"
+]
+},
+{
+"args": [
+")~# ca b)\\\n'a\\'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+")~'a\\'"
+]
+},
+{
+"args": [
+"  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\n\\ '\\\na=b~\"x y\"$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&'x y'  \"a\\\"b\"(\"\""
+],
+"kwargs": {},
+"expected": [
+"&&x y",
+"a\"b("
+]
+},
+{
+"args": [
+"|\"&&#bar\\'*"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\"a\\\"b\"\\\\\\ x#ybar  ''|"
+],
+"kwargs": {},
+"expected": [
+"--opta\"b\\ x#ybar",
+"|"
+]
+},
+{
+"args": [
+")-;é\\&&\"\"#\n"
+],
+"kwargs": {},
+"expected": [
+")-;é&&#"
+]
+},
+{
+"args": [
+"x#y\r"
+],
+"kwargs": {},
+"expected": [
+"x#y"
+]
+},
+{
+"args": [
+"é'a b~$HOME\"a\\\"b\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é'a",
+"b~$HOME\"a\\\"b\""
+]
+},
+{
+"args": [
+"= `"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"=",
+"`"
+]
+},
+{
+"args": [
+"\\\n)\\ =(`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+")\\",
+"=(`"
+]
+},
+{
+"args": [
+"*\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*\""
+]
+},
+{
+"args": [
+"foo=*\\'x#y''"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo=*'x"
+]
+},
+{
+"args": [
+"\"\"(\"\t|bara b''\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=ba=b=\"x y\"\"a\\\"b\";a b'a\\'  "
+],
+"kwargs": {},
+"expected": [
+"a=ba=b=x ya\"b;a",
+"ba\\"
+]
+},
+{
+"args": [
+"\\\"foo--opt\r\\\\\\' |\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"foo--opt",
+"\\'",
+"|'"
+]
+},
+{
+"args": [
+"`~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`~"
+]
+},
+{
+"args": [
+"\"x y\")\r#"
+],
+"kwargs": {},
+"expected": [
+"x y)",
+"#"
+]
+},
+{
+"args": [
+"="
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"`(()--opt\"x y\"foo"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"`(()--opt\"x",
+"y\"foo"
+]
+},
+{
+"args": [
+"'\n'' a b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"foo--opt'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a ba b\\\n\n\"x y\"\\ "
+],
+"kwargs": {},
+"expected": [
+"a",
+"ba",
+"b\n",
+"x y "
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+";"
+]
+},
+{
+"args": [
+"\n"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"'\\'~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\~"
+]
+},
+{
+"args": [
+"--opt\"   \t\t"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"   "
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"# c\\\n$HOMEfoo"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"#",
+"c\\",
+"$HOMEfoo"
+]
+},
+{
+"args": [
+"x#y\\~(#=# c\"\"x y\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"#",
+"c"
+]
+},
+{
+"args": [
+" \\\n;a=bfooa b# c''#"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\",
+";a=bfooa",
+"b"
+]
+},
+{
+"args": [
+"=`~#'*"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"=`~"
+]
+},
+{
+"args": [
+"   =\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\"\\\\"
+],
+"kwargs": {},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"`|* \"x y\"\\'''a b"
+],
+"kwargs": {},
+"expected": [
+"`|*",
+"x y'a",
+"b"
+]
+},
+{
+"args": [
+";*a b  'a\\'()"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+";*a",
+"b",
+"'a\\'",
+"()"
+]
+},
+{
+"args": [
+" "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"\\\"\n="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"",
+"="
+]
+},
+{
+"args": [
+"=''"
+],
+"kwargs": {},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"\"\"&&|)foo  # ca=b# c"
+],
+"kwargs": {},
+"expected": [
+"&&|)foo",
+"#",
+"ca=b#",
+"c"
+]
+},
+{
+"args": [
+"\"\"*&&\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\rfoox#y\n;"
+],
+"kwargs": {},
+"expected": [
+"foox#y",
+";"
+]
+},
+{
+"args": [
+"($HOME;\"\";"
+],
+"kwargs": {},
+"expected": [
+"($HOME;;"
+]
+},
+{
+"args": [
+"|'x y'-foobar)"
+],
+"kwargs": {},
+"expected": [
+"|x y-foobar)"
+]
+},
+{
+"args": [
+"a=b\r~foo"
+],
+"kwargs": {},
+"expected": [
+"a=b",
+"~foo"
+]
+},
+{
+"args": [
+"  )'x y'"
+],
+"kwargs": {},
+"expected": [
+")x y"
+]
+},
+{
+"args": [
+"'bar\r# c"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"`*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`*"
+]
+},
+{
+"args": [
+"'a\\''a\\'$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\a\\$HOME"
+]
+},
+{
+"args": [
+"é#a b|\néx#yx#y"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é",
+"éx"
+]
+},
+{
+"args": [
+"# c*"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c*"
+]
+},
+{
+"args": [
+"a=bbar\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=bbara\"b"
+]
+},
+{
+"args": [
+"\\'=\n"
+],
+"kwargs": {},
+"expected": [
+"'="
+]
+},
+{
+"args": [
+"~\té"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"~",
+"é"
+]
+},
+{
+"args": [
+")'x y'''&&é\\\n"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+")'x",
+"y'''&&é\\"
+]
+},
+{
+"args": [
+"`''`=$HOME\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"``=$HOME "
+]
+},
+{
+"args": [
+"&&\r"
+],
+"kwargs": {},
+"expected": [
+"&&"
+]
+},
+{
+"args": [
+"|\\ \\'\\\\\"\"\"a\\\"b\"\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"|\\",
+"\\'\\\\\"\"\"a\\\"b\"\\'"
+]
+},
+{
+"args": [
+"\\\\   ''="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\",
+"="
+]
+},
+{
+"args": [
+"'x y'\\\\\"x y\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y\\x y"
+]
+},
+{
+"args": [
+"a=b\"x y\"'x y'~foo'|"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"' )"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&(\"a\\\"b\"\r\t\"\"  \"\""
+],
+"kwargs": {},
+"expected": [
+"&&(a\"b",
+"",
+""
+]
+},
+{
+"args": [
+"é)\\ bar# c\"\"&&\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é) bar"
+]
+},
+{
+"args": [
+"*\\\n~ ~--opt\n"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"*\\",
+"~",
+"~--opt"
+]
+},
+{
+"args": [
+"é\\   \""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"é\t''\"a\\\"b\"\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\\ a=b\"\"\"a\\\"b\")$HOME&&bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--opt a=ba\"b)$HOME&&bar"
+]
+},
+{
+"args": [
+"\\)'x y'$HOME"
+],
+"kwargs": {},
+"expected": [
+")x y$HOME"
+]
+},
+{
+"args": [
+"\\\\\\\\\"x y\""
+],
+"kwargs": {},
+"expected": [
+"\\\\x y"
+]
+},
+{
+"args": [
+"x#y#`)'  \\'\"\"# c"
+],
+"kwargs": {},
+"expected": [
+"x#y#`)  \\#",
+"c"
+]
+},
+{
+"args": [
+"a b'`\\\"|\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=\"x y\")"
+],
+"kwargs": {},
+"expected": [
+"=x y)"
+]
+},
+{
+"args": [
+"(~"
+],
+"kwargs": {},
+"expected": [
+"(~"
+]
+},
+{
+"args": [
+"'a\\'é\"a\\\"b\"*=a=b"
+],
+"kwargs": {},
+"expected": [
+"a\\éa\"b*=a=b"
+]
+},
+{
+"args": [
+"éa b'a\\'')\\\n  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"éa",
+"b'a\\'')\\"
+]
+},
+{
+"args": [
+"\\\\-"
+],
+"kwargs": {},
+"expected": [
+"\\-"
+]
+},
+{
+"args": [
+"$HOME\"\""
+],
+"kwargs": {},
+"expected": [
+"$HOME"
+]
+},
+{
+"args": [
+"\"x y\"é\t''\r\\\n"
+],
+"kwargs": {},
+"expected": [
+"x yé",
+"",
+"\n"
+]
+},
+{
+"args": [
+"`-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"`-"
+]
+},
+{
+"args": [
+"\\\\a b|# c"
+],
+"kwargs": {},
+"expected": [
+"\\a",
+"b|#",
+"c"
+]
+},
+{
+"args": [
+"# cx#y=\\\n"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"|\"\"| "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"|\"\"|"
+]
+},
+{
+"args": [
+"\"a\\\"b\"$HOME  '"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"|&&;--opt\\\""
+],
+"kwargs": {},
+"expected": [
+"|&&;--opt\""
+]
+},
+{
+"args": [
+";'a\\'$HOME\rfoo\"'''a\\'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\\'\t\"\"'a\\'&&\\\"--opt"
+],
+"kwargs": {},
+"expected": [
+"--opt'",
+"a\\&&\"--opt"
+]
+},
+{
+"args": [
+"'\r\ta=bé \\ \""
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'"
+],
+"kwargs": {},
+"expected": [
+"'"
+]
+},
+{
+"args": [
+"'a\\'=bar'a\\'\\ 'x y'x#y"
+],
+"kwargs": {},
+"expected": [
+"a\\=bara\\ x yx#y"
+]
+},
+{
+"args": [
+"=\ra=bbara b*"
+],
+"kwargs": {},
+"expected": [
+"=",
+"a=bbara",
+"b*"
+]
+},
+{
+"args": [
+"-\"\"\"x y\"\r--opt-"
+],
+"kwargs": {},
+"expected": [
+"-x y",
+"--opt-"
+]
+},
+{
+"args": [
+"a=b\"\\ -\\'\\ "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r"
+],
+"kwargs": {},
+"expected": []
+},
+{
+"args": [
+"\"\"--opt#`\\\"\\\\'a\\'"
+],
+"kwargs": {},
+"expected": [
+"--opt#`\"\\a\\"
+]
+},
+{
+"args": [
+"'' ;''\\\\`\"a\\\"b\"  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"",
+";\\`a\"b"
+]
+},
+{
+"args": [
+"'a\\'&&  --optbar'x y'a=b\\\\("
+],
+"kwargs": {},
+"expected": [
+"a\\&&",
+"--optbarx ya=b\\("
+]
+},
+{
+"args": [
+"#a=b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\\\"x y\"\\ `'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\\"x",
+"y\"\\",
+"`'"
+]
+},
+{
+"args": [
+")a=b\\\"\\''a\\'*$HOME\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")a=b\"'a\\*$HOME'"
+]
+},
+{
+"args": [
+"="
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"`="
+],
+"kwargs": {},
+"expected": [
+"`="
+]
+},
+{
+"args": [
+"=\n`''\n"
+],
+"kwargs": {},
+"expected": [
+"=",
+"`"
+]
+},
+{
+"args": [
+"\r=\\\"\\\n(\r-"
+],
+"kwargs": {},
+"expected": [
+"=\"\n(",
+"-"
+]
+},
+{
+"args": [
+"#("
+],
+"kwargs": {},
+"expected": [
+"#("
+]
+},
+{
+"args": [
+"-  --opt\\\""
+],
+"kwargs": {},
+"expected": [
+"-",
+"--opt\""
+]
+},
+{
+"args": [
+"\"'\\  \\\\'  "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"bar'a\\''x y'\"*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" ;  \n\"a\\\"b\"\r&&|`"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+";",
+"\"a\\\"",
+"b\"",
+"&&|`"
+]
+},
+{
+"args": [
+"|a b\\ \"\""
+],
+"kwargs": {},
+"expected": [
+"|a",
+"b "
+]
+},
+{
+"args": [
+"é# c\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"é#",
+"ca\"b"
+]
+},
+{
+"args": [
+"&&x#y~"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&x"
+]
+},
+{
+"args": [
+"---opt\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"---opt"
+]
+},
+{
+"args": [
+" \\\n\\x#y'''a=b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\nx"
+]
+},
+{
+"args": [
+"\n)"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"$HOME*#\r`a=b# c-$HOME"
+],
+"kwargs": {},
+"expected": [
+"$HOME*#",
+"`a=b#",
+"c-$HOME"
+]
+},
+{
+"args": [
+"\\'x#y--opt*\\'\\("
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'x"
+]
+},
+{
+"args": [
+"\\\"''bar"
+],
+"kwargs": {},
+"expected": [
+"\"bar"
+]
+},
+{
+"args": [
+"--opté\\\\"
+],
+"kwargs": {},
+"expected": [
+"--opté\\"
+]
+},
+{
+"args": [
+"$HOME*bar\\ \r("
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME*bar ",
+"("
+]
+},
+{
+"args": [
+"\"\"foo'--opt'foo\n"
+],
+"kwargs": {},
+"expected": [
+"foo--optfoo"
+]
+},
+{
+"args": [
+"\"\"'x y'x#y\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a b# c`x#y"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b#",
+"c`x#y"
+]
+},
+{
+"args": [
+"=\t&&foo--opt'a b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+")#($HOME"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"\"\"\\'a=b#\\\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"\"",
+"\\'a=b#\\"
+]
+},
+{
+"args": [
+"# c\\\"--opt\"\\*\\'\\\\;"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"#",
+"c\\\"--opt\"\\*\\'\\\\;"
+]
+},
+{
+"args": [
+"="
+],
+"kwargs": {},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"\\'\"\\\n(\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\'\"\\",
+"("
+]
+},
+{
+"args": [
+"$HOME|`''&& 'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME|`&&",
+"x y"
+]
+},
+{
+"args": [
+"(;"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(;"
+]
+},
+{
+"args": [
+"\\ --opt"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\",
+"--opt"
+]
+},
+{
+"args": [
+"\"x y\"$HOME=\\'a ba b  "
+],
+"kwargs": {},
+"expected": [
+"x y$HOME='a",
+"ba",
+"b"
+]
+},
+{
+"args": [
+"'x y'~\"\"\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y~\""
+]
+},
+{
+"args": [
+"\r\\\\"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\\\"
+]
+},
+{
+"args": [
+"\tx#y"
+],
+"kwargs": {},
+"expected": [
+"x#y"
+]
+},
+{
+"args": [
+"#\r"
+],
+"kwargs": {},
+"expected": [
+"#"
+]
+},
+{
+"args": [
+"'x y'\"a\\\"b\"'~\r"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'x y'",
+"\"a\\\"",
+"b\"'~"
+]
+},
+{
+"args": [
+"\té\\\n\"\"\\\"\t("
+],
+"kwargs": {},
+"expected": [
+"é\n\"",
+"("
+]
+},
+{
+"args": [
+"\\\"\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\\"bar) é&&\r\\\n"
+],
+"kwargs": {},
+"expected": [
+"\"bar)",
+"é&&",
+"\n"
+]
+},
+{
+"args": [
+"foo')bar"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n'a\\''x y'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"'a\\'",
+"'x y'"
+]
+},
+{
+"args": [
+"=\"x y\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"=\"x",
+"y\""
+]
+},
+{
+"args": [
+"#'x y''a\\'` \\\"\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"#x ya\\`",
+"\"a\"b"
+]
+},
+{
+"args": [
+"\\'\\'a b&&**"
+],
+"kwargs": {},
+"expected": [
+"''a",
+"b&&**"
+]
+},
+{
+"args": [
+"\\ \\(\t'a\\'\\\\=\r"
+],
+"kwargs": {},
+"expected": [
+" (",
+"a\\\\="
+]
+},
+{
+"args": [
+"$HOME*''\r\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME*",
+"\\"
+]
+},
+{
+"args": [
+"foo\"\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foo\"\\'"
+]
+},
+{
+"args": [
+"'a\\'\\'\"x y\"\"\n#a b-# c"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"'a\\'",
+"\\'\"x",
+"y\"\"",
+"#a",
+"b-#",
+"c"
+]
+},
+{
+"args": [
+"foo \tfoo~~"
+],
+"kwargs": {},
+"expected": [
+"foo",
+"foo~~"
+]
+},
+{
+"args": [
+"\n\\ --opt-\\ "
+],
+"kwargs": {},
+"expected": [
+" --opt- "
+]
+},
+{
+"args": [
+"x#y\\\")('a\\'\\\\)"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y\\\")('a\\'\\\\)"
+]
+},
+{
+"args": [
+"*'''a b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*'''a",
+"b"
+]
+},
+{
+"args": [
+"`foo# c\\\\\\\t"
+],
+"kwargs": {},
+"expected": [
+"`foo#",
+"c\\\t"
+]
+},
+{
+"args": [
+"$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME"
+]
+},
+{
+"args": [
+"\"é\"\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"é\n"
+]
+},
+{
+"args": [
+"'x y'\\'=\\   ("
+],
+"kwargs": {},
+"expected": [
+"x y'= ",
+"("
+]
+},
+{
+"args": [
+"é`\\\n\\\")=~"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"é`\\",
+"\\\")=~"
+]
+},
+{
+"args": [
+"\\'\\\\\\'"
+],
+"kwargs": {},
+"expected": [
+"'\\'"
+]
+},
+{
+"args": [
+"\"'(\\\"&&"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(*\\\";\\\"\"a b"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\"\rbar~="
+],
+"kwargs": {},
+"expected": [
+"a\"b",
+"bar~="
+]
+},
+{
+"args": [
+"\\\n)"
+],
+"kwargs": {},
+"expected": [
+"\n)"
+]
+},
+{
+"args": [
+"bar'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'é\"~ \\\n# c\\\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\'é\"~",
+"\\",
+"#",
+"c\\"
+]
+},
+{
+"args": [
+")$HOMEa b;  ()"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+")$HOMEa",
+"b;",
+"()"
+]
+},
+{
+"args": [
+"bar\\'\\'\"a\\\"b\"= "
+],
+"kwargs": {},
+"expected": [
+"bar''a\"b="
+]
+},
+{
+"args": [
+"\\\"'# c\\'=|)\"foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'x y'\"\"\\\\  "
+],
+"kwargs": {},
+"expected": [
+"x y\\"
+]
+},
+{
+"args": [
+"\t'a\\'"
+],
+"kwargs": {},
+"expected": [
+"a\\"
+]
+},
+{
+"args": [
+"'x y''x y'-''''"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x yx y-"
+]
+},
+{
+"args": [
+"\r\"x y\"=a b\\\"|"
+],
+"kwargs": {},
+"expected": [
+"x y=a",
+"b\"|"
+]
+},
+{
+"args": [
+"--opt\"a=b\"`''x y' "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt\"a=b\"`''x",
+"y'"
+]
+},
+{
+"args": [
+"\t\\ ''\\\\"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\",
+"''",
+"\\\\"
+]
+},
+{
+"args": [
+"\\ ;--opt\\# c\\\n'  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\\ \\'&&"
+],
+"kwargs": {},
+"expected": [
+"--opt '&&"
+]
+},
+{
+"args": [
+"#\\\""
+],
+"kwargs": {},
+"expected": [
+"#\""
+]
+},
+{
+"args": [
+"'a\\''x y''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"x y\"''`\"\\'\\\\=\\ #"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"#)'x y'\"a\\\"b\"\r\\\\''="
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"#)'x y'\"",
+"a\\\"b\"",
+"\\\\''="
+]
+},
+{
+"args": [
+"(--opt;"
+],
+"kwargs": {},
+"expected": [
+"(--opt;"
+]
+},
+{
+"args": [
+"\"a\\\"b\"\";)\\\"é "
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+")foo foo~\"x y\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+")foo",
+"foo~\"x",
+"y\""
+]
+},
+{
+"args": [
+"''\\\n*\"x y\""
+],
+"kwargs": {},
+"expected": [
+"\n*x y"
+]
+},
+{
+"args": [
+"é"
+],
+"kwargs": {},
+"expected": [
+"é"
+]
+},
+{
+"args": [
+"--opt\\ ~é\r#=--opt("
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"--opt\\",
+"~é"
+]
+},
+{
+"args": [
+"('x y'~\tfoox#y"
+],
+"kwargs": {},
+"expected": [
+"(x y~",
+"foox#y"
+]
+},
+{
+"args": [
+"foo\\\";=x#y  \\\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";''&&"
+],
+"kwargs": {},
+"expected": [
+";&&"
+]
+},
+{
+"args": [
+"*|  ''a\\'bar&&# c("
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*|",
+"''",
+"a\\'bar&&#",
+"c("
+]
+},
+{
+"args": [
+"``\t\"a\\\"b\"  \\'x#y"
+],
+"kwargs": {},
+"expected": [
+"``",
+"a\"b",
+"'x#y"
+]
+},
+{
+"args": [
+"=--opt=\\\"'')foo"
+],
+"kwargs": {},
+"expected": [
+"=--opt=\")foo"
+]
+},
+{
+"args": [
+"=\r\t'\"x y\"#\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\")é'x y'-\"a\\\"b\"(\\\\''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"é"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~$HOME;é\"x y\"foo# c"
+],
+"kwargs": {},
+"expected": [
+"~$HOME;éx yfoo#",
+"c"
+]
+},
+{
+"args": [
+"a=b\\\\\t-~foo"
+],
+"kwargs": {},
+"expected": [
+"a=b\\",
+"-~foo"
+]
+},
+{
+"args": [
+"\\ #a=b"
+],
+"kwargs": {},
+"expected": [
+" #a=b"
+]
+},
+{
+"args": [
+"\\';*;\\\\\"x y\"\"x y\"$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"';*;\\x yx y$HOME"
+]
+},
+{
+"args": [
+"a=b\r"
+],
+"kwargs": {},
+"expected": [
+"a=b"
+]
+},
+{
+"args": [
+"##"
+],
+"kwargs": {},
+"expected": [
+"##"
+]
+},
+{
+"args": [
+"x#y\\\n-|\" a b*# c"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\a b--opt"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\a",
+"b--opt"
+]
+},
+{
+"args": [
+"\"a\\\"b\" `\n\\\"'x y'\\bar''"
+],
+"kwargs": {},
+"expected": [
+"a\"b",
+"`",
+"\"x ybar"
+]
+},
+{
+"args": [
+"x#y\"a=b\\\\\"\"\\a=b~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y\"a=b\\\\\"\"\\a=b~"
+]
+},
+{
+"args": [
+"-|--opt*=|"
+],
+"kwargs": {},
+"expected": [
+"-|--opt*=|"
+]
+},
+{
+"args": [
+"''=\"a\\\"b\"$HOME`\"\"'x y'\"\"foo"
+],
+"kwargs": {},
+"expected": [
+"=a\"b$HOME`x yfoo"
+]
+},
+{
+"args": [
+"'&&\t\\ ''(a=b)"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"foo`\\ )"
+],
+"kwargs": {},
+"expected": [
+"foo` )"
+]
+},
+{
+"args": [
+"(bar#bar  ;~\"x y\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(bar#bar",
+";~\"x",
+"y\""
+]
+},
+{
+"args": [
+"a=b\"x y\""
+],
+"kwargs": {},
+"expected": [
+"a=bx y"
+]
+},
+{
+"args": [
+"('a\\'=a=ba b\\'\\\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(a\\=a=ba",
+"b'\\"
+]
+},
+{
+"args": [
+"\\\"\\'\né\r=\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\"'",
+"é",
+"="
+]
+},
+{
+"args": [
+"'=# c`))"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~'a\\'*&&\"x y\""
+],
+"kwargs": {},
+"expected": [
+"~a\\*&&x y"
+]
+},
+{
+"args": [
+"|--opt"
+],
+"kwargs": {},
+"expected": [
+"|--opt"
+]
+},
+{
+"args": [
+"'`-bar'fooa b\"a\\\"b\"foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`-barfooa",
+"ba\"bfoo"
+]
+},
+{
+"args": [
+"\ra bé# c)\\\n  \\"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"bé",
+"\\"
+]
+},
+{
+"args": [
+"\"x y\"foo  $HOME"
+],
+"kwargs": {},
+"expected": [
+"x yfoo",
+"$HOME"
+]
+},
+{
+"args": [
+"a b  &&|''(\\ "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"b",
+"&&|''(\\"
+]
+},
+{
+"args": [
+"''''bar# cbar#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"bar"
+]
+},
+{
+"args": [
+"'a\\'foo\\x#y~=~x#y"
+],
+"kwargs": {},
+"expected": [
+"a\\foox#y~=~x#y"
+]
+},
+{
+"args": [
+"'''x y'(\"\"# c=\"\"x#y"
+],
+"kwargs": {},
+"expected": [
+"x y(#",
+"c=x#y"
+]
+},
+{
+"args": [
+"# c\\\\(\\\"\\\n\t`$HOME"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c\\(\"\n",
+"`$HOME"
+]
+},
+{
+"args": [
+"\"$HOME-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" *\"\"\"a\\\"b\"\\'\t# c"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*\"\"\"a\\\"b\"\\'",
+"#",
+"c"
+]
+},
+{
+"args": [
+" foo;\"x y\"'x y'foo\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo;x yx yfoo"
+]
+},
+{
+"args": [
+"a b \"x y\"\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b",
+"x y"
+]
+},
+{
+"args": [
+"éa b\"a\\\"b\"'# cbar"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~;('a\\'''a\\'bar`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"~;(a\\a'bar`"
+]
+},
+{
+"args": [
+"\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\"b"
+]
+},
+{
+"args": [
+"'foo\t'''a\\' "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo\ta'"
+]
+},
+{
+"args": [
+"\r *;\t\r"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*;"
+]
+},
+{
+"args": [
+"x#y~\\'\r\\\n x#y\\\""
+],
+"kwargs": {},
+"expected": [
+"x#y~'",
+"\n",
+"x#y\""
+]
+},
+{
+"args": [
+"\\\"='"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+";=|'a\\'('a\\'$HOMEbar\"x y\""
+],
+"kwargs": {},
+"expected": [
+";=|a\\(a\\$HOMEbarx y"
+]
+},
+{
+"args": [
+"$HOME~\\\n# cbar`"
+],
+"kwargs": {},
+"expected": [
+"$HOME~\n#",
+"cbar`"
+]
+},
+{
+"args": [
+");"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+");"
+]
+},
+{
+"args": [
+"\"|''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-'a\\'\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"-a\\ "
+]
+},
+{
+"args": [
+"\n\\\nfoo"
+],
+"kwargs": {},
+"expected": [
+"\nfoo"
+]
+},
+{
+"args": [
+"\\="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"#$HOME)a=b\"\";-"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"é\\a=b&&x#y\t--opt"
+],
+"kwargs": {},
+"expected": [
+"éa=b&&x#y",
+"--opt"
+]
+},
+{
+"args": [
+"  \\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'''a\\'|a=b;\n"
+],
+"kwargs": {},
+"expected": [
+"'a'|a=b;"
+]
+},
+{
+"args": [
+"\n # c\"a\\\"b\";"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"#\\\"#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"a=bx#y*'x y''x y'"
+],
+"kwargs": {},
+"expected": [
+"a=bx#y*x yx y"
+]
+},
+{
+"args": [
+"\\#x#yfoo|\\ \"''\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=b--opt"
+],
+"kwargs": {},
+"expected": [
+"a=b--opt"
+]
+},
+{
+"args": [
+"a=b\\ a b''\\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b a",
+"b\n"
+]
+},
+{
+"args": [
+"'\\\\ \\\n--opt;"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+")\\;`'a\\'"
+],
+"kwargs": {},
+"expected": [
+");`a\\"
+]
+},
+{
+"args": [
+"|'\t\n"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"baré\"\"\\\n*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"baré\n*"
+]
+},
+{
+"args": [
+"a=b~*\\'(# c"
+],
+"kwargs": {},
+"expected": [
+"a=b~*'(#",
+"c"
+]
+},
+{
+"args": [
+"bar'a\\'\"\"x y\";"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(=\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(="
+]
+},
+{
+"args": [
+"''"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+""
+]
+},
+{
+"args": [
+"'\n\n# cbara=b\"a\\\"b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"''"
+],
+"kwargs": {},
+"expected": [
+""
+]
+},
+{
+"args": [
+"\\ foo(foo"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"foo(foo"
+]
+},
+{
+"args": [
+"=\\#bar\"a\\\"b\"''\"\"\\'"
+],
+"kwargs": {},
+"expected": [
+"=#bara\"b'"
+]
+},
+{
+"args": [
+"\\\\\\''x y'\r\\ # c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\'x y",
+" "
+]
+},
+{
+"args": [
+"\"a\\\"b\"\\\t\"\\\\(  \"\"\"\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"=` 'x y'\\'|"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"=`",
+"'x y'",
+"\\'|"
+]
+},
+{
+"args": [
+"\"x y\"  | (é  "
+],
+"kwargs": {},
+"expected": [
+"x y",
+"|",
+"(é"
+]
+},
+{
+"args": [
+"--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--opt"
+]
+},
+{
+"args": [
+"\n\t\"\"\"x y\"'a\\';\\\\--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x ya\\;\\--opt"
+]
+},
+{
+"args": [
+"é((&&*"
+],
+"kwargs": {},
+"expected": [
+"é((&&*"
+]
+},
+{
+"args": [
+"''foo'a\\'\n\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x#ybar-\\\\|~\\\\="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"$HOME $HOME\\\"="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"$HOME",
+"$HOME\"="
+]
+},
+{
+"args": [
+"\\'x y'\"a\\\"b\"("
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"$HOMEa=b\t~a=b"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"$HOMEa=b",
+"~a=b"
+]
+},
+{
+"args": [
+"\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\\\n\";`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"$HOME\"a\\\"b\"\\\\'\"x y\"~\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  \\=# c;"
+],
+"kwargs": {},
+"expected": [
+"=#",
+"c;"
+]
+},
+{
+"args": [
+"* \"x y\"é\"\"\\ a=ba=b\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\"a b\t  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"\"",
+"a",
+"b"
+]
+},
+{
+"args": [
+"'' "
+],
+"kwargs": {},
+"expected": [
+""
+]
+},
+{
+"args": [
+"|\\\\`\\\"x y\"\"a\\\"b\"&&"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"|\\\\`\\\"x",
+"y\"\"a\\\"b\"&&"
+]
+},
+{
+"args": [
+"\\ a=b-\"\"$HOME"
+],
+"kwargs": {},
+"expected": [
+" a=b-$HOME"
+]
+},
+{
+"args": [
+"'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"#a=b'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"a=bx#y-"
+],
+"kwargs": {},
+"expected": [
+"a=bx#y-"
+]
+},
+{
+"args": [
+"|- \\\\\"a\\\"b\";a b|\\\\"
+],
+"kwargs": {},
+"expected": [
+"|-",
+"\\a\"b;a",
+"b|\\"
+]
+},
+{
+"args": [
+"\\\na b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\na",
+"b"
+]
+},
+{
+"args": [
+"\\\\foo\\|)"
+],
+"kwargs": {},
+"expected": [
+"\\foo|)"
+]
+},
+{
+"args": [
+"bar -`\t\\\\\\# c\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"bar",
+"-`",
+"\\#",
+"c\\"
+]
+},
+{
+"args": [
+"foo\\\n\t\tfoo\\'"
+],
+"kwargs": {},
+"expected": [
+"foo\n",
+"foo'"
+]
+},
+{
+"args": [
+"#-bar$HOME\\  "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"'a\\';\n\"\"#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\;",
+""
+]
+},
+{
+"args": [
+"foo\\'"
+],
+"kwargs": {},
+"expected": [
+"foo'"
+]
+},
+{
+"args": [
+"`-bar'  - #\\'"
+],
+"kwargs": {},
+"expected": [
+"`-bar  - #\\"
+]
+},
+{
+"args": [
+"--opt$HOME"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--opt$HOME"
+]
+},
+{
+"args": [
+"\"'a\\''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"''`--opt\\ ''\\\\\\\"\\'`"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`--opt \\\"'`"
+]
+},
+{
+"args": [
+"bar*''''# c&&bar;"
+],
+"kwargs": {},
+"expected": [
+"bar*#",
+"c&&bar;"
+]
+},
+{
+"args": [
+"a b--opt*a=b'a\\'--opt\t\\\n"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b--opt*a=ba\\--opt",
+"\n"
+]
+},
+{
+"args": [
+"*--opt\\\n\\$HOMEbar"
+],
+"kwargs": {},
+"expected": [
+"*--opt\n$HOMEbar"
+]
+},
+{
+"args": [
+"é~\"x y\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é~\"x",
+"y\""
+]
+},
+{
+"args": [
+"x#ya b\\'#\n\t#é"
+],
+"kwargs": {},
+"expected": [
+"x#ya",
+"b'#",
+"#é"
+]
+},
+{
+"args": [
+") \"a\\\"b\"=*\\\\é\"\""
+],
+"kwargs": {},
+"expected": [
+")",
+"a\"b=*\\é"
+]
+},
+{
+"args": [
+"a=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a=b"
+]
+},
+{
+"args": [
+"# c\\\\|=)(a b&&a b"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c\\|=)(a",
+"b&&a",
+"b"
+]
+},
+{
+"args": [
+"$HOME|-\r\t''"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"$HOME|-",
+"''"
+]
+},
+{
+"args": [
+"bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"bar"
+]
+},
+{
+"args": [
+"x#ybarbar\"\"*a b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"''\"x y\"#)\\\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"''",
+"\"x y\"",
+"#)\\\""
+]
+},
+{
+"args": [
+"&&é'~$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'~&&\t$HOME'  -\"x y\""
+],
+"kwargs": {},
+"expected": [
+"~&&\t$HOME",
+"-x y"
+]
+},
+{
+"args": [
+"  \\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+" "
+]
+},
+{
+"args": [
+"=\r\t\"x y\""
+],
+"kwargs": {},
+"expected": [
+"=",
+"x y"
+]
+},
+{
+"args": [
+"$HOME\\\n~"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"$HOME\\",
+"~"
+]
+},
+{
+"args": [
+"\"(*'"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'=\"\"\"a\\\"b\"\tfoo'x y'\"\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'=a\"b",
+"foox y"
+]
+},
+{
+"args": [
+"''\\ foo\" "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x#y''\"x y\"\\"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"--opt "
+],
+"kwargs": {},
+"expected": [
+"--opt"
+]
+},
+{
+"args": [
+"|"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|"
+]
+},
+{
+"args": [
+"é\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\\\a b"
+],
+"kwargs": {},
+"expected": [
+"\\a",
+"b"
+]
+},
+{
+"args": [
+"\"\"\"x y\";\\\\\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"(bar|-$HOME\"a\\\"b\" é"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(bar|-$HOMEa\"b",
+"é"
+]
+},
+{
+"args": [
+"`'x y'é*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`x yé*"
+]
+},
+{
+"args": [
+"foo--opt)bar`)'a\\'\\\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo--opt)bar`)a\\\""
+]
+},
+{
+"args": [
+"\t--opt|\"a\\\"b\"fooa b'\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-'$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"$HOME''`'`$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"a=b\\' \"a\\\"b\"a=bfoo&&*bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b'",
+"a\"ba=bfoo&&*bar"
+]
+},
+{
+"args": [
+")x#y`''\\'&&\t|"
+],
+"kwargs": {},
+"expected": [
+")x#y`'&&",
+"|"
+]
+},
+{
+"args": [
+"'  &&&& "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'a\\'~a b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a\\~a",
+"b"
+]
+},
+{
+"args": [
+"a b"
+],
+"kwargs": {},
+"expected": [
+"a",
+"b"
+]
+},
+{
+"args": [
+"\\'-'x y'"
+],
+"kwargs": {},
+"expected": [
+"'-x y"
+]
+},
+{
+"args": [
+"\r;a=bé--opt=&&''\"a\\\"b\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+";a=bé--opt=&&''\"a\\\"b\""
+]
+},
+{
+"args": [
+"a b\\\"\"a\\\"b\"fooa=bx#y  \\\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b\"a\"bfooa=bx"
+]
+},
+{
+"args": [
+"\na=b &&$HOME-\\\"  bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a=b",
+"&&$HOME-\"",
+"bar"
+]
+},
+{
+"args": [
+"foo*~"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foo*~"
+]
+},
+{
+"args": [
+"\n'x y';**"
+],
+"kwargs": {},
+"expected": [
+"x y;**"
+]
+},
+{
+"args": [
+"|\\ &&'x y'# c\\'é'a\\'"
+],
+"kwargs": {},
+"expected": [
+"| &&x y#",
+"c'éa\\"
+]
+},
+{
+"args": [
+"foo&&`"
+],
+"kwargs": {},
+"expected": [
+"foo&&`"
+]
+},
+{
+"args": [
+"a b--opt=|"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b--opt=|"
+]
+},
+{
+"args": [
+"(\\\n'x y'|'x y'="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(\nx y|x y="
+]
+},
+{
+"args": [
+"\n'"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x#y~\r$HOME|\\'\\\\"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"x"
+]
+},
+{
+"args": [
+"\\ ;\"a\\\"b\"*bar-;\\\""
+],
+"kwargs": {},
+"expected": [
+" ;a\"b*bar-;\""
+]
+},
+{
+"args": [
+"\\\"\\'\\ ~--opt"
+],
+"kwargs": {},
+"expected": [
+"\"' ~--opt"
+]
+},
+{
+"args": [
+"\"\"\r\n"
+],
+"kwargs": {},
+"expected": [
+""
+]
+},
+{
+"args": [
+"# c#~|"
+],
+"kwargs": {},
+"expected": [
+"#",
+"c#~|"
+]
+},
+{
+"args": [
+"\r=\\ ''\\\\"
+],
+"kwargs": {},
+"expected": [
+"= \\"
+]
+},
+{
+"args": [
+")\\\\foo#\r\\ "
+],
+"kwargs": {},
+"expected": [
+")\\foo#",
+" "
+]
+},
+{
+"args": [
+"a b&&~\"x y\"''"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"b&&~\"x",
+"y\"''"
+]
+},
+{
+"args": [
+"|  \\#*\"x y\"--optx#y*"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"|",
+"#*x y--optx"
+]
+},
+{
+"args": [
+"\\ $HOME\t\\\")a=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"$HOME",
+"\\\")a=b"
+]
+},
+{
+"args": [
+"&&|  (--opt"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&|",
+"(--opt"
+]
+},
+{
+"args": [
+"\"~"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"~\n\r\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"*\"x y\"\\\"\n'x y'x#y\\'\\ "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"*\"x",
+"y\"\\\"",
+"'x y'",
+"x#y\\'\\"
+]
+},
+{
+"args": [
+"&&`'''a\\'\"x y\"a=b\r"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"&&`'''a\\'\"x",
+"y\"a=b"
+]
+},
+{
+"args": [
+"é"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é"
+]
+},
+{
+"args": [
+"`'x y'\\\\\"\"\\\\ ''"
+],
+"kwargs": {},
+"expected": [
+"`x y\\\\",
+""
+]
+},
+{
+"args": [
+"''(  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"("
+]
+},
+{
+"args": [
+"\\ *;--opta=b'x y'--opt-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"*;--opta=b'x",
+"y'--opt-"
+]
+},
+{
+"args": [
+"\"x y\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+"\\\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\"a=b"
+],
+"kwargs": {},
+"expected": [
+"a\"ba=b"
+]
+},
+{
+"args": [
+"a b\"a\\\"b\"='x y'-#);"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b\"a\\\"b\"='x",
+"y'-#);"
+]
+},
+{
+"args": [
+"a=b)-=`"
+],
+"kwargs": {},
+"expected": [
+"a=b)-=`"
+]
+},
+{
+"args": [
+"~\"a\\\"b\"\\'&&\t"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"~\"a\\\"b\"\\'&&"
+]
+},
+{
+"args": [
+"\nfoo&&-\"\"\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"foo&&-"
+]
+},
+{
+"args": [
+"'x y')"
+],
+"kwargs": {},
+"expected": [
+"x y)"
+]
+},
+{
+"args": [
+"a b# c\\ \"a\\\"b\"*# c"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"a",
+"b"
+]
+},
+{
+"args": [
+"\"x y\"*\\--opt\"\n-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"x y\"",
+"*\\--opt\"",
+"-"
+]
+},
+{
+"args": [
+"`\"\"\"a\\\"b\"\\'#' "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"x y\"bar| \"a\\\"b\"\\\"  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x ybar|",
+"a\"b\""
+]
+},
+{
+"args": [
+"\t# c\"x y\"a ba b\r="
+],
+"kwargs": {},
+"expected": [
+"#",
+"cx ya",
+"ba",
+"b",
+"="
+]
+},
+{
+"args": [
+"#--opt''"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"#--opt''"
+]
+},
+{
+"args": [
+"\"\"\t\"\"#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"\"\r'a\\'\\\"$HOME"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"\"",
+"'a\\'",
+"\\\"$HOME"
+]
+},
+{
+"args": [
+"\\ &&\"x y\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"&&\"x",
+"y\"\""
+]
+},
+{
+"args": [
+"''("
+],
+"kwargs": {},
+"expected": [
+"("
+]
+},
+{
+"args": [
+"\\))\"\"a=bfoo\\'foo&&"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\))\"\"a=bfoo\\'foo&&"
+]
+},
+{
+"args": [
+"-\r  --opt\"x y\""
+],
+"kwargs": {},
+"expected": [
+"-",
+"--optx y"
+]
+},
+{
+"args": [
+"\\\\bar;\t"
+],
+"kwargs": {},
+"expected": [
+"\\bar;"
+]
+},
+{
+"args": [
+"\\ 'a=b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  =\"x y\"bar'\\\"$HOME"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'x y'="
+],
+"kwargs": {},
+"expected": [
+"x y="
+]
+},
+{
+"args": [
+"('bar&&''\"\"--opt"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\t\"a\\\"b\"`'x y'\"\"'\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\t`\\\n--opt\\\n\\\\\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\\\\\# c a b|"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\\\\\"
+]
+},
+{
+"args": [
+"`'x y'$HOME\"\\'--opt"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"| '\\'foo=\"\"'a=b"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"|",
+"'\\'",
+"foo=\"\"'a=b"
+]
+},
+{
+"args": [
+")~|bar \"*"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"-)|)\\\na=bé"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"-)|)\\",
+"a=bé"
+]
+},
+{
+"args": [
+"\r#éfoo~(bar\r"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"#éfoo~(bar"
+]
+},
+{
+"args": [
+"foobar'x y'`\"\"|\n"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foobar'x",
+"y'`\"\"|"
+]
+},
+{
+"args": [
+"\"*-\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\"\\("
+],
+"kwargs": {},
+"expected": [
+"("
+]
+},
+{
+"args": [
+"x#y-*)'x y'a=b"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y-*)'x",
+"y'a=b"
+]
+},
+{
+"args": [
+"-(\\#  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"-(\\#"
+]
+},
+{
+"args": [
+"foo\"\"-\t`a=b`"
+],
+"kwargs": {},
+"expected": [
+"foo-",
+"`a=b`"
+]
+},
+{
+"args": [
+"#`x#y`"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"#`x#y`"
+]
+},
+{
+"args": [
+" &&\\\"~\\\n \"\"\t"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"&&\\\"~\\",
+"\"\""
+]
+},
+{
+"args": [
+"~"
+],
+"kwargs": {},
+"expected": [
+"~"
+]
+},
+{
+"args": [
+" )"
+],
+"kwargs": {},
+"expected": [
+")"
+]
+},
+{
+"args": [
+"\\foo''\\\\*'a\\''x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\foo''\\\\*'a\\''x",
+"y'"
+]
+},
+{
+"args": [
+"$HOME"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"$HOME"
+]
+},
+{
+"args": [
+"\"$HOME# c\\'\\\\\r"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\\'x#y\\'-$HOMEa b\t\\"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\" \"a\\\"b\"&&\t"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"",
+"a\"b&&"
+]
+},
+{
+"args": [
+"\"a\\\"b\"|'a\\'=a b|;# c "
+],
+"kwargs": {},
+"expected": [
+"a\"b|a\\=a",
+"b|;#",
+"c"
+]
+},
+{
+"args": [
+"'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"x#y\té|$HOMEé'a\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#y",
+"é|$HOMEé'a\\'"
+]
+},
+{
+"args": [
+"\t`'x y'a b'\\ \"a\\\"b\"\"\"'a\\'"
+],
+"kwargs": {},
+"expected": [
+"`x ya",
+"b\\ \"a\\\"b\"\"\"a'"
+]
+},
+{
+"args": [
+"`\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"`'"
+]
+},
+{
+"args": [
+"a=b($HOME`\\\"\"'&&"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"a\\\"b\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\"a\\\"",
+"b\""
+]
+},
+{
+"args": [
+"* \\\n\\\na b"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*",
+"\n\na",
+"b"
+]
+},
+{
+"args": [
+"\\\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"~\"a\\\"b\"\\\"'a\\'="
+],
+"kwargs": {},
+"expected": [
+"~a\"b\"a\\="
+]
+},
+{
+"args": [
+"\\ $HOME*"
+],
+"kwargs": {},
+"expected": [
+" $HOME*"
+]
+},
+{
+"args": [
+"\\\n$HOMEx#y#foo# c"
+],
+"kwargs": {},
+"expected": [
+"\n$HOMEx#y#foo#",
+"c"
+]
+},
+{
+"args": [
+"\\ \"\"--optfoo-"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"\"\"",
+"--optfoo-"
+]
+},
+{
+"args": [
+"'a\\'\"\"\"''"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\"\t\"\"\r#"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\n\n''\"a\\\"b\"  # c"
+],
+"kwargs": {},
+"expected": [
+"a\"b",
+"#",
+"c"
+]
+},
+{
+"args": [
+"|\\'a\\'"
+],
+"kwargs": {},
+"expected": [
+"|'a'"
+]
+},
+{
+"args": [
+"(x#y~foo~\\&&''"
+],
+"kwargs": {},
+"expected": [
+"(x#y~foo~&&"
+]
+},
+{
+"args": [
+"&&-\\\"a b#\\\n\n\\'\r"
+],
+"kwargs": {},
+"expected": [
+"&&-\"a",
+"b#\n",
+"'"
+]
+},
+{
+"args": [
+"(\\\\=é''&&"
+],
+"kwargs": {},
+"expected": [
+"(\\=é&&"
+]
+},
+{
+"args": [
+"\n*# c\n$HOMEfoo"
+],
+"kwargs": {},
+"expected": [
+"*#",
+"c",
+"$HOMEfoo"
+]
+},
+{
+"args": [
+"$HOME`\\\n--opt\t#"
+],
+"kwargs": {},
+"expected": [
+"$HOME`\n--opt",
+"#"
+]
+},
+{
+"args": [
+"--opt\\'\"a\\\"b\"foo'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"--opt\\'\"a\\\"b\"foo'"
+]
+},
+{
+"args": [
+"\"\"\\\"\"\"-\t"
+],
+"kwargs": {},
+"expected": [
+"\"-"
+]
+},
+{
+"args": [
+"\"x y\"'~foo'a\\'\\\n=&&"
+],
+"kwargs": {},
+"expected": [
+"x y~fooa'\n=&&"
+]
+},
+{
+"args": [
+"\"`bar\ra=b\r&&\\\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r\r-\r"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"-"
+]
+},
+{
+"args": [
+"\\"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c\\\""
+],
+"kwargs": {},
+"expected": [
+"#",
+"c\""
+]
+},
+{
+"args": [
+"x#yx#y\\\n\"\"~\\'  'a\\'\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"x#yx#y\\",
+"\"\"",
+"~\\'",
+"'a\\'",
+"\\'"
+]
+},
+{
+"args": [
+"x#y#\\\\\\\n\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'a\\''é"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\\'\\\"#éé''\\'"
+],
+"kwargs": {},
+"expected": [
+"'\"#éé'"
+]
+},
+{
+"args": [
+"-é"
+],
+"kwargs": {},
+"expected": [
+"-é"
+]
+},
+{
+"args": [
+"x#yé$HOME"
+],
+"kwargs": {},
+"expected": [
+"x#yé$HOME"
+]
+},
+{
+"args": [
+";$HOME$HOME|$HOME$HOME#--opt"
+],
+"kwargs": {},
+"expected": [
+";$HOME$HOME|$HOME$HOME#--opt"
+]
+},
+{
+"args": [
+"   =x#y\"\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"=x#y\"\""
+]
+},
+{
+"args": [
+"`&&"
+],
+"kwargs": {},
+"expected": [
+"`&&"
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+";"
+]
+},
+{
+"args": [
+"\\'(\"\"x#y\\'$HOME\"bar"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'(x"
+]
+},
+{
+"args": [
+"\\\\\"\")"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\\\\"\")"
+]
+},
+{
+"args": [
+"*=\\   ~-\\'  "
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"*= ",
+"~-'"
+]
+},
+{
+"args": [
+"\"x y\"`=\r`\\\\''x#y"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y`=",
+"`\\x"
+]
+},
+{
+"args": [
+"\\&&\"\" "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\\&&\"\""
+]
+},
+{
+"args": [
+"='a\\'x#y\\\n\\\\\\\t\nx#y"
+],
+"kwargs": {},
+"expected": [
+"=a\\x#y\n\\\t",
+"x#y"
+]
+},
+{
+"args": [
+"é''x y'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é''x",
+"y'"
+]
+},
+{
+"args": [
+"\"x y\"\t"
+],
+"kwargs": {},
+"expected": [
+"x y"
+]
+},
+{
+"args": [
+"=("
+],
+"kwargs": {},
+"expected": [
+"=("
+]
+},
+{
+"args": [
+"  #`\\'\t\"\"'x y';"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+")\\'&&"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+")'&&"
+]
+},
+{
+"args": [
+"\r\\ \\\""
+],
+"kwargs": {},
+"expected": [
+" \""
+]
+},
+{
+"args": [
+")bar\"x y\"'a\\'\r#;#"
+],
+"kwargs": {},
+"expected": [
+")barx ya\\",
+"#;#"
+]
+},
+{
+"args": [
+"\"a\\\"b\"  -é\"a\\\"b\"\\\\|"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"\"a\\\"",
+"b\"",
+"-é\"a\\\"b\"\\\\|"
+]
+},
+{
+"args": [
+"=\"\\foofoo("
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"=\"\\foofoo("
+]
+},
+{
+"args": [
+"(a b)'x y';*"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(a",
+"b)'x",
+"y';*"
+]
+},
+{
+"args": [
+"\r|'a\\'`a=b# c*"
+],
+"kwargs": {},
+"expected": [
+"|a\\`a=b#",
+"c*"
+]
+},
+{
+"args": [
+"--opt\\bar=*=foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"--optbar=*=foo"
+]
+},
+{
+"args": [
+"foo"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"foo"
+]
+},
+{
+"args": [
+"x#y`\t)\\\\"
+],
+"kwargs": {},
+"expected": [
+"x#y`",
+")\\"
+]
+},
+{
+"args": [
+"'x y''x y'\ra b~a b# c)"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x yx y",
+"a",
+"b~a",
+"b"
+]
+},
+{
+"args": [
+";*\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+";*a\"b"
+]
+},
+{
+"args": [
+"# c\"a\\\"b\"\\ "
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"-'a\\'\"x y\"'a\\'\\\\*"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"-'a\\'\"x",
+"y\"'a\\'\\\\*"
+]
+},
+{
+"args": [
+"a=b`--opt=\\ # c\n\t"
+],
+"kwargs": {},
+"expected": [
+"a=b`--opt= #",
+"c"
+]
+},
+{
+"args": [
+"\\\"a\\\"b\"("
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"="
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"="
+]
+},
+{
+"args": [
+"`` "
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"``"
+]
+},
+{
+"args": [
+"a b(  "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"a",
+"b("
+]
+},
+{
+"args": [
+"(\ré"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"(",
+"é"
+]
+},
+{
+"args": [
+"'x y'#`\"x y\"&&"
+],
+"kwargs": {},
+"expected": [
+"x y#`x y&&"
+]
+},
+{
+"args": [
+"# c\\ ( \r'x y'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": []
+},
+{
+"args": [
+"\\\\\t"
+],
+"kwargs": {},
+"expected": [
+"\\"
+]
+},
+{
+"args": [
+"&& "
+],
+"kwargs": {},
+"expected": [
+"&&"
+]
+},
+{
+"args": [
+"\\'\\\n$HOME-`\\"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"fooé#-'x y'"
+],
+"kwargs": {},
+"expected": [
+"fooé#-x y"
+]
+},
+{
+"args": [
+"~`--opt\\'\\ "
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"~`--opt\\'\\"
+]
+},
+{
+"args": [
+"\\\"\\ \\\n(( ;"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\" \n((",
+";"
+]
+},
+{
+"args": [
+"=\"x y\" --opta b\\\n\\é"
+],
+"kwargs": {},
+"expected": [
+"=x y",
+"--opta",
+"b\né"
+]
+},
+{
+"args": [
+"foo\\'\\\\bar)"
+],
+"kwargs": {},
+"expected": [
+"foo'\\bar)"
+]
+},
+{
+"args": [
+"\t"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": []
+},
+{
+"args": [
+"\rbar\\\\--opt*'\\ "
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"--opt\r\\ "
+],
+"kwargs": {},
+"expected": [
+"--opt",
+" "
+]
+},
+{
+"args": [
+"é)\n)*"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"é)",
+")*"
+]
+},
+{
+"args": [
+"~\"\"-\\\\("
+],
+"kwargs": {},
+"expected": [
+"~-\\("
+]
+},
+{
+"args": [
+"\"# c~# c--opt-# c`"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"  \rx#y\\foo\"\""
+],
+"kwargs": {},
+"expected": [
+"x#yfoo"
+]
+},
+{
+"args": [
+"-\\\\\"a\\\"b\"\n\"a\\\"b\""
+],
+"kwargs": {},
+"expected": [
+"-\\a\"b",
+"a\"b"
+]
+},
+{
+"args": [
+"\n\\ $HOME\""
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"&&'a\\'*'a\\'"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"&&a\\*a\\"
+]
+},
+{
+"args": [
+"a b\"\"\"a\\\"b\"\\'|`\\'\t"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": [
+"a",
+"b\"\"\"a\\\"b\"\\'|`\\'"
+]
+},
+{
+"args": [
+"barfoo"
+],
+"kwargs": {},
+"expected": [
+"barfoo"
+]
+},
+{
+"args": [
+"barx#y$HOME\"x y\"# \\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"barx#y$HOME\"x",
+"y\"#",
+"\\'"
+]
+},
+{
+"args": [
+"\\\"\\ \"\"\"a\\\"b\"\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"\" a\"b"
+]
+},
+{
+"args": [
+"\\'$HOME#"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"'$HOME"
+]
+},
+{
+"args": [
+";\\\\ &&\t\\\n\r"
+],
+"kwargs": {},
+"expected": [
+";\\",
+"&&",
+"\n"
+]
+},
+{
+"args": [
+"\\\nx#y(\\\\''--opt\\ \"a\\\"b\""
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"\\",
+"x#y(\\\\''--opt\\",
+"\"a\\\"",
+"b\""
+]
+},
+{
+"args": [
+"\"x y\"\"\"é\"x y\"**~\n"
+],
+"kwargs": {},
+"expected": [
+"x yéx y**~"
+]
+},
+{
+"args": [
+"\rbar\"a\\\"b\"\t\"a\\\"b\"'a\\'"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"bar\"a\\\"b\"",
+"\"a\\\"",
+"b\"'a\\'"
+]
+},
+{
+"args": [
+"'x y'\\  x#y--opt\"a\\\"b\""
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y ",
+"x"
+]
+},
+{
+"args": [
+"a b'x y'=("
+],
+"kwargs": {},
+"expected": [
+"a",
+"bx y=("
+]
+},
+{
+"args": [
+"(\t\\'  "
+],
+"kwargs": {},
+"expected": [
+"(",
+"'"
+]
+},
+{
+"args": [
+"\\\\\\\\\"a\\\"b\"\"*x#y\n"
+],
+"kwargs": {
+"comments": true
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"'x y'$HOME|"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y$HOME|"
+]
+},
+{
+"args": [
+"'x y'  |foo"
+],
+"kwargs": {
+"comments": true
+},
+"expected": [
+"x y",
+"|foo"
+]
+},
+{
+"args": [
+"  \"x#y;\rx#y\r--opt"
+],
+"kwargs": {
+"comments": true,
+"posix": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\r*a=b|"
+],
+"kwargs": {},
+"expected": [
+"*a=b|"
+]
+},
+{
+"args": [
+"(\"\\\n\"x y\" \\"
+],
+"kwargs": {
+"posix": false
+},
+"expected": [
+"(\"\\",
+"\"x y\"",
+"\\"
+]
+},
+{
+"args": [
+"\"(="
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"# c# cx#y ~~)\"x y\""
+],
+"kwargs": {},
+"expected": [
+"#",
+"c#",
+"cx#y",
+"~~)x y"
+]
+},
+{
+"args": [
+"~`(\"\"é"
+],
+"kwargs": {},
+"expected": [
+"~`(é"
+]
+},
+{
+"args": [
+"|*\t"
+],
+"kwargs": {},
+"expected": [
+"|*"
+]
+},
+{
+"args": [
+")a bfoo*bar"
+],
+"kwargs": {},
+"expected": [
+")a",
+"bfoo*bar"
+]
+},
+{
+"args": [
+"\\ #\\'\\\\\\ 'x y''"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+}
+]

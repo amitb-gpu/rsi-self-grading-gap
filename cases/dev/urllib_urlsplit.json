@@ -1,0 +1,4070 @@
+[
+{
+"args": [
+" HTTP:/[v1.fe]#"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/[v1.fe]",
+"",
+""
+]
+},
+{
+"args": [
+"file://:\r:1]?q=1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" [::1]"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"[::1]",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000file:user:pw@h"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"user:pw@h",
+"",
+""
+]
+},
+{
+"args": [
+"git+ssh://[v1.fe]a/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"[v1.fe]a",
+"/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" a.b-c//user:pw@h/a;p?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"a.b-c//user:pw@h/a;p",
+"",
+""
+]
+},
+{
+"args": [
+" x:/℀x/a b#f"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/℀x/a b",
+"",
+"f"
+]
+},
+{
+"args": [
+"a.b-c:/u@v@h?q#f#g"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"a.b-c",
+"",
+"/u@v@h",
+"q#f#g",
+""
+]
+},
+{
+"args": [
+"x:[v1.fe]/?q=1"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"[v1.fe]/",
+"q=1",
+""
+]
+},
+{
+"args": [
+" //[::1]/a/b\t?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"[::1]",
+"/a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"https:/EXAMPLE.com/?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/EXAMPLE.com/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"//ex／a/a:b?q#f"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u0000https///a;p?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"https///a;p",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000://u@v@h/a;p?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"://u@v@h/a;p",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000xexample.com/a:b?q#f#g"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"xexample.com/a:b",
+"q#f#g",
+""
+]
+},
+{
+"args": [
+"\u001f 1http:/EXAMPLE.com/a:b#f?q"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"1http:/EXAMPLE.com/a:b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" git+ssh://127.0.0.1/a:\rb#f?q"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"127.0.0.1",
+"/a:b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"https://u@v@h/a b?"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"https",
+"u@v@h",
+"/a b",
+"",
+""
+]
+},
+{
+"args": [
+"1http//ex／aa/b?q#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http//ex／aa/b",
+"q#f",
+""
+]
+},
+{
+"args": [
+"\u001f HTTPex／a/a b?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"HTTPex／a/a b",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000:/u@v@h/a:b?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/u@v@h/a:b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u001f HTTPh:99999?"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"httph",
+"",
+"99999",
+"",
+""
+]
+},
+{
+"args": [
+"http:/user:pw@ha/b"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/user:pw@ha/b",
+"",
+""
+]
+},
+{
+"args": [
+" a.b-c://user:pw@h?q=1"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"a.b-c",
+"user:pw@h",
+"",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f file//℀x/%20?q=1"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+"file//℀x/%20",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u00001http:/user@h/a b?q#f#g"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+"1http:/user@h/a b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u0000a.b-c:/h:80/a b#f?q"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"/h:80/a b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" file:/℀x/a;p?a=1&b=2"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"file",
+"",
+"/℀x/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"fileuser:pw@h/a b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"fileuser",
+"",
+"pw@h/a b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"file:user:pw@h/#f?q"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"file",
+"",
+"user:pw@h/",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u001f x127.0.0.1//x#f?q"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"x127.0.0.1//x#f",
+"q",
+""
+]
+},
+{
+"args": [
+" git+ss\rh://h:abc?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"h:abc",
+"",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"file:/[::1]//x"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"/[::1]//x",
+"",
+""
+]
+},
+{
+"args": [
+"mailto:/u@v@h//x?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"mailto",
+"",
+"/u@v@h//x",
+"q=1",
+""
+]
+},
+{
+"args": [
+" 1http//[::1"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"1http//[::1",
+"",
+""
+]
+},
+{
+"args": [
+"mailto:℀x/a;p#"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"℀x/a;p",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f git+ssh://EXAMPLE.com/a/b#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"git+ssh",
+"EXAMPLE.com",
+"/a/b#f",
+"",
+""
+]
+},
+{
+"args": [
+" http//EXAMPLE.\tcom/a;p?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//EXAMPLE.com/a;p",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u001f 1httph:99999?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1httph:99999",
+"",
+""
+]
+},
+{
+"args": [
+" exa\tmple.com#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"example.com",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u001f HTTP:h:/a:b"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"h:/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"ma\rilto/a b#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto/a b",
+"",
+"f"
+]
+},
+{
+"args": [
+" x:u@v@h//x#"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"u@v@h//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f //127.0.0.1/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"127.0.0.1",
+"/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u0000git+ssh//h:abc/a b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+ssh//h:abc/a b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f https://h:99999/?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"https",
+"h:99999",
+"/",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"HTTP:example.com/a/b#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"example.com/a/b#",
+"",
+""
+]
+},
+{
+"args": [
+"git+ssh:/::1]/"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"git+ssh",
+"",
+"/::1]/",
+"",
+""
+]
+},
+{
+"args": [
+" https:127.0.0.1a/b?a=1&b=2"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"127.0.0.1a/b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" x//h:abc/a/b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"x//h:abc/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f 1http//EXAMPLE.com/a;p?q#f#g"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http//EXAMPLE.com/a;p",
+"q#f#g",
+""
+]
+},
+{
+"args": [
+"file//h:99999/a:b?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+"file//h:99999/a:b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" http//::1]/a:b#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//::1]/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f mailto:h:80/a b#f?q"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"mailto",
+"",
+"h:80/a b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u001f file//h:abc/#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"file//h:abc/#f",
+"",
+""
+]
+},
+{
+"args": [
+"mailto:[::\t1]//x#f"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"[::1]//x",
+"",
+"f"
+]
+},
+{
+"args": [
+"1http:h:9\n9999/a;p#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http:h:99999/a;p#f",
+"",
+""
+]
+},
+{
+"args": [
+"https://[::1]/a b#f?q"
+],
+"kwargs": {},
+"expected": [
+"https",
+"[::1]",
+"/a b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"git+ssh[::1]#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"git+ssh[::1]#",
+"",
+""
+]
+},
+{
+"args": [
+" http℀x/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http℀x/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" xh:abc/%20?"
+],
+"kwargs": {},
+"expected": [
+"xh",
+"",
+"abc/%20",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f a.b-c:/[::1/%20#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"a.b-c",
+"",
+"/[::1/%20#",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c://[::1#f?q"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"httpexample.com/a;p#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"httpexample.com/a;p",
+"",
+""
+]
+},
+{
+"args": [
+" x://user@h/?"
+],
+"kwargs": {},
+"expected": [
+"x",
+"user@h",
+"/",
+"",
+""
+]
+},
+{
+"args": [
+"x:/EXAMPLE.com/#f?q"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/EXAMPLE.com/",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" x//user:pw@h/a:b#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"x//user:pw@h/a:b",
+"",
+"f"
+]
+},
+{
+"args": [
+"mailto//ex／a/a:b?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto//ex／a/a:b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"x//ex／a//x?a=1&b=2"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"x//ex／a//x",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" file://h:80//x?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"file",
+"h:80",
+"//x",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u001f HTTP:ex／a/%20#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"ex／a/%20#f",
+"",
+""
+]
+},
+{
+"args": [
+" h:99999/a;p"
+],
+"kwargs": {},
+"expected": [
+"h",
+"",
+"99999/a;p",
+"",
+""
+]
+},
+{
+"args": [
+"https://℀x?a=1&b=2"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" a.b-c:/[v1.fe]?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"a.b-c",
+"",
+"/[v1.fe]",
+"q=1",
+""
+]
+},
+{
+"args": [
+" HTTP//u@v@ha/b?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"HTTP//u@v@ha/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f http:/h:99999/?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:99999/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f a.b-c:h:99999/#f"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"h:99999/",
+"",
+"f"
+]
+},
+{
+"args": [
+" x:/h:80/a b#"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"x",
+"",
+"/h:80/a b",
+"",
+""
+]
+},
+{
+"args": [
+" http:/h:80/?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:80/",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u0000://user@h/a b#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"://user@h/a b#f",
+"",
+""
+]
+},
+{
+"args": [
+" x\r:///a/b?"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"xuser@h/a b#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"xuser@h/a b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" 1http://127.0.0.1/a b?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http://127.0.0.1/a b",
+"q=1",
+""
+]
+},
+{
+"args": [
+" http://℀x/%20?q=1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u0000http:[::1a/b#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"http",
+"",
+"[::1a/b",
+"",
+"f"
+]
+},
+{
+"args": [
+"\u0000HTTP://127.0.0.1//x?"
+],
+"kwargs": {},
+"expected": [
+"http",
+"127.0.0.1",
+"//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f\n 1httpuser@ha/b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1httpuser@ha/b",
+"",
+""
+]
+},
+{
+"args": [
+"x:/h:abc/a;p?q=1"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/h:abc/a;p",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000x://h:abc/a;p#f?q\r"
+],
+"kwargs": {},
+"expected": [
+"x",
+"h:abc",
+"/a;p",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"mailto://h:abc/a b"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"mailto",
+"h:abc",
+"/a b",
+"",
+""
+]
+},
+{
+"args": [
+"https:/[::1]/a b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/[::1]/a b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"mailto[::1/%20#\nf?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto[::1/%20",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"https://h:80/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"https",
+"h:80",
+"/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"1http:/u@v@ha/b"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http:/u@v@ha/b",
+"",
+""
+]
+},
+{
+"args": [
+"1http//℀x/"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http//℀x/",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000fileuser:pw@ha/b#f?q"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"fileuser",
+"",
+"pw@ha/b#f",
+"q",
+""
+]
+},
+{
+"args": [
+" git+ssh:/user:pw@h/#"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"/user:pw@h/",
+"",
+""
+]
+},
+{
+"args": [
+"1http/a/b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f http//EXAMPLE.com/%20?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//EXAMPLE.com/%20",
+"",
+""
+]
+},
+{
+"args": [
+" https℀x/"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"https℀x/",
+"",
+""
+]
+},
+{
+"args": [
+"x://ex／a/a b?q#f"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"fileu@v@h/%20#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"fileu@v@h/%20",
+"",
+"f?q"
+]
+},
+{
+"args": [
+":/h:abc/a b?q#f"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+":/h:abc/a b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" ::1]//x"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+"::1]//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f https:/user:pw@h/a b#f?q"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/user:pw@h/a b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u0000httph:a/b"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"httph",
+"",
+"a/b",
+"",
+""
+]
+},
+{
+"args": [
+"HTTP://[v1.fe]a/b?q=1"
+],
+"kwargs": {},
+"expected": [
+"http",
+"[v1.fe]a",
+"/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f 1\nhttp℀x/"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http℀x/",
+"",
+""
+]
+},
+{
+"args": [
+"x//[v1.fe]/a b?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"x//[v1.fe]/a b",
+"",
+""
+]
+},
+{
+"args": [
+"http//::1]a/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//::1]a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" http://example.com/a:b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"http",
+"example.com",
+"/a:b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f file:/?a=1&b=2\n"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"file",
+"",
+"/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"https:/h:a/b?q=1"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/h:a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"x:/[::1]//x#f?q"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/[::1]//x",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u001f example.coma/b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"example.coma/b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"a.b-c:u@v@h/%20?a=1&b=2"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"a.b-c",
+"",
+"u@v@h/%20",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"x///a:b?q=1"
+],
+"kwargs": {
+"scheme": "https",
+"allow_fragments": false
+},
+"expected": [
+"https",
+"",
+"x///a:b",
+"q=1",
+""
+]
+},
+{
+"args": [
+" mailto::1]/a/b#f"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+":1]/a/b",
+"",
+"f"
+]
+},
+{
+"args": [
+"HTTP//[\n::1/a:b#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"HTTP//[::1/a:b",
+"",
+"f"
+]
+},
+{
+"args": [
+"HTTP://h:99999/a b?q#f"
+],
+"kwargs": {},
+"expected": [
+"http",
+"h:99999",
+"/a b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" http://h:80/a b?q=1"
+],
+"kwargs": {},
+"expected": [
+"http",
+"h:80",
+"/a b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"mailto//ex／a#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto//ex／a",
+"",
+""
+]
+},
+{
+"args": [
+" http:/127.0.0.1/?\nq=1"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"http",
+"",
+"/127.0.0.1/",
+"q=1",
+""
+]
+},
+{
+"args": [
+"x:/EXAMPLE.com/a;p?a=1&b=2"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"x",
+"",
+"/EXAMPLE.com/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"file:[::1]/a\r/b?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"file",
+"",
+"[::1]/a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"http:/h:abc/%20?"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:abc/%20",
+"",
+""
+]
+},
+{
+"args": [
+"1h\nttp//h:80/?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http//h:80/",
+"q",
+"f"
+]
+},
+{
+"args": [
+"mai\rlto:/℀x//x?q=1"
+],
+"kwargs": {
+"scheme": "ftp",
+"allow_fragments": false
+},
+"expected": [
+"mailto",
+"",
+"/℀x//x",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f ://user:pw@h?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+"://user:pw@h",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000file:℀xa/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"℀xa/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" a.b-c:/example.com/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"/example.com/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"git+ssh:::1]/a:b#f"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"::1]/a:b",
+"",
+"f"
+]
+},
+{
+"args": [
+"a.b-c:\n//::1]/a;p?q#f#g"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u0000HTTP://user:pw@h#f?q"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"user:pw@h",
+"#f",
+"q",
+""
+]
+},
+{
+"args": [
+"mailto://ex／a//x?q=1"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"h:a\rbc"
+],
+"kwargs": {},
+"expected": [
+"h",
+"",
+"abc",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000git+ssh:[::1/a b"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"git+ssh",
+"",
+"[::1/a b",
+"",
+""
+]
+},
+{
+"args": [
+"://user@h/a:b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"://user@h/a:b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u0000a.b-c:EXAMPLE.com//x#"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"a.b-c",
+"",
+"EXAMPLE.com//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f xh:80//x?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"xh",
+"",
+"80//x",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"mailtoh:abc/a/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"mailtoh",
+"",
+"abc/a/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+" file:/u@v@h/a/b"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"file",
+"",
+"/u@v@h/a/b",
+"",
+""
+]
+},
+{
+"args": [
+" https:user@h/a/b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"user@h/a/b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"https//h:99999//x"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"https//h:99999//x",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c:127.0.0.1/a/b#"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"127.0.0.1/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"1htt\np//h:abc/%20#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http//h:abc/%20#",
+"",
+""
+]
+},
+{
+"args": [
+"git+ssh://user@h/a b?q#f"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"user@h",
+"/a b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u001f x//user@h?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"x//user@h",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"HTTP[::1]a/b\t"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"HTTP[::1]a/b",
+"",
+""
+]
+},
+{
+"args": [
+"http:h:99999/a b#f"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"h:99999/a b",
+"",
+"f"
+]
+},
+{
+"args": [
+"\u001f http://h:abc/a b#"
+],
+"kwargs": {
+"scheme": "ftp",
+"allow_fragments": false
+},
+"expected": [
+"http",
+"h:abc",
+"/a b#",
+"",
+""
+]
+},
+{
+"args": [
+"\u00001http:/\tuser:pw@h/a:b#"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"1http:/user:pw@h/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"git+ssh:[::1]//x#\rf"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"[::1]//x",
+"",
+"f"
+]
+},
+{
+"args": [
+" x:/[::1]/a:b#"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/[::1]/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c:[v1.fe]/%20?a=1\n&b=2"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"[v1.fe]/%20",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u0000git+ssh:[v1.fe]/a b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"[v1.fe]/a b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f mailto//127.0.0.1/a;p?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto//127.0.0.1/a;p",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u001f file:[v1.fe]//x#"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"[v1.fe]//x",
+"",
+""
+]
+},
+{
+"args": [
+" HTTP//ex／a/?q#f"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"HTTP//ex／a/",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000\ta.b-c:/h:80//x?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"/h:80//x",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f a\n.b-c://%20#f"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"%20",
+"",
+"",
+"f"
+]
+},
+{
+"args": [
+"\u0000http:/user@h/%20?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/user@h/%20",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"https:h\n:a/b#"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"h:a/b",
+"",
+""
+]
+},
+{
+"args": [
+"h:80a/b#\t"
+],
+"kwargs": {},
+"expected": [
+"h",
+"",
+"80a/b",
+"",
+""
+]
+},
+{
+"args": [
+":user:pw@h?a\n=1&b=2"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+":user:pw@h",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"HTTP[::1]#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"HTTP[::1]#",
+"",
+""
+]
+},
+{
+"args": [
+"https://h:/a/b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"https",
+"h:",
+"/a/b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" a.b-c:127.0.0.1/?"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"127.0.0.1/",
+"",
+""
+]
+},
+{
+"args": [
+"https:u@v@h/?"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"u@v@h/",
+"",
+""
+]
+},
+{
+"args": [
+"file:/h:\t99999"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"/h:99999",
+"",
+""
+]
+},
+{
+"args": [
+":/℀x/%20?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"",
+":/℀x/%20",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u001f a.b-cuser:pw@h/a/b#"
+],
+"kwargs": {},
+"expected": [
+"a.b-cuser",
+"",
+"pw@h/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f http//h\t:99999?q#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"http//h:99999",
+"q#f",
+""
+]
+},
+{
+"args": [
+"http/?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http/",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000http:/[v1\n.fe]/a b?q#f"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/[v1.fe]/a b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000://ex／a//x#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"://ex／a//x",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"git+ssh://ex／a\r/a/b"
+],
+"kwargs": {
+"scheme": "https",
+"allow_fragments": false
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+" fileuser:pw@h/"
+],
+"kwargs": {},
+"expected": [
+"fileuser",
+"",
+"pw@h/",
+"",
+""
+]
+},
+{
+"args": [
+"1http//h:80#f?q"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"1http//h:80",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u0000HTTP//[::1]/a b"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"HTTP//[::1]/a b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f\n x:127.0.0.1/a/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"127.0.0.1/a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000x//u@v@h/?q\r#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"x//u@v@h/",
+"q#f",
+""
+]
+},
+{
+"args": [
+"\u001f https//::1]/"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"https//::1]/",
+"",
+""
+]
+},
+{
+"args": [
+" a.b-c//[v1.fe]#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"a.b-c//[v1.fe]",
+"",
+""
+]
+},
+{
+"args": [
+"mailto://example.coma/b"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"example.coma",
+"/b",
+"",
+""
+]
+},
+{
+"args": [
+" http:h://x?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"h://x",
+"q=1",
+""
+]
+},
+{
+"args": [
+"http:/[v1.fe]/a:b?q=1"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/[v1.fe]/a:b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"https//user:pw@h/a:b"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"https//user:pw@h/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"x:/℀\rx/%20#f?q"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"/℀x/%20",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u0000http:/h:80/a/b#f?q"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"http",
+"",
+"/h:80/a/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u0000://h:/a:b?q#f\r#g"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"://h:/a:b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"http://EXAMPLE.com/a;p#f?q"
+],
+"kwargs": {},
+"expected": [
+"http",
+"EXAMPLE.com",
+"/a;p",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"http:[v1.fe]/a/b#f?q"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"[v1.fe]/a/b#f",
+"q",
+""
+]
+},
+{
+"args": [
+"mail\nto:℀x/%20?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"℀x/%20",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"HTTP:/h:99999/a/b?q=1"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:99999/a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"http//example.com/?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//example.com/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u001f xex／a/%20?a=1&b=2"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"xex／a/%20",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"file://[::1/%20#"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"\u001f git+ssh:/127.0.0\n.1/a:b?q#f"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"git+ssh",
+"",
+"/127.0.0.1/a:b",
+"q#f",
+""
+]
+},
+{
+"args": [
+"\u001f 1http[::1/a:b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http[::1/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"HTTP:[::1/a/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"[::1/a/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"1http//h:80/%20?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http//h:80/%20",
+"q",
+"f"
+]
+},
+{
+"args": [
+":/127.0.0.1/?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/127.0.0.1/",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+" HTTP//[::1a/b?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"HTTP//[::1a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f f\rile:h:/a/b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"h:/a/b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"mailto:/user@h//x"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"mailto",
+"",
+"/user@h//x",
+"",
+""
+]
+},
+{
+"args": [
+"mailto℀x/%20?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto℀x/%20",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u0000httpsexample.com/?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"httpsexample.com/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"//u@v@h/a/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"u@v@h",
+"/a/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\u0000\na.b-c[::1]/?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"a.b-c[::1]/",
+"",
+""
+]
+},
+{
+"args": [
+"u@v@h/a/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"u@v@h/a/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"httpsuser@h/a/b#"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"httpsuser@h/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f https://h:abc?q#f"
+],
+"kwargs": {},
+"expected": [
+"https",
+"h:abc",
+"",
+"q",
+"f"
+]
+},
+{
+"args": [
+"git+ssh://u@v@h/?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"u@v@h",
+"/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"mailto:user@h/%20#f?q"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"user@h/%20",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"file:/[v1.fe]/a:b?q#f\n"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"/[v1.fe]/a:b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"1http//#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http//",
+"",
+""
+]
+},
+{
+"args": [
+" \n1http:/127.0.0.1/a b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http:/127.0.0.1/a b",
+"",
+""
+]
+},
+{
+"args": [
+"file//user:p\rw@h//x?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"file//user:pw@h//x",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" git+ssh//h:/a/b#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+ssh//h:/a/b",
+"",
+"f"
+]
+},
+{
+"args": [
+"\u0000a.b-c:EXAMPLE.coma/b?"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"EXAMPLE.coma/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u00001http//h:abc/a;p?q#f"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"1http//h:abc/a;p",
+"q",
+"f"
+]
+},
+{
+"args": [
+" http:/[::1]//x?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/[::1]//x",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"HTTP:user:pw@ha/b?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"user:pw@ha/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000http:ex／a//x#"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"ex／a//x",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c:/℀x\r//x?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"a.b-c",
+"",
+"/℀x//x",
+"q",
+"f"
+]
+},
+{
+"args": [
+" :/h:80?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/h:80",
+"q",
+"f"
+]
+},
+{
+"args": [
+"[v1.fe]/#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"[v1.fe]/",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f gi\tt+ssh//h:99999/a b?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+ssh//h:99999/a b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u001f git+ssh[::1]//x?q=1"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+ssh[::1]//x",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000x:example.coma/b#f"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"example.coma/b",
+"",
+"f"
+]
+},
+{
+"args": [
+":/::1]\r/%20#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/::1]/%20",
+"",
+""
+]
+},
+{
+"args": [
+"http//user:pw@h//x#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//user:pw@h//x",
+"",
+"f"
+]
+},
+{
+"args": [
+"http:h:99999/a:b?q#f"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"h:99999/a:b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"a.b-cex／a/a;p#"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"a.b-cex／a/a;p#",
+"",
+""
+]
+},
+{
+"args": [
+"https:/example.co\nm//x?q#f#g"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"https",
+"",
+"/example.com//x",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+" https127.0.0.1/%20"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"https127.0.0.1/%20",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c//example.c\tom/"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"a.b-c//example.com/",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f git+sshu@v@h"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+sshu@v@h",
+"",
+""
+]
+},
+{
+"args": [
+" mailto127.0.0.1/a:b#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto127.0.0.1/a:b",
+"",
+""
+]
+},
+{
+"args": [
+" mailto:EXAMPLE.coma/b\n?"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"EXAMPLE.coma/b",
+"",
+""
+]
+},
+{
+"args": [
+"x:127.0.0.1/?q#f"
+],
+"kwargs": {},
+"expected": [
+"x",
+"",
+"127.0.0.1/",
+"q",
+"f"
+]
+},
+{
+"args": [
+"https:/127.0.0.1a/b#f"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"/127.0.0.1a/b",
+"",
+"f"
+]
+},
+{
+"args": [
+"\u0000:/EXAMPLE.coma/b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/EXAMPLE.coma/b",
+"",
+""
+]
+},
+{
+"args": [
+"http:/u@v@h?"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"http",
+"",
+"/u@v@h",
+"",
+""
+]
+},
+{
+"args": [
+"HTTP:u@v@ha/b?"
+],
+"kwargs": {
+"scheme": "https",
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"u@v@ha/b",
+"",
+""
+]
+},
+{
+"args": [
+"\u00001http://example.coma/b#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http://example.coma/b",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"mailto//EXAMPLE.com/a/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"mailto//EXAMPLE.com/a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"HTTP:/[v1.fe]/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/[v1.fe]/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+" http//[v1.fe]/a;p?q#f#g\t"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"http//[v1.fe]/a;p",
+"q#f#g",
+""
+]
+},
+{
+"args": [
+"x:h:99999//x?q#f#g"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"x",
+"",
+"h:99999//x",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+" git+ssh:/[v1.fe]?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"git+ssh",
+"",
+"/[v1.fe]",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000http//::1]/a/b#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//::1]/a/b",
+"",
+""
+]
+},
+{
+"args": [
+" file:/h:?q#f"
+],
+"kwargs": {},
+"expected": [
+"file",
+"",
+"/h:",
+"q",
+"f"
+]
+},
+{
+"args": [
+" mailto:/h:abc/a/b#f"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"",
+"/h:abc/a/b",
+"",
+"f"
+]
+},
+{
+"args": [
+"HTTPex／a/\n/x#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"HTTPex／a//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f http:/h:/a:b"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"x[v1.fe]/a/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"x[v1.fe]/a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000:/h:abc/a:b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/h:abc/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"https://[::1]//x?"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"https",
+"[::1]",
+"//x",
+"",
+""
+]
+},
+{
+"args": [
+"\u001f HTTP:/h:a/b?q=1"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/h:a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000a.b-c:/℀x/a b?q=1"
+],
+"kwargs": {},
+"expected": [
+"a.b-c",
+"",
+"/℀x/a b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"://::1]/?a=1&b=2"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"https",
+"",
+"://::1]/",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"https\t:/[::1]a/b?"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/[::1]a/b",
+"",
+""
+]
+},
+{
+"args": [
+"file://EXAMPLE.com/a/b?q#f#g"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"file",
+"EXAMPLE.com",
+"/a/b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"git+ssh:::1]/a;p?"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"::1]/a;p",
+"",
+""
+]
+},
+{
+"args": [
+"a.b-c://[::1/a;p?q#f"
+],
+"kwargs": {},
+"expected": {
+"raises": "ValueError"
+}
+},
+{
+"args": [
+"1http℀x/a b?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http℀x/a b",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000git+ssh//[::1]/a;p?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"git+ssh//[::1]/a;p",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"http:/a b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"/a b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"file[::1]//x#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"file[::1]//x",
+"",
+""
+]
+},
+{
+"args": [
+"1http:/h:abc/#f?q"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"1http:/h:abc/",
+"",
+"f?q"
+]
+},
+{
+"args": [
+"\r1http//u@v@h/a:b?"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"",
+"",
+"1http//u@v@h/a:b",
+"",
+""
+]
+},
+{
+"args": [
+" mailtoh:abc/a;p?"
+],
+"kwargs": {
+"scheme": "https"
+},
+"expected": [
+"mailtoh",
+"",
+"abc/a;p",
+"",
+""
+]
+},
+{
+"args": [
+" HTTP:[::1/\ra/b?q#f"
+],
+"kwargs": {},
+"expected": [
+"http",
+"",
+"[::1/a/b",
+"q",
+"f"
+]
+},
+{
+"args": [
+" httpsEXAMPLE.com/%20?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"httpsEXAMPLE.com/%20",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u0000mailto:/\t/user:pw@h/a:b"
+],
+"kwargs": {},
+"expected": [
+"mailto",
+"user:pw@h",
+"/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000fileh:abc//x?q#f"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"fileh",
+"",
+"abc//x",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000a.b-c:us\rer:pw@h/#f?q"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"a.b-c",
+"",
+"user:pw@h/#f",
+"q",
+""
+]
+},
+{
+"args": [
+"\u001f HTTP://EXAMPLE.com//x?q=1"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"http",
+"EXAMPLE.com",
+"//x",
+"q=1",
+""
+]
+},
+{
+"args": [
+"file//user@ha/b"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"file//user@ha/b",
+"",
+""
+]
+},
+{
+"args": [
+" https:[::1]a/b#"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"https",
+"",
+"[::1]a/b",
+"",
+""
+]
+},
+{
+"args": [
+" file://example.com?\rq#f#g"
+],
+"kwargs": {},
+"expected": [
+"file",
+"example.com",
+"",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"\u001f http//u@v@h/a:b#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//u@v@h/a:b",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000file:h:99999/a b"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"file",
+"",
+"h:99999/a b",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000http/a:b?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http/a:b",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+":u@v@h/a:b?q\n#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":u@v@h/a:b",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000https:u@v@h\na/b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"u@v@ha/b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"//u@v@h/%20?q#f#g"
+],
+"kwargs": {
+"scheme": "ftp"
+},
+"expected": [
+"ftp",
+"u@v@h",
+"/%20",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"https:/℀x/a/b"
+],
+"kwargs": {},
+"expected": [
+"https",
+"",
+"/℀x/a/b",
+"",
+""
+]
+},
+{
+"args": [
+" http//EXAMPLE.com/a/b"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"http//EXAMPLE.com/a/b",
+"",
+""
+]
+},
+{
+"args": [
+"fileEXAMPLE.com/%20?q#f"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"fileEXAMPLE.com/%20",
+"q",
+"f"
+]
+},
+{
+"args": [
+"\u0000http:/h:99999/a/b?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"http",
+"",
+"/h:99999/a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"\u0000file//127.0.0.1/a/b?a=1&b=2"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"file//127.0.0.1/a/b",
+"a=1&b=2",
+""
+]
+},
+{
+"args": [
+"\u0000file//℀x//x#"
+],
+"kwargs": {
+"scheme": "ftp",
+"allow_fragments": false
+},
+"expected": [
+"ftp",
+"",
+"file//℀x//x#",
+"",
+""
+]
+},
+{
+"args": [
+"\u0000git+ssh:/user@h/a/b?q=1"
+],
+"kwargs": {
+"allow_fragments": false
+},
+"expected": [
+"git+ssh",
+"",
+"/user@h/a/b",
+"q=1",
+""
+]
+},
+{
+"args": [
+"x\t℀x?q#f#g"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"x℀x",
+"q",
+"f#g"
+]
+},
+{
+"args": [
+"https127.0.0.1/a/b#"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+"https127.0.0.1/a/b",
+"",
+""
+]
+},
+{
+"args": [
+" :/[::1?"
+],
+"kwargs": {},
+"expected": [
+"",
+"",
+":/[::1",
+"",
+""
+]
+},
+{
+"args": [
+" git+ssh:h:abc/#f"
+],
+"kwargs": {},
+"expected": [
+"git+ssh",
+"",
+"h:abc/",
+"",
+"f"
+]
+}
+]

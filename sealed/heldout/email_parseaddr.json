@@ -1,0 +1,10564 @@
+[
+{
+"args": [
+"a@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <x+tag@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+" ..\"\ta@b"
+],
+"kwargs": {},
+"expected": [
+"",
+".."
+]
+},
+{
+"args": [
+"< Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@ex.org ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"mary_k@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"@ea@bx.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"é@<a@b>Doe>\\\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <o'brien@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"o'brien@ex..com"
+]
+},
+{
+"args": [
+"Doea@bx@Mary <m@x.io>:"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'j.d@ex.orgbrien@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@[1.2.3.@x4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <john@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"john@example.com"
+]
+},
+{
+"args": [
+"(c) J <o'brien@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"john@[1.2.3.4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4][1.2.3.4]>@)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <a..b@ex.org>, john@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <x+tag@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"x+tag@b"
+]
+},
+{
+"args": [
+"Zoë <o'brien@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"\t)Doe  "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <\"johnq u\"@>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"@ex.org (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"@ex.org"
+]
+},
+{
+"args": [
+"<a@b>a@b@ John"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<a@exa\\\"mple.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Joh\\n Doe <first.last@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Joh\\n Doe",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"John Doe <john@[1.2.3.4]>, john@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"john@[1.2.3.4]"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <mary_k@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"mary_k@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"\\Johna@b,\\\"\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(x@x@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <first.last@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"(c) J <a@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"a@ex..com"
+]
+},
+{
+"args": [
+"a..b@b (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"a..b@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <john@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <Doe@>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+"o'brien@[1.2.3.4] (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"o'brien@[1.2.3.4]"
+]
+},
+{
+"args": [
+"o'brien@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@ex..com"
+]
+},
+{
+"args": [
+"@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\,  .[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"Zoë <first.last@sub.ex.co.uk>, j.d@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"first.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"John Doe <\"q u\"@e..xample.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"\"q u\"@e..xample.com"
+]
+},
+{
+"args": [
+"Zoë <mary_k@ex.org>, john@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"John Doe <x+ta  g@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"x+ta  g@example.com"
+]
+},
+{
+"args": [
+"John@x"
+],
+"kwargs": {},
+"expected": [
+"",
+"John@x"
+]
+},
+{
+"args": [
+"aj.d@ex.org@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <a@example.co\\\"m>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"a@example.co\\"
+]
+},
+{
+"args": [
+"\\>\"J D\"<a@b>)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"(c) J <j.d@>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+"Zoë <o'brien@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"o'brien@mail.io"
+]
+},
+{
+"args": [
+"<first.last@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@b"
+]
+},
+{
+"args": [
+"Mary <o'brien@ex.org>, a@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\t..john\\\""
+],
+"kwargs": {},
+"expected": [
+"",
+"..john\\"
+]
+},
+{
+"args": [
+"@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"@example.com"
+]
+},
+{
+"args": [
+"j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"    @xa@b.."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"a@mail.io (JohJohnn)"
+],
+"kwargs": {},
+"expected": [
+"JohJohnn",
+"a@mail.io"
+]
+},
+{
+"args": [
+"a@b (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"a@b"
+]
+},
+{
+"args": [
+"j.d@ex.o..rg"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.o..rg"
+]
+},
+{
+"args": [
+"Mary <m@x.io>,DoeDoe"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <x+tag@b>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"x+tag@b"
+]
+},
+{
+"args": [
+"\"q u\"John@mail.io (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"\"q u\"John@mail.io"
+]
+},
+{
+"args": [
+"first.last@[1.2.3.4]@x"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_:k@mail.io (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"k@mail.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@sub.ex.co.uk>, \"q u\"@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@ex..com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a@ex..com"
+]
+},
+{
+"args": [
+"<mary_\\\"k@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_\\\"k@ex..com>\""
+]
+},
+{
+"args": [
+"o'brien@ex.org (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"john"
+],
+"kwargs": {},
+"expected": [
+"",
+"john"
+]
+},
+{
+"args": [
+"\\\"<a@b>é..\t "
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"..(c) J <first.last@sub.ex.co.uk>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+".. J (c)",
+"first.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"johnJohn  ;."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+".\t\\\t>é"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@maexample.comil.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@maexample.comil.io"
+]
+},
+{
+"args": [
+"Mary <m@x.io>\té"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <a..b@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"John Doe <a@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a@mail.io"
+]
+},
+{
+"args": [
+"x+tag@examplMary <m@x.io>e.com (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@[1<.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@example.com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"johnjohn@[1.2.3.4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@ex.org\" (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <mary_k@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"a..b@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@ex..com"
+]
+},
+{
+"args": [
+"<a@b>example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <\"q u\"@ex.org>, j.d@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"@b"
+]
+},
+{
+"args": [
+"@x"
+],
+"kwargs": {},
+"expected": [
+"",
+"@x"
+]
+},
+{
+"args": [
+":\"j.d@ex.org\")"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@ex.org ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@ex.org"
+]
+},
+{
+"args": [
+"x+tag@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"John Doe <a..b@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a..b@example.com"
+]
+},
+{
+"args": [
+" <mary_k@b>, a..b@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_k@b"
+]
+},
+{
+"args": [
+"Mary <o'brien@examp<a@b>le.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"( c) J <mary_k@b>"
+],
+"kwargs": {},
+"expected": [
+"J ( c)",
+"mary_k@b"
+]
+},
+{
+"args": [
+"  \"Doe, John\" <john@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@b"
+]
+},
+{
+"args": [
+"john@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@example.com"
+]
+},
+{
+"args": [
+"J>ohn Doe <first.last@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <o'brien@sub.ex.co.uk>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+";\\"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@example.com (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"first.last@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"(c) J ,<john@>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@exam(ple.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"ple.com",
+"@exam"
+]
+},
+{
+"args": [
+",,Doejohn"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Doe"
+],
+"kwargs": {},
+"expected": [
+"",
+"Doe"
+]
+},
+{
+"args": [
+"\\\\<x@a@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<\"q u\"@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<<([1.2.3.4]j.d@ex.org[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <mary_k@ex..>com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <mary_k@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+",  [1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\t\t;j.d@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@sub.ex.co.)uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@sub.ex.co."
+]
+},
+{
+"args": [
+"..>\"J D\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@ex..com (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"@ex..com"
+]
+},
+{
+"args": [
+"Zoë <first.last@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"Doe\\example.com\"J D\"<"
+],
+"kwargs": {},
+"expected": [
+"Doe\\example.com J D",
+""
+]
+},
+{
+"args": [
+"\"q u\"@ex..coJohnm ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@ex..coJohnm"
+]
+},
+{
+"args": [
+">>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io><x@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+";é>x@."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <mary_k@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"<j.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"jo  hn@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"jo  hn@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@b>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"x+tag@b"
+]
+},
+{
+"args": [
+"@ex,..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@sub.ex.co.uk (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"j.d@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<mary_k@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"x+tag@ex..com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@ex..com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <x+tag@ex.org>, mary_k@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\ta@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"[1.2.3.4]@x;)Doe"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <x+tag@mail:.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <a..b@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"\"Doe, John\" <mary_k@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"(c) J <\"q u\"@b >"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"\"q u\"@b"
+]
+},
+{
+"args": [
+"\"q u\"@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"Mary <john@sub.ex.co.uk>, a..b@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+"o'brien;@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@example.co;m (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@example.co"
+]
+},
+{
+"args": [
+"j.d@mail.io (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+"..Doe(comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"..Doe"
+]
+},
+{
+"args": [
+".j.d@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+".j.d@ex.org"
+]
+},
+{
+"args": [
+"\"q u\"@sub.ex.co.uk ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+" <x+tag@ex.org>, first.last@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <o'brien@>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+":)éDoe[1.2.3.4],"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <john@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"john@ex..com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <\"q u\"@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+""
+]
+},
+{
+"args": [
+"John Doe <o'brien@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"j.d@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Mary <@ex.,.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@b"
+]
+},
+{
+"args": [
+"x+.tag@ex..com (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"x+.tag@ex..com"
+]
+},
+{
+"args": [
+"a..b@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <o'brien@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"o'brien@b"
+]
+},
+{
+"args": [
+"john\"Doe, John\" <j.d@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"john Doe, John",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@sub.ex.co.uk>, \"q u\"@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <john@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@bx@,)\\a@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <a..b@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"<first.last@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"a..b@ex.org ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"Zoë <@ex..com>, mary_k@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io><a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.da@b@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@b(comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"a@b"
+]
+},
+{
+"args": [
+"Zoë <mary_k@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"mary_k@ex..com"
+]
+},
+{
+"args": [
+";;example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j.d@ex...com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"j.d@ex...com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\"Mary <m@x.io> <o'brien@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@sub.)ex.co.uk (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"x+tag@sub."
+]
+},
+{
+"args": [
+"MJohnary <john@example.com>"
+],
+"kwargs": {},
+"expected": [
+"MJohnary",
+"john@example.com"
+]
+},
+{
+"args": [
+"Mary <o'brien@:b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+"(comment)  é)<a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@sub.ex.co.uk (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\t"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, Jox@hn\" <john@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Doe, Jox@hn",
+"john@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"mary_k@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <j.d@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"mary_k@ex.Doeorg"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_k@ex.Doeorg"
+]
+},
+{
+"args": [
+"..john"
+],
+"kwargs": {},
+"expected": [
+"",
+"..john"
+]
+},
+{
+"args": [
+"John Doe <a@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"a@ex.org"
+]
+},
+{
+"args": [
+"john@[1.2.3.4] (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"john@[1.2.3.4]"
+]
+},
+{
+"args": [
+"Zoë <j.d@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"a@ex.org"
+]
+},
+{
+"args": [
+")\tj.d@ex.org\\\"(comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@example[1.2.3.4].com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@example[1.2.3.4].com"
+]
+},
+{
+"args": [
+"John Doe <Doea..b@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"Doea..b@ex..com"
+]
+},
+{
+"args": [
+"é(Doe\\\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <first.last@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"fir\tst.last@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"fir\tst.last@mail.io"
+]
+},
+{
+"args": [
+"john@ex.org (<John)"
+],
+"kwargs": {},
+"expected": [
+"<John",
+"john@ex.org"
+]
+},
+{
+"args": [
+")a@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<first.last@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@[1.2.3.4]"
+]
+},
+{
+"args": [
+"Zoë <j.d\\@ex.org>, a..b@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"j.d\\@ex.org"
+]
+},
+{
+"args": [
+"Mary <@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+"Mary <a..b@ma il.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"\"q u\"@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"John Doe <@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"mary_k@[1Mary <m@x.io>.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+")"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io>:"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"first.last@ex.oa@brg (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@b"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@example<.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <mary_k@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"john@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@ex.org"
+]
+},
+{
+"args": [
+"johMary <m@x.io>n@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <x+tag@ex.org>, \"q u\"@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" @j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@mail.io (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"\"q\" u\"@b (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+"q"
+]
+},
+{
+"args": [
+".)<a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"a..b@[1.2.3.4]"
+]
+},
+{
+"args": [
+"John Doe <a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a@ex.org"
+]
+},
+{
+"args": [
+"o'brien@)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@[1<.2.3.4] ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"o'brien@[1<.2.3.4]"
+]
+},
+{
+"args": [
+"(comment)(@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"john@mail\"J D\".io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@mail"
+]
+},
+{
+"args": [
+".()a@b "
+],
+"kwargs": {},
+"expected": [
+" ",
+".a@b"
+]
+},
+{
+"args": [
+"\"Doe, John\" <x+tag@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"x+tag@[1.2.3.4]"
+]
+},
+{
+"args": [
+">\"J D\"\t\t"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@sub.ex.co.uk (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<x+tag@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@sub.ex.co.uk"
+]
+},
+{
+"args": [
+" "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"Zoë <john@[1.2.3.4]>, x+tag@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@example.com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"john@example.com"
+]
+},
+{
+"args": [
+"\"Mary <m@x.io>[1.2.3.4] <"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"Mary <m@x.io>[1.2.3.4] <"
+]
+},
+{
+"args": [
+" ((Mary <m@x.io>\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@mail.io ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@mail.io"
+]
+},
+{
+"args": [
+"(c) J <mary_k@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@[1.2.3.4]@x>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"  :j.d@ex.orgMary <m@x.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.orgMary"
+]
+},
+{
+"args": [
+"@ma(il.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"il.io",
+"@ma"
+]
+},
+{
+"args": [
+">..<John.."
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4](comment))x@j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4]\t  ,"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <john@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"john@ex.org"
+]
+},
+{
+"args": [
+"Zoë: <\"q u\"@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"\\"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"(c) J <@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+">Mary <m@x.io>\\johnx@;"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"\"john;\tMary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+"john;\tMary <m@x.io>"
+]
+},
+{
+"args": [
+"mary_k@mail  .io (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"Mary <a..b@[1.2.3.4]>, \"q u\"@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"a..b@[1.2.3.4]"
+]
+},
+{
+"args": [
+"a..b@sub.ex.co:.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <mary_k@>, @example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@example.com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"john@b (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"john@b"
+]
+},
+{
+"args": [
+"mary_k@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@ex..com"
+]
+},
+{
+"args": [
+"Doe<a@b>John\\\".."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+""
+]
+},
+{
+"args": [
+"first.last@sub.ex.co.uk (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"first.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"j.d@ex.orgMary <m@x.io>\"J D\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <a..b@ex..com>, first.last@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"j.d@ex.orgJohn(comment)..johnj.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <..@>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <a..b@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"@exa@b.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@[1.2.3.4] (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Doe\"\"J D\">"
+],
+"kwargs": {},
+"expected": [
+"",
+"Doe"
+]
+},
+{
+"args": [
+"Doeexample.com)[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <o'brien@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"o'brien@b"
+]
+},
+{
+"args": [
+"j.d@ (\"J D\"John)"
+],
+"kwargs": {},
+"expected": [
+"\"J D\"John",
+""
+]
+},
+{
+"args": [
+"\"(a@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <\"q u\"@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"\"q u\"@[1.2.3.4]"
+]
+},
+{
+"args": [
+"a..b@ex..com (comMary <m@x.io>ment)"
+],
+"kwargs": {},
+"expected": [
+"comMary <m@x.io>ment",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"o'brien@mail.i<a@b>o"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\";"
+],
+"kwargs": {},
+"expected": [
+"",
+";"
+]
+},
+{
+"args": [
+"first.last@ex.org (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"\"q u\"@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@b"
+]
+},
+{
+"args": [
+"x@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment)@x\"."
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"@x"
+]
+},
+{
+"args": [
+"@\tDoejohn\tj.d@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@example.com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"Zoë <mary_k@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"mary_k@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<john@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@ex..com"
+]
+},
+{
+"args": [
+":@x<\"J D\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" a@b "
+],
+"kwargs": {},
+"expected": [
+"",
+"a@b"
+]
+},
+{
+"args": [
+"x+tag@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(..c) J <@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"J (..c)",
+""
+]
+},
+{
+"args": [
+"o'brien@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"<\"q u\"@mail.>io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" <)@example.com>, j.d@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <john@ex..com>, @b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <a..b@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"(c) J <first.last@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+" @x@x\t"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"..a..b@ (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+""
+]
+},
+{
+"args": [
+"\tjohn\"J D\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john"
+]
+},
+{
+"args": [
+"a@ (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"a@b\t@.."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"a@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a@example.com"
+]
+},
+{
+"args": [
+"mary_k@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"\"q u\"@[1.2.3.4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";mary_k@ (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q example.comu\"@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q example.comu\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"mary_k@\\\"ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j.d(comment)@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary (comment)",
+"j.d@b"
+]
+},
+{
+"args": [
+"first.last@ex..com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+"Zoë <o'brien@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"john@sub.ex.co.uk ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"john@example.cexample.comom"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@example.cexample.comom"
+]
+},
+{
+"args": [
+"Mary <a@sub.ex.co.uk>, a@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\\")(,\\\"[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<a@x@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@[1.2.3.4]"
+]
+},
+{
+"args": [
+"@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <o'brien@ex..com>, x+tag@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"mary_k@b (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"mary_k@b"
+]
+},
+{
+"args": [
+"\"q u\"@ex..com (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"\"q u\"@ex..com"
+]
+},
+{
+"args": [
+"John Doe <a@[1.2.3.4]>, x+tag@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex..com (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"Mary <j.d@>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+"a..b@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"a..b@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\\ (éx@\\"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@ex.org"
+]
+},
+{
+"args": [
+"John Doe <j.d@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a@[1.2.3.4]"
+]
+},
+{
+"args": [
+" <x<a@b>+tag@mail.io>, john@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <@ex.or\"g>, mary_k@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"\"g>, mary_k@sub.ex.co.uk\""
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a@b"
+]
+},
+{
+"args": [
+"John Doe <a@ex@x.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <first.last@[1.2.3.4]>, @[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4]\\;"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John \tDoe <a..b@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+étag@ex.org ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+étag@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@x@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <j.d@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"j.d@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Mary <m@x.io>Mary <m@x.io>x@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <john@>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"Mary <first.last@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"John Doe <j.d@[1.2.3.4]>, @b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex.org\\ "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.org\\"
+]
+},
+{
+"args": [
+"\\\"\t"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"(c) J <mary_k@ex..com>, first.last@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <o'brien@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<a@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@mail.io"
+]
+},
+{
+"args": [
+"Mary <john@example.com>, a..b@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zo..ë <x+tag@mail.io>, j.d@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zo..ë",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"a@ex.org (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"a@ex.org"
+]
+},
+{
+"args": [
+"(c) J <a..b@ex.org>, mary_k@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@[1.2.3.4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Doe,x@[1.2.3.4]\"J D\":"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\;\" D\" <j.d@>, john@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"J \"Q;"
+]
+},
+{
+"args": [
+"(c) J <mary_k@>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+"(c) J <mary_k@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+",,\tMary <m@x.io>(comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <j.d@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+"\"J \\(\"Q\\\" D\" <@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"J ( Q\\  D",
+""
+]
+},
+{
+"args": [
+"j.d@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@b"
+]
+},
+{
+"args": [
+" éjohn"
+],
+"kwargs": {},
+"expected": [
+"",
+"éjohn"
+]
+},
+{
+"args": [
+"a@example.ca@bom"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <first.lastx@@>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@examplexample.come.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@examplexample.come.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <x+tag@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"x+tag@ex..com"
+]
+},
+{
+"args": [
+"j.d@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"John Doe> <a..b@b>, mary_k@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"John"
+]
+},
+{
+"args": [
+"(c) J <x+tag@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+"\\\"Mary <m@x.io>\","
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"Zoë <fJohnirst.last@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a@ex..com"
+]
+},
+{
+"args": [
+"John Doe <first.last@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+"(c) J <john@example.com>, a..b@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"john@example.com"
+]
+},
+{
+"args": [
+"(c) J <a..b@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"a..b@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"x+tag@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+"John Doe <mary_k@mail.io>, first.last@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"a\\\"..b@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a\\"
+]
+},
+{
+"args": [
+"\"q u\"john@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"john@example.com"
+]
+},
+{
+"args": [
+"john>:[1.2.3.4].."
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john"
+]
+},
+{
+"args": [
+"x+tag@mail.io (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"o'brien@sub.ex.co.uk (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"éo'brien@b (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"éo'brien@b"
+]
+},
+{
+"args": [
+"a\"@b"
+],
+"kwargs": {},
+"expected": [
+"",
+"a"
+]
+},
+{
+"args": [
+"example.com;[1.2.3.4]x@;"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@example.com (JohDoen)"
+],
+"kwargs": {},
+"expected": [
+"JohDoen",
+"a@example.com"
+]
+},
+{
+"args": [
+"o'brien@ex;.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<first.last@>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <x+tag@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+">\"J D\"@x @"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe\"J D\" <john@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"John Doe J D",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+" <a..b@>, john@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@xjohn"
+],
+"kwargs": {},
+"expected": [
+"",
+"@xjohn"
+]
+},
+{
+"args": [
+":\t [1.2.3.4]@x)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"jox@hn@ (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@mail.io (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"@mail.io"
+]
+},
+{
+"args": [
+"<j.d@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"<o'brien@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <o'brien@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"x+tag@ (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+""
+]
+},
+{
+"args": [
+"Zoë <first.las@t@ex.org>, a..b@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"john@example.com"
+]
+},
+{
+"args": [
+"mary_k@ex..com (a (nes@ted) c)"
+],
+"kwargs": {},
+"expected": [
+"a nes@ted c",
+"mary_k@ex..com"
+]
+},
+{
+"args": [
+"Mary <j.d@b>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"j.d@b"
+]
+},
+{
+"args": [
+"(comment)<j.d@ex.org<a@b><John"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" <a..b@mai\\\"l.io>, @"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <j.d@example.co  m>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"@mail.io ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"@mail.io"
+]
+},
+{
+"args": [
+"x+tag@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+",Doe@   "
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\[1.2.3.4]\"Q\\\" D\" <@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J [1.2.3.4] Q\\  D",
+""
+]
+},
+{
+"args": [
+"Zoë <mary_k@[1.2.3.4]>Doe"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@[1.2.3.4<a@b>]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <john@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"john@mail.io"
+]
+},
+{
+"args": [
+"mary_k@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"x+tag@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"firs\"J D\"t.last@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"firs\"J D\"t.last@b"
+]
+},
+{
+"args": [
+":é<\\;example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <\"q u\"@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"first.last@sub.ex.co.uk ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"John Doe <a..b@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"a..b@[1.2.3.4]"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@sub.ex.co.u@k>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+""
+]
+},
+{
+"args": [
+"a@ (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+""
+]
+},
+{
+"args": [
+")  \"J D\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";é.John"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+",john.  ;"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <john@sub.ex.co.uk>, o'brien@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"John Doe <first.last@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"first.last@[1.2.3.4] ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@example.com"
+]
+},
+{
+"args": [
+"a@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a@mail.io"
+]
+},
+{
+"args": [
+"..x@\\(comment)é"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@ example.com("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@b ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"<\"q u\"@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"Mary <first@.last@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"o'brien@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"\"J D\"o'brien@example.com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@ (commentexample.com)"
+],
+"kwargs": {},
+"expected": [
+"commentexample.com",
+""
+]
+},
+{
+"args": [
+"first.last@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"j.d@ex.org..\\\"[1.2.3.4]:>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.org..\\"
+]
+},
+{
+"args": [
+"\"q u\"@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@ex..com"
+]
+},
+{
+"args": [
+" Zoë <j.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"\"q u\"@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"\"J\t \\\"Q\\\" D\" <a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J\t \"Q\" D",
+"a@ex.org"
+]
+},
+{
+"args": [
+"(comment);"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@example.com (comment)(comment)"
+],
+"kwargs": {},
+"expected": [
+"comment comment",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"(c) J <j.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"john@exampl:e.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\tJohn"
+],
+"kwargs": {},
+"expected": [
+"",
+"John"
+]
+},
+{
+"args": [
+"@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@[1.2.3.4]"
+]
+},
+{
+"args": [
+"john@example.>com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <first.last@ex.oérg>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"first.last@ex.oérg"
+]
+},
+{
+"args": [
+"..\"J D\"[1.2.3.4]<\t"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <john@mail.io>, john@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"john@mail.io"
+]
+},
+{
+"args": [
+"((c) J <a@example.com>, j.d@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <a..b@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"Zoë <jMary <m@x.io>ohn@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"jMary"
+]
+},
+{
+"args": [
+"jx@ohn@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@exx@ample.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@ex.o:rg"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <mary_k@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j:.d@b"
+],
+"kwargs": {},
+"expected": [
+"",
+".d@b"
+]
+},
+{
+"args": [
+"..@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+">;:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, Jo:hn\" <first.last@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, Jo:hn",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"\"q u\"@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<@mail.\tio>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@sub.ex.johnco.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@sub.ex.johnco.uk"
+]
+},
+{
+"args": [
+"Mexample.comary <j.d@b>"
+],
+"kwargs": {},
+"expected": [
+"Mexample.comary",
+"j.d@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@[1Mary <m@x.io>.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(\t"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@)mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.(comment)last@ex.org ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment comment ",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"\\j.d@ex.org\\johnexample.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\j.d@ex.org\\johnexample.com"
+]
+},
+{
+"args": [
+"<mar;y_k@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mar"
+]
+},
+{
+"args": [
+"@exampl e.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"@example.com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <\"q u\"@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"\"q u\"@example.com"
+]
+},
+{
+"args": [
+"\"Doe, Joexample.comhn\" <@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Doe, Joexample.comhn",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@e\\x.org>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@e\\x.org"
+]
+},
+{
+"args": [
+"Zoë, <o'brien@sub.ex.co.uk>, x+tag@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"Zoë"
+]
+},
+{
+"args": [
+"[1.2.3.4]@xj.d@ex.org@x...."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <j.d@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <j.d@example.coJohnm>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"j.d@example.coJohnm"
+]
+},
+{
+"args": [
+"Mary <o'brien@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"((comment)c) J <john@>"
+],
+"kwargs": {},
+"expected": [
+"J (commentc)",
+""
+]
+},
+{
+"args": [
+".;Mary <m@x.io><"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\t."
+],
+"kwargs": {},
+"expected": [
+"",
+"."
+]
+},
+{
+"args": [
+"\\\",j.d@ex.org\"J D\"\""
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"(x@c) J <first.last@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@su\"J D\"b.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j.d@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"john[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@ex.(comment)org (John)"
+],
+"kwargs": {},
+"expected": [
+"comment John",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+""
+]
+},
+{
+"args": [
+"first.laJohnst@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.laJohnst@example.com"
+]
+},
+{
+"args": [
+"Mary <john@b>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"john@b"
+]
+},
+{
+"args": [
+"fiJohnrst.last@b ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"fiJohnrst.last@b"
+]
+},
+{
+"args": [
+"<@b (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+" (a nested c)",
+""
+]
+},
+{
+"args": [
+"john@b\\\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"\"John@x"
+],
+"kwargs": {},
+"expected": [
+"",
+"John@x"
+]
+},
+{
+"args": [
+"@sub.ex.co.uk (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"Doe, John\" <first.last@[1.2a@b.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <o'brien@sub.exa@b.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <o'bexample.comrien@b>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"o'bexample.comrien@b"
+]
+},
+{
+"args": [
+"<o'brien@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"John Doe <mary_k@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <j.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"a..b@ex.org (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"a@example...com"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@example...com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"john@mail.io"
+]
+},
+{
+"args": [
+";@\\>example.com@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"johna@b;example.com[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+">Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"John...."
+],
+"kwargs": {},
+"expected": [
+"",
+"John...."
+]
+},
+{
+"args": [
+"x+tag@example.céom"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@example.céom"
+]
+},
+{
+"args": [
+")é\"John\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@sub.johnex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"@sub.johnex.co.uk"
+]
+},
+{
+"args": [
+"Mary <@ex.org>, a..b@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+"(c)\" J <john@>, a@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"c",
+" J <john@>, a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Mary <@exa\"J D\"mple.com>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"\"J D\"mple.com"
+]
+},
+{
+"args": [
+">:..john"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"DoeDoe<a@b>."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"\"Doe, John\" <j.d@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+".<john"
+],
+"kwargs": {},
+"expected": [
+".",
+"john"
+]
+},
+{
+"args": [
+"j.d@ex.\\org (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"j.d@ex.\\org"
+]
+},
+{
+"args": [
+"x@Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment)@)>@John"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"o'brien@mail.io"
+]
+},
+{
+"args": [
+"John Doe <john@example.com>, john@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@ex.org (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"@ex.org"
+]
+},
+{
+"args": [
+"mary._k@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary._k@ex.org"
+]
+},
+{
+"args": [
+"(comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@ex..com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"\"q u\"@ex..com"
+]
+},
+{
+"args": [
+"(c) J <o'brien@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"\t(comment)@x(comment)John[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<john@exajohnmple.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@exajohnmple.com"
+]
+},
+{
+"args": [
+"a@ex.oDoerg (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a@ex.oDoerg"
+]
+},
+{
+"args": [
+"\"Doe, John\" <a..b@ex.org>, mary_k@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John[1.2.3.4]j.d@ex.org<;"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"John"
+]
+},
+{
+"args": [
+"Mary <m@x.io>:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <john@[1.2.3.4]>, first.last@johnex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"john@[1.2.3.4]"
+]
+},
+{
+"args": [
+"éjohn@ex.org (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"éjohn@ex.org"
+]
+},
+{
+"args": [
+"j.d@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+",\\:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@.[1.2.3.4] (comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4]john;john "
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <j.d@sub.ex.co.uk>, a@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\a@b\t"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\a@b"
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a@example.com"
+]
+},
+{
+"args": [
+">\tx@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@b (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"x+tag@b"
+]
+},
+{
+"args": [
+"a..b@ex;..com (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@ex"
+]
+},
+{
+"args": [
+"mary_(k@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+")j.d@ex.orgDoe\\(Doe"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io>John Doe <@>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"o'brien@b (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"o'brien@b"
+]
+},
+{
+"args": [
+"John Doe <a..b@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"x@.;j.d@ex.org\"J D\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"x@."
+]
+},
+{
+"args": [
+"\"q u\"@b (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"\"q u\"@b"
+]
+},
+{
+"args": [
+"j.d@ex..com (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"Zoë <x+tag@>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"\\(a@bjohn\\\"\t"
+],
+"kwargs": {},
+"expected": [
+"a@bjohn\"\t",
+"\\"
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"Zoë <j.d@b>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"j.d@b"
+]
+},
+{
+"args": [
+"o'brienMary <m@x.io>@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j)ohn@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@johné"
+],
+"kwargs": {},
+"expected": [
+"",
+"@johné"
+]
+},
+{
+"args": [
+")@xx@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"M.ary <john@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"M.ary",
+"john@ex.org"
+]
+},
+{
+"args": [
+"a..b@mail.io (coDoemment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"coDoemment",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"\\\"\t[1.2.3.4]é>john"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"Zoë <o'brien@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"mary_k@ex.org (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"(c) J <fir st.last@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"fir st.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"a@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Zoë <first.last@ex.org>, first.last@ex...org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.lasDoet@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.lasDoet@[1.2.3.4]"
+]
+},
+{
+"args": [
+"\"\"q u\"@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@mail.io example.com()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@mail.ioexample.com"
+]
+},
+{
+"args": [
+"a..b@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"Mary <a..b@mail.a@bio>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\\\"Q\\\" D\" <x+tag@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"J \\ Q\\  D",
+"x+tag@ex..com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <@mail.io>, first.last@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <x+tag@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"x+tag@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"a@mail.io"
+]
+},
+{
+"args": [
+"Zoë <@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"mary_k@mail.io (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"mary_k@mail.io"
+]
+},
+{
+"args": [
+";\"@johnjohn"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@x\"J D\">"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@x"
+]
+},
+{
+"args": [
+"@(b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+",@x(comment)Doe"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <o'x@brien@>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j.d@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"\"q u\"@mail.io (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"\"q u\"@mail.io"
+]
+},
+{
+"args": [
+"j@ohn@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<x+tag<a@b>@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..\\b@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..\\b@ex.org"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@sub.ex.co.uk>, john@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"j.d@example.com (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"j.d@example.com"
+]
+},
+{
+"args": [
+"john@[1.2.3.4] ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@[1.2.3.4]"
+]
+},
+{
+"args": [
+"Zoë <o'brien@ex.org>, j.d@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <mary_k@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"Mary <\"q uJohn\"@>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+""
+]
+},
+{
+"args": [
+" <a@ex.org>, o'brien@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"jDoeohn@mail.io (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"jDoeohn@mail.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"\"[1.2.3.4]Doe, John\" <john@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"[1.2.3.4]Doe, John",
+"john@ex..com"
+]
+},
+{
+"args": [
+"\"J \\\"<Q\\\" D\" <@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"<Q\" D",
+""
+]
+},
+{
+"args": [
+"\"q u\"@\\example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@\\example.com"
+]
+},
+{
+"args": [
+"Zoë <john@>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"joDoehn@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"joDoehn@example.com"
+]
+},
+{
+"args": [
+"@ex[1.2.3.4]ample.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@ex[1.2.3.4]ample.com"
+]
+},
+{
+"args": [
+"o'brien@[1.2.3.4] (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"@ex..com"
+]
+},
+{
+"args": [
+"(c) J <mary_k@>[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <o'brien@sub.ex.co.uk>, john@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"@Doe\"\\Doex@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@Doe"
+]
+},
+{
+"args": [
+"a@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@mail.io"
+]
+},
+{
+"args": [
+"a@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"j.d@sub.ex.céo.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@sub.ex.céo.uk"
+]
+},
+{
+"args": [
+"Zoë <a@[1.2.3é.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"a@[1.2.3é.4]"
+]
+},
+{
+"args": [
+"."
+],
+"kwargs": {},
+"expected": [
+"",
+"."
+]
+},
+{
+"args": [
+" <@sub.ex.co.u[1.2.3.4]k>, a..b@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+"<a@b>(c) J <a@example.com>, j.d@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+",\"J D\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex.org (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+" <@ex.org>, john@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@ (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+""
+]
+},
+{
+"args": [
+"Mary <o'brien@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"o'brien@ex.org"
+]
+},
+{
+"args": [
+"Zoë <a..b@[1.2.3.4]>, @b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <x+tag@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"first.last@sub.ex.co.uk (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"first.last@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"mary_k@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <a@b@sub.ex.co.uk>, john@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"(c) J <o'brien@b>é"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"o'brien@b"
+]
+},
+{
+"args": [
+"x+tag@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"(c) J <@b>,: \"q u\"@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <a..b@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <\"q u\"@ex..co\\m>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"\"q u\"@ex..co\\m"
+]
+},
+{
+"args": [
+"\"Doe, John\" <j.d@ex(.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"Zoë <j.d@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"first.last@sub.ex\".co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe Mary <m@x.io><first.last@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"John Doe <j.d@>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"(c) J <o'brien@example.com>, o'brien@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";[1.2.3.4]é "
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@ex..com>x@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"mary_k@ex..com"
+]
+},
+{
+"args": [
+"(c) J <mary_k@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"a..b@ex..com (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+"Mary <o'briMary <m@x.io>en@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"<"
+],
+"kwargs": {},
+"expected": [
+"J D",
+""
+]
+},
+{
+"args": [
+"a@b@DoeJohn\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <john@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"john@example.com"
+]
+},
+{
+"args": [
+"o'brien@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"o'brien@ex..com"
+]
+},
+{
+"args": [
+"John Doe <j.d@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"j.d@[1.2.3.4]"
+]
+},
+{
+"args": [
+"John Doe <a..b@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@mail.i(o"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@example.com"
+]
+},
+{
+"args": [
+">john@ (comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<first.last@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@b"
+]
+},
+{
+"args": [
+"john@[1.2.3.4] (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"john@[1.2.3.4]"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@sub.ex.co.uk>, o'brien@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@ ..()"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@.."
+]
+},
+{
+"args": [
+"johnj.d@ex.org,<("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <x  +tag@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"x  +tag@mail.io"
+]
+},
+{
+"args": [
+"\"J D\"\"\\<(comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+"J D"
+]
+},
+{
+"args": [
+"  \"J D\"@   "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@b"
+]
+},
+{
+"args": [
+"<mary_k@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_k@[1.2.3.4]"
+]
+},
+{
+"args": [
+"first.la  st@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.la  st@mail.io"
+]
+},
+{
+"args": [
+"Doe"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"Doe"
+]
+},
+{
+"args": [
+"(c) J <a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"a@ex.org"
+]
+},
+{
+"args": [
+"john@ (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+""
+]
+},
+{
+"args": [
+"Mary <x+tag@[1.2.3.4]>, first.last@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"x+tag@[1.2.3.4]"
+]
+},
+{
+"args": [
+"\"j.d@ex.orgJ \\\"Q\\\" D\" <\"q u\"@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"j.d@ex.orgJ \"Q\" D",
+"\"q u\"@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <john@ex.org>, john@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";(comment)>\"J D\"é"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<john@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@mail.io"
+]
+},
+{
+"args": [
+"\"q u\"@sub.ex.co.uk (com@ment)"
+],
+"kwargs": {},
+"expected": [
+"com@ment",
+"\"q u\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<o'brien@b>a@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"o'brien@b"
+]
+},
+{
+"args": [
+"x+tag@ex.org (a (nested) c\\\")"
+],
+"kwargs": {},
+"expected": [
+"a nested c\"",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"Zoë <\"q u\"@mail.io>, mary_k@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@sub.ex.co.uk (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"mary_k@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"john@sub.ex,.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@sub.ex"
+]
+},
+{
+"args": [
+"a..b@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"<[1.2.3.4] \\<"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <  a@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"a@ex..com"
+]
+},
+{
+"args": [
+"\"q u\"@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@ex..com"
+]
+},
+{
+"args": [
+"x+tag@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"x+tag@ex..com"
+]
+},
+{
+"args": [
+"Zoë <a@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"a@ex..com"
+]
+},
+{
+"args": [
+"x@(comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+""
+]
+},
+{
+"args": [
+"\"."
+],
+"kwargs": {},
+"expected": [
+"",
+"."
+]
+},
+{
+"args": [
+"\"Doe, JohMary <m@x.io>n\" <x+tag@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, JohMary <m@x.io>n",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+"@ex.org\\\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <a@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"a@ex.org"
+]
+},
+{
+"args": [
+"éexample.com)a@b "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"éexample.com"
+]
+},
+{
+"args": [
+"éx@x@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@mail.io (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+"\"Doe, Joh(n\" <a..b@b>"
+],
+"kwargs": {},
+"expected": [
+"Doe, Joh(n",
+"a..b@b"
+]
+},
+{
+"args": [
+"Zoë <john@b>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"john@b"
+]
+},
+{
+"args": [
+"\"q u\"<@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"q u",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <mary_k@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <j.d@b>, @example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\"\t <j.d@b>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"j.d@b"
+]
+},
+{
+"args": [
+"Mary <m@x.io>@x@("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <mary_k@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+"mary_k@ex..com"
+]
+},
+{
+"args": [
+"Zoë <@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+""
+]
+},
+{
+"args": [
+"\"\"a@b."
+],
+"kwargs": {},
+"expected": [
+"",
+"\"\"a@b."
+]
+},
+{
+"args": [
+"john@b (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"john@b"
+]
+},
+{
+"args": [
+"<mary_k@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, Joa@bhn\" <a..b@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, Joa@bhn",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"[1.2.3.4]\"\\\"\"J D\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(,.."
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <first.last@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"Zoë <j.d@[1.2.3.4]>, @example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <john@sub.ex.co.uk>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"example.comJohn.."
+],
+"kwargs": {},
+"expected": [
+"",
+"example.comJohn.."
+]
+},
+{
+"args": [
+"j.d@ex.org (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"Mary <@ma;il.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"mary_k@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"John Doe <@example.com>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"Zoë <o'brien@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"o'brien@example.com"
+]
+},
+{
+"args": [
+"<x+tag@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"\"Doe, John\" <\"q u\"@[1.2.3.4]b>, mary_k@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <x+tag@b>, john@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <first.last@ex..com>, a..b@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@eMary <m@x.io>xample.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@eMary"
+]
+},
+{
+"args": [
+"\t(comment)[1.2.3.4]Doe"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Z.oë <john@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Z.oë",
+"john@example.com"
+]
+},
+{
+"args": [
+"j.d@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Doeexample.com\t.,"
+],
+"kwargs": {},
+"expected": [
+"",
+"Doeexample.com"
+]
+},
+{
+"args": [
+":,"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+">)\"J D\".(>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <john@ex..com>, @[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"john@ex..com"
+]
+},
+{
+"args": [
+"Zoë <\"q u\"@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"a..b@ex.org ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"x@é(comment)Mary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+">Doe\"Doe\"J D\""
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@ (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+""
+]
+},
+{
+"args": [
+" <mar<y_k@ex..com>, @example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@example.com (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"john@example.com"
+]
+},
+{
+"args": [
+";);"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <x\t+tag@>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"o'bri.en@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <john@example.com>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"john@example.com"
+]
+},
+{
+"args": [
+"<j.d@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@mail.io"
+]
+},
+{
+"args": [
+")j.d@ex.org@<"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <john@example.com>, john@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"john@example.com"
+]
+},
+{
+"args": [
+"(<j.d@ex.org@:>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" <a@[1.2.3.4]>, \"q u\"@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\\"  @xé>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"\"q u\"@ (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+""
+]
+},
+{
+"args": [
+"a..b@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"example.comMary <m@x.io>"
+],
+"kwargs": {},
+"expected": [
+"example.comMary",
+"m@x.io"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@mail.io>, \"q u\"@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"a@b\"(comment) .("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <j.d@ex..com>, x+tag@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"\"q u\"@example.com@x"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@(sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@ex\"ample.com (comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<j.d@ex.orgj.d@example.com>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment)Doe:)john("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <first.la)st@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <mary_k@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"(c) J <@sub.ex.co.uk>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+""
+]
+},
+{
+"args": [
+"(c) J <x+tag@ex)..com>, john@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\(comment)x@\t(comment)@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment comment comment",
+""
+]
+},
+{
+"args": [
+"<x+tag@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+"x+tag@b"
+]
+},
+{
+"args": [
+"  "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+".example.com :@x"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@x"
+]
+},
+{
+"args": [
+"(c) J <john@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"J (c)",
+"john@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<j.d@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John (Doe <first.last@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe <first.last@ex.org>",
+"John"
+]
+},
+{
+"args": [
+"John Doe <john@sub.:ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment)Doe[1.2.3.4]:.;"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <x+tag@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"x+tag@example.com"
+]
+},
+{
+"args": [
+"a..b@b (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"a..b@b"
+]
+},
+{
+"args": [
+")Mary <m@x.io>(comment)x@<a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <m@x.io>:\\\"\"J D\"<<a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"..Doe\t"
+],
+"kwargs": {},
+"expected": [
+"",
+"..Doe"
+]
+},
+{
+"args": [
+"Johnx@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a.[1.2.3.4].b@ex.org ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <\"q u\"@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x@(a@b\"J D\":"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John, Doe <a..b@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"John"
+]
+},
+{
+"args": [
+"@ex.orgj.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"x@(j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4]\"J \\\"Q\\\" D\" <o'brien@>, a..b@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) @J <a..b@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<a..b@ex..com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@ex..com"
+]
+},
+{
+"args": [
+" ..\""
+],
+"kwargs": {},
+"expected": [
+"",
+".."
+]
+},
+{
+"args": [
+"a..b@ex.org (;comment)"
+],
+"kwargs": {},
+"expected": [
+";comment",
+"a..b@ex.org"
+]
+},
+{
+"args": [
+"  Mary <m@x.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Mary",
+"m@x.io"
+]
+},
+{
+"args": [
+"j.d@example[1.2.3.4].com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@ex.orj.d@ex.orgg"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"a@b:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@mail.ioexample.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"mary_k@mail.ioexample.com"
+]
+},
+{
+"args": [
+"\t@@x[1.2.3.4]x@<"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"example.com\\\"@\":\\"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"a..b@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@b"
+]
+},
+{
+"args": [
+"a@ex.org (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"a@ex.org"
+]
+},
+{
+"args": [
+"Zoë <a@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"a@ex.org"
+]
+},
+{
+"args": [
+"john@[1.2.3.4] (comment)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@[1.2.3  .4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <o'brien@sub.ex.co.uk>, mary_k@b"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"o'brien@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"é."
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"é."
+]
+},
+{
+"args": [
+"Zoë <a..b@[1.2.3.4]>(comment), @example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"example.comJohn):("
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <x+tag@sub.ex.co.uk>, o'brien@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <john@[1.2.3.4]>, \"q u\"@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"\\\"\\\"  "
+],
+"kwargs": {},
+"expected": [
+"",
+"\"\"  "
+]
+},
+{
+"args": [
+":(comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"@example.c om"
+],
+"kwargs": {},
+"expected": [
+"",
+"@example.com"
+]
+},
+{
+"args": [
+"mary_k@ex..c@om"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@ (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+""
+]
+},
+{
+"args": [
+"\"q u\"@sub.ex.co.uk (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"\"q u\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"Zoë <first.last@..b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Zoë",
+"first.last@..b"
+]
+},
+{
+"args": [
+"(c) J <a..b@sub.ex.co.uk>, first.last@[1..2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";\\\"(comment)é"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a@mail.io>, o'brien@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"example.com[1.2.3.4]John\\<a@b>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"example.comMary <m@x.io>\\\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"Doe "
+],
+"kwargs": {},
+"expected": [
+"",
+"J D"
+]
+},
+{
+"args": [
+"john[1.2.3.4]John"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John Doe <x+tag@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"éj.d@ex.orgMary <m@x.io><\t)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@mail.io (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a@mail.io"
+]
+},
+{
+"args": [
+"\"q u\"@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"<(@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+" (@example.com>)",
+""
+]
+},
+{
+"args": [
+"é"
+],
+"kwargs": {},
+"expected": [
+"",
+"é"
+]
+},
+{
+"args": [
+"@)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"Doe, John\" <mary_k@example.com>, o'brien@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..\"J D\"b@b ()"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..\"J D\"b@b"
+]
+},
+{
+"args": [
+"Mary john<a..b@mail.io>"
+],
+"kwargs": {},
+"expected": [
+"Mary john",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"(comment)<a@b>\\<"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"a@ex.>org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"..\\\"J D\"\\\"(comment):"
+],
+"kwargs": {},
+"expected": [
+"",
+"..\\"
+]
+},
+{
+"args": [
+"mary_k@b: (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@ex.org (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"a@ex.org"
+]
+},
+{
+"args": [
+"@johnjohn  @x"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Zoë <j.d@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"(cexample.com) J <mary_k@b>, a..b@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (cexample.com)",
+"mary_k@b"
+]
+},
+{
+"args": [
+"a@ma>il.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<j.d@ex.org>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"a..b@example.com (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"(c) J <john@mail<a@b>.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+",(:>[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <mary_k@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+"<john@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <john@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"john@example.com"
+]
+},
+{
+"args": [
+"(comment)\\\"johnx@<"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"\\"
+]
+},
+{
+"args": [
+"@sub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <mary_k@example.com>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"mary_k@example.com"
+]
+},
+{
+"args": [
+"j.d@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+"Mary <ma(comment)ry_k@>"
+],
+"kwargs": {},
+"expected": [
+"Mary (comment)",
+""
+]
+},
+{
+"args": [
+".@xx@é,j.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Mary <j.d@ex..example.comcom>"
+],
+"kwargs": {},
+"expected": [
+"Mary",
+"j.d@ex..example.comcom"
+]
+},
+{
+"args": [
+"\"q u\"@ex.org (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"(é:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@mail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J D\"é"
+],
+"kwargs": {},
+"expected": [
+"",
+"J D"
+]
+},
+{
+"args": [
+"\"Doe, John\" <\"q u\"@>"
+],
+"kwargs": {},
+"expected": [
+"Doe, John",
+""
+]
+},
+{
+"args": [
+"o'b\"rien@ex.org (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+"o'b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"J \"Q\" D",
+"first.last@ex.org"
+]
+},
+{
+"args": [
+"mary>_k@ (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\<(comment)\"J D\"Doe"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"\\ (comment)",
+"\"J D\"Doe"
+]
+},
+{
+"args": [
+"(comment).\"example.comj.d@ex.org"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"."
+]
+},
+{
+"args": [
+" <a@b>@..\\"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a@b"
+]
+},
+{
+"args": [
+"x+ta@xg@sub.ex.co.uk"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex..com (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"j.d@ex..com"
+]
+},
+{
+"args": [
+",é"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<\"q u\"@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"example.com"
+]
+},
+{
+"args": [
+">"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+".(comment))>:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";[1.2.3.4]x@,:"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@b (a (nestejohnd) c)"
+],
+"kwargs": {},
+"expected": [
+"a nestejohnd c",
+"a@b"
+]
+},
+{
+"args": [
+"example.comjohn\")@x"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\tDoe"
+],
+"kwargs": {},
+"expected": [
+"",
+"Doe"
+]
+},
+{
+"args": [
+"example.com..>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(comment) "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@ex.org (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"a@ex.org"
+]
+},
+{
+"args": [
+"first.las(comment)t@example.com ()"
+],
+"kwargs": {},
+"expected": [
+"comment comment ",
+"first.last@example.com"
+]
+},
+{
+"args": [
+"\"Doe, John\" <a@ex..com>, john@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@johnb"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@johnb"
+]
+},
+{
+"args": [
+"(>johnjohn"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@ex..coma@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<john@  mail.io>"
+],
+"kwargs": {},
+"expected": [
+"",
+"john@mail.io"
+]
+},
+{
+"args": [
+"\"q u\"@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@ex.org"
+]
+},
+{
+"args": [
+"first.last@ (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+""
+]
+},
+{
+"args": [
+"mary_k@mail.i\"J D\"o"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a@bJohn"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@bJohn"
+]
+},
+{
+"args": [
+"a..b@example.com (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"a..b@example.com"
+]
+},
+{
+"args": [
+"john@example.comsub.ex.co.uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@example.comsub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"Doe, John\" <\"q\t u\"@[1.2.3.4]>, \"q u\"@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+" \\\"<\"q u\"@[1.2.3.4]>, first.last@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"éx@"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"john@example.com (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+"john@example.com"
+]
+},
+{
+"args": [
+"John Doe <@b>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John Doe",
+""
+]
+},
+{
+"args": [
+"a@ba@b(comment)<a@b>john"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\\\"j.d@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+"\\"
+]
+},
+{
+"args": [
+"john@ex..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@ex..com"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@ex..com>, x+tag@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+"Mary <john@exj.d@ex.org.org>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+";"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"John\"J D\"\":"
+],
+"kwargs": {},
+"expected": [
+"",
+"John"
+]
+},
+{
+"args": [
+"@first.last@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@ex.org (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"Zoë <x+tag@ex.org>"
+],
+"kwargs": {},
+"expected": [
+"Zoë",
+"x+tag@ex.org"
+]
+},
+{
+"args": [
+"o'brien@ej.d@ex.orgx..com (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<j.d@[1.2.3.4]>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@[1.2.3.4]"
+]
+},
+{
+"args": [
+"a..b@b (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"a nested c",
+"a..b@b"
+]
+},
+{
+"args": [
+"john@example.com (cjohnomment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"cjohnomment",
+"john@example.com"
+]
+},
+{
+"args": [
+"..[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+":<(comment),"
+],
+"kwargs": {},
+"expected": [
+" (comment)",
+""
+]
+},
+{
+"args": [
+"j.d@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"<first.last@ex..com>"
+],
+"kwargs": {},
+"expected": [
+"",
+"first.last@ex..com"
+]
+},
+{
+"args": [
+"x+tag@e@x..com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@maa@bil.io (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"q u\"@[1.2.3.4]"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"\"q u\"@[1.2.3.4]"
+]
+},
+{
+"args": [
+"a..b@:[1.2.3.4] (a (nested) c)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <o('brien@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c 'brien@example.com>)",
+"o"
+]
+},
+{
+"args": [
+"@johnmail.io"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"@johnmail.io"
+]
+},
+{
+"args": [
+"john@sub.ex.co.[1.2.3.4]uk"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"john@sub.ex.co.[1.2.3.4]uk"
+]
+},
+{
+"args": [
+"Jo<a@b>hn Doe <first.last@ex.org>, a@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Jo",
+"a@b"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <x+tag@mail.io>  "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J \"Q\" D",
+"x+tag@mail.io"
+]
+},
+{
+"args": [
+"a@ex..com"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@ex..com"
+]
+},
+{
+"args": [
+"John Doe <mary_k@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"John Doe",
+"mary_k@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"Doe, John\" <john@example.com>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"Doe, John",
+"john@example.com"
+]
+},
+{
+"args": [
+"mary_k@[1.2.3.4] (John)"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary_k@ex.org"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary_k@ex.org"
+]
+},
+{
+"args": [
+">..(comment);\\a@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"(c) J <o'brien@mail.io>"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"J (c)",
+"o'brien@mail.io"
+]
+},
+{
+"args": [
+"a..b@ ()"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <j\\.d@example.com>, a@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <a..b@exam\tple.com>, a..b@ex.org"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<a@sub.ex.co.uk>"
+],
+"kwargs": {},
+"expected": [
+"",
+"a@sub.ex.co.uk"
+]
+},
+{
+"args": [
+"\"J \\\"Q\\\" D\" <first.last@[1.2.3.4]>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"Marjohny <j.d@b>"
+],
+"kwargs": {},
+"expected": [
+"Marjohny",
+"j.d@b"
+]
+},
+{
+"args": [
+"(\\\"é\"(comment)@"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"o'brien@b (John)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"John",
+"o'brien@b"
+]
+},
+{
+"args": [
+"Zoë <a@sub.ex.co.uk>, john@example.com"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"first.last@mail.io (comment)"
+],
+"kwargs": {},
+"expected": [
+"comment",
+"first.last@mail.io"
+]
+},
+{
+"args": [
+"a@bjohnjohn\\\"John "
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"a@bjohnjohn\\"
+]
+},
+{
+"args": [
+" <j.d@[1.2.3.4]>, o'brien@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"a..b@mail.io"
+],
+"kwargs": {},
+"expected": [
+"",
+"a..b@mail.io"
+]
+},
+{
+"args": [
+"m\tary_k@[1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"x+tag@ (comment)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"comment",
+""
+]
+},
+{
+"args": [
+" [1.2.3.4]"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex.org (a (nested) c)"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"a nested c",
+"j.d@ex.org"
+]
+},
+{
+"args": [
+"x@x+tag@b"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"mary _k@example.com"
+],
+"kwargs": {
+"strict": false
+},
+"expected": [
+"",
+"mary _k@example.com"
+]
+},
+{
+"args": [
+"o'brien@mail.io (John)"
+],
+"kwargs": {},
+"expected": [
+"John",
+"o'brien@mail.io"
+]
+},
+{
+"args": [
+"éx@\"J D\","
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"[1.2.3.4]@xé"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"j.d@ex.orgJohn\t\""
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+},
+{
+"args": [
+"<\"q u\"@>"
+],
+"kwargs": {},
+"expected": [
+"",
+""
+]
+}
+]

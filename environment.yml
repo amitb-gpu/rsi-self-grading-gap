@@ -1,0 +1,11 @@
+name: rsigap
+channels: [conda-forge]
+dependencies:
+  - python=3.12.7
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - pytest
+# Sandbox interpreter (target modules deleted per task by rsigap/sandbox.py):
+#   conda create -n rsigap-sbx python=3.12.7

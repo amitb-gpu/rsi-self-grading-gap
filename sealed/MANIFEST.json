@@ -1,0 +1,83 @@
+{
+  "python": "3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 16:05:46) [GCC 13.3.0]",
+  "n_dev": 300,
+  "n_heldout": 1000,
+  "files": {
+    "cases/dev/shlex_split.json": "d029b88e4d3c1d22d1d8d9de0d57409f761f96afa4011a65dc46ebf720058419",
+    "sealed/heldout/shlex_split.json": "dc12a1650a05ed1886be247e1e22723411196666b33cc234f48b87e1fa0fd6fd",
+    "cases/dev/textwrap_wrap.json": "698f88233e734357fff4d872c3d584320867604ac33d45b71651fe0c88dfb787",
+    "sealed/heldout/textwrap_wrap.json": "16be395b0a77ea4465fb6fec6e09f5f59848319a153223f845450b131f380d33",
+    "cases/dev/fnmatch_filter.json": "1c1a39d743cffd908a14d8aa8bb35af6de9e9f370ecd632081d59da377e2b0d4",
+    "sealed/heldout/fnmatch_filter.json": "25f4edcac1ae1213fe38803c8935b8399668347ca92ccb14a18e59d323abe19c",
+    "cases/dev/urllib_urlsplit.json": "d4bfa5a3af37da3aa5ebbd954ac51ba8b43d347462c75090807671297da254da",
+    "sealed/heldout/urllib_urlsplit.json": "c9a3b6812b8f01bb1bde58a90b774d3357a3c7f611ef4f453b7a2f15318ff777",
+    "cases/dev/email_parseaddr.json": "206f3a161481205d95a052ac9931761a7fb5b62419660e35a35247fd2896d5a8",
+    "sealed/heldout/email_parseaddr.json": "7e4e3a1eb72210f78a48e221c9caa53f6edaf5d0e9206739731c373d1106f479",
+    "cases/dev/ipaddress_ip_address.json": "069115824baa88489b444a0f9e8ec82cf64d5b98b5e4350eab0c2f3e6a0e930e",
+    "sealed/heldout/ipaddress_ip_address.json": "d8c7568466ba389267b5da069492331047ec2d7aa8239656f1eb8633564c03df"
+  },
+  "discarded_reference_timeouts": [
+    {
+      "task": "textwrap_wrap",
+      "args": [
+        "\u000b",
+        2
+      ],
+      "kwargs": {
+        "drop_whitespace": true,
+        "fix_sentence_endings": true,
+        "initial_indent": ">>> "
+      }
+    },
+    {
+      "task": "textwrap_wrap",
+      "args": [
+        " ",
+        2
+      ],
+      "kwargs": {
+        "break_long_words": true,
+        "break_on_hyphens": false,
+        "replace_whitespace": false,
+        "fix_sentence_endings": true,
+        "initial_indent": ">>> "
+      }
+    },
+    {
+      "task": "textwrap_wrap",
+      "args": [
+        "\f -dash \n        end. e-mail    end.",
+        2
+      ],
+      "kwargs": {
+        "initial_indent": ">>> ",
+        "subsequent_indent": " "
+      }
+    },
+    {
+      "task": "textwrap_wrap",
+      "args": [
+        "   (paren) \t end. -dash Mr. -dash (paren)    (paren)",
+        1
+      ],
+      "kwargs": {
+        "break_long_words": true,
+        "drop_whitespace": false,
+        "fix_sentence_endings": true,
+        "subsequent_indent": "-- "
+      }
+    },
+    {
+      "task": "textwrap_wrap",
+      "args": [
+        "\f wrapping wrapping \"quote.\" an \t x--y a x--y",
+        1
+      ],
+      "kwargs": {
+        "drop_whitespace": true,
+        "replace_whitespace": true,
+        "initial_indent": "* "
+      }
+    }
+  ]
+}
