@@ -2,14 +2,68 @@
 
 **When an AI research loop measures its own progress, how much of that progress is real?**
 
-> **In plain language.**
-> - **The idea.** AI companies hope AI systems will soon help improve AI itself, by running
->   experiments, judging the results and building on whatever worked.
-> - **The risk.** If the AI is also the one judging, it may convince itself it is improving
->   when it isn't, and each round builds on the last mistake.
-> - **What we did.** We let an AI agent repeatedly try to make a small language model train
->   better. Each time, we compared what it *said* it had achieved with what a hidden test,
->   which it never saw, showed it had *actually* achieved.
+## Plain-language summary
+
+**What this is about.**
+- AI companies hope that AI will soon help build better AI: running its own experiments,
+  checking the results, keeping what worked, and repeating. People call this *recursive
+  self-improvement*.
+- The catch is the checking step. If the AI is the one deciding whether it improved, it might
+  fool itself, much like a student marking their own exam. Each round would then build on a
+  mistake.
+- Researchers at the leading labs say this "how do we know it really improved?" problem is
+  still unsolved. This project measures how big the problem is.
+
+**What we did.**
+- We gave an AI agent (Claude) a real piece of AI-research work and let it try to improve that
+  work several times in a row.
+- After each attempt we wrote down two things: what the AI *said* it had achieved, and what it
+  *actually* achieved on a hidden test it could never see or peek at.
+- The difference between the two is the number we care about. If the AI's claims run ahead
+  of reality, a self-improving AI would be building on hot air.
+
+**How we did it.**
+- **A fair comparison.** Half the attempts let the AI judge its own progress. The other half
+  had an independent scorekeeper report results back to it. Everything else was identical.
+- **Rules first.** We wrote down the rules, the measurements and when to stop *before*
+  collecting any data, and published them, so we could not move the goalposts afterwards.
+- **No human judgement.** Every score is computed by a program; nobody's opinion enters it.
+- **Checks on the AI.** The AI worked in a fenced-off folder, and every action it took was
+  logged and checked automatically for cheating or shortcuts.
+- **Cost.** Everything ran on one gaming-class graphics card (an RTX 5090) and a standard
+  Claude subscription, with no extra spending.
+
+**What we found so far.**
+- **First attempt: too easy.** We asked the AI to rewrite 13 well-known pieces of the Python
+  programming language from memory. It got them essentially perfect (99.3% correct), which
+  left nothing to improve, so we stopped, as our own rules required.
+  - Along the way we noticed that the AI *undersold* itself. It guessed it was about 89%
+    correct when it was really over 99%.
+  - Yet its own home-made tests gave it a perfect score on the one task where it had actually
+    made mistakes.
+  - So its self-assessment was off in both directions.
+- **Second attempt: a task with room to grow.** The AI's job was to make a small language model
+  learn faster within a strict 45-second time limit.
+  - In a trial run, it improved the model by about **20%**, a real gain confirmed by the hidden
+    test.
+  - But its own report got the size of the gain right only by luck. It guessed the starting
+    score instead of measuring it, and it mismeasured its own result, and the two errors
+    happened to cancel out.
+  - The full experiment, four runs of three rounds each, is running now, and its results will
+    be added here.
+
+**Why it matters.**
+- If AI is going to speed up AI research, the weakest link may not be the AI's ability to come
+  up with ideas. It may be its ability to tell whether those ideas worked.
+- This project offers a small, cheap and fully reproducible way to measure that gap, and to
+  test whether an independent scorekeeper closes it.
+- Early signs are that an AI's sense of its own progress is unreliable in *both* directions.
+  That is an argument for building independent checks into any self-improving system rather
+  than trusting the AI's own report.
+
+---
+
+## Technical overview
 
 Frontier labs describe recursive self-improvement (RSI) as AI that speeds up AI research, and
 they name verification as one of its defining open problems: *how does the loop know it has
