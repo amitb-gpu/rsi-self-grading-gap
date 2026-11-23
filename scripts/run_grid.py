@@ -6,9 +6,11 @@ Refuses to run the main phase unless the prereg is frozen (tag prereg-frozen exi
 from __future__ import annotations
 
 import argparse
+import json
 import random
 import subprocess
 import sys
+import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -24,12 +26,28 @@ def frozen() -> bool:
     return r.stdout.strip() == "prereg-frozen"
 
 
+def spent_usd(phase: str = "main") -> tuple[float, int]:
+    """Total API cost and number of iterations recorded in the ledger for a phase."""
+    led = ROOT / "runs" / "ledger.jsonl"
+    if not led.exists():
+        return 0.0, 0
+    tot, n = 0.0, 0
+    for line in led.read_text().splitlines():
+        r = json.loads(line)
+        if r["phase"] == phase:
+            tot += float(r["claude"].get("total_cost_usd") or 0)
+            n += 1
+    return tot, n
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--reps", type=int, default=2)
     ap.add_argument("--T", type=int, default=5)
     ap.add_argument("--concurrency", type=int, default=4)
     ap.add_argument("--only", nargs="*", default=None)
+    ap.add_argument("--budget-usd", type=float, required=True,
+                    help="total API spend ceiling for the main phase; no new run starts past it")
     a = ap.parse_args()
     if not frozen():
         sys.exit("prereg not frozen (no 'prereg-frozen' tag); refusing to start the main phase")
@@ -40,9 +58,19 @@ def main() -> None:
     logs = ROOT / "runs" / "logs"
     logs.mkdir(parents=True, exist_ok=True)
 
+    lock = threading.Lock()
+
     def go(g):
         task, arm, rep = g
         rid = f"{task}__{arm}__r{rep}"
+        with lock:
+            spent, n = spent_usd()
+            per_run = (spent / n * a.T) if n else 0.0
+            reserve = per_run * a.concurrency  # runs possibly still in flight
+            if spent + reserve >= a.budget_usd:
+                print(f"SKIP {rid}: spent ${spent:.2f} + reserve ${reserve:.2f} >= budget ${a.budget_usd:.2f}",
+                      flush=True)
+                return
         with (logs / f"{rid}.log").open("a") as fh:
             p = subprocess.run([sys.executable, "-m", "rsigap.loop", "--task", task, "--arm", arm,
                                 "--rep", str(rep), "--T", str(a.T), "--phase", "main"],

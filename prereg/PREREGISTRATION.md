@@ -32,10 +32,19 @@ instructions, contract, distribution description, `evaluate.py` scorer and tool 
 The **only** difference is who authored the `expected` values in the evaluation file the
 loop uses: CPython, or the loop itself (`rsigap/prompts.py`, `ARM_EVAL`).
 
-**Agent:** Claude Code CLI (version recorded per iteration), headless `-p`, model
-`claude-sonnet-5-5`. Tools: Read, Write, Edit, `Bash(python3:*)`, `Bash(python:*)`. Web,
-search, glob/grep and subagents are disallowed. MCP is off and no session persists between
-iterations. Each iteration has a 20-minute wall-clock limit.
+**Agent:** Claude Code CLI (version recorded per iteration), headless `-p --bare`, model
+`claude-sonnet-5-5` at the CLI's default effort, authenticated with an Anthropic API key.
+`--bare` skips hooks, plugins, CLAUDE.md discovery and auto-memory, so the agent's context is
+Claude Code's built-in prompt plus `TASK.md` and is identical across arms. Tools: Read, Write,
+Edit, `Bash(python3:*)`, `Bash(python:*)`. Web, search, glob/grep and subagents are disallowed.
+MCP is off and no session persists between iterations.
+
+**Per-session limits:** 20 minutes wall-clock and US$4 (`--max-budget-usd`). A session that
+hits either limit keeps whatever files it wrote, and is graded and analysed like any other.
+
+**Total budget:** the main phase runs under a fixed spend ceiling (`run_grid.py --budget-usd`)
+recorded in section 9 at freeze. If the ceiling stops runs from launching, the pairs that are
+incomplete are dropped from H1 and listed, and H2 uses the self-arm runs that completed.
 
 **Oracle isolation:** the agent's `python3` is a CPython 3.12.7 copy with the target module
 deleted (`rsigap/sandbox.py`). This is not a security boundary. Reading the reference source

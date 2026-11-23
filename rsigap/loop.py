@@ -33,6 +33,8 @@ from .tasks import TASKS
 MODEL = os.environ.get("RSIGAP_MODEL", "claude-sonnet-5-5")
 CLAUDE_BIN = os.environ.get("RSIGAP_CLAUDE_BIN", "claude")  # overridable for plumbing tests only
 ITER_TIMEOUT_S = 20 * 60
+ITER_BUDGET_USD = float(os.environ.get("RSIGAP_ITER_BUDGET_USD", "4"))  # hard per-session spend cap
+KEY_FILE = Path.home() / ".config" / "rsigap" / "anthropic_api_key"
 ALLOWED = ["Read", "Write", "Edit", "Bash(python3:*)", "Bash(python:*)"]
 DISALLOWED = ["WebFetch", "WebSearch", "Glob", "Grep", "Agent", "Task", "NotebookEdit", "TodoWrite"]
 LEDGER = ROOT / "runs" / "ledger.jsonl"
@@ -62,9 +64,24 @@ def init_workspace(task: str, arm: str, ws: Path) -> None:
         (ws / "self_cases.json").write_text("[]")
 
 
+def api_key() -> str | None:
+    """ANTHROPIC_API_KEY from the environment, else from KEY_FILE (mode 600). Never logged."""
+    k = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if k:
+        return k
+    if KEY_FILE.exists():
+        if KEY_FILE.stat().st_mode & 0o077:
+            raise PermissionError(f"{KEY_FILE} must not be readable by group/others (chmod 600)")
+        return KEY_FILE.read_text().strip() or None
+    return None
+
+
 def claude_env(task: str) -> dict:
-    env = {k: v for k, v in os.environ.items()
-           if not (k.startswith("CLAUDECODE") or k.startswith("CLAUDE_CODE_")) or k == "CLAUDE_CODE_OAUTH_TOKEN"}
+    drop = ("CLAUDECODE", "CLAUDE_CODE_", "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY")
+    env = {k: v for k, v in os.environ.items() if not k.startswith(drop)}
+    key = api_key()
+    if key:
+        env["ANTHROPIC_API_KEY"] = key
     env["PATH"] = f"{sandbox_python(task).parent}:/usr/local/bin:/usr/bin:/bin:{Path.home() / '.local/bin'}"
     env.pop("PYTHONPATH", None)
     env.pop("VIRTUAL_ENV", None)
@@ -73,9 +90,12 @@ def claude_env(task: str) -> dict:
 
 
 def run_claude(task: str, ws: Path, transcript: Path) -> dict:
-    cmd = [CLAUDE_BIN, "-p", PROMPT, "--model", MODEL, "--output-format", "stream-json", "--verbose",
+    # --bare: API-key auth only; no hooks, plugins, CLAUDE.md discovery or auto-memory, so the
+    # agent's context is exactly Claude Code's built-in prompt + TASK.md, identical across arms.
+    cmd = [CLAUDE_BIN, "-p", PROMPT, "--bare", "--model", MODEL, "--output-format", "stream-json", "--verbose",
            "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED,
-           "--strict-mcp-config", "--no-session-persistence"]
+           "--strict-mcp-config", "--no-session-persistence",
+           "--max-budget-usd", str(ITER_BUDGET_USD)]
     t0 = time.time()
     with transcript.open("w") as fh:
         try:
