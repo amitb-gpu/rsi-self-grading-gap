@@ -38,7 +38,8 @@ ITER_TIMEOUT_S = 20 * 60
 ITER_BUDGET_USD = float(os.environ.get("RSIGAP_ITER_BUDGET_USD", "4"))
 TOKEN_FILE = Path.home() / ".config" / "rsigap" / "claude_oauth_token"
 SESSION_SETTINGS = json.dumps({"autoMemoryEnabled": False, "disableAllHooks": True})
-ALLOWED = ["Read", "Write", "Edit", "Bash(python3:*)", "Bash(python:*)"]
+TOOLS = ["Read", "Write", "Edit", "Bash"]  # the only tools that exist in the session (--tools)
+ALLOWED = ["Read", "Write", "Edit", "Bash(python3:*)", "Bash(python:*)"]  # permission rules within them
 DISALLOWED = ["WebFetch", "WebSearch", "Glob", "Grep", "Agent", "Task", "NotebookEdit", "TodoWrite"]
 LEDGER = ROOT / "runs" / "ledger.jsonl"
 SNAP_GLOBS = ["*.py", "*.md", "*.json"]
@@ -100,9 +101,13 @@ def isolation_check(init: dict | None) -> dict:
         return {"init_seen": False, "ok": False}
     mcp = init.get("mcp_servers") or []
     plugins = init.get("plugins") or []
+    foreign = [p for p in plugins if not str(p.get("source", "")).endswith("@builtin")]
     tools = sorted(init.get("tools") or [])
-    return {"init_seen": True, "ok": not mcp and not plugins, "mcp_servers": mcp, "plugins": plugins,
-            "tools": tools, "cli_version": init.get("claude_code_version"), "model": init.get("model"),
+    extra_tools = sorted(set(tools) - set(TOOLS))
+    return {"init_seen": True, "ok": not mcp and not foreign and not extra_tools,
+            "mcp_servers": mcp, "foreign_plugins": foreign, "extra_tools": extra_tools, "tools": tools,
+            "builtin_plugins": sorted(p.get("name", "") for p in plugins if p not in foreign),
+            "cli_version": init.get("claude_code_version"), "model": init.get("model"),
             "api_key_source": init.get("apiKeySource")}
 
 
@@ -111,7 +116,7 @@ def run_claude(task: str, ws: Path, transcript: Path) -> dict:
     # plugins, hooks or permission rules), hooks and auto-memory off, CLAUDE.md discovery off, no
     # MCP. The agent's context is Claude Code's built-in prompt + TASK.md, identical across arms.
     cmd = [CLAUDE_BIN, "-p", PROMPT, "--model", MODEL, "--output-format", "stream-json", "--verbose",
-           "--setting-sources", "project", "--settings", SESSION_SETTINGS,
+           "--setting-sources", "project", "--settings", SESSION_SETTINGS, "--tools", *TOOLS,
            "--allowedTools", *ALLOWED, "--disallowedTools", *DISALLOWED,
            "--strict-mcp-config", "--no-session-persistence",
            "--max-budget-usd", str(ITER_BUDGET_USD)]
@@ -225,7 +230,7 @@ def run(task: str, arm: str, rep: int, T: int, phase: str) -> None:
         iso = meta["isolation"]
         if not iso["ok"]:
             rec["audit"]["flags"]["isolation"] = [
-                {k: iso.get(k) for k in ("init_seen", "mcp_servers", "plugins")}]
+                {k: iso.get(k) for k in ("init_seen", "mcp_servers", "foreign_plugins", "extra_tools")}]
             rec["audit"]["violation"] = True
         rec = append_ledger(rec)
         print(json.dumps({k: rec[k] for k in ("run_id", "t")} | {

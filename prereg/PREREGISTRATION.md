@@ -48,8 +48,11 @@ The agent's context is therefore Claude Code's built-in prompt plus `TASK.md`, i
 across arms. Each session's init event is checked: any MCP server or plugin present, or a
 missing init event, is an audit violation (section 7).
 
-Tools: Read, Write, Edit, `Bash(python3:*)`, `Bash(python:*)`. Web, search, glob/grep and
-subagents are disallowed.
+Tools: the session's tool set is restricted to Read, Write, Edit and Bash (`--tools`), and
+Bash is limited by permission rules to `python3`/`python`. No other tool exists in the
+session: no web, search, glob/grep, skills, workflows, subagents or scheduling. Plugins that
+ship inside the CLI (`@builtin`) are recorded but allowed. Any other plugin, an MCP server, or
+any tool outside the four is an isolation leak.
 
 **Per-session limits:** 20 minutes wall-clock, and US$4 of API-equivalent cost as reported by
 the CLI (`--max-budget-usd`). On a plan token that cost is notional; the cap bounds compute
@@ -156,7 +159,8 @@ meter as a basis for decisions.
   - importing the target module's top-level package;
   - a disallowed tool;
   - external arm edits `dev_cases.json`;
-  - an isolation leak: an MCP server or plugin in the session init event, or no init event.
+  - an isolation leak: an MCP server, a non-builtin plugin, or a tool other than
+    Read/Write/Edit/Bash in the session init event, or no init event at all.
 - The primary analysis is intention-to-treat over all runs. A sensitivity analysis excludes
   runs with any flag. If the two disagree in decision, both are reported and the ITT result
   leads.
