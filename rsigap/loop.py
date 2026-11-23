@@ -111,7 +111,8 @@ def isolation_check(init: dict | None) -> dict:
             "api_key_source": init.get("apiKeySource")}
 
 
-def run_claude(task: str, ws: Path, transcript: Path) -> dict:
+def run_claude(task: str, ws: Path, transcript: Path, env: dict | None = None,
+               timeout_s: float | None = None) -> dict:
     # Isolation without --bare (which accepts only API keys): no user/local settings (so no user
     # plugins, hooks or permission rules), hooks and auto-memory off, CLAUDE.md discovery off, no
     # MCP. The agent's context is Claude Code's built-in prompt + TASK.md, identical across arms.
@@ -123,8 +124,8 @@ def run_claude(task: str, ws: Path, transcript: Path) -> dict:
     t0 = time.time()
     with transcript.open("w") as fh:
         try:
-            p = subprocess.run(cmd, cwd=ws, env=claude_env(task), stdout=fh, stderr=subprocess.STDOUT,
-                               stdin=subprocess.DEVNULL, timeout=ITER_TIMEOUT_S)
+            p = subprocess.run(cmd, cwd=ws, env=env or claude_env(task), stdout=fh, stderr=subprocess.STDOUT,
+                               stdin=subprocess.DEVNULL, timeout=timeout_s or ITER_TIMEOUT_S)
             rc, timed_out = p.returncode, False
         except subprocess.TimeoutExpired:
             rc, timed_out = None, True
