@@ -1,0 +1,1 @@
+Iter1: solution.py is a from-memory port of pprint 3.12 (_safe_repr, _format, dict/list/tuple/str printers, compact, depth, underscore). self_cases.json is built by mkcases.py (34 hand-derived cases). Untested: bytes, other types, mixed-type dict key sort.

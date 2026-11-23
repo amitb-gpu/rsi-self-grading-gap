@@ -1,0 +1,1 @@
+{"estimated_pass_rate": 0.9, "basis": "Implemented from memory of the CPython algorithm; only 3 hand-derived cases are independent, the rest are self-generated regression cases."}

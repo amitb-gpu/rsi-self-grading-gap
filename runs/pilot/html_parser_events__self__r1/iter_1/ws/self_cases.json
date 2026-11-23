@@ -1,0 +1,494 @@
+[
+ {
+  "args": [
+   "hello"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "hello"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<p class=a id='b' disabled>x</P>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "p",
+    [
+     [
+      "class",
+      "a"
+     ],
+     [
+      "id",
+      "b"
+     ],
+     [
+      "disabled",
+      null
+     ]
+    ]
+   ],
+   [
+    "data",
+    "x"
+   ],
+   [
+    "endtag",
+    "p"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!-- c -->"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "comment",
+    " c "
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!---->"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "comment",
+    ""
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!-- unclosed"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "<"
+   ],
+   [
+    "data",
+    "!-- unclosed"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!DOCTYPE html>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "decl",
+    "DOCTYPE html"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<?php x ?>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "pi",
+    "php x ?"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<![CDATA[x]]>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "unknown_decl",
+    "CDATA[x"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "&amp; &#65; &#x41;"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "entityref",
+    "amp"
+   ],
+   [
+    "data",
+    " "
+   ],
+   [
+    "charref",
+    "65"
+   ],
+   [
+    "data",
+    " "
+   ],
+   [
+    "charref",
+    "x41"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<script>if(a<b){}</script>x"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "script",
+    []
+   ],
+   [
+    "data",
+    "if(a<b){}"
+   ],
+   [
+    "endtag",
+    "script"
+   ],
+   [
+    "data",
+    "x"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<br/>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "startendtag",
+    "br",
+    []
+   ]
+  ]
+ },
+ {
+  "args": [
+   "</>"
+  ],
+  "kwargs": {},
+  "expected": []
+ },
+ {
+  "args": [
+   "</ div >"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "endtag",
+    "div"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<STYLE>a</style>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "style",
+    []
+   ],
+   [
+    "data",
+    "a"
+   ],
+   [
+    "endtag",
+    "style"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<![if x]>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "unknown_decl",
+    "if x"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "a<"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "a"
+   ],
+   [
+    "data",
+    "<"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!x>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "comment",
+    "x"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<div\n a = 1 >"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "div",
+    [
+     [
+      "a",
+      "1"
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<a href=\"u\" b='c'/>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "startendtag",
+    "a",
+    [
+     [
+      "href",
+      "u"
+     ],
+     [
+      "b",
+      "c"
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "args": [
+   "x &lt; y"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "x "
+   ],
+   [
+    "entityref",
+    "lt"
+   ],
+   [
+    "data",
+    " y"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<p>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "p",
+    []
+   ]
+  ]
+ },
+ {
+  "args": [
+   "</p>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "endtag",
+    "p"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "a > b"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "a > b"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<script>unterminated"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "script",
+    []
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<![foo[x]]>"
+  ],
+  "kwargs": {},
+  "expected": {
+   "raises": "AssertionError"
+  }
+ },
+ {
+  "args": [
+   "<![ x"
+  ],
+  "kwargs": {},
+  "expected": {
+   "raises": "AssertionError"
+  }
+ },
+ {
+  "args": [
+   "<br />"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "startendtag",
+    "br",
+    []
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<A HREF=X>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "starttag",
+    "a",
+    [
+     [
+      "href",
+      "X"
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<?pi>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "pi",
+    "pi"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "</a b>"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "endtag",
+    "a"
+   ]
+  ]
+ },
+ {
+  "args": [
+   "<!-- a --  >"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "comment",
+    " a "
+   ]
+  ]
+ },
+ {
+  "args": [
+   "text<b>bold</b>tail"
+  ],
+  "kwargs": {},
+  "expected": [
+   [
+    "data",
+    "text"
+   ],
+   [
+    "starttag",
+    "b",
+    []
+   ],
+   [
+    "data",
+    "bold"
+   ],
+   [
+    "endtag",
+    "b"
+   ],
+   [
+    "data",
+    "tail"
+   ]
+  ]
+ }
+]

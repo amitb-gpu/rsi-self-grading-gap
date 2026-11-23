@@ -1,0 +1,1 @@
+{"estimated_pass_rate": 0.95, "basis": "Passes all 34 self-written cases whose expectations come from my recollection of CPython 3.12.7 parse_qsl/unquote; no reference available to verify."}

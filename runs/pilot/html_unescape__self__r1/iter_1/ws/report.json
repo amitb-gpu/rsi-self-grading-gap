@@ -1,0 +1,1 @@
+{"estimated_pass_rate": 0.8, "basis": "Algorithm matches CPython and my 41 hand-written cases pass, but the entity table is an incomplete from-memory subset so rare names may fail."}

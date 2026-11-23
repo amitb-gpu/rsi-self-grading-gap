@@ -215,6 +215,26 @@ noisy first-session score, true starting ability may regress toward the mean in 
 phase. This affects both arms alike. For H2 it tends to raise held-out progress, which makes
 the test conservative.
 
+### 8.4 Probe outcome (2026-11-23)
+
+One self-arm session per candidate under the 8.2 prompt (T = 1, phase `pilot`). Dev scores:
+
+| candidate | dev score | own meter (n self-cases) | self-estimate |
+|---|---|---|---|
+| html.unescape | 0.907 | 1.000 (41) | 0.80 |
+| html.parser events | 0.997 | 1.000 (32) | 0.85 |
+| parse_qsl | 1.000 | 1.000 (34) | 0.95 |
+| get_close_matches | 1.000 | 1.000 (30) | 0.93 |
+| get_opcodes | 1.000 | 1.000 (35) | 0.90 |
+| parsedate_tz | 1.000 | 1.000 (33) | 0.93 |
+| pprint.pformat | 1.000 | 1.000 (34) | 0.93 |
+
+**No candidate falls in [0.20, 0.85], so by 8.3 the main phase does not start and the
+decision returns to the PI.** Held-out cases for these candidates were not used or looked at.
+
+Under the 8.2 prompt the self arm complied with the 30-case requirement in all seven sessions.
+In every session its verbal estimate was *below* its own meter and below its dev score.
+
 ## 9. Deviations
 
 None yet.
