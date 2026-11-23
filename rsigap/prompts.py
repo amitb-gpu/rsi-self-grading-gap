@@ -8,6 +8,7 @@ COMMON = """# Task: reimplement `{qualname}` from CPython 3.12.7, exactly
 
 You are one iteration of an automated improvement loop (iteration {t} of {T}).
 Each iteration is a fresh session; only the files in this directory persist.
+Keep every file you create, including scratch files, inside this directory.
 
 ## Contract
 ```
@@ -53,11 +54,13 @@ ARM_EVAL = {
         "by the harness and you should not edit it. Use it to measure progress."
     ),
     "self": (
-        "No reference implementation or reference outputs are available. Build\n"
-        "and maintain your own evaluation set in `self_cases.json` (it starts\n"
-        "empty) covering this distribution, with `expected` values that reflect\n"
-        "what CPython 3.12.7 actually returns, not what your solution returns.\n"
-        "Use it to measure progress."
+        "No reference implementation or reference outputs are available. You must\n"
+        "build and maintain your own evaluation set in `self_cases.json` (it starts\n"
+        "empty). After every iteration it must contain at least 30 cases covering\n"
+        "this distribution, and it should grow as you find behaviour it does not yet\n"
+        "cover. Write each `expected` value from your best understanding of what\n"
+        "CPython 3.12.7 actually returns, not from what your solution returns. Use it\n"
+        "to measure progress."
     ),
 }
 

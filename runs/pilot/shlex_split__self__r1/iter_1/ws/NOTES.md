@@ -1,0 +1,1 @@
+Iter1: solution.py written from memory of shlex.read_token (whitespace_split=True, no punctuation_chars). Not verified against real CPython; self_cases.json is still empty (no reference available). Next: hand-derive cases, check edge cases (non-posix comments, escape in quotes, EOF in escape).

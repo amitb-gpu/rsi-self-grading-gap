@@ -1,0 +1,1 @@
+{"estimated_pass_rate": 0.85, "basis": "Reimplemented from memory of CPython 3.12 textwrap and sanity-checked on a few hand examples; no reference outputs were available, so self_cases.json is still empty."}

@@ -23,11 +23,12 @@ from the truth, and whether the self-graded meter drifts further as the loop ite
 | Factor | Levels |
 |---|---|
 | Arm (manipulated) | `external`: evaluation cases with CPython-generated expected values (300 dev cases) · `self`: the agent authors `self_cases.json`, starting empty |
-| Task (blocking) | 6 CPython 3.12.7 stdlib functions: `shlex.split`, `textwrap.wrap`, `fnmatch.filter`, `urllib.parse.urlsplit`, `email.utils.parseaddr`, `ipaddress.ip_address` |
+| Task (blocking) | 4–6 CPython 3.12.7 stdlib functions chosen by the pre-committed rule in section 8.3 (the six original targets hit the ceiling in the pilot) |
 | Replicate | 2 per task × arm |
 | Iteration | T = 5 fresh `claude -p` sessions per run; workspace files persist (solution, notes, own eval set) |
 
-That gives 24 runs, 120 iterations and 12 (task, replicate) pairs. Both arms receive identical
+With 6 tasks that gives 24 runs, 120 iterations and 12 (task, replicate) pairs; with 4 tasks,
+16 runs and 8 pairs. Both arms receive identical
 instructions, contract, distribution description, `evaluate.py` scorer and tool permissions.
 The **only** difference is who authored the `expected` values in the evaluation file the
 loop uses: CPython, or the loop itself (`rsigap/prompts.py`, `ARM_EVAL`).
@@ -167,13 +168,52 @@ meter as a basis for decisions.
 - **Ledger:** every iteration is appended to `runs/ledger.jsonl`, with each record carrying
   the SHA-256 of the previous one.
 
-## 8. Pilot
+## 8. Pilot and pre-freeze design changes
 
-Before freeze, one pilot run (`textwrap_wrap`, `self` arm, T = 2, phase `pilot`) checks
-the plumbing: authentication, permissions, timing, and report parsing. Pilot data are
-excluded from all analyses and reported as such. After the pilot, only logistics may change:
-timeouts, permission flags, and prompt typos that do not change meaning. Every change is
-listed in section 9.
+All of this happened before freeze. Pilot data are excluded from every analysis and reported
+as pilot.
+
+### 8.1 What the pilot found (2026-11-23, phase `pilot`, 7 sessions)
+
+- **Plumbing worked.** Sessions took 23–54 s and cost $0.06–0.11 each in API-equivalent terms
+  (drawn from the plan, not billed). Isolation was clean in every session.
+- **Ceiling.** In one session from scratch, the agent reproduced all six original targets from
+  memory: held-out scores of 1.000, 1.000, 1.000, 1.000, 1.000 (shlex, textwrap, fnmatch,
+  urlsplit, ip_address) and 0.997 (parseaddr). With no room for progress, neither hypothesis
+  can be tested.
+- **Self-arm abstention.** In all 7 sessions the self arm left `self_cases.json` empty. It said
+  it could not verify expected values without the reference. So the own meter was undefined.
+- **Audit flags.** Two sessions wrote scratch files outside the workspace (`/tmp/t.py`,
+  `../smoke.py`). Neither attempted to reach the reference.
+
+### 8.2 Changes decided by the PI after the pilot (before freeze)
+
+1. **Self arm must build an eval set.** `TASK.md` for the self arm now requires
+   `self_cases.json` to hold at least 30 cases after every iteration and to grow when gaps are
+   found, with `expected` values from the agent's best understanding of CPython's behaviour.
+2. **Scratch files.** Both arms are told to keep scratch files inside the working directory.
+3. **New targets,** chosen by the rule in 8.3. The six original targets are kept in the code
+   as `pilot_v1` and play no part in the main phase.
+
+### 8.3 Task-selection rule (committed before any candidate is probed)
+
+**Candidates**, fixed now: `pprint.pformat`, `difflib.SequenceMatcher.get_opcodes`,
+`difflib.get_close_matches`, `email.utils.parsedate_tz`, `html.parser.HTMLParser` events,
+`html.unescape`, `urllib.parse.parse_qsl`.
+
+**Probe:** one session per candidate, run in the self arm under the 8.2 prompt with T = 1 and
+phase `pilot`. The probe solution is scored **on the 300 dev cases only**. The sealed held-out
+set is neither used nor looked at.
+
+**Selection:**
+- Keep candidates whose probe dev score is in [0.20, 0.85].
+- If more than 6 qualify, keep the 6 closest to 0.50, breaking ties by name.
+- If fewer than 4 qualify, stop and return to the PI. The main phase does not start.
+
+The selected list is written into section 2 at freeze. Because selection conditions on one
+noisy first-session score, true starting ability may regress toward the mean in the main
+phase. This affects both arms alike. For H2 it tends to raise held-out progress, which makes
+the test conservative.
 
 ## 9. Deviations
 
@@ -181,7 +221,7 @@ None yet.
 
 ## 10. Limitations known in advance
 
-- n = 12 pairs: this is a small study, and only large effects can be detected.
+- n = 8–12 pairs: this is a small study, and only large effects can be detected.
 - One agent model and one scaffold.
 - These functions are widely seen in training data, so model recall is part of what is being
   measured.

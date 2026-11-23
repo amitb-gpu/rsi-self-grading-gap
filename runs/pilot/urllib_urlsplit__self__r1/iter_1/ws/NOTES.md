@@ -1,0 +1,1 @@
+Iter1: implemented urlsplit from memory of 3.12.7 (lstrip C0/space, strip tab/CR/LF, bracket host check via ipaddress, NFKC netloc check). Not verified against a reference; self_cases.json still empty. Next: hand-write cases from known CPython doc/test examples.

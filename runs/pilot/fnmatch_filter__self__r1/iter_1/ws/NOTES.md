@@ -1,0 +1,1 @@
+Iteration 1: reimplemented fnmatch.translate from memory of CPython 3.12 (regex w/ range merging, set-op escaping) in solution.py. self_cases.json left empty (no reference available); only smoke-tested. Next: hand-verify edge cases ([], [!], []a], reversed ranges, '[a-]').
