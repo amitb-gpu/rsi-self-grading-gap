@@ -1,0 +1,1 @@
+{"seed": 1, "split": "val", "budget_s": 45.0, "valid": true, "train_s": 42.0, "n_params": 3356160, "causal": true, "bpb": 1.69671267453815, "overrun": false}

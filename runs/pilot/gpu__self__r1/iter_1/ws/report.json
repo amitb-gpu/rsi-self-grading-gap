@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.70, "baseline_val_bpb": 2.1, "basis": "claimed: one evaluate.py run (seed 1) gave 1.6967; baseline is an unmeasured guess for the untuned 4-layer model at lr 3e-4, batch 32, fp32."}

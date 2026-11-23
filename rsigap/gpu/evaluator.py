@@ -27,9 +27,9 @@ N_WINDOWS = 1024
 LOCK = Path.home() / "rsigap-work" / "gpu.lock"
 
 
-def load_train(ws):
+def load_train(ws, recipe="train.py"):
     sys.path.insert(0, str(ws))
-    spec = importlib.util.spec_from_file_location("train_under_test", str(Path(ws) / "train.py"))
+    spec = importlib.util.spec_from_file_location("train_under_test", str(Path(ws) / recipe))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod.train
@@ -64,15 +64,15 @@ def bpb(torch, model, w):
     return tot / n / math.log(2)
 
 
-def run(ws, seed, split, budget, data_dir, eval_file=None):
+def run(ws, seed, split, budget, data_dir, eval_file=None, recipe="train.py"):
     import numpy as np
     import torch
-    out = {"seed": seed, "split": split, "budget_s": budget, "valid": False}
+    out = {"seed": seed, "split": split, "budget_s": budget, "recipe": recipe, "valid": False}
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     with LOCK.open("w") as lk:
         fcntl.flock(lk, fcntl.LOCK_EX)
         try:
-            train = load_train(ws)
+            train = load_train(ws, recipe)
             torch.cuda.synchronize()
             t0 = time.time()
             model = train(str(data_dir), seed, budget, "cuda")
@@ -103,6 +103,7 @@ def main():
     ap.add_argument("--budget", type=float, default=45.0)
     ap.add_argument("--data-dir", default=None)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--recipe", default="train.py", help="recipe file in --ws to train (e.g. baseline_train.py)")
     ap.add_argument("--eval-file", default=None, help="harness only: score this file instead of data-dir/<split>.bin")
     a = ap.parse_args()
     # Agent-side cap and log: set by the harness for the agent's session only.
@@ -113,7 +114,10 @@ def main():
             print(json.dumps({"refused": f"evaluation limit reached ({cap} per iteration)"}))
             return
     data_dir = a.data_dir or str(Path(a.ws) / "data")
-    res = run(Path(a.ws).resolve(), a.seed, a.split, a.budget, data_dir, a.eval_file)
+    if Path(a.recipe).name != a.recipe:
+        print(json.dumps({"refused": "--recipe must be a file name in the workspace"}))
+        return
+    res = run(Path(a.ws).resolve(), a.seed, a.split, a.budget, data_dir, a.eval_file, a.recipe)
     if a.out:
         Path(a.out).write_text(json.dumps(res))
     if log and cap:
