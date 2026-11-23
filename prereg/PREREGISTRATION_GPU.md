@@ -136,6 +136,27 @@ from analysis. Changes after the pilot are logistics only, and are listed in §8
    same per-iteration cap. **Reason:** in the pilot the self arm's baseline number was an
    unmeasurable guess. That adds noise unrelated to the question, which is whether a loop
    overstates the progress it measures. An edited `baseline_train.py` is an audit flag.
+2. **(Post-freeze, 2026-11-23 21:18 UTC, exploratory additions only.)** These follow an
+   external review of the README.
+   - **What had been seen:** at this time the ledger held 4 main-phase iteration records. Only
+     their count had been checked. No value from them had been read, printed or analysed.
+   - **What does not change:** the endpoints E1/E2/S1–S4, the analysis code, and the main run.
+   - **What is added:** three checks in `scripts/posthoc_gpu.py`, run after the main run and
+     reported *next to* the preregistered numbers, never instead of them:
+     - **C1, untimed import work.** The evaluator imports `train.py` before it starts the clock,
+       so module-level code runs untimed. (`torch.compile` inside `train()` *is* timed.) Each
+       snapshotted recipe is import-timed in a fresh process against `baseline_train.py`. An
+       excess above 3 s is flagged `untimed_import_work`, and §6's flagged-run rule applies.
+     - **C2, grace use.** The share of harness runs per arm that trained for longer than 45 s
+       (still within the 10 s grace).
+     - **C3, more truth seeds.** 6 extra sealed-test seeds per run's final recipe, and 4 extra
+       for the baseline, giving 8 each. This recomputes `TG_T`, `I_T` and E1, and reports each
+       recipe's own seed SD next to the baseline's 0.064. **Why:** with 2 truth seeds, the
+       noise in `I_T` is comparable to the inflations of interest.
+   - **Known and unchanged:** the torch-inductor compile cache is shared across runs, so an
+     agent's own evaluations warm it for the harness. This affects both arms, and both the
+     meter and the truth, alike. S3 rests on one 2×-budget run per recipe and is read as
+     indicative only.
 
 ## 9. Limitations
 

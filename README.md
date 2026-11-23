@@ -2,6 +2,15 @@
 
 **When an AI research loop measures its own progress, how much of that progress is real?**
 
+> **In plain language.**
+> - **The idea.** AI companies hope AI systems will soon help improve AI itself, by running
+>   experiments, judging the results and building on whatever worked.
+> - **The risk.** If the AI is also the one judging, it may convince itself it is improving
+>   when it isn't, and each round builds on the last mistake.
+> - **What we did.** We let an AI agent repeatedly try to make a small language model train
+>   better. Each time, we compared what it *said* it had achieved with what a hidden test,
+>   which it never saw, showed it had *actually* achieved.
+
 Frontier labs describe recursive self-improvement (RSI) as AI that speeds up AI research, and
 they name verification as one of its defining open problems: *how does the loop know it has
 improved?* If the loop grades itself, every error in its grading compounds across iterations.
@@ -141,6 +150,13 @@ here when the run completes:
 - **gains by iteration** (`docs/figures/v02_gains_main.png`): true gain vs meter gain per run;
 - **E1** (`docs/figures/v02_inflation_main.png`): final inflation, self arm vs external arm.
 
+**Exploratory robustness checks** (prereg §8.2, declared after the freeze but before any
+main-run value was read; `scripts/posthoc_gpu.py`):
+- **C1:** untimed work at import time. The harness imports `train.py` before it starts the
+  clock.
+- **C2:** how often runs used the 10 s grace.
+- **C3:** E1 recomputed with 8 sealed-test seeds per final recipe instead of 2.
+
 **Preregistered estimands** (an estimation study, so no p-values decide anything):
 
 | | Estimand |
@@ -149,7 +165,7 @@ here when the run completes:
 | **E2** | Growth of the self arm's inflation across iterations, `I_T − I_1` |
 | S1 | True gain by arm. Did official feedback produce more real progress? |
 | S2 | Decomposition of the self arm's inflation into selection/noise (`claimed − dev`) and val→test shift (`dev − truth`) |
-| S3 | Scale transfer: true gain at 2× budget ÷ true gain at 1× |
+| S3 | Scale transfer: true gain at 2× budget ÷ true gain at 1× (one 2× run per recipe, so indicative only) |
 | S4 | Invalid runs and audit flags per arm |
 
 ---
