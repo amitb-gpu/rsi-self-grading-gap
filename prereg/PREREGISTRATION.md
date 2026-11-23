@@ -100,8 +100,8 @@ bound is below the margin, it is reported as "significant but not practically co
 self-graded overstatement (in pp) at which the PI would stop trusting the loop's own progress
 meter as a basis for decisions.
 
-    MARGIN_P1_PP = TODO
-    MARGIN_P2_PP = TODO
+    MARGIN_P1_PP = 5    (set by PI 2026-11-23, before any main-phase data)
+    MARGIN_P2_PP = 5    (set by PI 2026-11-23, before any main-phase data)
 
 6.4 **Missing data.**
 - If `m_t` is undefined (the eval file is missing, unreadable or empty), the last defined
