@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.635, "baseline_val_bpb": 2.0099, "basis": "Mean of two evaluate.py runs of current train.py (1.6317, 1.6390); baseline taken from the official results in OFFICIAL_RESULTS.md, not re-run by me."}

@@ -1,0 +1,2 @@
+{"seed": 1, "split": "val", "budget_s": 45.0, "recipe": "train.py", "valid": true, "train_s": 42.01, "n_params": 3356160, "causal": true, "bpb": 1.629485591471542, "overrun": false}
+{"seed": 1, "split": "val", "budget_s": 45.0, "recipe": "baseline_train.py", "valid": true, "train_s": 43.0, "n_params": 3356160, "causal": true, "bpb": 2.052222247209439, "overrun": false}

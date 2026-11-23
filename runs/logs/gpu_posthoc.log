@@ -1,0 +1,93 @@
+_baseline 0 1.9484
+_baseline 1 1.9953
+_baseline 2 1.9137
+_baseline 3 1.9775
+gpu__self__r1 0 1.5696
+gpu__self__r1 1 1.5961
+gpu__self__r1 2 1.5788
+gpu__self__r1 3 1.5737
+gpu__self__r1 4 1.5931
+gpu__self__r1 5 1.5746
+gpu__external__r1 0 1.5978
+gpu__external__r1 1 1.6063
+gpu__external__r1 2 1.5952
+gpu__external__r1 3 1.599
+gpu__external__r1 4 1.5954
+gpu__external__r1 5 1.593
+gpu__external__r2 0 1.5869
+gpu__external__r2 1 1.5832
+gpu__external__r2 2 1.5785
+gpu__external__r2 3 1.5744
+gpu__external__r2 4 1.5853
+gpu__external__r2 5 1.5952
+gpu__self__r2 0 1.5873
+gpu__self__r2 1 1.5863
+gpu__self__r2 2 1.5759
+gpu__self__r2 3 1.5912
+gpu__self__r2 4 1.5747
+gpu__self__r2 5 1.5764
+{
+ "phase": "main",
+ "exploratory": true,
+ "C2_grace": {
+  "self": {
+   "n": 24,
+   "over_budget": 0,
+   "max_train_s": 42.04
+  },
+  "external": {
+   "n": 24,
+   "over_budget": 0,
+   "max_train_s": 42.04
+  }
+ },
+ "C3_more_truth_seeds": {
+  "baseline_test_8": {
+   "mean": 1.976554618414389,
+   "sd": 0.05139635953412243
+  },
+  "runs": {
+   "gpu__self__r1": {
+    "arm": "self",
+    "truth_8": 1.5816519647494787,
+    "recipe_seed_sd": 0.009379662583856625,
+    "TG_T_2seed": 0.4107169414411438,
+    "TG_T_8seed": 0.3949026536649103,
+    "I_T_2seed": 0.024283058558856263,
+    "I_T_8seed": 0.04009734633508977
+   },
+   "gpu__external__r1": {
+    "arm": "external",
+    "truth_8": 1.5982963724729933,
+    "recipe_seed_sd": 0.004253608334507678,
+    "TG_T_2seed": 0.39457902195261285,
+    "TG_T_8seed": 0.3782582459413957,
+    "I_T_2seed": -0.017522140664602226,
+    "I_T_8seed": -0.0012013646533850508
+   },
+   "gpu__external__r2": {
+    "arm": "external",
+    "truth_8": 1.583768738637021,
+    "recipe_seed_sd": 0.006792267638960436,
+    "TG_T_2seed": 0.4110629866580533,
+    "TG_T_8seed": 0.392785879777368,
+    "I_T_2seed": -0.03193342958088041,
+    "I_T_8seed": -0.013656322700195123
+   },
+   "gpu__self__r2": {
+    "arm": "self",
+    "truth_8": 1.5792478259911398,
+    "recipe_seed_sd": 0.007959764639679639,
+    "TG_T_2seed": 0.42332735971180346,
+    "TG_T_8seed": 0.3973067924232492,
+    "I_T_2seed": 0.029672640288196606,
+    "I_T_8seed": 0.05569320757675089
+   }
+  },
+  "I_T_8seed_mean_self": 0.04789527695592033,
+  "I_T_8seed_mean_external": -0.007428843676790087,
+  "E1_8seed_diff": 0.055324120632710416
+ }
+}
+C1 flagged: []
+wrote /home/manager/projects/rsi-self-grading-gap/results/gpu_posthoc_main.json

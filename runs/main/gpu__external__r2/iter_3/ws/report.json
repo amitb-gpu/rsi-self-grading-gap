@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.62, "baseline_val_bpb": 2.01, "basis": "Official evaluation of the identical iteration-2 recipe (mean 1.6195) and the official baseline mean 2.0099; iteration 3 tried lr 3e-3 (1.734 on one seed), which was worse, so train.py was reverted."}

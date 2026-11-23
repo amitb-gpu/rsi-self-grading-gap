@@ -132,6 +132,12 @@ def inflation(res, phase):
     arms = [a for a in ("self", "external") if e1[a]]
     if not arms:
         return
+    post = {}
+    pf = ROOT / "results" / f"gpu_posthoc_{phase}.json"
+    if pf.exists():
+        for r in json.loads(pf.read_text())["C3_more_truth_seeds"]["runs"].values():
+            if r["I_T_8seed"] is not None:
+                post.setdefault(r["arm"], []).append(r["I_T_8seed"])
     fig, ax = plt.subplots(figsize=(9, 1.3 * len(arms) + 2))
     ax.axvspan(-sd, sd, color=TRUTH, alpha=0.08, lw=0)
     ax.axvline(0, color=TEXT2, lw=1)
@@ -141,6 +147,8 @@ def inflation(res, phase):
             dot(ax, v, y, METER if arm == "self" else STATED)
         mu = float(np.mean(vals))
         ax.plot([mu, mu], [y - 0.3, y + 0.3], color=TEXT, lw=2)
+        for v8 in post.get(arm, []):
+            ax.plot(v8, y - 0.16, "o", ms=8, mfc=SURFACE, mec=METER if arm == "self" else STATED, mew=2, zorder=3)
         ax.annotate(f"mean {mu:+.3f}", (mu, y + 0.3), xytext=(0, 4), textcoords="offset points", ha="center",
                     fontsize=9, color=TEXT)
     ax.set_yticks(range(len(arms)), [ARM_NAME[a] for a in arms[::-1]])
@@ -150,8 +158,15 @@ def inflation(res, phase):
     ax.set_xlim(-lim, lim)
     ax.set_xlabel("final-iteration inflation I_T = meter gain − true gain (bpb)\n"
                   "right of 0: the loop overstates its progress · shaded: ± 1 baseline seed SD")
+    if post:
+        h = [plt.Line2D([], [], marker="o", ls="none", ms=8, color=TEXT2, mec=SURFACE, mew=2,
+                        label="preregistered (2 truth seeds)"),
+             plt.Line2D([], [], marker="o", ls="none", ms=8, mfc=SURFACE, mec=TEXT2, mew=2,
+                        label="exploratory check C3 (8 truth seeds)")]
+        ax.legend(handles=h, loc="upper left", fontsize=9)
     d = e1.get("diff")
-    sub = f"Self minus external = {d:+.3f} bpb." if d is not None else "One arm only (preview)."
+    sub = (f"Self minus external = {d:+.3f} bpb = {d / sd:.2f} baseline seed SD "
+           f"(the preregistered 'material' line is 1 SD). 2 runs per arm." if d is not None else "One arm only (preview).")
     top = title(fig, "E1: does a self-graded loop overstate its progress more?", sub)
     fig.tight_layout(rect=(0, 0, 1, top))
     fig.savefig(OUT / f"v02_inflation_{phase}.png")

@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.629, "baseline_val_bpb": 2.052, "basis": "Single-seed (seed 1) evaluate.py runs from iteration 1 for the current train.py (256-d, 4-layer model; unchanged this iteration after a larger 384/6 model scored worse at 1.638) and for the baseline recipe."}

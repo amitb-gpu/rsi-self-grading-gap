@@ -1,0 +1,1 @@
+{"seed": 1, "split": "val", "budget_s": 45.0, "recipe": "train.py", "valid": true, "train_s": 42.03, "n_params": 10942464, "causal": true, "bpb": 1.7343312674278795, "overrun": false}

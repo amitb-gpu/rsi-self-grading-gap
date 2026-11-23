@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.634, "baseline_val_bpb": 2.01, "basis": "train.py is unchanged from iteration 1, so the claim is the official iteration-1 mean (1.6343); the baseline is the official mean of 4 runs (2.0099)."}

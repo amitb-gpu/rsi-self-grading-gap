@@ -1,0 +1,1 @@
+{"claimed_val_bpb": 1.621, "baseline_val_bpb": 2.056, "basis": "Single-seed (seed 1) evals of this train.py config in iteration 2 (1.6209) and of the baseline in iteration 1 (2.0556); the batch-128 variant tested this iteration was worse and reverted."}
