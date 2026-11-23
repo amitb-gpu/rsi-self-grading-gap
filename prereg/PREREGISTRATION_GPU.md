@@ -1,7 +1,8 @@
 # Preregistration v0.2 (GPU): Does an AI research loop believe its own wins?
 
-**Status:** DRAFT. Not frozen. No main-phase iterations exist. The shared baseline
-reference (harness-only, fixed seeds, no agent) is computed before freeze.
+**Status:** FROZEN 2026-11-23. No main-phase iterations existed at freeze. The shared
+baseline reference (harness-only, fixed seeds, no agent) was computed before freeze (§7.1);
+84 instrument tests pass.
 **Freeze:** the commit that changes this status line to FROZEN is tagged `prereg-gpu-frozen`.
 
 v0.1 (`PREREGISTRATION.md`, stdlib reimplementation) was halted by its own pre-committed

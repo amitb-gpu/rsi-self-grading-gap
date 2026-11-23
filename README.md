@@ -15,7 +15,7 @@ measures what actually improved.
 | Study | Domain | Status |
 |---|---|---|
 | **v0.1** — `prereg/PREREGISTRATION.md` | Reimplement CPython 3.12.7 stdlib functions exactly; ground truth is CPython | **Halted by its own pre-committed rule.** The agent reproduced all 13 candidate targets from memory on the first try (dev 0.91–1.00), leaving no headroom to measure (§8) |
-| **v0.2** — `prereg/PREREGISTRATION_GPU.md` | Improve a byte-level GPT training recipe on enwik8 under a 45 s RTX 5090 budget; truth is harness-run, multi-seed, on a sealed test split | Built and validated; pilot running; not frozen |
+| **v0.2** — `prereg/PREREGISTRATION_GPU.md` | Improve a byte-level GPT training recipe on enwik8 under a 45 s RTX 5090 budget; truth is harness-run, multi-seed, on a sealed test split | Preregistration frozen 2026-11-23 (tag `prereg-gpu-frozen`); main run in progress |
 
 ## Design principles
 
