@@ -232,6 +232,22 @@ Agent runs need a Claude Code plan token: run `claude setup-token` and save the 
   environment, so installs are flagged rather than blocked.
 - **Same model family:** the baseline recipe was written by a Claude model, the same family as
   the agent.
+- **Warm compile cache:**
+  - the torch-inductor compile cache is shared across runs, so the agent's own evaluations warm
+    it before the harness's runs of the same recipe;
+  - tuned recipes use `torch.compile` and the baseline does not, so the true gain (S1) and the
+    scale transfer (S3) may be slightly overstated compared with a cold start;
+  - the gap between claimed and true gain (E1/E2) is not affected, because the meter and the
+    truth see the same cache.
+
+### Planned for v0.3
+
+- **Close the import gap:** start the clock before `train.py` is imported, or import it inside
+  the timed section, instead of measuring the gap afterwards (v0.2's C1).
+- **Cold starts:** clear the compile cache before every harness run.
+- **More seeds:** at least 8 sealed-test seeds per measured recipe and for the baseline, so that
+  per-run inflation is well above the noise.
+- **Scale transfer from more runs:** several 2×-budget runs instead of one.
 
 ## License
 

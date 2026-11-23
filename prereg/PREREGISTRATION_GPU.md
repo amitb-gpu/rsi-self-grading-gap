@@ -155,8 +155,9 @@ from analysis. Changes after the pilot are logistics only, and are listed in §8
        noise in `I_T` is comparable to the inflations of interest.
    - **Known and unchanged:** the torch-inductor compile cache is shared across runs, so an
      agent's own evaluations warm it for the harness. This affects both arms, and both the
-     meter and the truth, alike. S3 rests on one 2×-budget run per recipe and is read as
-     indicative only.
+     meter and the truth, alike. Because tuned recipes compile and the baseline does not, the
+     warm cache may slightly overstate S1 and S3, though not E1/E2. S3 rests on one 2×-budget
+     run per recipe and is read as indicative only.
 
 ## 9. Limitations
 
